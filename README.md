@@ -1,47 +1,29 @@
 # Falcon SEO and GEO Rankings
 
-## WordPress site-content ingest dashboard
+Next.js (App Router) + TypeScript + Tailwind.
 
-Next.js (App Router) + TypeScript + Tailwind dashboard that crawls a **public** WordPress site and exports CSV / JSON / Markdown for SEO audits.
-Job state: JSON files under `data/jobs/`.
+## Local Falcon pilot (Therman)
 
-> **Not the WP plugin** — stub for future plugin: `GET /api/sites/[siteId]/pages`
+One-client template for Charlie Therman Injury & Accident Lawyers, P.C. (group: Therman Law Group).
 
-## For Ben — mount at justifycode.com/wordpress
+- slash redirects to /clients/therman
+- /clients/therman location picker
+- /clients/therman/locations/PLACE_ID location dashboard
+- /wordpress WordPress ingest secondary
 
-- UI route: `/wordpress` (root `/` redirects there)
-- Reverse-proxy `justifycode.com/wordpress` plus `/api/ingest*` and `/api/sites*` to this Next app, or merge routes into the main host
-- Persist `data/jobs/` across deploys; crawler is in-process (single Node instance)
+### Build pilot data
 
-## Quick start
+Set LF_ARCHIVE then run build:lf-pilot script.
 
-```bash
-cd /workspace/falcon-seo-geo-rankings
-npm install
-npm run dev
-```
+Writes data/lf/pilot-client.json and per-place location JSON.
+Date filters derive from census date field (US M/D/YYYY), not GCS folders.
 
-Open http://localhost:3000/wordpress (or the next free port if 3000 is taken).
+### Dev
 
-```bash
-npm test
-npm run build && npm start
-```
+Run build:lf-pilot, then next build, then next dev.
+Open localhost:3000/clients/therman
 
-## API
+## WordPress ingest secondary
 
-- `POST /api/ingest` `{ url, maxPages? }` → 202 + job; starts crawl
-- `GET /api/ingest/[jobId]` poll status
-- `GET /api/ingest/[jobId]/export?format=csv|json|md`
-- `GET /api/sites/[siteId]/pages` stub (501)
+UI at /wordpress; jobs in data/jobs; ingest API under /api/ingest.
 
-Errors: `invalid_url`, `unreachable`, `blocked`, `not_wp`, `duplicate_in_progress`, `not_found`, `not_ready`
-
-## Real vs stubbed
-
-**Real:** URL normalize/validate, WP heuristics, robots.txt, rate limit, max 50 pages, undici+cheerio crawl, job JSON store, poll UI, CSV/JSON/MD exports.
-**Stub:** plugin/chatbot `sites/.../pages` API; no auth; JSON files (not SQLite).
-
-## Export fields
-
-URL, canonical, page type, status, title, meta description, H1, headings, main content, word count, internal/external links, images+alt, robots, schema present, dates, crawl date.

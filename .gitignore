@@ -30,3 +30,7 @@
 # typescript
 next-env.d.ts
 *.tsbuildinfo
+
+# Keep Local Falcon pilot JSON in git
+!/data/lf/
+!/data/lf/**
