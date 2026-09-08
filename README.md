@@ -1,4 +1,6 @@
-# JustifyCode WordPress Content Ingest Dashboard
+# Falcon SEO and GEO Rankings
+
+## WordPress site-content ingest dashboard
 
 Next.js (App Router) + TypeScript + Tailwind dashboard that crawls a **public** WordPress site and exports CSV / JSON / Markdown for SEO audits.
 Job state: JSON files under `data/jobs/`.
@@ -14,7 +16,7 @@ Job state: JSON files under `data/jobs/`.
 ## Quick start
 
 ```bash
-cd /workspace/justifycode-wordpress-dashboard
+cd /workspace/falcon-seo-geo-rankings
 npm install
 npm run dev
 ```
