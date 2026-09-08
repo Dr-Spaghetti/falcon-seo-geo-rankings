@@ -34,3 +34,4 @@ next-env.d.ts
 # Keep Local Falcon pilot JSON in git
 !/data/lf/
 !/data/lf/**
+.vercel
