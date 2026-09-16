@@ -641,6 +641,30 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Farias Firm (Clist/LF 1 place_id / 217 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Farias /
+   * San Antonio alone. Exclusions: none. Verified 2026-09-16 census (217).
+   * Prep: jl-ops/falcon-prep/farias-2026-09-16.json
+   * Brand: fariastriallaw.com dark ink #112337.
+   */
+  "farias-firm": {
+    slug: "farias-firm",
+    name: "Farias Firm",
+    group: "Farias Firm",
+    brand_match: "farias-firm",
+    placeIds: new Set([
+      "ChIJH9KZ12VfXIYRXFvaHHLbTqY", // San Antonio (217)
+    ]),
+    order: [
+      "ChIJH9KZ12VfXIYRXFvaHHLbTqY",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["farias-firm"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -1065,7 +1089,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|farias-firm|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

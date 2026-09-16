@@ -60,6 +60,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - dj-law: djlawcorp.com Bootstrap primary #0d6efd
  * - mary-higgins: letsbelegal.com --color-prime #b32227
  * - shammas-law: shammas-law.com practice-area cards #001159
+ * - farias-firm: fariastriallaw.com dark ink #112337
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -250,6 +251,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #001159 0%, #0a1f6a 48%, #1a2e75 100%)",
     source:
       "shammas-law.com practice-area cards #001159 (alternating navy #000c3b)",
+  }),
+  "farias-firm": buildTheme("#112337", {
+    soft: "#2a3f55",
+    ring: "#3a5570",
+    border: "#0a1828",
+    muted: "#d0d6dc",
+    hero: "linear-gradient(135deg, #112337 0%, #1a3048 48%, #2a3f55 100%)",
+    source:
+      "fariastriallaw.com dark ink/primary #112337 (gold #d4a437 accent secondary)",
   }),
 };
 

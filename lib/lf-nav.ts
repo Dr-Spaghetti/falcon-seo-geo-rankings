@@ -97,4 +97,9 @@ export const LF_CLIENT_NAV = [
     label: "Shammas Law",
     href: "/clients/shammas-law",
   },
+  {
+    slug: "farias-firm",
+    label: "Farias Firm",
+    href: "/clients/farias-firm",
+  },
 ] as const;
