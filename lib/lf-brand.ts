@@ -41,6 +41,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * Firm brand primaries researched from public sites (header-nav CSS).
  * - therman: choosecharlie.com `.header-nav` / `.header-main-wrap` / `.internal-hero-wrap`
  * - premier: plg-pllc redesign `.header-nav` (premierlawgroup.com)
+ * - michael-marr: atlantainjuryattorneys.com marrlaw `.header-main-wrap` / `.header-nav`
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -60,6 +61,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #142452 0%, #1a3168 48%, #244080 100%)",
     source:
       "premierlawgroup.com / plg-pllc redesign CSS .header-nav background-color #142452",
+  }),
+  "michael-marr": buildTheme("#212e51", {
+    soft: "#3a4a72",
+    ring: "#4a5f8a",
+    border: "#141c38",
+    muted: "#d0d6e4",
+    hero: "linear-gradient(135deg, #212e51 0%, #2a3a62 48%, #3a4a72 100%)",
+    source:
+      "atlantainjuryattorneys.com marrlaw theme CSS .header-main-wrap / .header-nav background-color #212e51",
   }),
 };
 

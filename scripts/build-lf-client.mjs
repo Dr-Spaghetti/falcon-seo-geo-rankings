@@ -83,6 +83,52 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS.premier.placeIds.has(placeId));
     },
   },
+  /**
+   * Michael Marr / city Injury Attorneys (Clist ~9; LF roster 11 PI place_ids / 5708 scans).
+   * Verified 2026-09-16 from falcon-lf-archive reports-census + FIRM-ROSTER "Michael Marr"
+   * + jl-ops/falcon-dashboard-client-queue-2026-09-16.json (eligible #1 by scans).
+   * Excludes: Marr Law Firm Atlanta Real Estate (ChIJr_JjyfEF9YgR1SJzz12xOz4, 10),
+   * Tampa duplicate empty-campaign alt (ChIJPYYL0MvDwogRV3QeKpInrT0, 5),
+   * Augusta Personal Injury Attorneys 0-scan alt (ChIJE0i3VrjT-YgRyWkb5LeifVE).
+   */
+  "michael-marr": {
+    slug: "michael-marr",
+    name: "Michael Marr / Injury Attorneys",
+    group: "Injury Attorney's Marr",
+    brand_match: "marr",
+    placeIds: new Set([
+      "ChIJvcSSqmMP9YgRPHRZQke9sfg", // Atlanta Injury Attorneys (879)
+      "ChIJCcH65Nf584gRp7f_b88zQEw", // Macon Injury Attorneys (827)
+      "ChIJjUQroEdlZIgRu2xAY6NnWPQ", // Nashville Injury Attorneys (721)
+      "ChIJUx5O_PDNjIgRfkE4ln96iic", // Columbus Injury Attorneys (673)
+      "ChIJI-MrHSTX2IgRUediZIFN05I", // West Palm Beach Injury Attorneys (668)
+      "ChIJyxQfBGhB24gRFyR6sd9z-qY", // Fort Myers Injury Attorneys (665)
+      "ChIJGTm5GHLDwogR2d6JRM2hek0", // Tampa Injury Attorneys (586)
+      "ChIJwQlW_Gef-4gRhxk5gYOD0Us", // Savannah Injury Attorneys Bull St (352)
+      "ChIJf-eIT6DP5YgR1n5yCCvEXSo", // Jacksonville Personal Injury Attorneys (172)
+      "ChIJY77Yj0af-4gRXCIEeGDP5tE", // Savannah Injury Attorneys LLC Barnard (131)
+      "ChIJKRdsIXHT-YgRU0wGvxsbe_k", // Augusta Injury Attorneys LLC (34)
+    ]),
+    order: [
+      "ChIJvcSSqmMP9YgRPHRZQke9sfg",
+      "ChIJCcH65Nf584gRp7f_b88zQEw",
+      "ChIJjUQroEdlZIgRu2xAY6NnWPQ",
+      "ChIJUx5O_PDNjIgRfkE4ln96iic",
+      "ChIJI-MrHSTX2IgRUediZIFN05I",
+      "ChIJyxQfBGhB24gRFyR6sd9z-qY",
+      "ChIJGTm5GHLDwogR2d6JRM2hek0",
+      "ChIJwQlW_Gef-4gRhxk5gYOD0Us",
+      "ChIJf-eIT6DP5YgR1n5yCCvEXSo",
+      "ChIJY77Yj0af-4gRXCIEeGDP5tE",
+      "ChIJKRdsIXHT-YgRU0wGvxsbe_k",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(
+        placeId && CLIENTS["michael-marr"].placeIds.has(placeId)
+      );
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -493,7 +539,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

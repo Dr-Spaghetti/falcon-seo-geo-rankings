@@ -9,14 +9,18 @@ import {
 } from "../lib/lf-brand";
 
 describe("lf-brand", () => {
-  it("maps therman and premier to distinct primaries", () => {
+  it("maps therman, premier, and michael-marr to distinct primaries", () => {
     const therman = getBrandTheme("therman");
     const premier = getBrandTheme("premier");
+    const marr = getBrandTheme("michael-marr");
     assert.equal(therman.primary, "#011633");
     assert.equal(premier.primary, "#142452");
+    assert.equal(marr.primary, "#212e51");
     assert.notEqual(therman.primary, premier.primary);
+    assert.notEqual(premier.primary, marr.primary);
     assert.equal(therman.onPrimary, "#ffffff");
     assert.equal(premier.onPrimary, "#ffffff");
+    assert.equal(marr.onPrimary, "#ffffff");
   });
 
   it("falls back to Falcon navy for unknown / null", () => {
@@ -31,12 +35,17 @@ describe("lf-brand", () => {
       brandSlugFromPathname("/clients/premier/locations/ChIJabc"),
       "premier"
     );
+    assert.equal(
+      brandSlugFromPathname("/clients/michael-marr/locations/ChIJabc"),
+      "michael-marr"
+    );
     assert.equal(brandSlugFromPathname("/wordpress"), null);
     assert.equal(brandSlugFromPathname("/"), null);
   });
 
   it("picks readable contrast on light vs dark primaries", () => {
     assert.equal(contrastOnPrimary("#011633"), "#ffffff");
+    assert.equal(contrastOnPrimary("#212e51"), "#ffffff");
     assert.equal(contrastOnPrimary("#ffffff"), "#0a0a0a");
     assert.equal(contrastOnPrimary("#ffb254"), "#0a0a0a");
   });
@@ -44,5 +53,9 @@ describe("lf-brand", () => {
   it("documents brand sources", () => {
     assert.match(LF_BRAND_BY_SLUG.therman.source, /choosecharlie/i);
     assert.match(LF_BRAND_BY_SLUG.premier.source, /142452|premierlawgroup|header-nav/i);
+    assert.match(
+      LF_BRAND_BY_SLUG["michael-marr"].source,
+      /212e51|atlantainjuryattorneys|header-nav|header-main-wrap/i
+    );
   });
 });
