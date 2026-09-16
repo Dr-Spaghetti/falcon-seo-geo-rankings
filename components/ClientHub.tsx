@@ -7,7 +7,7 @@ export function ClientHub({
   badge,
 }: {
   client: LfClient;
-  /** Optional chip under the hero (e.g. "Pilot template" / "Firm hub") */
+  /** Optional chip under the hero (e.g. "Firm hub") */
   badge?: string;
 }) {
   const base = `/clients/${client.slug}`;

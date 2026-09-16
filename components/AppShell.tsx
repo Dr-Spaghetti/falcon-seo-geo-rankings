@@ -35,9 +35,7 @@ export function AppShell({
               href={activeClient?.href ?? "/clients/therman"}
               className="shrink-0 rounded-md font-semibold tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             >
-              Falcon{" "}
-              <span className="font-normal text-navy-300">/</span>{" "}
-              <span className="font-medium text-white">Local Falcon</span>
+              LocalFalcon Keyword Scans/Reports
             </Link>
             <nav
               className="hidden items-center gap-1 text-sm sm:flex"

@@ -15,7 +15,7 @@ export default function ThermanClientPage() {
 
   return (
     <AppShell wide>
-      <ClientHub client={client} badge="Pilot template" />
+      <ClientHub client={client} />
     </AppShell>
   );
 }
