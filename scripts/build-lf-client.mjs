@@ -352,7 +352,35 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS.facchetti.placeIds.has(placeId));
     },
   },
+  /**
+   * Leahy Cox (Clist/LF 2 place_ids / 853 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Emerald Law
+   * / emeraldlaw.com alone (Portland GBP display name is Leahy Cox while
+   * location-list URL is emeraldlaw.com). Roster firm=='Leahy Cox' covers
+   * these 2. Exclusions: none. Verified 2026-09-16 census (516+337=853).
+   * Prep: jl-ops/falcon-prep/leahy-cox-2026-09-16.json
+   * Brand: emeraldlaw.com --color-prime:#2d7372.
+   */
+  "leahy-cox": {
+    slug: "leahy-cox",
+    name: "Leahy Cox",
+    group: "Leahy Cox",
+    brand_match: "leahy-cox",
+    placeIds: new Set([
+      "ChIJj5eDFcvhwFQRmyauSQBy4vk", // Springfield (516)
+      "ChIJmaqHA4ULlVQRAW0Y-KvwviA", // Portland (337)
+    ]),
+    order: [
+      "ChIJj5eDFcvhwFQRmyauSQBy4vk",
+      "ChIJmaqHA4ULlVQRAW0Y-KvwviA",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["leahy-cox"].placeIds.has(placeId));
+    },
+  },
 };
+
 
 function matchesHaystack(obj, re) {
   if (!obj || typeof obj !== "object") return false;
@@ -775,7 +803,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

@@ -49,6 +49,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - omega: omegalaw.com omega-rebuild main.min.css navy #22374b
  * - widrig: widriglaw.com styles/variables.css --color-primary #233C55
  * - facchetti: facchettilaw.com Elementor --e-global-color-primary #013f4e
+ * - leahy-cox: emeraldlaw.com --color-prime #2d7372
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -140,6 +141,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #013f4e 0%, #0a5568 48%, #1a5a6e 100%)",
     source:
       "facchettilaw.com Elementor kit --e-global-color-primary:#013f4e (teal navy; accent coral #ff6a67 secondary)",
+  }),
+  "leahy-cox": buildTheme("#2d7372", {
+    soft: "#3a8a88",
+    ring: "#4a9a98",
+    border: "#1e5554",
+    muted: "#d0e8e7",
+    hero: "linear-gradient(135deg, #2d7372 0%, #358582 48%, #3a8a88 100%)",
+    source:
+      "emeraldlaw.com homepage inline theme CSS --color-prime:#2d7372 (also --color-link; navy #0b244e --color-second secondary)",
   }),
 };
 

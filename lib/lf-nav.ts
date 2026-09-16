@@ -42,4 +42,9 @@ export const LF_CLIENT_NAV = [
     label: "Adrianos Facchetti",
     href: "/clients/facchetti",
   },
+  {
+    slug: "leahy-cox",
+    label: "Leahy Cox",
+    href: "/clients/leahy-cox",
+  },
 ] as const;
