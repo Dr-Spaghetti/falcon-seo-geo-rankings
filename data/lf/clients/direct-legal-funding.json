@@ -1,0 +1,27 @@
+{
+  "slug": "direct-legal-funding",
+  "name": "Direct Legal Funding",
+  "group": "Direct Legal Funding",
+  "brand_match": "direct-legal-funding",
+  "generated_at": "2026-09-16T19:35:54.441Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 30,
+  "locations": [
+    {
+      "place_id": "ChIJpfW5nahZwokRUbueEbbMuic",
+      "name": "Direct Legal Funding - Lawsuit Loans & Pre-Settlement Funding New York",
+      "address": "60 Avenue B #4b, New York, NY 10009",
+      "city": "New York",
+      "rating": 4.6,
+      "reviews": 96,
+      "phone": "+18669415588",
+      "url": "https://directlegalfunding.com/?utm_campaign=gmb",
+      "primary_category": "Financial institution",
+      "groups": [],
+      "scan_count": 30,
+      "latest_date": "8/27/2026 10:35 AM",
+      "latest_iso": "2026-08-27"
+    }
+  ]
+}

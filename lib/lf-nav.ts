@@ -107,4 +107,9 @@ export const LF_CLIENT_NAV = [
     label: "Pearl & Thompson",
     href: "/clients/pearl-thompson",
   },
+  {
+    slug: "direct-legal-funding",
+    label: "Direct Legal Funding",
+    href: "/clients/direct-legal-funding",
+  },
 ] as const;

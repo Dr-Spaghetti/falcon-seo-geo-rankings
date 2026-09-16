@@ -689,6 +689,31 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Direct Legal Funding (Clist/LF 1 place_id / 30 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Direct Legal /
+   * lawsuit loans alone. Legal-funding business included by request.
+   * Exclusions: none. Verified 2026-09-16 census (30).
+   * Prep: jl-ops/falcon-prep/direct-legal-2026-09-16.json
+   * Brand: directlegalfunding.com orange accent #ea5800.
+   */
+  "direct-legal-funding": {
+    slug: "direct-legal-funding",
+    name: "Direct Legal Funding",
+    group: "Direct Legal Funding",
+    brand_match: "direct-legal-funding",
+    placeIds: new Set([
+      "ChIJpfW5nahZwokRUbueEbbMuic", // New York (30)
+    ]),
+    order: [
+      "ChIJpfW5nahZwokRUbueEbbMuic",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["direct-legal-funding"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -1113,7 +1138,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|farias-firm|pearl-thompson|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|farias-firm|pearl-thompson|direct-legal-funding|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

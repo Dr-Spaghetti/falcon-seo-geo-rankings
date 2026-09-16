@@ -62,6 +62,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - shammas-law: shammas-law.com practice-area cards #001159
  * - farias-firm: fariastriallaw.com dark ink #112337
  * - pearl-thompson: pearlandthompsonlaw.com dark ink #112337
+ * - direct-legal-funding: directlegalfunding.com orange #ea5800
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -270,6 +271,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #112337 0%, #1a3048 48%, #2a3f55 100%)",
     source:
       "pearlandthompsonlaw.com dark ink/primary theme token #112337",
+  }),
+  "direct-legal-funding": buildTheme("#ea5800", {
+    soft: "#f07326",
+    ring: "#f59045",
+    border: "#c44a00",
+    muted: "#fde8d4",
+    hero: "linear-gradient(135deg, #ea5800 0%, #f06815 48%, #f07326 100%)",
+    source:
+      "directlegalfunding.com orange accent #ea5800 (deep navy #051750 section secondary)",
   }),
 };
 
