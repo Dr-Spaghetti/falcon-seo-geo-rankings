@@ -53,6 +53,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - andy-callif: andycallifbailbonds.com burgundy #640d0f
  * - amos-perrick: apmdlaw.com logo SVG navy #2b2b51
  * - gold-dog: golddoglaw.com logo SVG slate teal #375d6a
+ * - kunka: kunkalaw.com Elementor --e-global-color-primary #0b3752
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -180,6 +181,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #375d6a 0%, #426e7c 48%, #4a7585 100%)",
     source:
       "golddoglaw.com homepage/logo SVG slate teal #375d6a (gold #ECB52A accent secondary)",
+  }),
+  kunka: buildTheme("#0b3752", {
+    soft: "#1a4a66",
+    ring: "#2a6080",
+    border: "#07283c",
+    muted: "#c5d6e0",
+    hero: "linear-gradient(135deg, #0b3752 0%, #134868 48%, #1a5a7a 100%)",
+    source:
+      "kunkalaw.com Elementor kit --e-global-color-primary #0b3752 (peach #FFBC7D accent secondary)",
   }),
 };
 

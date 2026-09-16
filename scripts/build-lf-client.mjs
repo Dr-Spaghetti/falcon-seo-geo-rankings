@@ -459,6 +459,36 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Kunka Law (Clist 2 offices / LF 3 place_ids / 603 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Kunka /
+   * Columbia Criminal Defense alone. Two Columbia place_ids share
+   * 5501 Twin Knolls Rd #102 — keep both (202 + 39). Glen Burnie is the
+   * other office. Exclusions: none. Verified 2026-09-16 census (362+202+39=603).
+   * Prep: jl-ops/falcon-prep/kunka-2026-09-16.json
+   * Brand: kunkalaw.com Elementor --e-global-color-primary #0b3752.
+   */
+  "kunka": {
+    slug: "kunka",
+    name: "Kunka Law",
+    group: "Kunka Law",
+    brand_match: "kunka",
+    placeIds: new Set([
+      "ChIJ6egAs8X9t4kRQonJnHfArhA", // Glen Burnie (362)
+      "ChIJn6xrfznft4kRtWsldlY1zAQ", // Columbia Criminal Defense (202)
+      "ChIJv7sKXOHft4kRC4SX7Nf8g7U", // Kunka Law LLC Columbia (39)
+    ]),
+    order: [
+      "ChIJ6egAs8X9t4kRQonJnHfArhA",
+      "ChIJn6xrfznft4kRtWsldlY1zAQ",
+      "ChIJv7sKXOHft4kRC4SX7Nf8g7U",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.kunka.placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -883,7 +913,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
