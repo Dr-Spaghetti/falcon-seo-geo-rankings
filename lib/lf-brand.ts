@@ -45,6 +45,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - kaplun-marx: kaplunmarx.com Elementor header (elementor-24 / --e-global-color-2a1465e)
  * - cmh: carlsonmeissner.com inline CSS primary #06243d (carlsonhayslett.com redirects)
  * - jones-swanson: awjlaw.com theme jones-swanson-rebuild main.min.css #0c859c
+ * - norden-leacox: nordenleacox.com --primaryColor #002a54 (color-scheme-1)
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -100,6 +101,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #0c859c 0%, #0f9bb0 48%, #1a9fb5 100%)",
     source:
       "awjlaw.com theme jones-swanson-rebuild assets/app/css/main.min.css #0c859c (~49× btn-global/header__top-box/CTAs)",
+  }),
+  "norden-leacox": buildTheme("#002a54", {
+    soft: "#1a4a7a",
+    ring: "#2a6090",
+    border: "#001a38",
+    muted: "#c5d3e4",
+    hero: "linear-gradient(135deg, #002a54 0%, #0a3a6a 48%, #1a4a7a 100%)",
+    source:
+      "nordenleacox.com theme --primaryColor:#002a54 (body[data-color-scheme=color-scheme-1]; not secondary red #d10b0c)",
   }),
 };
 

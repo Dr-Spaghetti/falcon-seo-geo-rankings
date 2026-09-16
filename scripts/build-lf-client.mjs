@@ -220,6 +220,45 @@ export const CLIENTS = {
       );
     },
   },
+  /**
+   * Norden Leacox, PLLC (Clist 7; LF 7 place_ids / 3522 scans).
+   * Roster heuristic splits Norden Leacox (6 FL / 3217) vs Norden Leacox-Albuquerque
+   * (1 / 305) — builder unions via placeId set. INCLUDE Albuquerque
+   * ChIJX8useWgLIocRwEf3Tpw2-Ig. EXCLUDE Law Giant ABQ ChIJS67mWwILIocRNfkUidPPpFw
+   * and Santa Fe ChIJu1okKW5RGIcRc-2J0S5dN0c (different firm). Verified 2026-09-16 census.
+   * Prep: jl-ops/falcon-prep/norden-leacox-2026-09-16.json
+   * Brand: nordenleacox.com --primaryColor #002a54 (not secondary red).
+   */
+  "norden-leacox": {
+    slug: "norden-leacox",
+    name: "Norden Leacox",
+    group: "Norden Leacox",
+    brand_match: "norden-leacox",
+    placeIds: new Set([
+      "ChIJA_sE3eoP3ogRX4BgH3nQFC4", // Melbourne (664)
+      "ChIJSTFWgIJ754gR_Qvx75srB8c", // Orlando (566)
+      "ChIJscYHT7gB3ogRuwq6GjfiStk", // Cocoa (539)
+      "ChIJKfvJbD2z4IgRqXnuoTnYpdc", // Titusville (528)
+      "ChIJ_fzeSMsT3ogRPPsjJ5D7En0", // Palm Bay (514)
+      "ChIJQQPm7dnF54gR2ymLrVJqbao", // Lakeland (406)
+      "ChIJX8useWgLIocRwEf3Tpw2-Ig", // Albuquerque (305)
+    ]),
+    order: [
+      "ChIJA_sE3eoP3ogRX4BgH3nQFC4",
+      "ChIJSTFWgIJ754gR_Qvx75srB8c",
+      "ChIJscYHT7gB3ogRuwq6GjfiStk",
+      "ChIJKfvJbD2z4IgRqXnuoTnYpdc",
+      "ChIJ_fzeSMsT3ogRPPsjJ5D7En0",
+      "ChIJQQPm7dnF54gR2ymLrVJqbao",
+      "ChIJX8useWgLIocRwEf3Tpw2-Ig",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(
+        placeId && CLIENTS["norden-leacox"].placeIds.has(placeId)
+      );
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -630,7 +669,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
