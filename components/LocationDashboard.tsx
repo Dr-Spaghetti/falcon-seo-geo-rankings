@@ -55,6 +55,44 @@ function LinkPill({
   );
 }
 
+function SelectPill({
+  active,
+  disabled,
+  label,
+  onClick,
+}: {
+  active: boolean;
+  disabled?: boolean;
+  label: string;
+  onClick: () => void;
+}) {
+  if (disabled) {
+    return (
+      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-slate-300">
+        {label}
+      </span>
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={
+        active
+          ? "inline-flex rounded-md bg-navy-800 px-1.5 py-0.5 text-[11px] font-medium text-white"
+          : "inline-flex rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-900"
+      }
+    >
+      {label}
+    </button>
+  );
+}
+
+type Preview =
+  | { kind: "heatmap" | "image"; url: string; keyword: string; date: string; scanId: string }
+  | null;
+
 export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const years = useMemo(() => {
     const ys = new Set<number>();
@@ -66,6 +104,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const [month, setMonth] = useState<number | "all">("all");
   const [day, setDay] = useState<number | "all">("all");
   const [q, setQ] = useState("");
+  const [preview, setPreview] = useState<Preview>(null);
 
   const monthsAvailable = useMemo(() => {
     const ms = new Set<number>();
@@ -112,6 +151,22 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   function onMonthChange(v: string) {
     setMonth(v === "all" ? "all" : Number(v));
     setDay("all");
+  }
+
+  function selectPreview(s: LfScan, kind: "heatmap" | "image") {
+    const url = kind === "heatmap" ? s.heatmap : s.image;
+    if (!url) return;
+    setPreview((prev) =>
+      prev && prev.scanId === s.id && prev.kind === kind
+        ? null
+        : {
+            kind,
+            url,
+            keyword: s.keyword || "—",
+            date: s.date || "—",
+            scanId: s.id,
+          },
+    );
   }
 
   const loc = data.location;
@@ -249,6 +304,49 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         </div>
       </div>
 
+      {preview ? (
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 px-4 py-3">
+            <div className="min-w-0">
+              <p className="text-xs font-medium uppercase tracking-wider text-navy-600">
+                {preview.kind === "heatmap" ? "Heatmap" : "Scan image"} preview
+              </p>
+              <p className="truncate text-sm font-semibold text-slate-800">
+                {preview.keyword}
+                <span className="ml-2 font-normal tabular-nums text-slate-500">
+                  {preview.date}
+                </span>
+              </p>
+            </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <a
+                href={preview.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-medium text-navy-800 hover:bg-slate-50"
+              >
+                Open original ↗
+              </a>
+              <button
+                type="button"
+                onClick={() => setPreview(null)}
+                className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-50"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+          <div className="bg-slate-50 p-3 sm:p-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={preview.url}
+              alt={`${preview.kind} for ${preview.keyword}`}
+              className="mx-auto max-h-[70vh] w-full max-w-5xl rounded-lg border border-slate-200 bg-white object-contain shadow-sm"
+            />
+          </div>
+        </div>
+      ) : null}
+
       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
           <h2 className="text-sm font-semibold text-slate-800">Scan table</h2>
@@ -289,7 +387,14 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {filtered.map((s) => (
-                  <tr key={s.id} className="hover:bg-slate-50/80">
+                  <tr
+                    key={s.id}
+                    className={
+                      preview?.scanId === s.id
+                        ? "bg-navy-50/60 hover:bg-navy-50/80"
+                        : "hover:bg-slate-50/80"
+                    }
+                  >
                     <td className="whitespace-nowrap px-4 py-2.5 tabular-nums text-slate-600">
                       {s.date || "—"}
                     </td>
@@ -320,8 +425,26 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                     </td>
                     <td className="whitespace-nowrap px-4 py-2.5">
                       <div className="flex flex-wrap gap-1">
-                        <LinkPill href={s.heatmap} label="Heatmap" />
-                        <LinkPill href={s.image} label="Image" />
+                        <SelectPill
+                          label="Heatmap"
+                          disabled={!s.heatmap}
+                          active={
+                            !!preview &&
+                            preview.scanId === s.id &&
+                            preview.kind === "heatmap"
+                          }
+                          onClick={() => selectPreview(s, "heatmap")}
+                        />
+                        <SelectPill
+                          label="Image"
+                          disabled={!s.image}
+                          active={
+                            !!preview &&
+                            preview.scanId === s.id &&
+                            preview.kind === "image"
+                          }
+                          onClick={() => selectPreview(s, "image")}
+                        />
                         <LinkPill href={s.pdf} label="PDF" />
                         <LinkPill href={s.public_url} label="Report" />
                       </div>
