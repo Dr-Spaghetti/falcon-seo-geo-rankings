@@ -6,7 +6,7 @@
 | **state** | done |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | none (Band D: PR unmerged by design — no master merge / no prod promote) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `0a40649` (feature `6a984aa`) |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `fc23f33` (feature `6a984aa`) |
 | **updated_at** | 2026-09-16 1:00 PM ET |
 
 ## Evidence links
