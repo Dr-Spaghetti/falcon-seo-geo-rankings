@@ -23,17 +23,27 @@ export function KpiCard({
       : tone === "warn"
         ? "text-amber-700"
         : "text-slate-900";
+  const borderTone =
+    tone === "good"
+      ? "border-emerald-200/80 ring-1 ring-emerald-50"
+      : tone === "warn"
+        ? "border-amber-200/80 ring-1 ring-amber-50"
+        : "border-slate-200/90";
   return (
-    <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-      <p className="text-[11px] font-medium uppercase tracking-wider text-slate-500">
+    <div
+      className={`rounded-xl border bg-white px-4 py-3.5 shadow-sm shadow-slate-900/[0.03] ${borderTone}`}
+    >
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
         {label}
       </p>
       <p
-        className={`mt-1 font-semibold tabular-nums tracking-tight text-2xl ${toneClass}`}
+        className={`mt-1.5 text-2xl font-semibold tabular-nums tracking-tight ${toneClass}`}
       >
         {value}
       </p>
-      {hint ? <p className="mt-0.5 text-xs text-slate-400">{hint}</p> : null}
+      {hint ? (
+        <p className="mt-1 text-xs leading-snug text-slate-400">{hint}</p>
+      ) : null}
     </div>
   );
 }

@@ -4,18 +4,18 @@ import { ClientHub } from "@/components/ClientHub";
 import { getClient } from "@/lib/lf";
 
 export const metadata = {
-  title: "Therman · Local Falcon · Falcon",
+  title: "Premier Law Group · Local Falcon · Falcon",
   description:
-    "Charlie Therman Injury & Accident Lawyers — Local Falcon location picker",
+    "Premier Law Group — firm-level Local Falcon dashboard with nested WA locations",
 };
 
-export default function ThermanClientPage() {
-  const client = getClient("therman");
+export default function PremierClientPage() {
+  const client = getClient("premier");
   if (!client) notFound();
 
   return (
     <AppShell wide>
-      <ClientHub client={client} badge="Pilot template" />
+      <ClientHub client={client} badge="Firm hub" />
     </AppShell>
   );
 }

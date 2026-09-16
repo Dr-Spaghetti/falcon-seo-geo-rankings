@@ -4,8 +4,31 @@
 
 :root {
   color-scheme: light;
+  --selection-bg: #c5d3e4;
+  --selection-fg: #122033;
 }
 
 body {
   @apply bg-slate-50 text-slate-900 antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+:focus-visible {
+  outline-offset: 2px;
+}
+
+/* Smooth default scroll for long scan tables / hubs */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

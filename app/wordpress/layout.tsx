@@ -10,22 +10,28 @@ export default function WordpressLayout({
     <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-4 py-4">
-          <div className="flex items-center gap-4 min-w-0">
+          <div className="flex min-w-0 items-center gap-4">
             <Link
               href="/clients/therman"
-              className="font-semibold tracking-tight text-slate-900"
+              className="rounded-md font-semibold tracking-tight text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
             >
               Falcon
             </Link>
             <span className="text-slate-300">/</span>
             <span className="truncate text-sm text-slate-600">WordPress ingest</span>
           </div>
-          <nav className="flex items-center gap-3 text-sm">
+          <nav className="flex flex-wrap items-center justify-end gap-3 text-sm">
             <Link
               href="/clients/therman"
-              className="font-medium text-navy-700 hover:text-navy-900"
+              className="font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
             >
-              Therman dashboard
+              Therman
+            </Link>
+            <Link
+              href="/clients/premier"
+              className="font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+            >
+              Premier
             </Link>
             <span className="text-xs text-slate-400">secondary</span>
           </nav>

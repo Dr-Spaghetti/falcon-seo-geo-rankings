@@ -1,0 +1,125 @@
+{
+  "slug": "therman",
+  "name": "Charlie Therman Injury & Accident Lawyers, P.C.",
+  "group": "Therman Law Group",
+  "brand_match": "therman",
+  "generated_at": "2026-09-08T20:51:22.839Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 7,
+  "scan_count": 4733,
+  "locations": [
+    {
+      "place_id": "ChIJ9ztWtfPJD4gRiJFRBlDKIfw",
+      "name": "Charlie Therman Injury & Accident Lawyers, P.C.",
+      "address": "8501 W Higgins Rd Ste 720, Chicago, IL 60631",
+      "city": "Chicago",
+      "rating": 4.8,
+      "reviews": 178,
+      "phone": "+17738861601",
+      "url": "https://www.choosecharlie.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-chicago",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Therman Law Group"
+      ],
+      "scan_count": 1018,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    },
+    {
+      "place_id": "ChIJ9ztWtfPJD4gRq_Ge3EEDFLE",
+      "name": "Charlie Therman Injury & Accident Lawyers, P.C.",
+      "address": "1701 Woodfield Rd #1101, Schaumburg, IL 60173",
+      "city": "Schaumburg",
+      "rating": 5,
+      "reviews": 64,
+      "phone": "+18477131230",
+      "url": "https://www.choosecharlie.com/schaumburg-il/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-schaumburg",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Therman Law Group"
+      ],
+      "scan_count": 985,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    },
+    {
+      "place_id": "ChIJkaSBamKTD4gRcjiKRVw59c0",
+      "name": "Charlie Therman Injury & Accident Lawyers, P.C.",
+      "address": "1800 Nations Dr Ste 213, Gurnee, IL 60031",
+      "city": "Gurnee",
+      "rating": 5,
+      "reviews": 32,
+      "phone": "+18479160276",
+      "url": "https://www.choosecharlie.com/gurnee-il/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-gurnee",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Therman Law Group"
+      ],
+      "scan_count": 945,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    },
+    {
+      "place_id": "ChIJsXBvWu5VDogR8vVKfg5PHvI",
+      "name": "Charlie Therman Injury & Accident Lawyers, P.C.",
+      "address": "1755 S Naperville Rd STE 100, Wheaton, IL 60189",
+      "city": "Wheaton",
+      "rating": 5,
+      "reviews": 5,
+      "phone": "+16308646739",
+      "url": "https://www.choosecharlie.com/wheaton-il/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-wheaton",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Therman Law Group"
+      ],
+      "scan_count": 919,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    },
+    {
+      "place_id": "ChIJl2FcCAiVCIgRtjRZHT5Gsj8",
+      "name": "Rockford Personal Injury Lawyers | Choose Charlie",
+      "address": "308 W State St Ste 403, Rockford, IL 61101",
+      "city": "Rockford",
+      "rating": 5,
+      "reviews": 1,
+      "phone": "+18156459775",
+      "url": "https://www.choosecharlie.com/rockford-il/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-rockford",
+      "primary_category": "Personal Injury Attorney",
+      "groups": [],
+      "scan_count": 676,
+      "latest_date": "9/4/2026 1:30 AM",
+      "latest_iso": "2026-09-04"
+    },
+    {
+      "place_id": "ChIJDXo1lfbdDYgRIPTL1rCQcgA",
+      "name": "KANKAKEE PERSONAL INJURY LAWYERS | CHOOSE CHARLIE",
+      "address": "1 Dearborn Square #555, Kankakee, IL 60901",
+      "city": "Kankakee",
+      "rating": 0,
+      "reviews": 0,
+      "phone": "+18473217624",
+      "url": "https://www.choosecharlie.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-kankakee",
+      "primary_category": "Personal Injury Attorney",
+      "groups": [],
+      "scan_count": 95,
+      "latest_date": "8/20/2026 11:09 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJdZp5AfA5dYgR492fNnxVCA8",
+      "name": "Springfield Personal Injury Lawyers | Choose Charlie",
+      "address": "2144 S MacArthur Blvd Ste 207, Springfield, IL 62704",
+      "city": "Springfield",
+      "rating": 0,
+      "reviews": 0,
+      "phone": "+12179521995",
+      "url": "https://www.choosecharlie.com/",
+      "primary_category": "Personal Injury Attorney",
+      "groups": [],
+      "scan_count": 95,
+      "latest_date": "8/20/2026 11:09 PM",
+      "latest_iso": "2026-08-20"
+    }
+  ]
+}

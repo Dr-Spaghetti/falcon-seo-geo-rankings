@@ -1,0 +1,72 @@
+{
+  "slug": "premier",
+  "name": "Premier Law Group",
+  "group": "Premier Law Group",
+  "brand_match": "premier",
+  "generated_at": "2026-09-16T14:47:32.949Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 4,
+  "scan_count": 1436,
+  "locations": [
+    {
+      "place_id": "ChIJh_RMvzttkFQRdXcAxoifX4Q",
+      "name": "Bellevue Personal Injury Lawyer | Premier Law Group",
+      "address": "1408 140th Pl NE Ste A, Bellevue, WA 98007",
+      "city": "Bellevue",
+      "rating": 4.8,
+      "reviews": 296,
+      "phone": "+14252141680",
+      "url": "https://plg-pllc.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-bellevue",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 386,
+      "latest_date": "8/17/2026 10:15 AM",
+      "latest_iso": "2026-08-17"
+    },
+    {
+      "place_id": "ChIJXTyBiIVnkFQRMKImYWD2Avg",
+      "name": "Renton Personal Injury Lawyer | Premier Law Group",
+      "address": "401 Olympia Ave NE #41, Renton, WA 98056",
+      "city": "Renton",
+      "rating": 4.9,
+      "reviews": 24,
+      "phone": "+14258000814",
+      "url": "https://plg-pllc.com/renton/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-renton",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 385,
+      "latest_date": "8/17/2026 10:54 AM",
+      "latest_iso": "2026-08-17"
+    },
+    {
+      "place_id": "ChIJze5Cu49XkFQRA8EB6HcIvy8",
+      "name": "Federal Way Personal Injury Lawyer | Premier Law Group",
+      "address": "33309 1st Way S Suite A-204, Federal Way, WA 98003",
+      "city": "Federal Way",
+      "rating": 5,
+      "reviews": 33,
+      "phone": "+12532036678",
+      "url": "https://plg-pllc.com/federal-way/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-federal-way",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 355,
+      "latest_date": "8/17/2026 10:00 AM",
+      "latest_iso": "2026-08-17"
+    },
+    {
+      "place_id": "ChIJxw1Dv4VrkFQRa7UR5wKEPsg",
+      "name": "Seattle Personal Injury Lawyer | Premier Law Group",
+      "address": "720 3rd Ave Ste 2015 p, Seattle, WA 98104",
+      "city": "Seattle",
+      "rating": 4.8,
+      "reviews": 62,
+      "phone": "+12064831425",
+      "url": "https://plg-pllc.com/seattle/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-seattle",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 310,
+      "latest_date": "8/17/2026 10:52 AM",
+      "latest_iso": "2026-08-17"
+    }
+  ]
+}

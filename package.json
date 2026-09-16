@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "tsx --test __tests__/url.test.ts",
-    "build:lf-pilot": "node scripts/build-lf-pilot.mjs"
+    "build:lf-pilot": "node scripts/build-lf-pilot.mjs",
+    "build:lf-premier": "node scripts/build-lf-premier.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

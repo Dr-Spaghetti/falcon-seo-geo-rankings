@@ -5,7 +5,7 @@ import { LocationDashboard } from "@/components/LocationDashboard";
 import { getClient, getLocationDetail, listClientPlaceIds } from "@/lib/lf";
 
 export function generateStaticParams() {
-  return listClientPlaceIds("therman").map((placeId) => ({ placeId }));
+  return listClientPlaceIds("premier").map((placeId) => ({ placeId }));
 }
 
 export function generateMetadata({
@@ -16,17 +16,17 @@ export function generateMetadata({
   const detail = getLocationDetail(params.placeId);
   const city = detail?.location.city || detail?.location.name || params.placeId;
   return {
-    title: city + " · Therman · Falcon",
-    description: "Local Falcon scans for " + city,
+    title: city + " · Premier · Falcon",
+    description: "Local Falcon scans for " + city + " (Premier Law Group)",
   };
 }
 
-export default function LocationPage({
+export default function PremierLocationPage({
   params,
 }: {
   params: { placeId: string };
 }) {
-  const client = getClient("therman");
+  const client = getClient("premier");
   const detail = getLocationDetail(params.placeId);
   if (!client || !detail) notFound();
 
@@ -37,10 +37,10 @@ export default function LocationPage({
     <AppShell wide>
       <div className="mb-6">
         <Link
-          href="/clients/therman"
+          href="/clients/premier"
           className="inline-flex items-center gap-1 rounded-md text-sm font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
         >
-          ← All Therman locations
+          ← All Premier locations
         </Link>
       </div>
       <LocationDashboard data={detail} />

@@ -48,12 +48,23 @@ function LinkPill({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-900"
+      className="inline-flex rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
     >
       {label}
     </a>
   );
 }
+
+function solvClass(solv: number | null) {
+  if (solv == null || !Number.isFinite(solv)) return "text-slate-800";
+  if (solv >= 30) return "font-semibold text-emerald-700";
+  if (solv >= 20) return "font-medium text-emerald-600";
+  if (solv >= 10) return "text-slate-800";
+  return "text-slate-500";
+}
+
+const selectClass =
+  "rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 tabular-nums shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1";
 
 export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const years = useMemo(() => {
@@ -118,42 +129,48 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div className="min-w-0">
-          <p className="text-xs font-medium uppercase tracking-wider text-navy-600">
-            Location dashboard
-          </p>
-          <h1 className="mt-1 truncate text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {loc.city || loc.name}
-          </h1>
-          <p className="mt-1 text-sm text-slate-500">{loc.address}</p>
-          <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-500">
-            {loc.rating != null ? (
-              <span className="rounded-full bg-white px-2 py-0.5 ring-1 ring-slate-200">
-                ★ {formatMetric(loc.rating, 1)} · {loc.reviews ?? 0} reviews
+      <section className="relative overflow-hidden rounded-2xl border border-navy-200/50 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 px-5 py-6 text-white shadow-lg shadow-navy-900/15 sm:px-7 sm:py-7">
+        <div
+          className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/5 blur-2xl"
+          aria-hidden
+        />
+        <div className="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-wider text-navy-100/80">
+              Location dashboard
+            </p>
+            <h1 className="mt-1 truncate text-2xl font-semibold tracking-tight sm:text-3xl">
+              {loc.city || loc.name}
+            </h1>
+            <p className="mt-1.5 text-sm text-navy-100/85">{loc.address}</p>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              {loc.rating != null && loc.rating > 0 ? (
+                <span className="rounded-full bg-white/10 px-2.5 py-0.5 font-medium text-white ring-1 ring-white/20">
+                  ★ {formatMetric(loc.rating, 1)} · {loc.reviews ?? 0} reviews
+                </span>
+              ) : null}
+              {loc.primary_category ? (
+                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-navy-50 ring-1 ring-white/15">
+                  {loc.primary_category}
+                </span>
+              ) : null}
+              <span className="rounded-full bg-white/10 px-2.5 py-0.5 font-mono text-[11px] text-navy-100/80 ring-1 ring-white/15">
+                {loc.place_id}
               </span>
-            ) : null}
-            {loc.primary_category ? (
-              <span className="rounded-full bg-white px-2 py-0.5 ring-1 ring-slate-200">
-                {loc.primary_category}
-              </span>
-            ) : null}
-            <span className="rounded-full bg-white px-2 py-0.5 font-mono text-[11px] ring-1 ring-slate-200">
-              {loc.place_id}
-            </span>
+            </div>
           </div>
+          {loc.url ? (
+            <a
+              href={loc.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-800"
+            >
+              Open GBP site ↗
+            </a>
+          ) : null}
         </div>
-        {loc.url ? (
-          <a
-            href={loc.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-navy-800 shadow-sm hover:bg-slate-50"
-          >
-            Open GBP site ↗
-          </a>
-        ) : null}
-      </div>
+      </section>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <KpiCard
@@ -179,19 +196,20 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         />
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="sticky top-[3.25rem] z-30 rounded-xl border border-slate-200/90 bg-white/95 p-4 shadow-sm shadow-slate-900/[0.04] backdrop-blur-md">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-800">Date filters</p>
+            <p className="text-sm font-semibold text-slate-800">Date filters</p>
             <p className="text-xs text-slate-500">
-              From census <code className="text-[11px]">date</code> field (US M/D/YYYY)
+              From census <code className="rounded bg-slate-100 px-1 text-[11px]">date</code>{" "}
+              field (US M/D/YYYY)
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <label className="flex flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
               Year
               <select
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 tabular-nums"
+                className={selectClass}
                 value={year === "all" ? "all" : String(year)}
                 onChange={(e) => onYearChange(e.target.value)}
               >
@@ -203,10 +221,10 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
               Month
               <select
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800"
+                className={selectClass}
                 value={month === "all" ? "all" : String(month)}
                 onChange={(e) => onMonthChange(e.target.value)}
               >
@@ -218,10 +236,10 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
               Day
               <select
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 tabular-nums"
+                className={selectClass}
                 value={day === "all" ? "all" : String(day)}
                 onChange={(e) =>
                   setDay(e.target.value === "all" ? "all" : Number(e.target.value))
@@ -235,21 +253,21 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex min-w-[12rem] flex-1 flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex min-w-[12rem] flex-1 flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
               Keyword
               <input
                 type="search"
                 placeholder="Filter keywords…"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 placeholder:text-slate-400"
+                className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 shadow-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
               />
             </label>
           </div>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-xl border border-slate-200/90 bg-white shadow-sm shadow-slate-900/[0.03]">
         <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
           <h2 className="text-sm font-semibold text-slate-800">Scan table</h2>
           <p className="text-xs tabular-nums text-slate-500">
@@ -260,40 +278,50 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
 
         {filtered.length === 0 ? (
           <div className="px-4 py-16 text-center">
-            <p className="text-sm font-medium text-slate-700">No scans match</p>
+            <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+              ∅
+            </div>
+            <p className="text-sm font-semibold text-slate-700">No scans match</p>
             <p className="mt-1 text-sm text-slate-500">
               Try clearing month/day or the keyword filter.
             </p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="max-h-[70vh] overflow-auto">
             <table className="min-w-full text-left text-sm">
-              <thead className="bg-slate-50 text-[11px] uppercase tracking-wider text-slate-500">
-                <tr>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium">Date</th>
-                  <th className="px-4 py-2.5 font-medium">Keyword</th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+              <thead className="sticky top-0 z-10 bg-slate-50/95 text-[11px] uppercase tracking-wider text-slate-500 backdrop-blur-sm">
+                <tr className="border-b border-slate-200">
+                  <th className="whitespace-nowrap px-3 py-2 font-semibold sm:px-4">
+                    Date
+                  </th>
+                  <th className="px-3 py-2 font-semibold sm:px-4">Keyword</th>
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     ARP
                   </th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     ATRP
                   </th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     SOLV
                   </th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     Found
                   </th>
-                  <th className="px-4 py-2.5 font-medium">Links</th>
+                  <th className="px-3 py-2 font-semibold sm:px-4">Links</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
-                {filtered.map((s) => (
-                  <tr key={s.id} className="hover:bg-slate-50/80">
-                    <td className="whitespace-nowrap px-4 py-2.5 tabular-nums text-slate-600">
+              <tbody>
+                {filtered.map((s, i) => (
+                  <tr
+                    key={s.id}
+                    className={`border-b border-slate-100/80 transition-colors hover:bg-navy-50/40 ${
+                      i % 2 === 0 ? "bg-white" : "bg-slate-50/60"
+                    }`}
+                  >
+                    <td className="whitespace-nowrap px-3 py-2 tabular-nums text-slate-600 sm:px-4">
                       {s.date || "—"}
                     </td>
-                    <td className="max-w-[18rem] px-4 py-2.5">
+                    <td className="max-w-[18rem] px-3 py-2 sm:px-4">
                       <p className="truncate font-medium text-slate-800">
                         {s.keyword || "—"}
                       </p>
@@ -303,22 +331,24 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                         </p>
                       ) : null}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-800">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-slate-800 sm:px-4">
                       {formatMetric(s.arp)}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-800">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-slate-800 sm:px-4">
                       {formatMetric(s.atrp)}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-800">
+                    <td
+                      className={`whitespace-nowrap px-3 py-2 text-right tabular-nums sm:px-4 ${solvClass(s.solv)}`}
+                    >
                       {s.solv == null ? "—" : `${formatMetric(s.solv)}%`}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-600">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-slate-600 sm:px-4">
                       {s.found_in == null ? "—" : s.found_in}
                       {s.data_points != null ? (
                         <span className="text-slate-400">/{s.data_points}</span>
                       ) : null}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5">
+                    <td className="whitespace-nowrap px-3 py-2 sm:px-4">
                       <div className="flex flex-wrap gap-1">
                         <LinkPill href={s.heatmap} label="Heatmap" />
                         <LinkPill href={s.image} label="Image" />
