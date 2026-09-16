@@ -7,4 +7,9 @@ export const LF_CLIENT_NAV = [
     label: "Michael Marr",
     href: "/clients/michael-marr",
   },
+  {
+    slug: "kaplun-marx",
+    label: "KaplunMarx",
+    href: "/clients/kaplun-marx",
+  },
 ] as const;

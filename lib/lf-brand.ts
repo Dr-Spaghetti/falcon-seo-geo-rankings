@@ -42,6 +42,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - therman: choosecharlie.com `.header-nav` / `.header-main-wrap` / `.internal-hero-wrap`
  * - premier: plg-pllc redesign `.header-nav` (premierlawgroup.com)
  * - michael-marr: atlantainjuryattorneys.com marrlaw `.header-main-wrap` / `.header-nav`
+ * - kaplun-marx: kaplunmarx.com Elementor header (elementor-24 / --e-global-color-2a1465e)
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -70,6 +71,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #212e51 0%, #2a3a62 48%, #3a4a72 100%)",
     source:
       "atlantainjuryattorneys.com marrlaw theme CSS .header-main-wrap / .header-nav background-color #212e51",
+  }),
+  "kaplun-marx": buildTheme("#092241", {
+    soft: "#1a3a5a",
+    ring: "#2a5080",
+    border: "#061828",
+    muted: "#c5d3e4",
+    hero: "linear-gradient(135deg, #092241 0%, #0f3058 48%, #1a3a5a 100%)",
+    source:
+      "kaplunmarx.com Elementor header (elementor-24) background-color var(--e-global-color-2a1465e) #092241",
   }),
 };
 

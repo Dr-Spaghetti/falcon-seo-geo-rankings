@@ -129,6 +129,40 @@ export const CLIENTS = {
       );
     },
   },
+  /**
+   * KaplunMarx (Clist 6; LF roster 6 place_ids / 4699 scans).
+   * Verified 2026-09-16 from falcon-lf-archive FIRM-ROSTER "KaplunMarx"
+   * + reports-census (Kaplun/KaplunMarx brand only; no other firms).
+   * + jl-ops/falcon-dashboard-client-queue-2026-09-16.json.
+   */
+  "kaplun-marx": {
+    slug: "kaplun-marx",
+    name: "KaplunMarx",
+    group: "Kaplun Marx",
+    brand_match: "kaplun",
+    placeIds: new Set([
+      "ChIJ5fHispQ0wYkRoSrFTrQRDpU", // Marlton NJ (1748)
+      "ChIJU6hH5gHJxokRTt9l2dFOr0E", // Philadelphia (1218)
+      "ChIJl98shp24xokR9ahgsE6mii0", // Bryn Mawr (513)
+      "ChIJTbT2t--txokRoWzCuhd53ak", // Allentown (492)
+      "ChIJP64QIqitxokRP-krkKcU8jY", // Southampton / Bucks (478)
+      "ChIJj3OsYLt3xokRJEjYzsxC4-o", // Reading (250)
+    ]),
+    order: [
+      "ChIJ5fHispQ0wYkRoSrFTrQRDpU",
+      "ChIJU6hH5gHJxokRTt9l2dFOr0E",
+      "ChIJl98shp24xokR9ahgsE6mii0",
+      "ChIJTbT2t--txokRoWzCuhd53ak",
+      "ChIJP64QIqitxokRP-krkKcU8jY",
+      "ChIJj3OsYLt3xokRJEjYzsxC4-o",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(
+        placeId && CLIENTS["kaplun-marx"].placeIds.has(placeId)
+      );
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -539,7 +573,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
