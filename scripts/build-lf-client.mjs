@@ -159,6 +159,41 @@ export const CLIENTS = {
       );
     },
   },
+  /**
+   * Carlson Hayslett / CMH (Clist 7; LF 7 place_ids / 4644 scans).
+   * Includes Kevin Hayslett Clearwater (ChIJBfQZa83xwogROITmamKF6MQ, 427) —
+   * distinct GBP co-located with main Clearwater suite; roster heuristic splits
+   * CMH vs Kevin, builder must union both. Verified 2026-09-16 census recount.
+   * Prep: jl-ops/falcon-prep/cmh-2026-09-16.json
+   */
+  cmh: {
+    slug: "cmh",
+    name: "Carlson Hayslett / CMH",
+    group: "Carlson Hayslett, P.A.",
+    brand_match: "cmh",
+    placeIds: new Set([
+      "ChIJByaIzvbjwogRla_2yvPQD6w", // St. Petersburg (787)
+      "ChIJ4xWf_vaQwogRGBA4kwmnfDk", // New Port Richey (783)
+      "ChIJx2w59WAg6IgR2LFgtOn3ZH0", // Spring Hill (677)
+      "ChIJjxUx1gyNwogRpb4hKte0zJo", // Clearwater (667)
+      "ChIJjUr9kGXFwogRVR7ZYm_AP4U", // Tampa Ashley (655)
+      "ChIJCQ6E_jIWw4gR_ZpDiibiSvc", // Palmetto / Bradenton (648)
+      "ChIJBfQZa83xwogROITmamKF6MQ", // Kevin Hayslett Clearwater (427)
+    ]),
+    order: [
+      "ChIJByaIzvbjwogRla_2yvPQD6w",
+      "ChIJ4xWf_vaQwogRGBA4kwmnfDk",
+      "ChIJx2w59WAg6IgR2LFgtOn3ZH0",
+      "ChIJjxUx1gyNwogRpb4hKte0zJo",
+      "ChIJjUr9kGXFwogRVR7ZYm_AP4U",
+      "ChIJCQ6E_jIWw4gR_ZpDiibiSvc",
+      "ChIJBfQZa83xwogROITmamKF6MQ",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.cmh.placeIds.has(placeId));
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -569,7 +604,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

@@ -43,6 +43,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - premier: plg-pllc redesign `.header-nav` (premierlawgroup.com)
  * - michael-marr: atlantainjuryattorneys.com marrlaw `.header-main-wrap` / `.header-nav`
  * - kaplun-marx: kaplunmarx.com Elementor header (elementor-24 / --e-global-color-2a1465e)
+ * - cmh: carlsonmeissner.com inline CSS primary #06243d (carlsonhayslett.com redirects)
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -80,6 +81,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #092241 0%, #0f3058 48%, #1a3a5a 100%)",
     source:
       "kaplunmarx.com Elementor header (elementor-24) background-color var(--e-global-color-2a1465e) #092241",
+  }),
+  cmh: buildTheme("#06243d", {
+    soft: "#1a3a5a",
+    ring: "#2a5080",
+    border: "#041828",
+    muted: "#c5d3e4",
+    hero: "linear-gradient(135deg, #06243d 0%, #0c3558 48%, #1a3a5a 100%)",
+    source:
+      "carlsonmeissner.com homepage inline CSS primary #06243d (carlsonhayslett.com redirects; ~120× buttons/header/body)",
   }),
 };
 

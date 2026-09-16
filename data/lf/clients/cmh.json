@@ -1,0 +1,131 @@
+{
+  "slug": "cmh",
+  "name": "Carlson Hayslett / CMH",
+  "group": "Carlson Hayslett, P.A.",
+  "brand_match": "cmh",
+  "generated_at": "2026-09-16T18:40:02.192Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 7,
+  "scan_count": 4644,
+  "locations": [
+    {
+      "place_id": "ChIJByaIzvbjwogRla_2yvPQD6w",
+      "name": "Carlson Hayslett P.A.",
+      "address": "3443 1st Ave N, St. Petersburg, FL 33713",
+      "city": "St. Petersburg",
+      "rating": 5,
+      "reviews": 183,
+      "phone": "+17276161210",
+      "url": "https://carlsonmeissner.com/st-pete/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-st-pete",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 787,
+      "latest_date": "8/28/2026 3:14 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJ4xWf_vaQwogRGBA4kwmnfDk",
+      "name": "Carlson | Hayslett PA",
+      "address": "7614 Massachusetts Ave, New Port Richey, FL 34653",
+      "city": "New Port Richey",
+      "rating": 4.9,
+      "reviews": 326,
+      "phone": "+17272231224",
+      "url": "https://carlsonmeissner.com/new-port-richey/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-npr",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 783,
+      "latest_date": "8/28/2026 3:15 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJx2w59WAg6IgR2LFgtOn3ZH0",
+      "name": "Carlson | Hayslett PA",
+      "address": "5323 Spring Hill Dr, Spring Hill, FL 34606",
+      "city": "Spring Hill",
+      "rating": 4.9,
+      "reviews": 562,
+      "phone": "+13522474946",
+      "url": "https://carlsonmeissner.com/spring-hill/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-spring-hill",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 677,
+      "latest_date": "8/28/2026 3:13 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJjxUx1gyNwogRpb4hKte0zJo",
+      "name": "Carlson | Hayslett PA",
+      "address": "250 N Belcher Rd. Ste 102, Clearwater, FL 33765",
+      "city": "Clearwater",
+      "rating": 4.9,
+      "reviews": 938,
+      "phone": "+17272192272",
+      "url": "https://carlsonmeissner.com/clearwater/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-clearwater",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 667,
+      "latest_date": "8/28/2026 3:12 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJjUr9kGXFwogRVR7ZYm_AP4U",
+      "name": "Carlson | Hayslett PA | Tampa DUI & Criminal Defense Attorneys",
+      "address": "601 N Ashley Dr #1100-1007, Tampa, FL 33602",
+      "city": "Tampa",
+      "rating": 4.9,
+      "reviews": 269,
+      "phone": "+18134736132",
+      "url": "https://carlsonmeissner.com/tampa/?utm_source=GMB&utm_medium=Website&utm_campaign=mapstakeover",
+      "primary_category": "Criminal justice attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 655,
+      "latest_date": "8/28/2026 3:03 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJCQ6E_jIWw4gR_ZpDiibiSvc",
+      "name": "Carlson | Hayslett PA",
+      "address": "433 8th Ave W Ste 103, Palmetto, FL 34221",
+      "city": "Palmetto",
+      "rating": 4.8,
+      "reviews": 104,
+      "phone": "+19412890504",
+      "url": "https://carlsonmeissner.com/bradenton/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-bradenton",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 648,
+      "latest_date": "8/28/2026 3:04 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJBfQZa83xwogROITmamKF6MQ",
+      "name": "J. Kevin Hayslett | DUI Attorney and Criminal Defense Lawyer",
+      "address": "250 N Belcher Rd. Ste 102, Clearwater, FL 33765",
+      "city": "Clearwater",
+      "rating": 4.9,
+      "reviews": 343,
+      "phone": "+17273060273",
+      "url": "https://carlsonmeissner.com/clearwater/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=gmb-kevin",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "CMH"
+      ],
+      "scan_count": 427,
+      "latest_date": "8/28/2026 3:16 AM",
+      "latest_iso": "2026-08-28"
+    }
+  ]
+}
