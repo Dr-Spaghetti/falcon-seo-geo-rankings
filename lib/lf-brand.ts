@@ -55,6 +55,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - gold-dog: golddoglaw.com logo SVG slate teal #375d6a
  * - kunka: kunkalaw.com Elementor --e-global-color-primary #0b3752
  * - rampart: rampartinjurylawyers.com Elementor --e-global-color-primary #333544
+ * - milano: milanoaccidentlawyers.com WordPress theme primary #0073e5
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -200,6 +201,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #333544 0%, #3e4054 48%, #4a4c5c 100%)",
     source:
       "rampartinjurylawyers.com Elementor kit --e-global-color-primary #333544 (bronze #A96F44 accent secondary)",
+  }),
+  milano: buildTheme("#0073e5", {
+    soft: "#1f8af0",
+    ring: "#3d9cf5",
+    border: "#005bb8",
+    muted: "#cce4fa",
+    hero: "linear-gradient(135deg, #0073e5 0%, #1a85eb 48%, #3397f0 100%)",
+    source:
+      "milanoaccidentlawyers.com WordPress theme primary/secondary #0073e5 (navy #0C2340 also in site CSS)",
   }),
 };
 

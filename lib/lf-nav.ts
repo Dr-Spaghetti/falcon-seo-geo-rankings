@@ -72,4 +72,9 @@ export const LF_CLIENT_NAV = [
     label: "Rampart Injury Lawyers",
     href: "/clients/rampart",
   },
+  {
+    slug: "milano",
+    label: "Milano Legal Group",
+    href: "/clients/milano",
+  },
 ] as const;

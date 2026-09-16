@@ -515,6 +515,30 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Milano Legal Group (Clist/LF 1 place_id / 558 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Milano /
+   * milanoaccidentlawyers alone. Exclusions: none. Verified 2026-09-16 census (558).
+   * Prep: jl-ops/falcon-prep/milano-2026-09-16.json
+   * Brand: milanoaccidentlawyers.com WordPress theme primary #0073e5.
+   */
+  "milano": {
+    slug: "milano",
+    name: "Milano Legal Group",
+    group: "Milano Legal Group",
+    brand_match: "milano",
+    placeIds: new Set([
+      "ChIJkQgFGEPBQIYRGT7-6YcKRRY", // Houston (558)
+    ]),
+    order: [
+      "ChIJkQgFGEPBQIYRGT7-6YcKRRY",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.milano.placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -939,7 +963,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
