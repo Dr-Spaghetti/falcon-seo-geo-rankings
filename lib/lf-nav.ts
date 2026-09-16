@@ -57,4 +57,9 @@ export const LF_CLIENT_NAV = [
     label: "Amos Perrick",
     href: "/clients/amos-perrick",
   },
+  {
+    slug: "gold-dog",
+    label: "Gold Dog Injury Law",
+    href: "/clients/gold-dog",
+  },
 ] as const;

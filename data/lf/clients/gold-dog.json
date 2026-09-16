@@ -1,0 +1,42 @@
+{
+  "slug": "gold-dog",
+  "name": "Gold Dog Injury Law",
+  "group": "Gold Dog Injury Law",
+  "brand_match": "gold-dog",
+  "generated_at": "2026-09-16T19:21:57.909Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 2,
+  "scan_count": 753,
+  "locations": [
+    {
+      "place_id": "ChIJD3xS4915mFQRgplHEvLmC7s",
+      "name": "Gold Dog Injury Law - Kennewick Injury Lawyers",
+      "address": "4415 W Clearwater Ave #7c, Kennewick, WA 99336",
+      "city": "Kennewick",
+      "rating": 5,
+      "reviews": 11,
+      "phone": "+15095090699",
+      "url": "https://golddoglaw.com/?utm_source=google&utm_medium=organic&utm_campaign=kennewick-gbp",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 397,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    },
+    {
+      "place_id": "ChIJ-wi4M4UBkVQR7SQWDYWFJf0",
+      "name": "Gold Dog Injury Law - Tacoma",
+      "address": "8811 S Tacoma Way Ste 202, Lakewood, WA 98499",
+      "city": "Lakewood",
+      "rating": 5,
+      "reviews": 75,
+      "phone": "+15095176328",
+      "url": "https://golddoglaw.com/?utm_source=google&utm_medium=organic&utm_campaign=tacoma-gbp",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 356,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    }
+  ]
+}

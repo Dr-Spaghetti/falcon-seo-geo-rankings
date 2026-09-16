@@ -430,6 +430,34 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS["amos-perrick"].placeIds.has(placeId));
     },
   },
+  /**
+   * Gold Dog Injury Law (Clist/LF 2 place_ids / 753 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Gold Dog /
+   * Bulldog Law alone. Kennewick census includes campaign alias Bulldog Law
+   * (Jack Law) on the same place_id (include; no separate firm). Tacoma queue
+   * GBP is addressed in Lakewood — keep source address / Lakewood city label.
+   * Exclusions: none. Verified 2026-09-16 census (397+356=753).
+   * Prep: jl-ops/falcon-prep/gold-dog-2026-09-16.json
+   * Brand: golddoglaw.com logo SVG slate teal #375d6a (gold #ECB52A accent).
+   */
+  "gold-dog": {
+    slug: "gold-dog",
+    name: "Gold Dog Injury Law",
+    group: "Gold Dog Injury Law",
+    brand_match: "gold-dog",
+    placeIds: new Set([
+      "ChIJD3xS4915mFQRgplHEvLmC7s", // Kennewick (397)
+      "ChIJ-wi4M4UBkVQR7SQWDYWFJf0", // Lakewood / Tacoma (356)
+    ]),
+    order: [
+      "ChIJD3xS4915mFQRgplHEvLmC7s",
+      "ChIJ-wi4M4UBkVQR7SQWDYWFJf0",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["gold-dog"].placeIds.has(placeId));
+    },
+  },
 
 };
 
@@ -855,7 +883,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
