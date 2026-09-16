@@ -7,8 +7,8 @@ export default function WordpressLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-      <header className="border-b border-slate-200 bg-white">
+    <div className="min-h-screen bg-page-wash text-slate-900 antialiased">
+      <header className="border-b border-navy-200/70 bg-navy-50/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-4 py-4">
           <div className="flex min-w-0 items-center gap-4">
             <Link

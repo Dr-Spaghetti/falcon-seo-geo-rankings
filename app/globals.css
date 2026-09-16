@@ -6,11 +6,15 @@
   color-scheme: light;
   --selection-bg: #c5d3e4;
   --selection-fg: #122033;
+  --surface: #f4f7fb;
+  --surface-raised: #eaf0f6;
+  --surface-panel: #e4ebf3;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply bg-page-wash text-slate-900 antialiased;
   text-rendering: optimizeLegibility;
+  min-height: 100vh;
 }
 
 ::selection {

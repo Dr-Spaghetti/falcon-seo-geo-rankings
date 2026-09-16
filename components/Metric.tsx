@@ -15,25 +15,29 @@ export function KpiCard({
   label: string;
   value: string;
   hint?: string;
-  tone?: "default" | "good" | "warn";
+  tone?: "default" | "good" | "warn" | "accent";
 }) {
   const toneClass =
     tone === "good"
       ? "text-emerald-700"
       : tone === "warn"
         ? "text-amber-700"
-        : "text-slate-900";
+        : tone === "accent"
+          ? "text-accent-700"
+          : "text-navy-900";
   const borderTone =
     tone === "good"
-      ? "border-emerald-200/80 ring-1 ring-emerald-50"
+      ? "border-emerald-200/90 bg-emerald-50/60 ring-1 ring-emerald-100/80"
       : tone === "warn"
-        ? "border-amber-200/80 ring-1 ring-amber-50"
-        : "border-slate-200/90";
+        ? "border-amber-200/90 bg-amber-50/60 ring-1 ring-amber-100/80"
+        : tone === "accent"
+          ? "border-accent-200/80 bg-accent-50/80 ring-1 ring-accent-100/70"
+          : "border-navy-200/70 bg-navy-50/90 ring-1 ring-navy-100/60";
   return (
     <div
-      className={`rounded-xl border bg-white px-4 py-3.5 shadow-sm shadow-slate-900/[0.03] ${borderTone}`}
+      className={`rounded-xl border px-4 py-3.5 shadow-sm shadow-navy-900/[0.04] ${borderTone}`}
     >
-      <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-navy-600/80">
         {label}
       </p>
       <p
@@ -42,7 +46,7 @@ export function KpiCard({
         {value}
       </p>
       {hint ? (
-        <p className="mt-1 text-xs leading-snug text-slate-400">{hint}</p>
+        <p className="mt-1 text-xs leading-snug text-navy-600/75">{hint}</p>
       ) : null}
     </div>
   );

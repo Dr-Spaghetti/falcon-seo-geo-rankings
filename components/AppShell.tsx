@@ -20,8 +20,8 @@ export function AppShell({
   const wordpressActive = pathname.startsWith("/wordpress");
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-      <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 shadow-sm shadow-slate-900/5 backdrop-blur-md">
+    <div className="min-h-screen bg-page-wash text-slate-900 antialiased">
+      <header className="sticky top-0 z-40 border-b border-navy-200/70 bg-navy-50/90 shadow-sm shadow-navy-900/5 backdrop-blur-md">
         <div
           className={`mx-auto flex items-center justify-between gap-4 px-4 py-3 sm:px-6 ${
             wide ? "max-w-7xl" : "max-w-5xl"
@@ -30,10 +30,10 @@ export function AppShell({
           <div className="flex min-w-0 items-center gap-6">
             <Link
               href={activeClient?.href ?? "/clients/therman"}
-              className="shrink-0 rounded-md font-semibold tracking-tight text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+              className="shrink-0 rounded-md font-semibold tracking-tight text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
             >
               Falcon{" "}
-              <span className="font-normal text-slate-400">/</span>{" "}
+              <span className="font-normal text-navy-300">/</span>{" "}
               <span className="text-navy-700">Local Falcon</span>
             </Link>
             <nav
@@ -49,8 +49,8 @@ export function AppShell({
                     aria-current={active ? "page" : undefined}
                     className={
                       active
-                        ? "rounded-md bg-navy-50 px-2.5 py-1.5 font-medium text-navy-800 ring-1 ring-navy-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
-                        : "rounded-md px-2.5 py-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+                        ? "rounded-md bg-navy-100 px-2.5 py-1.5 font-medium text-navy-800 ring-1 ring-navy-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+                        : "rounded-md px-2.5 py-1.5 text-navy-600/80 hover:bg-navy-100/70 hover:text-navy-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
                     }
                   >
                     {c.label}
@@ -62,15 +62,15 @@ export function AppShell({
                 aria-current={wordpressActive ? "page" : undefined}
                 className={
                   wordpressActive
-                    ? "rounded-md bg-navy-50 px-2.5 py-1.5 font-medium text-navy-800 ring-1 ring-navy-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
-                    : "rounded-md px-2.5 py-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+                    ? "rounded-md bg-navy-100 px-2.5 py-1.5 font-medium text-navy-800 ring-1 ring-navy-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+                    : "rounded-md px-2.5 py-1.5 text-navy-600/80 hover:bg-navy-100/70 hover:text-navy-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
                 }
               >
                 WordPress
               </Link>
             </nav>
           </div>
-          <p className="truncate text-xs text-slate-500">
+          <p className="truncate text-xs text-navy-600/80">
             {activeClient
               ? `${activeClient.label} · Local Falcon`
               : wordpressActive

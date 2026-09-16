@@ -14,13 +14,13 @@ export function ClientHub({
 
   return (
     <div className="space-y-8">
-      <section className="relative overflow-hidden rounded-2xl border border-navy-200/60 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 px-6 py-7 text-white shadow-lg shadow-navy-900/20 sm:px-8 sm:py-9">
+      <section className="relative overflow-hidden rounded-2xl border border-navy-700/40 bg-hero-navy px-6 py-7 text-white shadow-lg shadow-navy-900/20 sm:px-8 sm:py-9">
         <div
           className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/5 blur-2xl"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-navy-500/30 blur-3xl"
+          className="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-navy-500/25 blur-3xl"
           aria-hidden
         />
         <div className="relative space-y-3">
@@ -43,7 +43,7 @@ export function ClientHub({
               {client.scan_count.toLocaleString()} scans
             </span>
             {badge ? (
-              <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-100 ring-1 ring-emerald-300/30">
+              <span className="rounded-full bg-accent-50/15 px-3 py-1 text-xs font-medium text-accent-100 ring-1 ring-accent-200/30">
                 {badge}
               </span>
             ) : null}
@@ -51,12 +51,15 @@ export function ClientHub({
         </div>
       </section>
 
-      <section aria-label="Locations">
+      <section
+        aria-label="Locations"
+        className="rounded-2xl border border-navy-200/60 bg-navy-50/70 p-4 sm:p-5"
+      >
         <div className="mb-3 flex items-end justify-between gap-3">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-navy-600">
             Locations
           </h2>
-          <p className="text-xs tabular-nums text-slate-400">
+          <p className="text-xs tabular-nums text-navy-500/80">
             {client.locations.length} nested under firm
           </p>
         </div>
@@ -65,19 +68,19 @@ export function ClientHub({
             <Link
               key={loc.place_id}
               href={`${base}/locations/${loc.place_id}`}
-              className="group flex flex-col rounded-xl border border-slate-200/90 bg-white p-5 shadow-sm shadow-slate-900/[0.03] transition duration-150 hover:-translate-y-0.5 hover:border-navy-200 hover:shadow-md hover:shadow-navy-900/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+              className="group flex flex-col rounded-xl border border-navy-200/80 bg-navy-50/95 p-5 shadow-sm shadow-navy-900/[0.04] transition duration-150 hover:-translate-y-0.5 hover:border-navy-300 hover:bg-white/80 hover:shadow-md hover:shadow-navy-900/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <h3 className="truncate text-lg font-semibold text-slate-900 group-hover:text-navy-800">
+                  <h3 className="truncate text-lg font-semibold text-navy-900 group-hover:text-navy-800">
                     {loc.city || loc.name}
                   </h3>
-                  <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-slate-500">
+                  <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-navy-600/80">
                     {loc.address}
                   </p>
                 </div>
                 <span
-                  className="shrink-0 rounded-full bg-navy-50 px-2.5 py-1 text-xs font-semibold tabular-nums text-navy-800 ring-1 ring-navy-100"
+                  className="shrink-0 rounded-full bg-navy-100 px-2.5 py-1 text-xs font-semibold tabular-nums text-navy-800 ring-1 ring-navy-200/80"
                   title="Scan count"
                 >
                   {loc.scan_count.toLocaleString()} scans
@@ -85,7 +88,7 @@ export function ClientHub({
               </div>
               <div className="mt-4 flex flex-wrap items-center gap-2">
                 {loc.rating != null && loc.rating > 0 ? (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900 ring-1 ring-amber-100">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900 ring-1 ring-amber-200/70">
                     ★ {formatMetric(loc.rating, 1)}
                     {loc.reviews != null ? (
                       <span className="font-normal text-amber-700/80">
@@ -94,12 +97,12 @@ export function ClientHub({
                     ) : null}
                   </span>
                 ) : (
-                  <span className="inline-flex rounded-full bg-slate-50 px-2 py-0.5 text-xs text-slate-400 ring-1 ring-slate-100">
+                  <span className="inline-flex rounded-full bg-navy-100/80 px-2 py-0.5 text-xs text-navy-500 ring-1 ring-navy-200/60">
                     No rating yet
                   </span>
                 )}
                 {loc.latest_iso || loc.latest_date ? (
-                  <span className="inline-flex rounded-full bg-slate-50 px-2 py-0.5 text-xs tabular-nums text-slate-500 ring-1 ring-slate-100">
+                  <span className="inline-flex rounded-full bg-accent-50 px-2 py-0.5 text-xs tabular-nums text-accent-700 ring-1 ring-accent-200/70">
                     Latest {loc.latest_iso || loc.latest_date}
                   </span>
                 ) : null}
@@ -117,11 +120,11 @@ export function ClientHub({
           ))}
         </div>
         {client.locations.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-slate-200 bg-white px-6 py-16 text-center">
-            <p className="text-sm font-medium text-slate-700">
+          <div className="rounded-xl border border-dashed border-navy-300/70 bg-navy-100/50 px-6 py-16 text-center">
+            <p className="text-sm font-medium text-navy-800">
               No locations in this firm hub
             </p>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-navy-600/80">
               Rebuild client data from the Local Falcon census archive.
             </p>
           </div>

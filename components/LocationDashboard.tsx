@@ -38,7 +38,7 @@ function LinkPill({
 }) {
   if (!href || disabled) {
     return (
-      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-slate-300">
+      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-navy-300">
         {label}
       </span>
     );
@@ -48,7 +48,7 @@ function LinkPill({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
+      className="inline-flex rounded-md bg-navy-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-200/80 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
     >
       {label}
     </a>
@@ -56,15 +56,15 @@ function LinkPill({
 }
 
 function solvClass(solv: number | null) {
-  if (solv == null || !Number.isFinite(solv)) return "text-slate-800";
+  if (solv == null || !Number.isFinite(solv)) return "text-navy-800";
   if (solv >= 30) return "font-semibold text-emerald-700";
   if (solv >= 20) return "font-medium text-emerald-600";
-  if (solv >= 10) return "text-slate-800";
-  return "text-slate-500";
+  if (solv >= 10) return "text-navy-800";
+  return "text-navy-500";
 }
 
 const selectClass =
-  "rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 tabular-nums shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1";
+  "rounded-lg border border-navy-200/80 bg-navy-50/90 px-2.5 py-1.5 text-sm font-normal normal-case text-navy-900 tabular-nums shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1";
 
 export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const years = useMemo(() => {
@@ -129,7 +129,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
 
   return (
     <div className="space-y-6">
-      <section className="relative overflow-hidden rounded-2xl border border-navy-200/50 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 px-5 py-6 text-white shadow-lg shadow-navy-900/15 sm:px-7 sm:py-7">
+      <section className="relative overflow-hidden rounded-2xl border border-navy-700/40 bg-hero-navy px-5 py-6 text-white shadow-lg shadow-navy-900/15 sm:px-7 sm:py-7">
         <div
           className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/5 blur-2xl"
           aria-hidden
@@ -187,6 +187,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
           label="Avg ATRP"
           value={formatMetric(meanAtrp)}
           hint="Avg true rank position"
+          tone="accent"
         />
         <KpiCard
           label="Avg SOLV"
@@ -196,17 +197,20 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         />
       </div>
 
-      <div className="sticky top-[3.25rem] z-30 rounded-xl border border-slate-200/90 bg-white/95 p-4 shadow-sm shadow-slate-900/[0.04] backdrop-blur-md">
+      <div className="sticky top-[3.25rem] z-30 rounded-xl border border-navy-200/80 bg-navy-100/85 p-4 shadow-sm shadow-navy-900/[0.05] backdrop-blur-md">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-800">Date filters</p>
-            <p className="text-xs text-slate-500">
-              From census <code className="rounded bg-slate-100 px-1 text-[11px]">date</code>{" "}
+            <p className="text-sm font-semibold text-navy-900">Date filters</p>
+            <p className="text-xs text-navy-600/80">
+              From census{" "}
+              <code className="rounded bg-navy-200/60 px-1 text-[11px] text-navy-800">
+                date
+              </code>{" "}
               field (US M/D/YYYY)
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Year
               <select
                 className={selectClass}
@@ -221,7 +225,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Month
               <select
                 className={selectClass}
@@ -236,7 +240,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Day
               <select
                 className={selectClass}
@@ -253,44 +257,41 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex min-w-[12rem] flex-1 flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+            <label className="flex min-w-[12rem] flex-1 flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Keyword
               <input
                 type="search"
                 placeholder="Filter keywords…"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 shadow-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
+                className="rounded-lg border border-navy-200/80 bg-navy-50/90 px-2.5 py-1.5 text-sm font-normal normal-case text-navy-900 shadow-sm placeholder:text-navy-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
               />
             </label>
           </div>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-200/90 bg-white shadow-sm shadow-slate-900/[0.03]">
-        <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
-          <h2 className="text-sm font-semibold text-slate-800">Scan table</h2>
-          <p className="text-xs tabular-nums text-slate-500">
+      <div className="overflow-hidden rounded-xl border border-navy-200/80 bg-navy-50/80 shadow-sm shadow-navy-900/[0.04]">
+        <div className="flex items-center justify-between border-b border-navy-200/70 bg-navy-100/60 px-4 py-3">
+          <h2 className="text-sm font-semibold text-navy-900">Scan table</h2>
+          <p className="text-xs tabular-nums text-navy-600">
             {filtered.length.toLocaleString()} row
             {filtered.length === 1 ? "" : "s"}
           </p>
         </div>
 
         {filtered.length === 0 ? (
-          <div className="px-4 py-16 text-center">
-            <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-400">
-              ∅
-            </div>
-            <p className="text-sm font-semibold text-slate-700">No scans match</p>
-            <p className="mt-1 text-sm text-slate-500">
+          <div className="mx-4 my-6 rounded-xl border border-dashed border-navy-300/70 bg-navy-100/50 px-4 py-14 text-center">
+            <p className="text-sm font-semibold text-navy-800">No scans match</p>
+            <p className="mt-1 text-sm text-navy-600/80">
               Try clearing month/day or the keyword filter.
             </p>
           </div>
         ) : (
           <div className="max-h-[70vh] overflow-auto">
             <table className="min-w-full text-left text-sm">
-              <thead className="sticky top-0 z-10 bg-slate-50/95 text-[11px] uppercase tracking-wider text-slate-500 backdrop-blur-sm">
-                <tr className="border-b border-slate-200">
+              <thead className="sticky top-0 z-10 bg-navy-100/95 text-[11px] uppercase tracking-wider text-navy-600 backdrop-blur-sm">
+                <tr className="border-b border-navy-200/80">
                   <th className="whitespace-nowrap px-3 py-2 font-semibold sm:px-4">
                     Date
                   </th>
@@ -314,27 +315,27 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 {filtered.map((s, i) => (
                   <tr
                     key={s.id}
-                    className={`border-b border-slate-100/80 transition-colors hover:bg-navy-50/40 ${
-                      i % 2 === 0 ? "bg-white" : "bg-slate-50/60"
+                    className={`border-b border-navy-100/90 transition-colors hover:bg-navy-100/70 ${
+                      i % 2 === 0 ? "bg-navy-50/40" : "bg-navy-100/35"
                     }`}
                   >
-                    <td className="whitespace-nowrap px-3 py-2 tabular-nums text-slate-600 sm:px-4">
+                    <td className="whitespace-nowrap px-3 py-2 tabular-nums text-navy-700 sm:px-4">
                       {s.date || "—"}
                     </td>
                     <td className="max-w-[18rem] px-3 py-2 sm:px-4">
-                      <p className="truncate font-medium text-slate-800">
+                      <p className="truncate font-medium text-navy-900">
                         {s.keyword || "—"}
                       </p>
                       {s.campaign_name ? (
-                        <p className="truncate text-xs text-slate-400">
+                        <p className="truncate text-xs text-navy-500/80">
                           {s.campaign_name}
                         </p>
                       ) : null}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-slate-800 sm:px-4">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-navy-800 sm:px-4">
                       {formatMetric(s.arp)}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-slate-800 sm:px-4">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-accent-700 sm:px-4">
                       {formatMetric(s.atrp)}
                     </td>
                     <td
@@ -342,10 +343,10 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                     >
                       {s.solv == null ? "—" : `${formatMetric(s.solv)}%`}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-slate-600 sm:px-4">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-navy-700 sm:px-4">
                       {s.found_in == null ? "—" : s.found_in}
                       {s.data_points != null ? (
-                        <span className="text-slate-400">/{s.data_points}</span>
+                        <span className="text-navy-400">/{s.data_points}</span>
                       ) : null}
                     </td>
                     <td className="whitespace-nowrap px-3 py-2 sm:px-4">
