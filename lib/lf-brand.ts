@@ -51,6 +51,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - facchetti: facchettilaw.com Elementor --e-global-color-primary #013f4e
  * - leahy-cox: emeraldlaw.com --color-prime #2d7372
  * - andy-callif: andycallifbailbonds.com burgundy #640d0f
+ * - amos-perrick: apmdlaw.com logo SVG navy #2b2b51
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -160,6 +161,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #640d0f 0%, #7a181a 48%, #8a2426 100%)",
     source:
       "andycallifbailbonds.com homepage inline CSS / 24 Hour Help mark burgundy #640d0f (CTA blue #066a94 supporting accent)",
+  }),
+  "amos-perrick": buildTheme("#2b2b51", {
+    soft: "#454575",
+    ring: "#555588",
+    border: "#1a1a38",
+    muted: "#d0d0e0",
+    hero: "linear-gradient(135deg, #2b2b51 0%, #353568 48%, #454575 100%)",
+    source:
+      "apmdlaw.com header/footer logo SVG navy #2b2b51 (gold #E2C675 accent secondary)",
   }),
 };
 

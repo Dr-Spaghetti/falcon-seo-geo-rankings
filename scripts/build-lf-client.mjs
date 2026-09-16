@@ -406,6 +406,31 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS["andy-callif"].placeIds.has(placeId));
     },
   },
+  /**
+   * Amos Perrick (Clist/LF 1 place_id / 782 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Amos Perrick
+   * / apmdlaw.com alone. Roster firm=='Amos Perrick' covers this 1.
+   * Exclusions: none. Verified 2026-09-16 census (782).
+   * Prep: jl-ops/falcon-prep/amos-perrick-2026-09-16.json
+   * Brand: apmdlaw.com logo SVG navy #2b2b51.
+   */
+  "amos-perrick": {
+    slug: "amos-perrick",
+    name: "Amos Perrick",
+    group: "Amos Perrick",
+    brand_match: "amos-perrick",
+    placeIds: new Set([
+      "ChIJtfvPmgUhyIkRrqVD-3_sl2s", // Columbia (782)
+    ]),
+    order: [
+      "ChIJtfvPmgUhyIkRrqVD-3_sl2s",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["amos-perrick"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -830,7 +855,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

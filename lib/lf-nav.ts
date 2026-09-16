@@ -52,4 +52,9 @@ export const LF_CLIENT_NAV = [
     label: "Andy Callif Bail Bonds",
     href: "/clients/andy-callif",
   },
+  {
+    slug: "amos-perrick",
+    label: "Amos Perrick",
+    href: "/clients/amos-perrick",
+  },
 ] as const;
