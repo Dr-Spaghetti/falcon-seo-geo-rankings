@@ -8,32 +8,32 @@ export default function WordpressLayout({
 }) {
   return (
     <div className="min-h-screen bg-page-wash text-slate-900 antialiased">
-      <header className="border-b border-navy-200/70 bg-navy-50/90 backdrop-blur-md">
+      <header className="border-b border-navy-950 bg-navy-900 text-white shadow-md shadow-navy-950/30">
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-4 py-4">
           <div className="flex min-w-0 items-center gap-4">
             <Link
               href="/clients/therman"
-              className="rounded-md font-semibold tracking-tight text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+              className="rounded-md font-semibold tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             >
               Falcon
             </Link>
-            <span className="text-slate-300">/</span>
-            <span className="truncate text-sm text-slate-600">WordPress ingest</span>
+            <span className="text-navy-300">/</span>
+            <span className="truncate text-sm font-medium text-navy-50">WordPress ingest</span>
           </div>
           <nav className="flex flex-wrap items-center justify-end gap-3 text-sm">
             <Link
               href="/clients/therman"
-              className="font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+              className="rounded-md px-2 py-1 font-medium text-navy-50 hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             >
               Therman
             </Link>
             <Link
               href="/clients/premier"
-              className="font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+              className="rounded-md px-2 py-1 font-medium text-navy-50 hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             >
               Premier
             </Link>
-            <span className="text-xs text-slate-400">secondary</span>
+            <span className="text-xs font-medium text-navy-100">secondary</span>
           </nav>
         </div>
       </header>

@@ -8,6 +8,9 @@ function navActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(href + "/");
 }
 
+const navBase =
+  "rounded-md px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900";
+
 export function AppShell({
   children,
   wide = false,
@@ -21,7 +24,7 @@ export function AppShell({
 
   return (
     <div className="min-h-screen bg-page-wash text-slate-900 antialiased">
-      <header className="sticky top-0 z-40 border-b border-navy-200/70 bg-navy-50/90 shadow-sm shadow-navy-900/5 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-navy-950 bg-navy-900 text-white shadow-md shadow-navy-950/30">
         <div
           className={`mx-auto flex items-center justify-between gap-4 px-4 py-3 sm:px-6 ${
             wide ? "max-w-7xl" : "max-w-5xl"
@@ -30,11 +33,11 @@ export function AppShell({
           <div className="flex min-w-0 items-center gap-6">
             <Link
               href={activeClient?.href ?? "/clients/therman"}
-              className="shrink-0 rounded-md font-semibold tracking-tight text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+              className="shrink-0 rounded-md font-semibold tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             >
               Falcon{" "}
               <span className="font-normal text-navy-300">/</span>{" "}
-              <span className="text-navy-700">Local Falcon</span>
+              <span className="font-medium text-white">Local Falcon</span>
             </Link>
             <nav
               className="hidden items-center gap-1 text-sm sm:flex"
@@ -49,8 +52,8 @@ export function AppShell({
                     aria-current={active ? "page" : undefined}
                     className={
                       active
-                        ? "rounded-md bg-navy-100 px-2.5 py-1.5 font-medium text-navy-800 ring-1 ring-navy-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
-                        : "rounded-md px-2.5 py-1.5 text-navy-600/80 hover:bg-navy-100/70 hover:text-navy-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+                        ? `${navBase} bg-white font-semibold text-navy-900`
+                        : `${navBase} text-navy-50 hover:bg-white/15 hover:text-white`
                     }
                   >
                     {c.label}
@@ -62,15 +65,15 @@ export function AppShell({
                 aria-current={wordpressActive ? "page" : undefined}
                 className={
                   wordpressActive
-                    ? "rounded-md bg-navy-100 px-2.5 py-1.5 font-medium text-navy-800 ring-1 ring-navy-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
-                    : "rounded-md px-2.5 py-1.5 text-navy-600/80 hover:bg-navy-100/70 hover:text-navy-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+                    ? `${navBase} bg-white font-semibold text-navy-900`
+                    : `${navBase} text-navy-50 hover:bg-white/15 hover:text-white`
                 }
               >
                 WordPress
               </Link>
             </nav>
           </div>
-          <p className="truncate text-xs text-navy-600/80">
+          <p className="truncate text-xs font-medium text-navy-50">
             {activeClient
               ? `${activeClient.label} · Local Falcon`
               : wordpressActive
