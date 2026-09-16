@@ -379,6 +379,33 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS["leahy-cox"].placeIds.has(placeId));
     },
   },
+  /**
+   * Andy Callif Bail Bonds (Clist/LF 2 place_ids / 843 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Andy Callif
+   * alone (roster firm=='Andy Callif' while queue name is Andy Callif Bail
+   * Bonds). Delaware + Columbus both required for queue 2/843. Exclusions:
+   * none. Verified 2026-09-16 census (426+417=843).
+   * Prep: jl-ops/falcon-prep/andy-callif-2026-09-16.json
+   * Brand: andycallifbailbonds.com burgundy #640d0f.
+   */
+  "andy-callif": {
+    slug: "andy-callif",
+    name: "Andy Callif Bail Bonds",
+    group: "Andy Callif Bail Bonds",
+    brand_match: "andy-callif",
+    placeIds: new Set([
+      "ChIJWdogKpv7OIgR3Zl3LYcVaVI", // Delaware (426)
+      "ChIJJ-LLruKLR4gRNvyLl0GX69Q", // Columbus (417)
+    ]),
+    order: [
+      "ChIJWdogKpv7OIgR3Zl3LYcVaVI",
+      "ChIJJ-LLruKLR4gRNvyLl0GX69Q",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["andy-callif"].placeIds.has(placeId));
+    },
+  },
 };
 
 
@@ -803,7 +830,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

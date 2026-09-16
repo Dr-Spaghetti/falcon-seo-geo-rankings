@@ -50,6 +50,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - widrig: widriglaw.com styles/variables.css --color-primary #233C55
  * - facchetti: facchettilaw.com Elementor --e-global-color-primary #013f4e
  * - leahy-cox: emeraldlaw.com --color-prime #2d7372
+ * - andy-callif: andycallifbailbonds.com burgundy #640d0f
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -150,6 +151,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #2d7372 0%, #358582 48%, #3a8a88 100%)",
     source:
       "emeraldlaw.com homepage inline theme CSS --color-prime:#2d7372 (also --color-link; navy #0b244e --color-second secondary)",
+  }),
+  "andy-callif": buildTheme("#640d0f", {
+    soft: "#8a2426",
+    ring: "#9a3032",
+    border: "#4a090a",
+    muted: "#e8d0d1",
+    hero: "linear-gradient(135deg, #640d0f 0%, #7a181a 48%, #8a2426 100%)",
+    source:
+      "andycallifbailbonds.com homepage inline CSS / 24 Hour Help mark burgundy #640d0f (CTA blue #066a94 supporting accent)",
   }),
 };
 
