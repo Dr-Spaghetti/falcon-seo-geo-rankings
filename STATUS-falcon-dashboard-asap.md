@@ -7,7 +7,7 @@
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | none (Band D: PR unmerged by design — no master merge / no prod promote) |
 | **branch** | `feat/falcon-ui-premier-2026-09-16` @ `0a40649` (feature `6a984aa`) |
-| **updated_at** | 2026-09-16 11:17 AM ET |
+| **updated_at** | 2026-09-16 1:00 PM ET |
 
 ## Evidence links
 
@@ -51,7 +51,7 @@ Shared polish (benefits Therman + Premier):
 ## Known bugs / follow-ups
 
 1. Preview deployment protection may block agent content checks (403); human should spot-check preview after login.
-2. `build:lf-pilot` still clears **all** files under `data/lf/locations/` before rewrite — re-running Therman builder without Premier rebuild would drop Premier location JSON.
+2. ~~`build:lf-pilot` wiped all `data/lf/locations/`~~ **Fixed**: use `npm run build:lf -- --client=therman|premier` (client-scoped; no wholesale location wipe).
 3. Legacy `data/lf/pilot-client.json` retained; keep in sync if regenerating.
 4. WordPress layout has its own chrome (not AppShell).
 5. No merge to master / no prod promote (Band D) — waiting on Nick.
@@ -60,7 +60,7 @@ Shared polish (benefits Therman + Premier):
 ## Verify commands run
 
 ```text
-npm test          → 12 pass (url + heatmap helpers + census URL check)
+npm test          → 17 pass (url + heatmap + brand helpers + census URL check)
 npx tsc --noEmit  → exit 0
 npm run build     → success; Therman + Premier location SSG paths
 ```

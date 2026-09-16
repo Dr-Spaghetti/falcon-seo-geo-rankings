@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "bash -c 'tsx --test __tests__/*.test.ts'",
-    "build:lf-pilot": "node scripts/build-lf-pilot.mjs",
-    "build:lf-premier": "node scripts/build-lf-premier.mjs"
+    "build:lf-pilot": "node scripts/build-lf-client.mjs --client=therman",
+    "build:lf-premier": "node scripts/build-lf-client.mjs --client=premier",
+    "build:lf": "node scripts/build-lf-client.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

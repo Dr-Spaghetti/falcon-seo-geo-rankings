@@ -1,0 +1,526 @@
+#!/usr/bin/env node
+/**
+ * Client-scoped Local Falcon data builder.
+ *
+ * Updates ONE client's artifacts under data/lf/ without wiping other clients.
+ *
+ * Usage:
+ *   node scripts/build-lf-client.mjs --client=therman
+ *   node scripts/build-lf-client.mjs --client=premier
+ *   node scripts/build-lf-client.mjs --client=all
+ *   npm run build:lf -- --client=therman
+ *
+ * Env:
+ *   LF_ARCHIVE  — path to archive dir (default /workspace/falcon-lf-archive)
+ *   LF_OUT      — output root (default <repo>/data/lf)
+ *
+ * Flags:
+ *   --client=<slug|all>  required (unless positional)
+ *   --dry-run            print planned writes/deletes; touch nothing
+ *   --list               list known clients and exit
+ *
+ * Writes per client (additive / idempotent):
+ *   data/lf/clients/{slug}.json
+ *   data/lf/locations/{placeId}.json   — only that client's place IDs
+ *   data/lf/pilot-client.json          — Therman legacy mirror only
+ *
+ * Never rm -rf data/lf or unlink the whole locations/ directory.
+ * Orphan cleanup (if any) is limited to place IDs previously listed
+ * on THAT client's JSON that are no longer present.
+ */
+import fs from "node:fs";
+import path from "node:path";
+import readline from "node:readline";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..");
+const ARCHIVE = process.env.LF_ARCHIVE || "/workspace/falcon-lf-archive";
+const OUT_DIR = process.env.LF_OUT || path.join(ROOT, "data", "lf");
+const CLIENTS_DIR = path.join(OUT_DIR, "clients");
+const LOC_DIR = path.join(OUT_DIR, "locations");
+
+/** @typedef {{
+ *   slug: string,
+ *   name: string,
+ *   group: string,
+ *   brand_match: string,
+ *   match: (row: object) => boolean,
+ *   placeIds?: Set<string>,
+ *   order?: string[],
+ *   writePilotLegacy?: boolean,
+ * }} ClientConfig */
+
+/** @type {Record<string, ClientConfig>} */
+export const CLIENTS = {
+  therman: {
+    slug: "therman",
+    name: "Charlie Therman Injury & Accident Lawyers, P.C.",
+    group: "Therman Law Group",
+    brand_match: "therman",
+    writePilotLegacy: true,
+    match: (obj) => matchesHaystack(obj, /therman/i),
+  },
+  premier: {
+    slug: "premier",
+    name: "Premier Law Group",
+    group: "Premier Law Group",
+    brand_match: "premier",
+    placeIds: new Set([
+      "ChIJh_RMvzttkFQRdXcAxoifX4Q", // Bellevue
+      "ChIJXTyBiIVnkFQRMKImYWD2Avg", // Renton
+      "ChIJze5Cu49XkFQRA8EB6HcIvy8", // Federal Way
+      "ChIJxw1Dv4VrkFQRa7UR5wKEPsg", // Seattle
+    ]),
+    order: [
+      "ChIJh_RMvzttkFQRdXcAxoifX4Q",
+      "ChIJXTyBiIVnkFQRMKImYWD2Avg",
+      "ChIJze5Cu49XkFQRA8EB6HcIvy8",
+      "ChIJxw1Dv4VrkFQRa7UR5wKEPsg",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.premier.placeIds.has(placeId));
+    },
+  },
+};
+
+function matchesHaystack(obj, re) {
+  if (!obj || typeof obj !== "object") return false;
+  const hay = [];
+  if (obj.name) hay.push(String(obj.name));
+  if (obj.campaign_name) hay.push(String(obj.campaign_name));
+  for (const key of ["groups", "group"]) {
+    if (Array.isArray(obj[key])) {
+      for (const g of obj[key]) {
+        if (typeof g === "string") hay.push(g);
+        else if (g?.name) hay.push(String(g.name));
+      }
+    }
+  }
+  if (obj.location?.name) hay.push(String(obj.location.name));
+  if (Array.isArray(obj.location?.group)) {
+    for (const g of obj.location.group) {
+      if (typeof g === "string") hay.push(g);
+      else if (g?.name) hay.push(String(g.name));
+    }
+  }
+  return hay.some((s) => re.test(s));
+}
+
+/** Parse US `M/D/YYYY h:mm AM/PM` → { year, month, day, isoDate } or null */
+export function parseCensusDate(dateStr) {
+  if (!dateStr || typeof dateStr !== "string") return null;
+  const m = dateStr.trim().match(
+    /^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2})\s*(AM|PM))?$/i
+  );
+  if (!m) return null;
+  const month = Number(m[1]);
+  const day = Number(m[2]);
+  const year = Number(m[3]);
+  if (!year || month < 1 || month > 12 || day < 1 || day > 31) return null;
+  const isoDate = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  return { year, month, day, isoDate };
+}
+
+function numOrNull(v) {
+  if (v === false || v === null || v === undefined || v === "") return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+
+function compactScan(row) {
+  const parsed = parseCensusDate(row.date);
+  return {
+    id: row.id || row.report_key,
+    report_key: row.report_key || null,
+    date: row.date || null,
+    year: parsed?.year ?? null,
+    month: parsed?.month ?? null,
+    day: parsed?.day ?? null,
+    isoDate: parsed?.isoDate ?? null,
+    type: row.type || null,
+    campaign_name: row.campaign_name || null,
+    platform: row.platform || null,
+    keyword: row.keyword || null,
+    grid_size: numOrNull(row.grid_size),
+    radius: numOrNull(row.radius),
+    measurement: row.measurement || null,
+    data_points: numOrNull(row.data_points),
+    found_in: numOrNull(row.found_in),
+    arp: numOrNull(row.arp),
+    atrp: numOrNull(row.atrp),
+    solv: numOrNull(row.solv),
+    image: row.image || null,
+    heatmap: row.heatmap || null,
+    pdf: row.pdf || null,
+    public_url: row.public_url || null,
+  };
+}
+
+function readJsonl(filePath, onRow) {
+  return new Promise((resolve, reject) => {
+    if (!fs.existsSync(filePath)) {
+      reject(new Error(`Missing archive file: ${filePath}`));
+      return;
+    }
+    const input = fs.createReadStream(filePath, { encoding: "utf8" });
+    const rl = readline.createInterface({ input, crlfDelay: Infinity });
+    rl.on("line", (line) => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+      try {
+        onRow(JSON.parse(trimmed));
+      } catch {
+        // skip bad lines
+      }
+    });
+    rl.on("close", resolve);
+    rl.on("error", reject);
+    input.on("error", reject);
+  });
+}
+
+function ensureDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+function cityFromAddress(address) {
+  if (!address) return null;
+  const parts = String(address).split(",").map((s) => s.trim());
+  if (parts.length >= 2) return parts[parts.length - 2] || null;
+  return null;
+}
+
+function seedFromListRow(row, placeId, fallbackName) {
+  const groups = Array.isArray(row.groups)
+    ? row.groups.map((g) => (typeof g === "string" ? g : g?.name)).filter(Boolean)
+    : [];
+  let primary = null;
+  if (row.categories && typeof row.categories === "object") {
+    primary = Object.values(row.categories)[0] || null;
+  }
+  return {
+    place_id: placeId,
+    name: row.name || fallbackName,
+    address: row.address || null,
+    city: cityFromAddress(row.address),
+    lat: row.lat ? Number(row.lat) : null,
+    lng: row.lng ? Number(row.lng) : null,
+    rating: numOrNull(row.rating),
+    reviews: numOrNull(row.reviews),
+    phone: row.phone || null,
+    url: row.url || null,
+    primary_category: primary,
+    groups,
+    scan_count: 0,
+    latest_date: null,
+    latest_iso: null,
+  };
+}
+
+function seedFromCensusLoc(loc, placeId, fallbackName) {
+  const groups = Array.isArray(loc.group)
+    ? loc.group.map((g) => (typeof g === "string" ? g : g?.name)).filter(Boolean)
+    : [];
+  return {
+    place_id: placeId,
+    name: loc.name || fallbackName,
+    address: loc.address || null,
+    city: cityFromAddress(loc.address),
+    lat: loc.lat ? Number(loc.lat) : null,
+    lng: loc.lng ? Number(loc.lng) : null,
+    rating: numOrNull(loc.rating),
+    reviews: numOrNull(loc.reviews),
+    phone: loc.phone || null,
+    url: loc.url || null,
+    primary_category: loc.primary_category || null,
+    groups,
+    scan_count: 0,
+    latest_date: null,
+    latest_iso: null,
+  };
+}
+
+function parseArgs(argv) {
+  const out = { client: null, dryRun: false, list: false };
+  for (const arg of argv) {
+    if (arg === "--dry-run") out.dryRun = true;
+    else if (arg === "--list") out.list = true;
+    else if (arg.startsWith("--client=")) out.client = arg.slice("--client=".length);
+    else if (arg === "--client") continue;
+    else if (!arg.startsWith("-") && !out.client) out.client = arg;
+  }
+  // support: --client therman
+  for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === "--client" && argv[i + 1] && !argv[i + 1].startsWith("-")) {
+      out.client = argv[i + 1];
+    }
+  }
+  return out;
+}
+
+function previousPlaceIds(slug) {
+  const p = path.join(CLIENTS_DIR, `${slug}.json`);
+  if (!fs.existsSync(p)) return [];
+  try {
+    const data = JSON.parse(fs.readFileSync(p, "utf8"));
+    return (data.locations || []).map((l) => l.place_id).filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function writeJson(filePath, value, dryRun, pretty = false) {
+  const body = pretty ? JSON.stringify(value, null, 2) : JSON.stringify(value);
+  if (dryRun) {
+    console.log(`  [dry-run] would write ${path.relative(ROOT, filePath)} (${body.length} bytes)`);
+    return;
+  }
+  ensureDir(path.dirname(filePath));
+  fs.writeFileSync(filePath, body);
+}
+
+function unlinkIfExists(filePath, dryRun) {
+  if (!fs.existsSync(filePath)) return;
+  if (dryRun) {
+    console.log(`  [dry-run] would unlink ${path.relative(ROOT, filePath)}`);
+    return;
+  }
+  fs.unlinkSync(filePath);
+}
+
+/**
+ * Build one client. Returns summary stats.
+ * @param {ClientConfig} cfg
+ * @param {{ dryRun?: boolean }} opts
+ */
+export async function buildClient(cfg, opts = {}) {
+  const dryRun = Boolean(opts.dryRun);
+  console.log(`\n=== Building client: ${cfg.slug} ===`);
+  console.log(`LF archive: ${ARCHIVE}`);
+  console.log(`Output:     ${OUT_DIR}`);
+  console.log(`Mode:       ${dryRun ? "dry-run (no writes)" : "write"}`);
+
+  const locationsById = new Map();
+
+  await readJsonl(path.join(ARCHIVE, "locations-list.jsonl"), (row) => {
+    if (!cfg.match(row)) return;
+    const placeId = row.place_id || row.id;
+    if (!placeId) return;
+    if (cfg.placeIds && !cfg.placeIds.has(placeId)) return;
+    locationsById.set(placeId, seedFromListRow(row, placeId, cfg.name));
+  });
+
+  const scansByPlace = new Map();
+
+  await readJsonl(path.join(ARCHIVE, "reports-census.jsonl"), (row) => {
+    if (!cfg.match(row)) return;
+    const placeId = row.place_id || row.location?.place_id;
+    if (!placeId) return;
+    if (cfg.placeIds && !cfg.placeIds.has(placeId)) return;
+
+    if (!locationsById.has(placeId)) {
+      locationsById.set(
+        placeId,
+        seedFromCensusLoc(row.location || {}, placeId, cfg.name)
+      );
+    }
+
+    const scan = compactScan(row);
+    if (!scansByPlace.has(placeId)) scansByPlace.set(placeId, []);
+    scansByPlace.get(placeId).push(scan);
+  });
+
+  for (const [placeId, scans] of scansByPlace) {
+    scans.sort((a, b) => {
+      const ai = a.isoDate || "";
+      const bi = b.isoDate || "";
+      if (ai !== bi) return bi.localeCompare(ai);
+      return String(b.date || "").localeCompare(String(a.date || ""));
+    });
+    const loc = locationsById.get(placeId);
+    if (loc) {
+      loc.scan_count = scans.length;
+      loc.latest_date = scans[0]?.date || null;
+      loc.latest_iso = scans[0]?.isoDate || null;
+    }
+  }
+
+  let locations;
+  if (cfg.order?.length) {
+    locations = cfg.order
+      .map((id) => locationsById.get(id))
+      .filter(Boolean)
+      .filter((l) => (scansByPlace.get(l.place_id) || []).length > 0);
+    if (cfg.placeIds && locations.length !== cfg.placeIds.size) {
+      const missing = [...cfg.placeIds].filter(
+        (id) => !locations.some((l) => l.place_id === id)
+      );
+      console.warn("WARNING missing locations with scans:", missing);
+    }
+  } else {
+    locations = [...locationsById.values()]
+      .filter((l) => (scansByPlace.get(l.place_id) || []).length > 0)
+      .sort((a, b) => (b.scan_count || 0) - (a.scan_count || 0));
+  }
+
+  const newPlaceIds = new Set(locations.map((l) => l.place_id));
+  const prevIds = previousPlaceIds(cfg.slug);
+  const orphans = prevIds.filter((id) => !newPlaceIds.has(id));
+
+  // Safety: never delete a place_id that still belongs to another known client.
+  const otherOwned = new Set();
+  for (const other of Object.values(CLIENTS)) {
+    if (other.slug === cfg.slug) continue;
+    for (const id of previousPlaceIds(other.slug)) otherOwned.add(id);
+  }
+  const safeOrphans = orphans.filter((id) => !otherOwned.has(id));
+  const blockedOrphans = orphans.filter((id) => otherOwned.has(id));
+  if (blockedOrphans.length) {
+    console.warn(
+      `  Skipping orphan delete (owned by another client): ${blockedOrphans.join(", ")}`
+    );
+  }
+
+  if (!dryRun) {
+    ensureDir(CLIENTS_DIR);
+    ensureDir(LOC_DIR);
+  }
+
+  let totalScans = 0;
+  for (const loc of locations) {
+    const scans = scansByPlace.get(loc.place_id) || [];
+    totalScans += scans.length;
+    const years = [...new Set(scans.map((s) => s.year).filter(Boolean))].sort(
+      (a, b) => b - a
+    );
+    const payload = {
+      place_id: loc.place_id,
+      location: {
+        place_id: loc.place_id,
+        name: loc.name,
+        address: loc.address,
+        city: loc.city,
+        lat: loc.lat,
+        lng: loc.lng,
+        rating: loc.rating,
+        reviews: loc.reviews,
+        phone: loc.phone,
+        url: loc.url,
+        primary_category: loc.primary_category,
+        groups: loc.groups,
+      },
+      scan_count: scans.length,
+      years,
+      scans,
+    };
+    const outPath = path.join(LOC_DIR, `${loc.place_id}.json`);
+    writeJson(outPath, payload, dryRun, false);
+    console.log(
+      `  ${dryRun ? "would write" : "wrote"} locations/${loc.place_id}.json (${scans.length} scans)`
+    );
+  }
+
+  for (const id of safeOrphans) {
+    unlinkIfExists(path.join(LOC_DIR, `${id}.json`), dryRun);
+  }
+
+  const client = {
+    slug: cfg.slug,
+    name: cfg.name,
+    group: cfg.group,
+    brand_match: cfg.brand_match,
+    generated_at: new Date().toISOString(),
+    source_archive: ARCHIVE,
+    location_count: locations.length,
+    scan_count: totalScans,
+    locations: locations.map((l) => ({
+      place_id: l.place_id,
+      name: l.name,
+      address: l.address,
+      city: l.city,
+      rating: l.rating,
+      reviews: l.reviews,
+      phone: l.phone,
+      url: l.url,
+      primary_category: l.primary_category,
+      groups: l.groups,
+      scan_count: l.scan_count,
+      latest_date: l.latest_date,
+      latest_iso: l.latest_iso,
+    })),
+  };
+
+  writeJson(path.join(CLIENTS_DIR, `${cfg.slug}.json`), client, dryRun, true);
+  console.log(
+    `  ${dryRun ? "would write" : "Wrote"} data/lf/clients/${cfg.slug}.json`
+  );
+
+  if (cfg.writePilotLegacy) {
+    writeJson(path.join(OUT_DIR, "pilot-client.json"), client, dryRun, true);
+    console.log(
+      `  ${dryRun ? "would write" : "Wrote"} data/lf/pilot-client.json (legacy mirror)`
+    );
+  }
+
+  console.log(`Client: ${client.name}`);
+  console.log(`Locations: ${client.location_count}`);
+  console.log(`Scans: ${client.scan_count}`);
+  if (safeOrphans.length) {
+    console.log(`Orphans removed (this client only): ${safeOrphans.length}`);
+  }
+
+  return {
+    slug: cfg.slug,
+    location_count: client.location_count,
+    scan_count: client.scan_count,
+    place_ids: [...newPlaceIds],
+    orphans_removed: safeOrphans,
+  };
+}
+
+async function main() {
+  const args = parseArgs(process.argv.slice(2));
+
+  if (args.list) {
+    console.log("Known clients:");
+    for (const c of Object.values(CLIENTS)) {
+      console.log(`  - ${c.slug}: ${c.name}`);
+    }
+    return;
+  }
+
+  if (!args.client) {
+    console.error(
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|all [--dry-run]\n" +
+        "       npm run build:lf -- --client=therman"
+    );
+    process.exit(2);
+  }
+
+  const slugs =
+    args.client === "all" ? Object.keys(CLIENTS) : [args.client.toLowerCase()];
+
+  for (const slug of slugs) {
+    const cfg = CLIENTS[slug];
+    if (!cfg) {
+      console.error(
+        `Unknown client "${slug}". Known: ${Object.keys(CLIENTS).join(", ")}`
+      );
+      process.exit(2);
+    }
+    await buildClient(cfg, { dryRun: args.dryRun });
+  }
+}
+
+const isDirect =
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isDirect) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

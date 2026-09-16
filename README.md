@@ -17,15 +17,24 @@ Firm-level hubs with nested location dashboards (not one top-level client per pl
 
 Date filters derive from census `date` field (US M/D/YYYY), not GCS folders.
 
-### Build LF data
+### Build LF data (client-scoped — safe)
+
+Builders update **one client at a time**. They overwrite that client's `clients/{slug}.json` and that client's location files only. They do **not** `rm -rf data/lf` or clear the whole `locations/` directory.
 
 ```bash
-# Therman (writes data/lf/pilot-client.json + locations; also mirrored at clients/therman.json)
-LF_ARCHIVE=/workspace/falcon-lf-archive npm run build:lf-pilot
+# Preferred: rebuild one client
+LF_ARCHIVE=/workspace/falcon-lf-archive npm run build:lf -- --client=therman
+LF_ARCHIVE=/workspace/falcon-lf-archive npm run build:lf -- --client=premier
 
-# Premier (writes data/lf/clients/premier.json + Premier location JSON only)
+# Aliases (same safe behavior)
+LF_ARCHIVE=/workspace/falcon-lf-archive npm run build:lf-pilot
 LF_ARCHIVE=/workspace/falcon-lf-archive npm run build:lf-premier
+
+# Optional dry-run (no disk writes)
+LF_ARCHIVE=/workspace/falcon-lf-archive npm run build:lf -- --client=therman --dry-run
 ```
+
+Therman also mirrors to legacy `data/lf/pilot-client.json`.
 
 ### Dev
 
