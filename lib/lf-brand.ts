@@ -54,6 +54,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - amos-perrick: apmdlaw.com logo SVG navy #2b2b51
  * - gold-dog: golddoglaw.com logo SVG slate teal #375d6a
  * - kunka: kunkalaw.com Elementor --e-global-color-primary #0b3752
+ * - rampart: rampartinjurylawyers.com Elementor --e-global-color-primary #333544
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -190,6 +191,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #0b3752 0%, #134868 48%, #1a5a7a 100%)",
     source:
       "kunkalaw.com Elementor kit --e-global-color-primary #0b3752 (peach #FFBC7D accent secondary)",
+  }),
+  rampart: buildTheme("#333544", {
+    soft: "#4a4c5c",
+    ring: "#5a5c70",
+    border: "#222330",
+    muted: "#d4d4dc",
+    hero: "linear-gradient(135deg, #333544 0%, #3e4054 48%, #4a4c5c 100%)",
+    source:
+      "rampartinjurylawyers.com Elementor kit --e-global-color-primary #333544 (bronze #A96F44 accent secondary)",
   }),
 };
 

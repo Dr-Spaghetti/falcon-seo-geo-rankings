@@ -489,6 +489,32 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Rampart Injury Lawyers (Clist/LF 1 place_id / 577 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Rampart /
+   * Travis Legal Offices alone. Census includes campaign alias Travis Legal
+   * Offices on the same Castle Rock place_id (include; no separate firm).
+   * Exclusions: none. Verified 2026-09-16 census (577).
+   * Prep: jl-ops/falcon-prep/rampart-2026-09-16.json
+   * Brand: rampartinjurylawyers.com Elementor --e-global-color-primary #333544.
+   */
+  "rampart": {
+    slug: "rampart",
+    name: "Rampart Injury Lawyers",
+    group: "Rampart Injury Lawyers",
+    brand_match: "rampart",
+    placeIds: new Set([
+      "ChIJB4HGE9uFbIcRZmUc1GIQWM0", // Castle Rock (577)
+    ]),
+    order: [
+      "ChIJB4HGE9uFbIcRZmUc1GIQWM0",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.rampart.placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -913,7 +939,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
