@@ -617,6 +617,30 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Shammas Law (Clist/LF 1 place_id / 354 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Shammas /
+   * Chicago alone. Exclusions: none. Verified 2026-09-16 census (354).
+   * Prep: jl-ops/falcon-prep/shammas-2026-09-16.json
+   * Brand: shammas-law.com practice-area cards #001159.
+   */
+  "shammas-law": {
+    slug: "shammas-law",
+    name: "Shammas Law",
+    group: "Shammas Law",
+    brand_match: "shammas-law",
+    placeIds: new Set([
+      "ChIJgxuIOLcsDogR-X9pkQnGlC4", // Chicago (354)
+    ]),
+    order: [
+      "ChIJgxuIOLcsDogR-X9pkQnGlC4",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["shammas-law"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -1041,7 +1065,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

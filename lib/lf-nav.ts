@@ -92,4 +92,9 @@ export const LF_CLIENT_NAV = [
     label: "Mary Higgins",
     href: "/clients/mary-higgins",
   },
+  {
+    slug: "shammas-law",
+    label: "Shammas Law",
+    href: "/clients/shammas-law",
+  },
 ] as const;

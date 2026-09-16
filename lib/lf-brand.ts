@@ -59,6 +59,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - tad-law: tadlaw.com homepage critical CSS #cb6326
  * - dj-law: djlawcorp.com Bootstrap primary #0d6efd
  * - mary-higgins: letsbelegal.com --color-prime #b32227
+ * - shammas-law: shammas-law.com practice-area cards #001159
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -240,6 +241,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #b32227 0%, #c02e33 48%, #c93a3f 100%)",
     source:
       "letsbelegal.com homepage inline CSS --color-prime:#b32227 (teal #048282 secondary)",
+  }),
+  "shammas-law": buildTheme("#001159", {
+    soft: "#1a2e75",
+    ring: "#2a4088",
+    border: "#000c3b",
+    muted: "#c5cce4",
+    hero: "linear-gradient(135deg, #001159 0%, #0a1f6a 48%, #1a2e75 100%)",
+    source:
+      "shammas-law.com practice-area cards #001159 (alternating navy #000c3b)",
   }),
 };
 
