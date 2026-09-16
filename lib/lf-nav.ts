@@ -77,4 +77,9 @@ export const LF_CLIENT_NAV = [
     label: "Milano Legal Group",
     href: "/clients/milano",
   },
+  {
+    slug: "tad-law",
+    label: "Tad Law",
+    href: "/clients/tad-law",
+  },
 ] as const;

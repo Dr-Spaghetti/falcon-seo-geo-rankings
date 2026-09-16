@@ -56,6 +56,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - kunka: kunkalaw.com Elementor --e-global-color-primary #0b3752
  * - rampart: rampartinjurylawyers.com Elementor --e-global-color-primary #333544
  * - milano: milanoaccidentlawyers.com WordPress theme primary #0073e5
+ * - tad-law: tadlaw.com homepage critical CSS #cb6326
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -210,6 +211,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #0073e5 0%, #1a85eb 48%, #3397f0 100%)",
     source:
       "milanoaccidentlawyers.com WordPress theme primary/secondary #0073e5 (navy #0C2340 also in site CSS)",
+  }),
+  "tad-law": buildTheme("#cb6326", {
+    soft: "#db7a3f",
+    ring: "#e08a52",
+    border: "#9a4a1c",
+    muted: "#f0ddd0",
+    hero: "linear-gradient(135deg, #cb6326 0%, #d57235 48%, #db7a3f 100%)",
+    source:
+      "tadlaw.com homepage critical CSS #cb6326 (dark #252422 supporting neutral)",
   }),
 };
 

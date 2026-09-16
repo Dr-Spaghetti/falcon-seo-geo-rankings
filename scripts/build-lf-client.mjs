@@ -539,6 +539,33 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Tad Law / Tad Nelson (Clist/LF 2 place_ids / 423 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Tad /
+   * tadlaw alone. Union roster split Tad Law (Galveston) + Tad Nelson Law
+   * (League City). Exclusions: none. Verified 2026-09-16 census (423).
+   * Prep: jl-ops/falcon-prep/tad-law-2026-09-16.json
+   * Brand: tadlaw.com homepage critical CSS #cb6326.
+   */
+  "tad-law": {
+    slug: "tad-law",
+    name: "Tad Law",
+    group: "Tad Law",
+    brand_match: "tad-law",
+    placeIds: new Set([
+      "ChIJj16zeDGdQIYRJaadIn2tVkA", // League City (223)
+      "ChIJqyalQEKeP4YRcS9LApadEjg", // Galveston (200)
+    ]),
+    order: [
+      "ChIJj16zeDGdQIYRJaadIn2tVkA",
+      "ChIJqyalQEKeP4YRcS9LApadEjg",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["tad-law"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -963,7 +990,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
