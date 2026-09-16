@@ -665,6 +665,30 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Pearl & Thompson (Clist/LF 1 place_id / 206 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Pearl /
+   * Thompson / Lakeland alone. Exclusions: none. Verified 2026-09-16 census (206).
+   * Prep: jl-ops/falcon-prep/pearl-thompson-2026-09-16.json
+   * Brand: pearlandthompsonlaw.com dark ink #112337.
+   */
+  "pearl-thompson": {
+    slug: "pearl-thompson",
+    name: "Pearl & Thompson",
+    group: "Pearl & Thompson",
+    brand_match: "pearl-thompson",
+    placeIds: new Set([
+      "ChIJMVM6ReY53YgRIqk5ezNJKbk", // Lakeland (206)
+    ]),
+    order: [
+      "ChIJMVM6ReY53YgRIqk5ezNJKbk",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["pearl-thompson"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -1089,7 +1113,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|farias-firm|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|shammas-law|farias-firm|pearl-thompson|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);
