@@ -6,8 +6,8 @@
 | **state** | done |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | none (Band D: PR unmerged by design — no master merge / no prod promote) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `6a984aa` |
-| **updated_at** | 2026-09-16 11:20 AM ET |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `0a40649` (feature `6a984aa`) |
+| **updated_at** | 2026-09-16 11:17 AM ET |
 
 ## Evidence links
 
@@ -16,7 +16,8 @@
 | PR | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | Vercel project | justifycode-wordpress-dashboard → Dr-Spaghetti/falcon-seo-geo-rankings |
 | Live prod (unchanged; Band D) | https://justifycode-wordpress-dashboard.vercel.app/clients/therman |
-| Local verify | `npm test`; `npx tsc --noEmit`; `npm run build` |
+| Vercel preview (Ready) | https://justifycode-wordpress-dashbo-git-84b3e6-nicks-projects-2d0579a1.vercel.app |
+| Local verify | `npm test` 12/12 pass; `npx tsc --noEmit` clean; `npm run build` 18 routes |
 
 ## Requirement correction (Nick + CoS + Projects Manager) — inline heatmaps
 
@@ -59,7 +60,7 @@ Shared polish (benefits Therman + Premier):
 ## Verify commands run
 
 ```text
-npm test          → url + heatmap tests
+npm test          → 12 pass (url + heatmap helpers + census URL check)
 npx tsc --noEmit  → exit 0
 npm run build     → success; Therman + Premier location SSG paths
 ```
