@@ -566,6 +566,31 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * DJ Law Corp (Clist/LF 1 place_id / 411 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match DJ / Burbank /
+   * Djougourian alone. SEPARATE from Adrianos Facchetti (ChIJ_9dZEG_DwoARrMm0afE4i24,
+   * 1369 scans, facchettilaw.com) — do NOT merge. Verified 2026-09-16 census (411).
+   * Prep: jl-ops/falcon-prep/dj-law-2026-09-16.json
+   * Brand: djlawcorp.com Bootstrap primary #0d6efd.
+   */
+  "dj-law": {
+    slug: "dj-law",
+    name: "DJ Law Corp",
+    group: "DJ Law Corp",
+    brand_match: "dj-law",
+    placeIds: new Set([
+      "ChIJ-Q_YxzfBwoAR2ZBArnFZhBk", // Burbank (411)
+    ]),
+    order: [
+      "ChIJ-Q_YxzfBwoAR2ZBArnFZhBk",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["dj-law"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -990,7 +1015,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

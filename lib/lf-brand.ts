@@ -57,6 +57,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - rampart: rampartinjurylawyers.com Elementor --e-global-color-primary #333544
  * - milano: milanoaccidentlawyers.com WordPress theme primary #0073e5
  * - tad-law: tadlaw.com homepage critical CSS #cb6326
+ * - dj-law: djlawcorp.com Bootstrap primary #0d6efd
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -220,6 +221,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #cb6326 0%, #d57235 48%, #db7a3f 100%)",
     source:
       "tadlaw.com homepage critical CSS #cb6326 (dark #252422 supporting neutral)",
+  }),
+  "dj-law": buildTheme("#0d6efd", {
+    soft: "#3d8bfd",
+    ring: "#5c9cfe",
+    border: "#0a58ca",
+    muted: "#cfe2ff",
+    hero: "linear-gradient(135deg, #0d6efd 0%, #2a7ffe 48%, #3d8bfd 100%)",
+    source:
+      "djlawcorp.com Bootstrap primary #0d6efd (site shell; separate from Facchetti)",
   }),
 };
 
