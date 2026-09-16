@@ -591,6 +591,32 @@ export const CLIENTS = {
     },
   },
 
+  /**
+   * Mary Higgins (Clist/LF 2 place_ids / 408 scans).
+   * Match ONLY the explicit placeId set — do NOT haystack-match Higgins /
+   * letsbelegal / McLean alone. Exclusions: none. Verified 2026-09-16 census (408).
+   * Prep: jl-ops/falcon-prep/mary-higgins-2026-09-16.json
+   * Brand: letsbelegal.com --color-prime #b32227.
+   */
+  "mary-higgins": {
+    slug: "mary-higgins",
+    name: "Mary Higgins",
+    group: "Mary Higgins",
+    brand_match: "mary-higgins",
+    placeIds: new Set([
+      "ChIJyfopmGRlx4kR0zCxNFAuMBc", // Dover (229)
+      "ChIJj-y1UxoBx4kR3W5jXJstOXI", // Newark (179)
+    ]),
+    order: [
+      "ChIJyfopmGRlx4kR0zCxNFAuMBc",
+      "ChIJj-y1UxoBx4kR3W5jXJstOXI",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS["mary-higgins"].placeIds.has(placeId));
+    },
+  },
+
 };
 
 
@@ -1015,7 +1041,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|leahy-cox|andy-callif|amos-perrick|gold-dog|kunka|rampart|milano|tad-law|dj-law|mary-higgins|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

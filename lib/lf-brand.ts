@@ -58,6 +58,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - milano: milanoaccidentlawyers.com WordPress theme primary #0073e5
  * - tad-law: tadlaw.com homepage critical CSS #cb6326
  * - dj-law: djlawcorp.com Bootstrap primary #0d6efd
+ * - mary-higgins: letsbelegal.com --color-prime #b32227
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -230,6 +231,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #0d6efd 0%, #2a7ffe 48%, #3d8bfd 100%)",
     source:
       "djlawcorp.com Bootstrap primary #0d6efd (site shell; separate from Facchetti)",
+  }),
+  "mary-higgins": buildTheme("#b32227", {
+    soft: "#c93a3f",
+    ring: "#d44a4f",
+    border: "#8a1a1e",
+    muted: "#f0d0d1",
+    hero: "linear-gradient(135deg, #b32227 0%, #c02e33 48%, #c93a3f 100%)",
+    source:
+      "letsbelegal.com homepage inline CSS --color-prime:#b32227 (teal #048282 secondary)",
   }),
 };
 
