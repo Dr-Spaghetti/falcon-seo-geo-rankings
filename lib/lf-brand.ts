@@ -1,0 +1,139 @@
+import { LF_CLIENT_NAV } from "@/lib/lf-nav";
+
+/** Per-client brand tokens for header / hero / active nav accents. */
+export type LfBrandTheme = {
+  /** Header & primary surface */
+  primary: string;
+  /** Text/icons on primary (WCAG-ish auto pick) */
+  onPrimary: string;
+  /** Soft tint for subtle fills / glows */
+  soft: string;
+  /** Focus ring accent on light surfaces */
+  ring: string;
+  /** Border against primary surfaces */
+  border: string;
+  /** Muted text on primary (hex with implied opacity via CSS) */
+  muted: string;
+  /** Hero background image (linear-gradient) */
+  hero: string;
+  /** Human-readable provenance for commits / audits */
+  source: string;
+};
+
+const FALLBACK_PRIMARY = "#122033";
+
+/**
+ * Falcon default navy — WordPress, unknown routes, and missing slugs.
+ * Matches existing tailwind navy-900 / hero-navy scale.
+ */
+export const LF_BRAND_FALLBACK: LfBrandTheme = {
+  primary: FALLBACK_PRIMARY,
+  onPrimary: "#ffffff",
+  soft: "#3d5a80",
+  ring: "#2f4a6e",
+  border: "#0a1420",
+  muted: "#e4ebf3",
+  hero: "linear-gradient(135deg, #122033 0%, #1b2d45 48%, #243a58 100%)",
+  source: "Falcon default navy (tailwind navy-900 / hero-navy)",
+};
+
+/**
+ * Firm brand primaries researched from public sites (header-nav CSS).
+ * - therman: choosecharlie.com `.header-nav` / `.header-main-wrap` / `.internal-hero-wrap`
+ * - premier: plg-pllc redesign `.header-nav` (premierlawgroup.com)
+ */
+export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
+  therman: buildTheme("#011633", {
+    soft: "#1a3a66",
+    ring: "#2a5080",
+    border: "#000d1f",
+    muted: "#c5d3e4",
+    hero: "linear-gradient(135deg, #011633 0%, #0a2448 48%, #143a66 100%)",
+    source:
+      "choosecharlie.com theme CSS header-nav/hero #011633 (Charlie Therman / Choose Charlie)",
+  }),
+  premier: buildTheme("#142452", {
+    soft: "#243660",
+    ring: "#3a5080",
+    border: "#0c1838",
+    muted: "#c5d0e8",
+    hero: "linear-gradient(135deg, #142452 0%, #1a3168 48%, #244080 100%)",
+    source:
+      "premierlawgroup.com / plg-pllc redesign CSS .header-nav background-color #142452",
+  }),
+};
+
+function buildTheme(
+  primary: string,
+  extras: Omit<LfBrandTheme, "primary" | "onPrimary">
+): LfBrandTheme {
+  return {
+    primary,
+    onPrimary: contrastOnPrimary(primary),
+    ...extras,
+  };
+}
+
+/** Relative luminance (sRGB) for WCAG-ish contrast decisions. */
+export function relativeLuminance(hex: string): number {
+  const [r, g, b] = hexToRgb(hex).map((c) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+/**
+ * Pick white vs near-black foreground for text on `primary`.
+ * Threshold ~0.4 keeps dark brand navies on white text.
+ */
+export function contrastOnPrimary(hex: string): "#ffffff" | "#0a0a0a" {
+  return relativeLuminance(hex) > 0.4 ? "#0a0a0a" : "#ffffff";
+}
+
+export function hexToRgb(hex: string): [number, number, number] {
+  const h = hex.replace("#", "").trim();
+  const full =
+    h.length === 3
+      ? h
+          .split("")
+          .map((c) => c + c)
+          .join("")
+      : h;
+  if (!/^[0-9a-fA-F]{6}$/.test(full)) {
+    return [18, 32, 51]; // fallback navy
+  }
+  return [
+    parseInt(full.slice(0, 2), 16),
+    parseInt(full.slice(2, 4), 16),
+    parseInt(full.slice(4, 6), 16),
+  ];
+}
+
+export function getBrandTheme(slug: string | null | undefined): LfBrandTheme {
+  if (!slug) return LF_BRAND_FALLBACK;
+  return LF_BRAND_BY_SLUG[slug] ?? LF_BRAND_FALLBACK;
+}
+
+/** Resolve active LF client slug from pathname using LF_CLIENT_NAV. */
+export function brandSlugFromPathname(pathname: string): string | null {
+  const hit = LF_CLIENT_NAV.find(
+    (c) => pathname === c.href || pathname.startsWith(c.href + "/")
+  );
+  return hit?.slug ?? null;
+}
+
+/** CSS custom properties applied on AppShell (and inherited by heroes). */
+export function brandCssVars(
+  theme: LfBrandTheme
+): Record<string, string> {
+  return {
+    "--brand": theme.primary,
+    "--brand-fg": theme.onPrimary,
+    "--brand-muted": theme.muted,
+    "--brand-soft": theme.soft,
+    "--brand-ring": theme.ring,
+    "--brand-border": theme.border,
+    "--brand-hero": theme.hero,
+  };
+}

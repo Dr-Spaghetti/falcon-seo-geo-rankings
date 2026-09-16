@@ -192,20 +192,23 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
 
   return (
     <div className="space-y-6">
-      <section className="relative overflow-hidden rounded-2xl border border-navy-700/40 bg-hero-navy px-5 py-6 text-white shadow-lg shadow-navy-900/15 sm:px-7 sm:py-7">
+      <section
+        className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] px-5 py-6 text-[var(--brand-fg)] shadow-lg shadow-black/15 sm:px-7 sm:py-7"
+        style={{ backgroundImage: "var(--brand-hero)" }}
+      >
         <div
           className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/5 blur-2xl"
           aria-hidden
         />
         <div className="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-wider text-navy-100/80">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-muted)]">
               Location dashboard
             </p>
             <h1 className="mt-1 truncate text-2xl font-semibold tracking-tight sm:text-3xl">
               {loc.city || loc.name}
             </h1>
-            <p className="mt-1.5 text-sm text-navy-100/85">{loc.address}</p>
+            <p className="mt-1.5 text-sm text-[color:var(--brand-muted)]">{loc.address}</p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               {loc.rating != null && loc.rating > 0 ? (
                 <span className="rounded-full bg-white/10 px-2.5 py-0.5 font-medium text-white ring-1 ring-white/20">
@@ -213,7 +216,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 </span>
               ) : null}
               {loc.primary_category ? (
-                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-navy-50 ring-1 ring-white/15">
+                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[color:var(--brand-muted)] ring-1 ring-white/15">
                   {loc.primary_category}
                 </span>
               ) : null}
@@ -224,7 +227,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
               href={loc.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-800"
+              className="inline-flex shrink-0 items-center rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]"
             >
               Open GBP site ↗
             </a>

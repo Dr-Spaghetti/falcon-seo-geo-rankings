@@ -14,23 +14,26 @@ export function ClientHub({
 
   return (
     <div className="space-y-8">
-      <section className="relative overflow-hidden rounded-2xl border border-navy-700/40 bg-hero-navy px-6 py-7 text-white shadow-lg shadow-navy-900/20 sm:px-8 sm:py-9">
+      <section
+        className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] px-6 py-7 text-[var(--brand-fg)] shadow-lg shadow-black/20 sm:px-8 sm:py-9"
+        style={{ backgroundImage: "var(--brand-hero)" }}
+      >
         <div
           className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/5 blur-2xl"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-navy-500/25 blur-3xl"
+          className="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-[var(--brand-soft)]/30 blur-3xl"
           aria-hidden
         />
         <div className="relative space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-navy-100/80">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-muted)]">
             Client dashboard
           </p>
           <h1 className="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
             {client.name}
           </h1>
-          <p className="max-w-2xl text-sm leading-relaxed text-navy-100/90 sm:text-base">
+          <p className="max-w-2xl text-sm leading-relaxed text-[color:var(--brand-muted)] sm:text-base">
             {client.group} · {client.location_count} locations ·{" "}
             {client.scan_count.toLocaleString()} Local Falcon scans. Select a
             location to review rankings, filters, and scan reports.

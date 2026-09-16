@@ -81,9 +81,9 @@ export function HeatmapViewer({ url, context, onClose }: HeatmapViewerProps) {
         aria-describedby={descId}
         className="relative z-10 flex max-h-[min(92vh,56rem)] w-full max-w-5xl flex-col overflow-hidden rounded-t-2xl border border-navy-700/40 bg-navy-50 shadow-2xl shadow-navy-950/40 sm:rounded-2xl"
       >
-        <header className="flex shrink-0 items-start gap-3 border-b border-navy-700/30 bg-hero-navy px-4 py-3.5 text-white sm:px-5">
+        <header className="flex shrink-0 items-start gap-3 border-b border-[color:var(--brand-border)] px-4 py-3.5 text-[var(--brand-fg)] sm:px-5" style={{ backgroundImage: "var(--brand-hero)" }}>
           <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-navy-100/80">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[color:var(--brand-muted)]">
               Heatmap
             </p>
             <h2
@@ -92,7 +92,7 @@ export function HeatmapViewer({ url, context, onClose }: HeatmapViewerProps) {
             >
               {context.keyword?.trim() || "Untitled keyword"}
             </h2>
-            <p id={descId} className="mt-1 text-xs text-navy-100/85 sm:text-sm">
+            <p id={descId} className="mt-1 text-xs text-[color:var(--brand-muted)] sm:text-sm">
               <span className="font-medium text-white/95">
                 {context.locationLabel}
               </span>
@@ -119,7 +119,7 @@ export function HeatmapViewer({ url, context, onClose }: HeatmapViewerProps) {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden rounded-lg border border-white/20 bg-white/10 px-2.5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-800 sm:inline-flex"
+              className="hidden rounded-lg border border-white/20 bg-white/10 px-2.5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)] sm:inline-flex"
             >
               Open original ↗
             </a>
@@ -127,7 +127,7 @@ export function HeatmapViewer({ url, context, onClose }: HeatmapViewerProps) {
               ref={closeRef}
               type="button"
               onClick={onClose}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-lg leading-none text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-800"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-lg leading-none text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]"
               aria-label="Close"
             >
               ×

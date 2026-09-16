@@ -9,6 +9,14 @@
   --surface: #f4f7fb;
   --surface-raised: #eaf0f6;
   --surface-panel: #e4ebf3;
+  /* Per-client brand (AppShell overrides by slug; fallback = Falcon navy) */
+  --brand: #122033;
+  --brand-fg: #ffffff;
+  --brand-muted: #e4ebf3;
+  --brand-soft: #3d5a80;
+  --brand-ring: #2f4a6e;
+  --brand-border: #0a1420;
+  --brand-hero: linear-gradient(135deg, #122033 0%, #1b2d45 48%, #243a58 100%);
 }
 
 body {

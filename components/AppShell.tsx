@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  brandCssVars,
+  brandSlugFromPathname,
+  getBrandTheme,
+} from "@/lib/lf-brand";
 import { LF_CLIENT_NAV } from "@/lib/lf-nav";
 
 function navActive(pathname: string, href: string) {
@@ -9,7 +14,7 @@ function navActive(pathname: string, href: string) {
 }
 
 const navBase =
-  "rounded-md px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900";
+  "rounded-md px-2.5 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]";
 
 export function AppShell({
   children,
@@ -21,10 +26,15 @@ export function AppShell({
   const pathname = usePathname() || "";
   const activeClient = LF_CLIENT_NAV.find((c) => navActive(pathname, c.href));
   const wordpressActive = pathname.startsWith("/wordpress");
+  const brand = getBrandTheme(brandSlugFromPathname(pathname));
+  const brandStyle = brandCssVars(brand) as React.CSSProperties;
 
   return (
-    <div className="min-h-screen bg-page-wash text-slate-900 antialiased">
-      <header className="sticky top-0 z-40 border-b border-navy-950 bg-navy-900 text-white shadow-md shadow-navy-950/30">
+    <div
+      className="min-h-screen bg-page-wash text-slate-900 antialiased"
+      style={brandStyle}
+    >
+      <header className="sticky top-0 z-40 border-b border-[color:var(--brand-border)] bg-[var(--brand)] text-[var(--brand-fg)] shadow-md shadow-black/25">
         <div
           className={`mx-auto flex items-center justify-between gap-4 px-4 py-3 sm:px-6 ${
             wide ? "max-w-7xl" : "max-w-5xl"
@@ -33,7 +43,7 @@ export function AppShell({
           <div className="flex min-w-0 items-center gap-6">
             <Link
               href={activeClient?.href ?? "/clients/therman"}
-              className="shrink-0 rounded-md font-semibold tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
+              className="shrink-0 rounded-md font-semibold tracking-tight text-[var(--brand-fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]"
             >
               LocalFalcon Keyword Scans/Reports
             </Link>
@@ -50,8 +60,8 @@ export function AppShell({
                     aria-current={active ? "page" : undefined}
                     className={
                       active
-                        ? `${navBase} bg-white font-semibold text-navy-900`
-                        : `${navBase} text-navy-50 hover:bg-white/15 hover:text-white`
+                        ? `${navBase} bg-white font-semibold text-[var(--brand)]`
+                        : `${navBase} text-[color:var(--brand-muted)] hover:bg-white/15 hover:text-[var(--brand-fg)]`
                     }
                   >
                     {c.label}
@@ -63,15 +73,15 @@ export function AppShell({
                 aria-current={wordpressActive ? "page" : undefined}
                 className={
                   wordpressActive
-                    ? `${navBase} bg-white font-semibold text-navy-900`
-                    : `${navBase} text-navy-50 hover:bg-white/15 hover:text-white`
+                    ? `${navBase} bg-white font-semibold text-[var(--brand)]`
+                    : `${navBase} text-[color:var(--brand-muted)] hover:bg-white/15 hover:text-[var(--brand-fg)]`
                 }
               >
                 WordPress
               </Link>
             </nav>
           </div>
-          <p className="truncate text-xs font-medium text-navy-50">
+          <p className="truncate text-xs font-medium text-[color:var(--brand-muted)]">
             {activeClient
               ? `${activeClient.label} · Local Falcon`
               : wordpressActive
