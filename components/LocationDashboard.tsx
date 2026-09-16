@@ -217,9 +217,6 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                   {loc.primary_category}
                 </span>
               ) : null}
-              <span className="rounded-full bg-white/10 px-2.5 py-0.5 font-mono text-[11px] text-navy-100/80 ring-1 ring-white/15">
-                {loc.place_id}
-              </span>
             </div>
           </div>
           {loc.url ? (
