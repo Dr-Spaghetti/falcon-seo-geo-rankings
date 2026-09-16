@@ -27,4 +27,9 @@ export const LF_CLIENT_NAV = [
     label: "Norden Leacox",
     href: "/clients/norden-leacox",
   },
+  {
+    slug: "omega",
+    label: "Omega Law Group",
+    href: "/clients/omega",
+  },
 ] as const;

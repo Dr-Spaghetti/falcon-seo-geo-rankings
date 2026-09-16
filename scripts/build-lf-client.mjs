@@ -259,6 +259,39 @@ export const CLIENTS = {
       );
     },
   },
+  /**
+   * Omega Law Group (Clist 5; LF scanned 4 place_ids / 1794 scans).
+   * Match ONLY the 4 scanned placeIds — do NOT haystack-match "omega"
+   * (pulls 21 zero-scan inflation GBPs under roster
+   * "Omega Law Group Accident & Injury Attorneys") and do NOT include
+   * Cali Crash King ChIJNQLwhWgTkIARGihS8eZcYg8 (PAUSE, 229 scans, same
+   * Stockton building suite #914 vs Omega #705). Clist 5th row not in
+   * census with scans — do not invent. Verified 2026-09-16 census.
+   * Prep: jl-ops/falcon-prep/omega-2026-09-16.json
+   * Brand: omegalaw.com omega-rebuild main.min.css navy #22374b.
+   */
+  omega: {
+    slug: "omega",
+    name: "Omega Law Group",
+    group: "Omega",
+    brand_match: "omega",
+    placeIds: new Set([
+      "ChIJBwVdXCcTkIARFvxVGj1NITM", // Stockton (544)
+      "ChIJP5rAp0Np6oARr9GIHXriErw", // Bakersfield (438)
+      "ChIJ8TIc9ISZToYRveGA0Vx1weQ", // Dallas (410)
+      "ChIJqzfhTsXDQIYR6vdZUPtCbRg", // Houston (402)
+    ]),
+    order: [
+      "ChIJBwVdXCcTkIARFvxVGj1NITM",
+      "ChIJP5rAp0Np6oARr9GIHXriErw",
+      "ChIJ8TIc9ISZToYRveGA0Vx1weQ",
+      "ChIJqzfhTsXDQIYR6vdZUPtCbRg",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.omega.placeIds.has(placeId));
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -669,7 +702,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

@@ -46,6 +46,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - cmh: carlsonmeissner.com inline CSS primary #06243d (carlsonhayslett.com redirects)
  * - jones-swanson: awjlaw.com theme jones-swanson-rebuild main.min.css #0c859c
  * - norden-leacox: nordenleacox.com --primaryColor #002a54 (color-scheme-1)
+ * - omega: omegalaw.com omega-rebuild main.min.css navy #22374b
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -110,6 +111,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #002a54 0%, #0a3a6a 48%, #1a4a7a 100%)",
     source:
       "nordenleacox.com theme --primaryColor:#002a54 (body[data-color-scheme=color-scheme-1]; not secondary red #d10b0c)",
+  }),
+  omega: buildTheme("#22374b", {
+    soft: "#3a5570",
+    ring: "#4a6885",
+    border: "#152838",
+    muted: "#d0d8e0",
+    hero: "linear-gradient(135deg, #22374b 0%, #2a4560 48%, #3a5570 100%)",
+    source:
+      "omegalaw.com theme omega-rebuild assets/app/css/main.min.css navy #22374b (~66× button hover/fill + scroll-to-top; gold #d0b56d accent secondary)",
   }),
 };
 
