@@ -2,10 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { LocationDashboard } from "@/components/LocationDashboard";
-import { getLocationDetail, getPilotClient, listPilotPlaceIds } from "@/lib/lf";
+import { getClient, getLocationDetail, listClientPlaceIds } from "@/lib/lf";
 
 export function generateStaticParams() {
-  return listPilotPlaceIds().map((placeId) => ({ placeId }));
+  return listClientPlaceIds("therman").map((placeId) => ({ placeId }));
 }
 
 export function generateMetadata({
@@ -26,11 +26,11 @@ export default function LocationPage({
 }: {
   params: { placeId: string };
 }) {
-  const pilot = getPilotClient();
+  const client = getClient("therman");
   const detail = getLocationDetail(params.placeId);
-  if (!pilot || !detail) notFound();
+  if (!client || !detail) notFound();
 
-  const known = pilot.locations.some((l) => l.place_id === params.placeId);
+  const known = client.locations.some((l) => l.place_id === params.placeId);
   if (!known) notFound();
 
   return (
@@ -38,7 +38,7 @@ export default function LocationPage({
       <div className="mb-6">
         <Link
           href="/clients/therman"
-          className="text-sm font-medium text-navy-700 hover:text-navy-900"
+          className="inline-flex items-center gap-1 rounded-md text-sm font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
         >
           ← All Therman locations
         </Link>
@@ -47,4 +47,3 @@ export default function LocationPage({
     </AppShell>
   );
 }
-

@@ -1,0 +1,27 @@
+{
+  "slug": "farias-firm",
+  "name": "Farias Firm",
+  "group": "Farias Firm",
+  "brand_match": "farias-firm",
+  "generated_at": "2026-09-16T19:34:58.385Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 217,
+  "locations": [
+    {
+      "place_id": "ChIJH9KZ12VfXIYRXFvaHHLbTqY",
+      "name": "Farias Firm",
+      "address": "502 N Zarzamora St Ste 205, San Antonio, TX 78207",
+      "city": "San Antonio",
+      "rating": 5,
+      "reviews": 2,
+      "phone": "+12107400223",
+      "url": "https://www.fariastriallaw.com/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 217,
+      "latest_date": "8/19/2026 9:30 AM",
+      "latest_iso": "2026-08-19"
+    }
+  ]
+}

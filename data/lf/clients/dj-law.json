@@ -1,0 +1,27 @@
+{
+  "slug": "dj-law",
+  "name": "DJ Law Corp",
+  "group": "DJ Law Corp",
+  "brand_match": "dj-law",
+  "generated_at": "2026-09-16T19:30:30.924Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 411,
+  "locations": [
+    {
+      "place_id": "ChIJ-Q_YxzfBwoAR2ZBArnFZhBk",
+      "name": "DJ Law Corp - Los Angeles Injury Attorneys",
+      "address": "300 E Magnolia Blvd Unit 506, Burbank, CA 91502",
+      "city": "Burbank",
+      "rating": 5,
+      "reviews": 70,
+      "phone": "+18185300000",
+      "url": "https://djlawcorp.com/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 411,
+      "latest_date": "9/4/2026 4:55 PM",
+      "latest_iso": "2026-09-04"
+    }
+  ]
+}

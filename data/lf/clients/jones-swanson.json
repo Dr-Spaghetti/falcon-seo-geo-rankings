@@ -1,0 +1,46 @@
+{
+  "slug": "jones-swanson",
+  "name": "Jones & Swanson",
+  "group": "Jones & Swanson",
+  "brand_match": "jones-swanson",
+  "generated_at": "2026-09-16T18:46:42.610Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 2,
+  "scan_count": 3525,
+  "locations": [
+    {
+      "place_id": "ChIJRcbcxtAV9YgRtFGgBaVT63A",
+      "name": "Jones & Swanson, Marietta Personal Injury Lawyers",
+      "address": "635 Whitlock Ave SW, Marietta, GA 30064",
+      "city": "Marietta",
+      "rating": 5,
+      "reviews": 579,
+      "phone": "+17707286173",
+      "url": "https://www.awjlaw.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-Marietta",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Jones & Swanson"
+      ],
+      "scan_count": 3021,
+      "latest_date": "8/18/2026 3:31 PM",
+      "latest_iso": "2026-08-18"
+    },
+    {
+      "place_id": "ChIJzeal6y5P9YgR4OYjyk5bFVQ",
+      "name": "Jones & Swanson, Cartersville Personal Injury Lawyers",
+      "address": "1124 N Tennessee St #230, Cartersville, GA 30120",
+      "city": "Cartersville",
+      "rating": 5,
+      "reviews": 24,
+      "phone": "+16789462916",
+      "url": "https://www.awjlaw.com/cartersville/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=cartersville-gbp",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Jones & Swanson"
+      ],
+      "scan_count": 504,
+      "latest_date": "8/18/2026 3:28 PM",
+      "latest_iso": "2026-08-18"
+    }
+  ]
+}
