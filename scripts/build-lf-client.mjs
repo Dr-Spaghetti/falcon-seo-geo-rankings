@@ -194,6 +194,32 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS.cmh.placeIds.has(placeId));
     },
   },
+  /**
+   * Jones & Swanson / AWJ Law (Clist 2; LF 2 place_ids / 3525 scans).
+   * Verified 2026-09-16 census: Marietta 3021 + Cartersville 504 = 3525.
+   * Prep: jl-ops/falcon-prep/jones-swanson-2026-09-16.json
+   * Brand domain awjlaw.com; public display name Jones & Swanson.
+   */
+  "jones-swanson": {
+    slug: "jones-swanson",
+    name: "Jones & Swanson",
+    group: "Jones & Swanson",
+    brand_match: "jones-swanson",
+    placeIds: new Set([
+      "ChIJRcbcxtAV9YgRtFGgBaVT63A", // Marietta (3021)
+      "ChIJzeal6y5P9YgR4OYjyk5bFVQ", // Cartersville (504)
+    ]),
+    order: [
+      "ChIJRcbcxtAV9YgRtFGgBaVT63A",
+      "ChIJzeal6y5P9YgR4OYjyk5bFVQ",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(
+        placeId && CLIENTS["jones-swanson"].placeIds.has(placeId)
+      );
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -604,7 +630,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

@@ -44,6 +44,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - michael-marr: atlantainjuryattorneys.com marrlaw `.header-main-wrap` / `.header-nav`
  * - kaplun-marx: kaplunmarx.com Elementor header (elementor-24 / --e-global-color-2a1465e)
  * - cmh: carlsonmeissner.com inline CSS primary #06243d (carlsonhayslett.com redirects)
+ * - jones-swanson: awjlaw.com theme jones-swanson-rebuild main.min.css #0c859c
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -90,6 +91,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #06243d 0%, #0c3558 48%, #1a3a5a 100%)",
     source:
       "carlsonmeissner.com homepage inline CSS primary #06243d (carlsonhayslett.com redirects; ~120× buttons/header/body)",
+  }),
+  "jones-swanson": buildTheme("#0c859c", {
+    soft: "#1a9fb5",
+    ring: "#2aa8bc",
+    border: "#086a7a",
+    muted: "#e0f4f7",
+    hero: "linear-gradient(135deg, #0c859c 0%, #0f9bb0 48%, #1a9fb5 100%)",
+    source:
+      "awjlaw.com theme jones-swanson-rebuild assets/app/css/main.min.css #0c859c (~49× btn-global/header__top-box/CTAs)",
   }),
 };
 
