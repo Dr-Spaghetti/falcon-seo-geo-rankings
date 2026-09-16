@@ -3,10 +3,10 @@
   "name": "Michael Marr / Injury Attorneys",
   "group": "Injury Attorney's Marr",
   "brand_match": "marr",
-  "generated_at": "2026-09-16T17:35:48.243Z",
+  "generated_at": "2026-09-16T18:33:07.963Z",
   "source_archive": "/workspace/falcon-lf-archive",
-  "location_count": 11,
-  "scan_count": 5708,
+  "location_count": 9,
+  "scan_count": 5502,
   "locations": [
     {
       "place_id": "ChIJvcSSqmMP9YgRPHRZQke9sfg",
@@ -24,6 +24,40 @@
       "scan_count": 879,
       "latest_date": "8/7/2026 12:11 PM",
       "latest_iso": "2026-08-07"
+    },
+    {
+      "place_id": "ChIJUx5O_PDNjIgRfkE4ln96iic",
+      "name": "Columbus Injury Attorneys",
+      "address": "233 12th St Ste 802 B, Columbus, GA 31901",
+      "city": "Columbus",
+      "rating": 0,
+      "reviews": 0,
+      "phone": "+17066726223",
+      "url": "https://columbuspersonalinjurylawyers.com/?utm_campaign=columbus",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Injury Attorney's Marr"
+      ],
+      "scan_count": 673,
+      "latest_date": "8/1/2026 5:16 AM",
+      "latest_iso": "2026-08-01"
+    },
+    {
+      "place_id": "ChIJyxQfBGhB24gRFyR6sd9z-qY",
+      "name": "Fort Myers Injury Attorneys",
+      "address": "5237 Summerlin Commons Blvd Ste 322, Fort Myers, FL 33907",
+      "city": "Fort Myers",
+      "rating": 5,
+      "reviews": 1,
+      "phone": "+12393091330",
+      "url": "https://fortmyersinjuryattorney.com/?utm_campaign=fortmeyers",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Injury Attorney's Marr"
+      ],
+      "scan_count": 665,
+      "latest_date": "8/1/2026 5:16 AM",
+      "latest_iso": "2026-08-01"
     },
     {
       "place_id": "ChIJCcH65Nf584gRp7f_b88zQEw",
@@ -58,20 +92,18 @@
       "latest_iso": "2026-07-27"
     },
     {
-      "place_id": "ChIJUx5O_PDNjIgRfkE4ln96iic",
-      "name": "Columbus Injury Attorneys",
-      "address": "233 12th St Ste 802 B, Columbus, GA 31901",
-      "city": "Columbus",
+      "place_id": "ChIJGTm5GHLDwogR2d6JRM2hek0",
+      "name": "Tampa Injury Attorneys",
+      "address": "5401 W Kennedy Blvd Suite 100, Office #113, Tampa, FL 33609",
+      "city": "Tampa",
       "rating": 0,
       "reviews": 0,
-      "phone": "+17066726223",
-      "url": "https://columbuspersonalinjurylawyers.com/?utm_campaign=columbus",
+      "phone": "+18137254344",
+      "url": "https://www.tampainjuryattorneys.com/",
       "primary_category": "Personal injury attorney",
-      "groups": [
-        "Injury Attorney's Marr"
-      ],
-      "scan_count": 673,
-      "latest_date": "8/1/2026 5:16 AM",
+      "groups": [],
+      "scan_count": 586,
+      "latest_date": "8/1/2026 4:36 AM",
       "latest_iso": "2026-08-01"
     },
     {
@@ -92,38 +124,6 @@
       "latest_iso": "2026-08-01"
     },
     {
-      "place_id": "ChIJyxQfBGhB24gRFyR6sd9z-qY",
-      "name": "Fort Myers Injury Attorneys",
-      "address": "5237 Summerlin Commons Blvd Ste 322, Fort Myers, FL 33907",
-      "city": "Fort Myers",
-      "rating": 5,
-      "reviews": 1,
-      "phone": "+12393091330",
-      "url": "https://fortmyersinjuryattorney.com/?utm_campaign=fortmeyers",
-      "primary_category": "Personal injury attorney",
-      "groups": [
-        "Injury Attorney's Marr"
-      ],
-      "scan_count": 665,
-      "latest_date": "8/1/2026 5:16 AM",
-      "latest_iso": "2026-08-01"
-    },
-    {
-      "place_id": "ChIJGTm5GHLDwogR2d6JRM2hek0",
-      "name": "Tampa Injury Attorneys",
-      "address": "5401 W Kennedy Blvd Suite 100, Office #113, Tampa, FL 33609",
-      "city": "Tampa",
-      "rating": 0,
-      "reviews": 0,
-      "phone": "+18137254344",
-      "url": "https://www.tampainjuryattorneys.com/",
-      "primary_category": "Personal injury attorney",
-      "groups": [],
-      "scan_count": 586,
-      "latest_date": "8/1/2026 4:36 AM",
-      "latest_iso": "2026-08-01"
-    },
-    {
       "place_id": "ChIJwQlW_Gef-4gRhxk5gYOD0Us",
       "name": "Savannah Injury Attorneys",
       "address": "100 Bull St #237, Savannah, GA 31401",
@@ -139,21 +139,6 @@
       "latest_iso": "2026-08-01"
     },
     {
-      "place_id": "ChIJf-eIT6DP5YgR1n5yCCvEXSo",
-      "name": "Jacksonville Personal Injury Attorneys",
-      "address": "12276 San Jose Blvd Bldg 700, Suite 718-8, Jacksonville, FL 32223",
-      "city": "Jacksonville",
-      "rating": 5,
-      "reviews": 2,
-      "phone": "+19048072999",
-      "url": "https://jacksonvillepersonalinjuryattorneys.com/",
-      "primary_category": "Personal injury attorney",
-      "groups": [],
-      "scan_count": 172,
-      "latest_date": "6/16/2026 11:37 AM",
-      "latest_iso": "2026-06-16"
-    },
-    {
       "place_id": "ChIJY77Yj0af-4gRXCIEeGDP5tE",
       "name": "Savannah Injury Attorneys, LLC",
       "address": "2323 Barnard St, Savannah, GA 31401",
@@ -167,21 +152,6 @@
       "scan_count": 131,
       "latest_date": "6/5/2026 12:15 PM",
       "latest_iso": "2026-06-05"
-    },
-    {
-      "place_id": "ChIJKRdsIXHT-YgRU0wGvxsbe_k",
-      "name": "Augusta Injury Attorneys, LLC",
-      "address": "3643 Walton Wy Ext 4 Suite 2K, Augusta, GA 30909, USA",
-      "city": "GA 30909",
-      "rating": 5,
-      "reviews": 0,
-      "phone": null,
-      "url": "https://www.augustapersonalinjuryattorneys.com/",
-      "primary_category": null,
-      "groups": [],
-      "scan_count": 34,
-      "latest_date": "4/27/2026 1:34 PM",
-      "latest_iso": "2026-04-27"
     }
   ]
 }

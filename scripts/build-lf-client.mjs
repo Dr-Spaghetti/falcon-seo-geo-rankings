@@ -84,11 +84,11 @@ export const CLIENTS = {
     },
   },
   /**
-   * Michael Marr / city Injury Attorneys (Clist ~9; LF roster 11 PI place_ids / 5708 scans).
-   * Verified 2026-09-16 from falcon-lf-archive reports-census + FIRM-ROSTER "Michael Marr"
-   * + jl-ops/falcon-dashboard-client-queue-2026-09-16.json (eligible #1 by scans).
-   * Excludes: Marr Law Firm Atlanta Real Estate (ChIJr_JjyfEF9YgR1SJzz12xOz4, 10),
-   * Tampa duplicate empty-campaign alt (ChIJPYYL0MvDwogRV3QeKpInrT0, 5),
+   * Michael Marr / city Injury Attorneys — Client Ops Master Client Clist (Aug 2 2026): exactly 9.
+   * Accuracy fix 2026-09-16: dropped Augusta (ChIJKRdsIXHT-YgRU0wGvxsbe_k, 34) and
+   * Jacksonville (ChIJf-eIT6DP5YgR1n5yCCvEXSo, 172). Expected scans 5708-172-34 = 5502.
+   * Still excludes: Marr Law Firm Atlanta Real Estate (ChIJr_JjyfEF9YgR1SJzz12xOz4),
+   * Tampa duplicate empty-campaign alt (ChIJPYYL0MvDwogRV3QeKpInrT0),
    * Augusta Personal Injury Attorneys 0-scan alt (ChIJE0i3VrjT-YgRyWkb5LeifVE).
    */
   "michael-marr": {
@@ -97,30 +97,26 @@ export const CLIENTS = {
     group: "Injury Attorney's Marr",
     brand_match: "marr",
     placeIds: new Set([
-      "ChIJvcSSqmMP9YgRPHRZQke9sfg", // Atlanta Injury Attorneys (879)
-      "ChIJCcH65Nf584gRp7f_b88zQEw", // Macon Injury Attorneys (827)
-      "ChIJjUQroEdlZIgRu2xAY6NnWPQ", // Nashville Injury Attorneys (721)
-      "ChIJUx5O_PDNjIgRfkE4ln96iic", // Columbus Injury Attorneys (673)
-      "ChIJI-MrHSTX2IgRUediZIFN05I", // West Palm Beach Injury Attorneys (668)
-      "ChIJyxQfBGhB24gRFyR6sd9z-qY", // Fort Myers Injury Attorneys (665)
-      "ChIJGTm5GHLDwogR2d6JRM2hek0", // Tampa Injury Attorneys (586)
-      "ChIJwQlW_Gef-4gRhxk5gYOD0Us", // Savannah Injury Attorneys Bull St (352)
-      "ChIJf-eIT6DP5YgR1n5yCCvEXSo", // Jacksonville Personal Injury Attorneys (172)
-      "ChIJY77Yj0af-4gRXCIEeGDP5tE", // Savannah Injury Attorneys LLC Barnard (131)
-      "ChIJKRdsIXHT-YgRU0wGvxsbe_k", // Augusta Injury Attorneys LLC (34)
+      "ChIJvcSSqmMP9YgRPHRZQke9sfg", // Atlanta Injury Attorneys
+      "ChIJUx5O_PDNjIgRfkE4ln96iic", // Columbus Injury Attorneys
+      "ChIJyxQfBGhB24gRFyR6sd9z-qY", // Fort Myers Injury Attorneys
+      "ChIJCcH65Nf584gRp7f_b88zQEw", // Macon Injury Attorneys
+      "ChIJjUQroEdlZIgRu2xAY6NnWPQ", // Nashville Injury Attorneys
+      "ChIJGTm5GHLDwogR2d6JRM2hek0", // Tampa Injury Attorneys
+      "ChIJI-MrHSTX2IgRUediZIFN05I", // West Palm Beach Injury Attorneys
+      "ChIJwQlW_Gef-4gRhxk5gYOD0Us", // Savannah Injury Attorneys (Bull St)
+      "ChIJY77Yj0af-4gRXCIEeGDP5tE", // Savannah Injury Attorneys, LLC (Barnard) KEEP
     ]),
     order: [
       "ChIJvcSSqmMP9YgRPHRZQke9sfg",
+      "ChIJUx5O_PDNjIgRfkE4ln96iic",
+      "ChIJyxQfBGhB24gRFyR6sd9z-qY",
       "ChIJCcH65Nf584gRp7f_b88zQEw",
       "ChIJjUQroEdlZIgRu2xAY6NnWPQ",
-      "ChIJUx5O_PDNjIgRfkE4ln96iic",
-      "ChIJI-MrHSTX2IgRUediZIFN05I",
-      "ChIJyxQfBGhB24gRFyR6sd9z-qY",
       "ChIJGTm5GHLDwogR2d6JRM2hek0",
+      "ChIJI-MrHSTX2IgRUediZIFN05I",
       "ChIJwQlW_Gef-4gRhxk5gYOD0Us",
-      "ChIJf-eIT6DP5YgR1n5yCCvEXSo",
       "ChIJY77Yj0af-4gRXCIEeGDP5tE",
-      "ChIJKRdsIXHT-YgRU0wGvxsbe_k",
     ],
     match: (row) => {
       const placeId = row.place_id || row.id || row.location?.place_id;
