@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import type { LfLocationDetail, LfScan } from "@/lib/lf";
 import { KpiCard, formatMetric } from "@/components/Metric";
+import { HeatmapViewer } from "@/components/HeatmapViewer";
+import type { HeatmapContext } from "@/lib/heatmap";
 
 const MONTHS = [
   "Jan",
@@ -55,6 +57,46 @@ function LinkPill({
   );
 }
 
+function HeatmapOpenButton({
+  scan,
+  locationLabel,
+  onOpen,
+}: {
+  scan: LfScan;
+  locationLabel: string;
+  onOpen: (url: string, context: HeatmapContext, trigger: HTMLButtonElement) => void;
+}) {
+  if (!scan.heatmap) {
+    return (
+      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-navy-300">
+        Heatmap
+      </span>
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={(e) =>
+        onOpen(
+          scan.heatmap!,
+          {
+            keyword: scan.keyword,
+            date: scan.date,
+            campaignName: scan.campaign_name,
+            locationLabel,
+          },
+          e.currentTarget
+        )
+      }
+      className="inline-flex rounded-md bg-navy-800 px-1.5 py-0.5 text-[11px] font-semibold text-white hover:bg-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
+      aria-haspopup="dialog"
+      aria-label={`View heatmap for ${scan.keyword?.trim() || "scan"}`}
+    >
+      Heatmap
+    </button>
+  );
+}
+
 function solvClass(solv: number | null) {
   if (solv == null || !Number.isFinite(solv)) return "text-navy-800";
   if (solv >= 30) return "font-semibold text-emerald-700";
@@ -77,6 +119,11 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const [month, setMonth] = useState<number | "all">("all");
   const [day, setDay] = useState<number | "all">("all");
   const [q, setQ] = useState("");
+  const [viewer, setViewer] = useState<{
+    url: string;
+    context: HeatmapContext;
+  } | null>(null);
+  const reopenFocusRef = useRef<HTMLButtonElement | null>(null);
 
   const monthsAvailable = useMemo(() => {
     const ms = new Set<number>();
@@ -126,6 +173,22 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   }
 
   const loc = data.location;
+  const locationLabel = loc.city || loc.name || "Location";
+
+  function openHeatmap(
+    url: string,
+    context: HeatmapContext,
+    trigger: HTMLButtonElement
+  ) {
+    reopenFocusRef.current = trigger;
+    setViewer({ url, context });
+  }
+
+  function closeHeatmap() {
+    setViewer(null);
+    // Restore focus to the Heatmap button that opened the viewer
+    queueMicrotask(() => reopenFocusRef.current?.focus());
+  }
 
   return (
     <div className="space-y-6">
@@ -351,7 +414,11 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                     </td>
                     <td className="whitespace-nowrap px-3 py-2 sm:px-4">
                       <div className="flex flex-wrap gap-1">
-                        <LinkPill href={s.heatmap} label="Heatmap" />
+                        <HeatmapOpenButton
+                          scan={s}
+                          locationLabel={locationLabel}
+                          onOpen={openHeatmap}
+                        />
                         <LinkPill href={s.image} label="Image" />
                         <LinkPill href={s.pdf} label="PDF" />
                         <LinkPill href={s.public_url} label="Report" />
@@ -364,6 +431,14 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
           </div>
         )}
       </div>
+
+      {viewer ? (
+        <HeatmapViewer
+          url={viewer.url}
+          context={viewer.context}
+          onClose={closeHeatmap}
+        />
+      ) : null}
     </div>
   );
 }
