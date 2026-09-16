@@ -48,6 +48,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - norden-leacox: nordenleacox.com --primaryColor #002a54 (color-scheme-1)
  * - omega: omegalaw.com omega-rebuild main.min.css navy #22374b
  * - widrig: widriglaw.com styles/variables.css --color-primary #233C55
+ * - facchetti: facchettilaw.com Elementor --e-global-color-primary #013f4e
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -130,6 +131,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #233C55 0%, #2a4a68 48%, #3a5575 100%)",
     source:
       "widriglaw.com styles/variables.css --color-primary:#233C55 (also --cta-phone-color; red --color-accent:#DC0418 secondary; not legacy #06357a)",
+  }),
+  facchetti: buildTheme("#013f4e", {
+    soft: "#1a5a6e",
+    ring: "#2a7088",
+    border: "#012a36",
+    muted: "#c5d8de",
+    hero: "linear-gradient(135deg, #013f4e 0%, #0a5568 48%, #1a5a6e 100%)",
+    source:
+      "facchettilaw.com Elementor kit --e-global-color-primary:#013f4e (teal navy; accent coral #ff6a67 secondary)",
   }),
 };
 

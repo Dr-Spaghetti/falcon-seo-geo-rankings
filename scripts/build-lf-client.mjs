@@ -326,6 +326,32 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS.widrig.placeIds.has(placeId));
     },
   },
+  /**
+   * Adrianos Facchetti (Clist/LF 1 place_id / 1369 scans).
+   * Match ONLY the explicit placeId set — do NOT match on Burbank city
+   * alone (would pull DJ Law Corp ChIJ-Q_YxzfBwoAR2ZBArnFZhBk, 411 scans,
+   * separate queue firm / djlawcorp.com / Magnolia Blvd). Roster
+   * firm=='Adrianos Facchetti' covers this 1. Exclusions: DJ Law Corp.
+   * Verified 2026-09-16 census (1369).
+   * Prep: jl-ops/falcon-prep/facchetti-2026-09-16.json
+   * Brand: facchettilaw.com Elementor --e-global-color-primary:#013f4e.
+   */
+  facchetti: {
+    slug: "facchetti",
+    name: "Adrianos Facchetti",
+    group: "Facchetti",
+    brand_match: "facchetti",
+    placeIds: new Set([
+      "ChIJ_9dZEG_DwoARrMm0afE4i24", // Burbank (1369)
+    ]),
+    order: [
+      "ChIJ_9dZEG_DwoARrMm0afE4i24",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.facchetti.placeIds.has(placeId));
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -749,7 +775,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|facchetti|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

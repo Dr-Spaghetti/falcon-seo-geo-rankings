@@ -1,0 +1,27 @@
+{
+  "slug": "facchetti",
+  "name": "Adrianos Facchetti",
+  "group": "Facchetti",
+  "brand_match": "facchetti",
+  "generated_at": "2026-09-16T19:10:34.945Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 1369,
+  "locations": [
+    {
+      "place_id": "ChIJ_9dZEG_DwoARrMm0afE4i24",
+      "name": "Facchetti Accident & Injury Lawyers of Burbank",
+      "address": "4444 W Riverside Dr #308, Burbank, CA 91505",
+      "city": "Burbank",
+      "rating": 5,
+      "reviews": 274,
+      "phone": "+18184521427",
+      "url": "https://facchettilaw.com/?utm_source=google&utm_medium=gbp&utm_campaign=gbp-burbank",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 1369,
+      "latest_date": "8/10/2026 1:38 PM",
+      "latest_iso": "2026-08-10"
+    }
+  ]
+}

@@ -37,4 +37,9 @@ export const LF_CLIENT_NAV = [
     label: "Widrig Law",
     href: "/clients/widrig",
   },
+  {
+    slug: "facchetti",
+    label: "Adrianos Facchetti",
+    href: "/clients/facchetti",
+  },
 ] as const;
