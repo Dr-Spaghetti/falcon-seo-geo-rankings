@@ -292,6 +292,40 @@ export const CLIENTS = {
       return Boolean(placeId && CLIENTS.omega.placeIds.has(placeId));
     },
   },
+  /**
+   * Widrig Law (Clist/LF 4 place_ids / 1675 scans).
+   * Match ONLY the explicit placeId set — union roster firms
+   * 'Widrig Law' + 'Widrig Law PLLC | Mt Juliet Attorney'. The 4th GBP
+   * (ChIJ65_Tnrs_ZIgRhu5UJOeYRaw, 11205 Lebanon Rd #74) has 0 census
+   * rows but is required to hit queue 4 locations; keepZeroScan keeps it.
+   * Do NOT rely on firm=='Widrig Law' alone (drops the 0-scan listing).
+   * Exclusions: none. Verified 2026-09-16 census (631+589+455+0=1675).
+   * Prep: jl-ops/falcon-prep/widrig-2026-09-16.json
+   * Brand: widriglaw.com styles/variables.css --color-primary:#233C55.
+   */
+  widrig: {
+    slug: "widrig",
+    name: "Widrig Law",
+    group: "Widrig",
+    brand_match: "widrig",
+    keepZeroScan: true,
+    placeIds: new Set([
+      "ChIJ0U7ruvd7ZIgR12gqUk_CdK4", // Brentwood (631)
+      "ChIJ80LRkM8VZIgRQhwCW7eRouw", // Mt. Juliet (589)
+      "ChIJtaeHLDAfZIgRR46Ibm7n-fk", // Lebanon (455)
+      "ChIJ65_Tnrs_ZIgRhu5UJOeYRaw", // Mt. Juliet Attorney (0)
+    ]),
+    order: [
+      "ChIJ0U7ruvd7ZIgR12gqUk_CdK4",
+      "ChIJ80LRkM8VZIgRQhwCW7eRouw",
+      "ChIJtaeHLDAfZIgRR46Ibm7n-fk",
+      "ChIJ65_Tnrs_ZIgRhu5UJOeYRaw",
+    ],
+    match: (row) => {
+      const placeId = row.place_id || row.id || row.location?.place_id;
+      return Boolean(placeId && CLIENTS.widrig.placeIds.has(placeId));
+    },
+  },
 };
 
 function matchesHaystack(obj, re) {
@@ -561,16 +595,29 @@ export async function buildClient(cfg, opts = {}) {
     locations = cfg.order
       .map((id) => locationsById.get(id))
       .filter(Boolean)
-      .filter((l) => (scansByPlace.get(l.place_id) || []).length > 0);
+      .filter(
+        (l) =>
+          cfg.keepZeroScan ||
+          (scansByPlace.get(l.place_id) || []).length > 0
+      );
     if (cfg.placeIds && locations.length !== cfg.placeIds.size) {
       const missing = [...cfg.placeIds].filter(
         (id) => !locations.some((l) => l.place_id === id)
       );
-      console.warn("WARNING missing locations with scans:", missing);
+      console.warn(
+        cfg.keepZeroScan
+          ? "WARNING missing locations:"
+          : "WARNING missing locations with scans:",
+        missing
+      );
     }
   } else {
     locations = [...locationsById.values()]
-      .filter((l) => (scansByPlace.get(l.place_id) || []).length > 0)
+      .filter(
+        (l) =>
+          cfg.keepZeroScan ||
+          (scansByPlace.get(l.place_id) || []).length > 0
+      )
       .sort((a, b) => (b.scan_count || 0) - (a.scan_count || 0));
   }
 
@@ -702,7 +749,7 @@ async function main() {
 
   if (!args.client) {
     console.error(
-      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|all [--dry-run]\n" +
+      "Usage: node scripts/build-lf-client.mjs --client=therman|premier|michael-marr|kaplun-marx|cmh|jones-swanson|norden-leacox|omega|widrig|all [--dry-run]\n" +
         "       npm run build:lf -- --client=therman"
     );
     process.exit(2);

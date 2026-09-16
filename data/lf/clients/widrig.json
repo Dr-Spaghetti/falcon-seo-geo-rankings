@@ -1,0 +1,72 @@
+{
+  "slug": "widrig",
+  "name": "Widrig Law",
+  "group": "Widrig",
+  "brand_match": "widrig",
+  "generated_at": "2026-09-16T19:04:57.917Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 4,
+  "scan_count": 1675,
+  "locations": [
+    {
+      "place_id": "ChIJ0U7ruvd7ZIgR12gqUk_CdK4",
+      "name": "Nashville Divorce Lawyers - Widrig Law",
+      "address": "101 Westpark Dr Ste 260, Brentwood, TN 37027",
+      "city": "Brentwood",
+      "rating": 4.8,
+      "reviews": 50,
+      "phone": "+16156944646",
+      "url": "https://www.widriglaw.com/?utm_campaign=brentwood",
+      "primary_category": "Divorce lawyer",
+      "groups": [],
+      "scan_count": 631,
+      "latest_date": "8/10/2026 1:39 PM",
+      "latest_iso": "2026-08-10"
+    },
+    {
+      "place_id": "ChIJ80LRkM8VZIgRQhwCW7eRouw",
+      "name": "Nashville Divorce Lawyers - Widrig Law",
+      "address": "1483 N Mt Juliet Rd, Mt. Juliet, TN 37122",
+      "city": "Mt. Juliet",
+      "rating": 5,
+      "reviews": 22,
+      "phone": "+16155763819",
+      "url": "https://www.widriglaw.com/",
+      "primary_category": "Family law attorney",
+      "groups": [],
+      "scan_count": 589,
+      "latest_date": "8/10/2026 1:39 PM",
+      "latest_iso": "2026-08-10"
+    },
+    {
+      "place_id": "ChIJtaeHLDAfZIgRR46Ibm7n-fk",
+      "name": "Nashville Divorce Lawyers - Widrig Law",
+      "address": "200 E Spring St, Lebanon, TN 37087",
+      "city": "Lebanon",
+      "rating": 5,
+      "reviews": 4,
+      "phone": "+16158573490",
+      "url": "https://www.widriglaw.com/?utm_source=lebanon",
+      "primary_category": "Family law attorney",
+      "groups": [],
+      "scan_count": 455,
+      "latest_date": "8/10/2026 1:38 PM",
+      "latest_iso": "2026-08-10"
+    },
+    {
+      "place_id": "ChIJ65_Tnrs_ZIgRhu5UJOeYRaw",
+      "name": "Widrig Law PLLC | Mt Juliet Attorney",
+      "address": "11205 Lebanon Rd #74, Mt. Juliet, TN 37122",
+      "city": "Mt. Juliet",
+      "rating": 0,
+      "reviews": 0,
+      "phone": "+16154177800",
+      "url": "https://mtjulietdivorcelawyer.com/",
+      "primary_category": "Social security attorney",
+      "groups": [],
+      "scan_count": 0,
+      "latest_date": null,
+      "latest_iso": null
+    }
+  ]
+}

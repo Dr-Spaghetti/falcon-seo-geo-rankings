@@ -32,4 +32,9 @@ export const LF_CLIENT_NAV = [
     label: "Omega Law Group",
     href: "/clients/omega",
   },
+  {
+    slug: "widrig",
+    label: "Widrig Law",
+    href: "/clients/widrig",
+  },
 ] as const;

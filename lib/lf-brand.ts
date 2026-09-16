@@ -47,6 +47,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - jones-swanson: awjlaw.com theme jones-swanson-rebuild main.min.css #0c859c
  * - norden-leacox: nordenleacox.com --primaryColor #002a54 (color-scheme-1)
  * - omega: omegalaw.com omega-rebuild main.min.css navy #22374b
+ * - widrig: widriglaw.com styles/variables.css --color-primary #233C55
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
   therman: buildTheme("#011633", {
@@ -120,6 +121,15 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #22374b 0%, #2a4560 48%, #3a5570 100%)",
     source:
       "omegalaw.com theme omega-rebuild assets/app/css/main.min.css navy #22374b (~66× button hover/fill + scroll-to-top; gold #d0b56d accent secondary)",
+  }),
+  widrig: buildTheme("#233C55", {
+    soft: "#3a5575",
+    ring: "#4a6888",
+    border: "#162838",
+    muted: "#d0d8e0",
+    hero: "linear-gradient(135deg, #233C55 0%, #2a4a68 48%, #3a5575 100%)",
+    source:
+      "widriglaw.com styles/variables.css --color-primary:#233C55 (also --cta-phone-color; red --color-accent:#DC0418 secondary; not legacy #06357a)",
   }),
 };
 
