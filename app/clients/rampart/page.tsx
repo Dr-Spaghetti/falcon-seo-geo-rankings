@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Rampart Injury Lawyers · Local Falcon · Falcon",
   description:
-    "Rampart Injury Lawyers — firm-level Local Falcon dashboard with nested GA locations",
+    "Rampart Injury Lawyers — local search rankings for every office location",
 };
 
 export default function RampartClientPage() {

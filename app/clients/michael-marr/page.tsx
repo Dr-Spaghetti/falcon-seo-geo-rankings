@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Michael Marr · Local Falcon · Falcon",
   description:
-    "Michael Marr / Injury Attorneys — firm-level Local Falcon dashboard with nested locations",
+    "Michael Marr / Injury Attorneys — local search rankings for every office location",
 };
 
 export default function MichaelMarrClientPage() {

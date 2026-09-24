@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Widrig Law · Local Falcon · Falcon",
   description:
-    "Widrig Law — firm-level Local Falcon dashboard with nested GA locations",
+    "Widrig Law — local search rankings for every office location",
 };
 
 export default function WidrigClientPage() {

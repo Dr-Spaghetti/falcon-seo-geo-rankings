@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { LfLocationDetail, LfScan } from "@/lib/lf";
 import { KpiCard, formatMetric } from "@/components/Metric";
+import { locationLinks } from "@/lib/google-listing";
 
 const MONTHS = [
   "Jan",
@@ -126,6 +127,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   }
 
   const loc = data.location;
+  const links = locationLinks(loc);
 
   return (
     <div className="space-y-6">
@@ -159,15 +161,27 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
               ) : null}
             </div>
           </div>
-          {loc.url ? (
-            <a
-              href={loc.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]"
-            >
-              Open GBP site ↗
-            </a>
+          {links.length ? (
+            <div className="flex shrink-0 flex-wrap gap-2">
+              {links.map((l) => (
+                <a
+                  key={l.kind}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-listing-link={l.kind}
+                  className={
+                    (l.kind === "google"
+                      ? "border-white/30 bg-white/15 "
+                      : "border-white/20 bg-transparent ") +
+                    "inline-flex items-center rounded-lg border px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]"
+                  }
+                >
+                  {l.label} <span aria-hidden className="ml-1">↗</span>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              ))}
+            </div>
           ) : null}
         </div>
       </section>
@@ -202,11 +216,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
           <div>
             <p className="text-sm font-semibold text-navy-900">Date filters</p>
             <p className="text-xs text-navy-700">
-              From census{" "}
-              <code className="rounded bg-navy-200/60 px-1 text-[11px] text-navy-800">
-                date
-              </code>{" "}
-              field (US M/D/YYYY)
+              Filter scans by date or keyword
             </p>
           </div>
           <div className="flex flex-wrap gap-2">

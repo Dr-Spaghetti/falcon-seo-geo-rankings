@@ -134,7 +134,7 @@ export function ClientHub({ client }: { client: LfClient }) {
               <article
                 key={loc.place_id}
                 data-location-card
-                className="flex flex-col justify-between rounded-xl border border-slate-700/70 bg-[#101726]/90 p-5 shadow-xl sm:p-6 backdrop-blur-sm transition-all duration-200 hover:border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)]"
+                className="relative flex cursor-pointer flex-col justify-between rounded-xl border border-slate-700/70 bg-[#101726]/90 p-5 shadow-xl sm:p-6 backdrop-blur-sm transition-all duration-200 hover:border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)]"
               >
                 <div>
                   <div className="mb-4 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-slate-800 pb-3">
@@ -167,7 +167,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                     </div>
                     {/* CSS radar/grid thumb + glowing pin (HTML SoT ADOPT) */}
                     <div
-                      className="relative flex h-20 w-24 flex-shrink-0 items-center justify-center overflow-hidden rounded-md border border-slate-700/80 bg-[#0a1120]"
+                      className="pointer-events-none relative flex h-20 w-24 flex-shrink-0 items-center justify-center overflow-hidden rounded-md border border-slate-700/80 bg-[#0a1120]"
                       aria-hidden
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:10px_10px]" />
@@ -177,9 +177,15 @@ export function ClientHub({ client }: { client: LfClient }) {
                 </div>
 
                 <div className="mt-6 flex justify-end border-t border-slate-800/80 pt-3">
+                  {/* Stretched link: its ::after covers the whole card, so title,
+                      address and map all open the dashboard with ONE link / tab stop (no
+                      nested interactive elements). No transform/filter on the link so
+                      the ::after stays anchored to the <article>. */}
                   <Link
                     href={`${base}/locations/${loc.place_id}`}
-                    className="gold-badge inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold shadow-sm xl:text-[15px] transition-all hover:brightness-110 active:scale-95"
+                    aria-label={`Open dashboard for ${loc.city || loc.name}`}
+                    data-card-link
+                    className="gold-badge inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold shadow-sm transition-shadow after:absolute after:inset-0 after:rounded-xl after:content-[''] hover:shadow-[0_0_0_2px_rgba(247,228,146,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f7e492] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101726] focus-visible:after:ring-2 focus-visible:after:ring-[#f7e492]/70 xl:text-[15px]"
                   >
                     <span>Open dashboard</span>
                     <span aria-hidden>→</span>
@@ -196,7 +202,7 @@ export function ClientHub({ client }: { client: LfClient }) {
               No locations in this firm hub
             </p>
             <p className="mt-1 text-sm text-hub-text">
-              Rebuild client data from the Local Falcon census archive.
+              Location rankings will appear here once scans are available.
             </p>
           </div>
         ) : null}

@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Adrianos Facchetti · Local Falcon · Falcon",
   description:
-    "Adrianos Facchetti — firm-level Local Falcon dashboard with nested GA locations",
+    "Adrianos Facchetti — local search rankings for every office location",
 };
 
 export default function FacchettiClientPage() {

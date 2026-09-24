@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Andy Callif Bail Bonds · Local Falcon · Falcon",
   description:
-    "Andy Callif Bail Bonds — firm-level Local Falcon dashboard with nested GA locations",
+    "Andy Callif Bail Bonds — local search rankings for every office location",
 };
 
 export default function AndyCallifClientPage() {

@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Kunka Law · Local Falcon · Falcon",
   description:
-    "Kunka Law — firm-level Local Falcon dashboard with nested GA locations",
+    "Kunka Law — local search rankings for every office location",
 };
 
 export default function KunkaClientPage() {

@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Premier Law Group · Local Falcon · Falcon",
   description:
-    "Premier Law Group — firm-level Local Falcon dashboard with nested WA locations",
+    "Premier Law Group — local search rankings for every office location",
 };
 
 export default function PremierClientPage() {

@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Carlson Hayslett / CMH · Local Falcon · Falcon",
   description:
-    "Carlson Hayslett, P.A. — firm-level Local Falcon dashboard with nested FL locations",
+    "Carlson Hayslett, P.A. — local search rankings for every office location",
 };
 
 export default function CmhClientPage() {

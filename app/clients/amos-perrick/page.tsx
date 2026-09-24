@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Amos Perrick · Local Falcon · Falcon",
   description:
-    "Amos Perrick — firm-level Local Falcon dashboard with nested GA locations",
+    "Amos Perrick — local search rankings for every office location",
 };
 
 export default function AmosPerrickClientPage() {

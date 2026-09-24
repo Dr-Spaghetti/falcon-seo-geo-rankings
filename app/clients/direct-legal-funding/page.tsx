@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Direct Legal Funding · Local Falcon · Falcon",
   description:
-    "Direct Legal Funding — firm-level Local Falcon dashboard with nested GA locations",
+    "Direct Legal Funding — local search rankings for every office location",
 };
 
 export default function DirectLegalFundingClientPage() {

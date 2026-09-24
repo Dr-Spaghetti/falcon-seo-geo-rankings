@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Milano Legal Group · Local Falcon · Falcon",
   description:
-    "Milano Legal Group — firm-level Local Falcon dashboard with nested GA locations",
+    "Milano Legal Group — local search rankings for every office location",
 };
 
 export default function MilanoClientPage() {

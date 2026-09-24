@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Gold Dog Injury Law · Local Falcon · Falcon",
   description:
-    "Gold Dog Injury Law — firm-level Local Falcon dashboard with nested GA locations",
+    "Gold Dog Injury Law — local search rankings for every office location",
 };
 
 export default function GoldDogClientPage() {

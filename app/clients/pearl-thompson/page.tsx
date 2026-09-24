@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Pearl & Thompson · Local Falcon · Falcon",
   description:
-    "Pearl & Thompson — firm-level Local Falcon dashboard with nested GA locations",
+    "Pearl & Thompson — local search rankings for every office location",
 };
 
 export default function PearlThompsonClientPage() {

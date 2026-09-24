@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Mary Higgins · Local Falcon · Falcon",
   description:
-    "Mary Higgins — firm-level Local Falcon dashboard with nested GA locations",
+    "Mary Higgins — local search rankings for every office location",
 };
 
 export default function MaryHigginsClientPage() {

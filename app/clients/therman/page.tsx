@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Therman · Local Falcon · Falcon",
   description:
-    "Charlie Therman Injury & Accident Lawyers — Local Falcon location picker",
+    "Charlie Therman Injury & Accident Lawyers — local search rankings for every office location",
 };
 
 export default function ThermanClientPage() {

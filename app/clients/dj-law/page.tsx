@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "DJ Law Corp · Local Falcon · Falcon",
   description:
-    "DJ Law Corp — firm-level Local Falcon dashboard with nested GA locations",
+    "DJ Law Corp — local search rankings for every office location",
 };
 
 export default function DjLawClientPage() {

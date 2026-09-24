@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Norden Leacox · Local Falcon · Falcon",
   description:
-    "Norden Leacox — firm-level Local Falcon dashboard with nested GA locations",
+    "Norden Leacox — local search rankings for every office location",
 };
 
 export default function NordenLeacoxClientPage() {

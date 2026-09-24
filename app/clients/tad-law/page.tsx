@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "Tad Law · Local Falcon · Falcon",
   description:
-    "Tad Law — firm-level Local Falcon dashboard with nested GA locations",
+    "Tad Law — local search rankings for every office location",
 };
 
 export default function TadLawClientPage() {

@@ -6,7 +6,7 @@ import { getClient } from "@/lib/lf";
 export const metadata = {
   title: "KaplunMarx · Local Falcon · Falcon",
   description:
-    "KaplunMarx — firm-level Local Falcon dashboard with nested PA/NJ locations",
+    "KaplunMarx — local search rankings for every office location",
 };
 
 export default function KaplunMarxClientPage() {
