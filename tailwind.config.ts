@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "Newsreader", "Georgia", "serif"],
+        serif: ["var(--font-serif)", "Cinzel", "Georgia", "serif"],
       },
       colors: {
         brand: {

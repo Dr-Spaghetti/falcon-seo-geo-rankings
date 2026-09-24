@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader } from "next/font/google";
+import { Cinzel, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const newsreader = Newsreader({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800"],
   variable: "--font-serif",
   display: "swap",
 });
@@ -31,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
-      <body className="font-sans">{children}</body>
+    <html lang="en" className={`${inter.variable} ${cinzel.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

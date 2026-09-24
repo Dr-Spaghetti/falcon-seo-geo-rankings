@@ -1,165 +1,186 @@
 import Link from "next/link";
 import type { LfClient } from "@/lib/lf";
 import { resolveBrandLogoUrl } from "@/lib/lf-logo";
-import {
-  HeroChromePlate,
-  MapThumbPlaceholder,
-} from "@/components/hub/HubDecor";
 
 /**
- * Shared premium dark branded hub — Nick DJ Law hub SoT is the master template.
- * Photoreal chrome cropped from SoT PNG (not flat SVG gold).
- * Per-firm: crest/logo, name, counts, --brand-* tokens only.
+ * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
+ * CSS gold-frame + circuit-bg + Cinzel/Inter. Official crest in ring only.
+ * Per-firm chrome via --brand-accent / --hub-* tokens (not DJ-gold stamped).
  */
 export function ClientHub({ client }: { client: LfClient }) {
   const base = `/clients/${client.slug}`;
   const logoUrl = resolveBrandLogoUrl(client.slug);
-  const countsLine = `${client.location_count} locations | ${client.scan_count.toLocaleString()} Total scans`;
-  // Long firm names (e.g. Therman) — keep clear of seal; prefer natural wrap
+  const locationsLabel = `${client.location_count} LOCATIONS`;
+  const scansLabel = `${client.scan_count.toLocaleString()} TOTAL SCANS`;
   const isLongName = client.name.length > 34;
 
+  // Real latest scan from location data (no fake "Operational & Synced")
+  const latestDates = client.locations
+    .map((l) => l.latest_iso)
+    .filter((d): d is string => Boolean(d))
+    .sort();
+  const latestIso = latestDates.length ? latestDates[latestDates.length - 1] : null;
+  const latestLabel = latestIso
+    ? `Latest scan ${formatScanDate(latestIso)}`
+    : null;
+
   return (
-    <div className="relative space-y-5 text-slate-100">
-      {/* Framed hero — clean composite chrome; type/crest/logo live in DOM */}
+    <div className="relative flex flex-col gap-6 text-slate-100">
+      {/* Hero — gold-frame + dashed inset; NO photoreal PNG plate */}
       <section
-        className="relative z-[1] overflow-hidden rounded-[16px] shadow-2xl shadow-black/55"
-        style={{ backgroundColor: "#141618" }}
+        className="gold-frame relative overflow-hidden rounded-2xl p-6"
         aria-label={`${client.name} client dashboard`}
       >
-        <div className="relative w-full" style={{ aspectRatio: "996 / 218" }}>
-          {/* CLEAN composite plate: frame/cols/gold-ring + empty field (no baked glyphs) */}
-          <HeroChromePlate className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-fill" />
+        <div
+          className="gold-dashed pointer-events-none absolute inset-2 rounded-xl"
+          aria-hidden
+        />
 
-
-          {/* Crest locked to photoreal seal hole (~84.5% x) */}
-          <div
-            className="pointer-events-none absolute z-[4] flex items-center justify-center overflow-hidden rounded-full"
-            style={{
-              left: "84.5%",
-              top: "51.5%",
-              transform: "translate(-50%, -50%)",
-              width: "11.2%",
-              height: "51%",
-              backgroundColor: "color-mix(in srgb, var(--brand) 82%, #050805)",
-              boxShadow: "inset 0 0 10px rgba(0,0,0,0.5)",
-            }}
-          >
-            {logoUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={logoUrl}
-                alt={`${client.name} logo`}
-                width={150}
-                height={150}
-                className="pointer-events-auto h-[88%] w-[88%] object-contain"
-              />
-            ) : (
-              <span className="px-1 text-center text-[8px] font-medium uppercase tracking-wider text-white/50">
-                Crest unavailable
-              </span>
-            )}
+        <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 md:flex-row md:px-4">
+          {/* Left: justify local mark — two green arrows (N1) */}
+          <div className="flex shrink-0 items-center gap-2">
+            <div>
+              <div className="flex items-center gap-1">
+                <span className="text-2xl font-black tracking-tight text-white">
+                  justify
+                </span>
+                <TwoGreenArrows className="h-4 w-4 text-emerald-400" />
+              </div>
+              <div className="mt-0.5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                <span>local</span>
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              </div>
+            </div>
           </div>
 
-          <div className="relative z-[3] flex h-full items-center gap-3 px-[4%] py-[3%]">
-            {/* Left: justify local mark */}
-            <div className="flex w-[14%] shrink-0 justify-start">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brands/_justify/logo.png"
-                alt="justify local"
-                width={150}
-                height={66}
-                className="h-auto w-full max-w-[9.5rem] object-contain"
-              />
+          {/* Center stack */}
+          <div className="flex min-w-0 flex-1 flex-col items-center px-2 text-center md:px-4">
+            <h1
+              className={
+                isLongName
+                  ? "max-w-[22ch] font-serif text-xl font-bold uppercase tracking-widest text-[#f0d481] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:text-2xl"
+                  : "font-serif text-2xl font-bold uppercase tracking-widest text-[#f0d481] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:text-3xl"
+              }
+            >
+              {client.name}
+            </h1>
+            <p className="mb-2 mt-0.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-300">
+              Client Dashboard
+            </p>
+            <div className="gold-badge-outline mb-2 rounded-full px-5 py-1 text-xs font-semibold tracking-wider text-[#f7e492]">
+              <span>{locationsLabel}</span>
+              <span className="mx-2 text-slate-500">|</span>
+              <span>{scansLabel}</span>
             </div>
+            <p className="text-xs font-normal text-slate-400">
+              Select a location to review rankings, filters, and scan reports.
+            </p>
+          </div>
 
-            {/* Center stack — live firm typography (wraps; clears seal) */}
-            <div className="min-w-0 flex-1 space-y-0.5 px-1 pr-[24%] text-center sm:pr-[26%]">
-              <h1
-                className={
-                  isLongName
-                    ? "mx-auto max-w-[36ch] font-serif text-[clamp(0.7rem,1.55vw,1.45rem)] font-semibold leading-[1.15] tracking-tight break-words"
-                    : "font-serif text-[clamp(0.9rem,2.2vw,2.1rem)] font-semibold leading-[1.12] tracking-tight break-words"
-                }
-                style={{ color: "var(--brand-accent)" }}
-              >
-                {client.name}
-              </h1>
-              <p
-                className="text-[clamp(9px,1.1vw,12px)] font-semibold uppercase tracking-[0.22em]"
-                style={{ color: "var(--brand-accent)" }}
-              >
-                CLIENT DASHBOARD
-              </p>
-              <p
-                className="text-[clamp(0.85rem,1.5vw,1.15rem)] font-medium tabular-nums"
-                style={{ color: "var(--brand-accent)" }}
-              >
-                {countsLine}
-              </p>
-              <p
-                className="mx-auto max-w-xl text-[clamp(0.7rem,1.1vw,0.875rem)] italic leading-snug"
-                style={{
-                  color:
-                    "color-mix(in srgb, var(--brand-accent) 55%, #ffffff)",
-                }}
-              >
-                Select a location to review rankings, filters, and scan reports.
-              </p>
+          {/* Right: CSS gold pillars + gold-gradient ring holding OFFICIAL crest */}
+          <div className="flex shrink-0 items-center gap-3">
+            <CssGoldPillar />
+            <div
+              className="flex h-20 w-20 items-center justify-center rounded-full p-[2px] shadow-lg"
+              style={{
+                background:
+                  "linear-gradient(to top right, var(--hub-metal-dark), var(--hub-metal-light), var(--hub-metal))",
+              }}
+            >
+              <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[#05281e] shadow-inner">
+                {logoUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={logoUrl}
+                    alt={`${client.name} crest`}
+                    width={72}
+                    height={72}
+                    className="h-[88%] w-[88%] object-contain"
+                  />
+                ) : (
+                  <span className="px-1 text-center text-[8px] uppercase tracking-wider text-white/40">
+                    Crest unavailable
+                  </span>
+                )}
+              </div>
             </div>
+            <CssGoldPillar />
           </div>
         </div>
       </section>
 
-      {/* Office Locations — simplified density (Nick punch: too busy for older clients) */}
-      <section aria-label="Office Locations" className="relative z-[1] space-y-3">
-        <h2
-          className="font-serif text-base font-semibold tracking-tight sm:text-lg"
-          style={{ color: "var(--brand-accent)" }}
-        >
-          Office Locations
-        </h2>
+      {/* Office Locations */}
+      <section aria-label="Office Locations" className="flex flex-col gap-3">
+        <div>
+          <span className="gold-badge inline-flex items-center gap-1.5 rounded-md px-3.5 py-1 text-xs font-bold uppercase tracking-wider">
+            <LocationOnIcon className="h-3.5 w-3.5" />
+            Office Locations
+          </span>
+        </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {client.locations.map((loc) => (
-            <article
-              key={loc.place_id}
-              className="flex flex-col rounded-lg bg-[#1a1c22]/90 p-4"
-              style={{
-                boxShadow:
-                  "0 0 0 1px color-mix(in srgb, var(--brand-accent) 35%, transparent)",
-              }}
-            >
-              <div className="flex items-baseline justify-between gap-2">
-                <h3 className="font-serif text-lg font-bold text-white">
-                  {loc.city || loc.name}
-                </h3>
-                <span className="shrink-0 text-xs tabular-nums text-white/45">
-                  {loc.scan_count.toLocaleString()} scans
-                </span>
-              </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {client.locations.map((loc) => {
+            const locLatest =
+              loc.latest_iso || loc.latest_date
+                ? `Latest scan ${formatScanDate(loc.latest_iso || loc.latest_date || "")}`
+                : latestLabel;
+            return (
+              <article
+                key={loc.place_id}
+                className="flex flex-col justify-between rounded-xl border border-slate-700/70 bg-[#101726]/90 p-5 shadow-xl backdrop-blur-sm transition-all duration-200 hover:border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)]"
+              >
+                <div>
+                  <div className="mb-4 flex items-center justify-between border-b border-slate-800 pb-3">
+                    <h2
+                      className="font-serif text-lg font-bold text-white underline decoration-2 underline-offset-4"
+                      style={{
+                        textDecorationColor:
+                          "color-mix(in srgb, var(--hub-metal) 60%, transparent)",
+                      }}
+                    >
+                      {loc.city || loc.name}
+                    </h2>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-[#172238] px-2.5 py-0.5 text-[11px] font-medium text-slate-300">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      {loc.scan_count.toLocaleString()} scans
+                    </span>
+                  </div>
 
-              <div className="mt-2 flex items-start gap-3">
-                <p className="min-w-0 flex-1 text-sm leading-snug text-white/75">
-                  {loc.address || "Address unavailable"}
-                </p>
-                <MapThumbPlaceholder
-                  className="h-10 w-11 shrink-0 rounded object-cover opacity-90"
-                  label={loc.city || loc.name}
-                />
-              </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-1">
+                      <p className="text-xs leading-relaxed text-slate-300">
+                        {loc.address || "Address unavailable"}
+                      </p>
+                      {locLatest ? (
+                        <div className="flex items-center gap-1.5 pt-2 text-[11px] font-medium text-emerald-400">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                          {locLatest}
+                        </div>
+                      ) : null}
+                    </div>
+                    {/* CSS radar/grid thumb + glowing pin (HTML SoT ADOPT) */}
+                    <div
+                      className="relative flex h-16 w-20 flex-shrink-0 items-center justify-center overflow-hidden rounded-md border border-slate-700/80 bg-[#0a1120]"
+                      aria-hidden
+                    >
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:10px_10px]" />
+                      <LocationOnIcon className="relative z-10 h-5 w-5 text-emerald-400 drop-shadow-[0_0_6px_rgba(0,214,143,0.8)]" />
+                    </div>
+                  </div>
+                </div>
 
-              <div className="mt-4 flex justify-end">
-                <Link
-                  href={`${base}/locations/${loc.place_id}`}
-                  className="text-sm font-medium text-white/90 underline-offset-2 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-accent)]"
-                  style={{ color: "var(--brand-accent)" }}
-                >
-                  Open dashboard →
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="mt-6 flex justify-end border-t border-slate-800/80 pt-3">
+                  <Link
+                    href={`${base}/locations/${loc.place_id}`}
+                    className="gold-badge inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold shadow-sm transition-all hover:brightness-110 active:scale-95"
+                  >
+                    <span>Open dashboard</span>
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         {client.locations.length === 0 ? (
@@ -175,4 +196,78 @@ export function ClientHub({ client }: { client: LfClient }) {
       </section>
     </div>
   );
+}
+
+function CssGoldPillar() {
+  return (
+    <div className="flex flex-col items-center" aria-hidden>
+      <div
+        className="h-1.5 w-5 rounded-t-sm"
+        style={{
+          background:
+            "linear-gradient(to right, var(--hub-metal), var(--hub-metal-light))",
+        }}
+      />
+      <div
+        className="h-14 w-3.5 border-x border-[#f7e492]/40 shadow-sm"
+        style={{
+          background:
+            "linear-gradient(to bottom, #e3bf52, #b89228, #e3bf52)",
+        }}
+      />
+      <div
+        className="h-2 w-5 rounded-b-sm"
+        style={{
+          background:
+            "linear-gradient(to right, var(--hub-metal-dark), var(--hub-metal))",
+        }}
+      />
+    </div>
+  );
+}
+
+/** N1 — two green arrows (not people icons). */
+function TwoGreenArrows({ className }: { className?: string }) {
+  return (
+    <span className={`inline-flex flex-col leading-none ${className ?? ""}`} aria-hidden>
+      <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="currentColor">
+        <path d="M4 10 L8 5 L12 10 L10.5 10 L8 7.2 L5.5 10 Z" />
+      </svg>
+      <svg viewBox="0 0 16 16" className="-mt-1.5 h-3.5 w-3.5" fill="currentColor">
+        <path d="M4 10 L8 5 L12 10 L10.5 10 L8 7.2 L5.5 10 Z" />
+      </svg>
+    </span>
+  );
+}
+
+function LocationOnIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+    </svg>
+  );
+}
+
+function formatScanDate(raw: string): string {
+  // Accept ISO YYYY-MM-DD or display strings like "9/4/2026 4:55 PM"
+  const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) {
+    const d = new Date(`${iso[1]}-${iso[2]}-${iso[3]}T12:00:00Z`);
+    return d.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC",
+    });
+  }
+  const slash = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (slash) {
+    return `${slash[1]}/${slash[2]}/${slash[3]}`;
+  }
+  return raw;
 }

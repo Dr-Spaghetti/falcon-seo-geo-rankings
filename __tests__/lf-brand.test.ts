@@ -78,21 +78,24 @@ describe("lf-brand", () => {
     assert.notEqual(therman.primary, "#1b3e2a");
   });
 
-  it("dj-law uses crest charcoal/green/gold — not Bootstrap blue", () => {
+  it("dj-law uses Nick HTML SoT palette — not Bootstrap blue", () => {
     const dj = getBrandTheme("dj-law");
-    assert.equal(dj.primary, "#1b3e2a");
-    assert.equal(dj.accent, "#d0a854");
+    assert.equal(dj.primary, "#0d131f");
+    assert.equal(dj.accent, "#d4af37");
+    assert.equal(dj.metalLight, "#f6e27a");
+    assert.equal(dj.metalDark, "#997d25");
+    assert.equal(dj.surface, "#0b0f17");
     assert.notEqual(dj.primary, "#0d6efd");
-    assert.match(dj.source, /DLC crest|forest green|Bootstrap/i);
+    assert.match(dj.source, /HTML SoT|gold #d4af37/i);
   });
 
   it("non-gold firms keep own accents (andy-callif, direct-legal-funding)", () => {
     const andy = getBrandTheme("andy-callif");
     const dlf = getBrandTheme("direct-legal-funding");
     assert.equal(andy.accent, "#066a94");
-    assert.notEqual(andy.accent.toLowerCase(), "#d0a854");
+    assert.notEqual(andy.accent.toLowerCase(), "#d4af37");
     assert.equal(dlf.accent, "#ea5800");
-    assert.notEqual(dlf.accent.toLowerCase(), "#d0a854");
+    assert.notEqual(dlf.accent.toLowerCase(), "#d4af37");
   });
 
   it("every LF brand slug exposes accent + surface tokens", () => {

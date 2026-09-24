@@ -23,6 +23,10 @@ export type LfBrandTheme = {
   accent: string;
   /** Dark hub body surface (premium dark template) */
   surface: string;
+  /** Optional exact metal light (HTML SoT goldLight) */
+  metalLight?: string;
+  /** Optional exact metal dark (HTML SoT goldDark) */
+  metalDark?: string;
   /** Human-readable provenance for commits / audits */
   source: string;
 };
@@ -243,17 +247,21 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     source:
       "tadlaw.com homepage critical CSS #cb6326 (dark #252422 supporting neutral)",
   }),
-  "dj-law": buildTheme("#1b3e2a", {
-    soft: "#33353c",
-    ring: "#e8c8a8",
-    border: "#0d2418",
-    muted: "#d4c4a8",
-    hero: "linear-gradient(135deg, #1a1c22 0%, #2a2c34 48%, #33353c 100%)",
-    accent: "#d0a854",
-    surface: "#131418",
+  "dj-law": {
+    primary: "#0d131f",
+    onPrimary: "#ffffff",
+    soft: "#101726",
+    ring: "#f6e27a",
+    border: "#090d14",
+    muted: "#cbd5e1",
+    hero: "radial-gradient(circle at 50% 30%, rgba(20,28,38,0.95), rgba(11,15,23,0.98))",
+    accent: "#d4af37",
+    surface: "#0b0f17",
+    metalLight: "#f6e27a",
+    metalDark: "#997d25",
     source:
-      "DLC crest + Nick hub mock — forest green #1b3e2a header, charcoal hero #33353c, metal gold accent #d0a854 (crest cream #e8c8a8); replaces wrong Bootstrap #0d6efd",
-  }),
+      "Nick HTML SoT 2026-09-24 — header #0d131f, page #090d14, circuit #0b0f17, gold #d4af37 / #f6e27a / #997d25, green #00d68f",
+  },
   "mary-higgins": buildTheme("#b32227", {
     soft: "#c93a3f",
     ring: "#d44a4f",
@@ -414,5 +422,11 @@ export function brandCssVars(
     "--brand-hero": theme.hero,
     "--brand-accent": theme.accent,
     "--brand-surface": theme.surface,
+    "--hub-metal": theme.accent,
+    "--hub-header": theme.primary,
+    "--hub-circuit": theme.surface,
+    "--hub-card": theme.soft,
+    ...(theme.metalLight ? { "--hub-metal-light": theme.metalLight } : {}),
+    ...(theme.metalDark ? { "--hub-metal-dark": theme.metalDark } : {}),
   };
 }
