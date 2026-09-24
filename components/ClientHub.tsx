@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { LfClient } from "@/lib/lf";
 import { OfficialLogo } from "@/components/hub/OfficialLogo";
 import { JUSTIFY_LOCAL_LOGO, getFirmLogo } from "@/lib/brand-logos";
+import { hubStatLabels } from "@/lib/hub-labels";
 
 /**
  * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
@@ -12,8 +13,10 @@ import { JUSTIFY_LOCAL_LOGO, getFirmLogo } from "@/lib/brand-logos";
 export function ClientHub({ client }: { client: LfClient }) {
   const base = `/clients/${client.slug}`;
   const firmLogo = getFirmLogo(client.slug);
-  const locationsLabel = `${client.location_count} LOCATIONS`;
-  const scansLabel = `${client.scan_count.toLocaleString()} TOTAL SCANS`;
+  const { locations: locationsLabel, scans: scansLabel } = hubStatLabels(
+    client.location_count,
+    client.scan_count,
+  );
   const isLongName = client.name.length > 34;
 
   // Real latest scan from location data (no fake "Operational & Synced")
@@ -61,10 +64,16 @@ export function ClientHub({ client }: { client: LfClient }) {
             <p className="mb-2 mt-0.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-300">
               Client Dashboard
             </p>
-            <div className="gold-badge-outline mb-2 rounded-full px-5 py-1 text-xs font-semibold tracking-wider text-[#f7e492]">
-              <span>{locationsLabel}</span>
-              <span className="mx-2 text-slate-500">|</span>
-              <span>{scansLabel}</span>
+            {/* Stats pill: one line at 390 (tighter tracking/padding <640px);
+                each segment is nowrap, so any wrap on very narrow screens
+                happens only between the two segments, never mid-label. */}
+            <div
+              data-hub-stats
+              className="gold-badge-outline mb-2 max-w-full rounded-full px-3.5 py-1 text-[11px] font-semibold tracking-wide text-[#f7e492] sm:px-5 sm:text-xs sm:tracking-wider"
+            >
+              <span className="whitespace-nowrap">{locationsLabel}</span>
+              <span aria-hidden="true" className="mx-1.5 text-slate-500 sm:mx-2">|</span>
+              <span className="whitespace-nowrap">{scansLabel}</span>
             </div>
             <p className="text-xs font-normal text-slate-400">
               Select a location to review rankings, filters, and scan reports.
