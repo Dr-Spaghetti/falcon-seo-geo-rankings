@@ -82,19 +82,22 @@ export function LegalCircuitWatermark({ className }: { className?: string }) {
  * N1: green arrows only, never people icons.
  */
 export function JustifyCornerArrows({ className }: { className?: string }) {
+  // Traced from justify-mark.png: each ⌝ arm is 12×4 px → thickness/length = 1/3.
+  // Front at (4,0), back at (0,5); viewBox 16×17 matches PNG arrow crop aspect.
   return (
     <svg
       className={className}
-      viewBox="0 0 16 16"
+      viewBox="0 0 16 17"
       fill="#00d68f"
       aria-hidden
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
       shapeRendering="geometricPrecision"
     >
-      {/* Back (lower-left) */}
-      <path d="M0.4 4.8h10.8v10.8h-3.9v-6.9h-6.9z" />
-      {/* Front (upper-right) */}
-      <path d="M4.6 0.4h10.8v10.8h-3.9v-6.9h-6.9z" />
+      {/* Back (lower-left) — ox=0 oy=5 L=12 T=4 */}
+      <path d="M0 5h12v12H8V9H0z" />
+      {/* Front (upper-right) — ox=4 oy=0 L=12 T=4 */}
+      <path d="M4 0h12v12h-4V4H4z" />
     </svg>
   );
 }
