@@ -6,8 +6,8 @@
 | **state** | ready_for_design (Eng retip after HARD FAIL 616687b — awaiting Design re-PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | Design HARD re-PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `9491bf0` |
-| **tip_sha** | `9491bf0ff9aa5f6f5d636b6ebfec7285834431dc` |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `6a6e955` |
+| **tip_sha** | `6a6e9559d69ef9dba3ec7c5ec5129f7f98ad26e4` |
 | **updated_at** | 2026-09-24 1:32 PM ET |
 
 ## Evidence links
@@ -15,7 +15,7 @@
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Tip SHA | `9491bf0ff9aa5f6f5d636b6ebfec7285834431dc` |
+| Tip SHA | `6a6e9559d69ef9dba3ec7c5ec5129f7f98ad26e4` |
 | Preview (Band C gitless) | https://justifycode-wordpress-dashboard-bw6l3s0n8.vercel.app |
 | Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-bw6l3s0n8.vercel.app/clients/dj-law |
 | Preview `/clients/therman` | https://justifycode-wordpress-dashboard-bw6l3s0n8.vercel.app/clients/therman |
