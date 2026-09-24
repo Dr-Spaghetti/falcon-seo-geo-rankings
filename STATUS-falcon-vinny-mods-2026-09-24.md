@@ -6,16 +6,16 @@
 | **state** | ready_for_design (Eng retip after HARD FAIL 616687b — awaiting Design re-PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | Design HARD re-PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` |
-| **tip_sha** | *(pending commit)* |
-| **updated_at** | 2026-09-24 1:25 PM ET |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `c7aaa6a` |
+| **tip_sha** | `c7aaa6ae9acee0fd002dbf3e0c8d0cafb8c007fe` |
+| **updated_at** | 2026-09-24 1:30 PM ET |
 
 ## Evidence links
 
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Preview (Band C gitless) | *(pending deploy)* |
+| Preview (Band C gitless) | https://justifycode-wordpress-dashboard-h1prp1zwb.vercel.app *(superseded by new deploy)* |
 | Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
 | Vercel project | justifycode-wordpress-dashboard |
 
