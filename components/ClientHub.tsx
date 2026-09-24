@@ -96,7 +96,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                     alt={`${client.name} crest`}
                     width={72}
                     height={72}
-                    className="h-[88%] w-[88%] object-contain"
+                    className="w-[90%] max-h-[90%] object-contain"
                   />
                 ) : (
                   <span className="px-1 text-center text-[8px] uppercase tracking-wider text-white/40">

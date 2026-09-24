@@ -2,9 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-/** Live America/New_York clock, e.g. "24th Sep, 11:43 AM EST" */
+/**
+ * Live America/New_York clock, e.g. "24th Sep, 11:43 AM EST".
+ * Server / first paint: stable-width placeholder (no clock text) so SSR HTML
+ * matches the client's first paint — avoids React #418 / #423 / #425.
+ * Live label only after mount.
+ */
 export function LiveClock({ className }: { className?: string }) {
-  const [label, setLabel] = useState(() => formatNy(new Date()));
+  const [label, setLabel] = useState<string | null>(null);
 
   useEffect(() => {
     const tick = () => setLabel(formatNy(new Date()));
@@ -14,8 +19,19 @@ export function LiveClock({ className }: { className?: string }) {
   }, []);
 
   return (
-    <time className={className} dateTime={new Date().toISOString()} aria-live="off">
-      {label}
+    <time
+      className={className}
+      dateTime={label ?? undefined}
+      aria-live="off"
+      suppressHydrationWarning
+      style={{
+        display: "inline-block",
+        minWidth: "11.5rem",
+        textAlign: "right",
+        fontVariantNumeric: "tabular-nums",
+      }}
+    >
+      {label ?? "\u00a0"}
     </time>
   );
 }
