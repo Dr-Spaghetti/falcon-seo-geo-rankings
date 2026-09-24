@@ -5,16 +5,16 @@ import path from "node:path";
 import { resolveBrandLogoUrl } from "../lib/lf-logo";
 
 describe("lf-logo", () => {
-  it("resolves dj-law official crest when present", () => {
+  it("resolves dj-law official logo.webp when present", () => {
     const url = resolveBrandLogoUrl("dj-law");
-    assert.equal(url, "/brands/dj-law/logo.png");
-    const abs = path.join(process.cwd(), "public", "brands", "dj-law", "logo.png");
+    assert.equal(url, "/brands/dj-law/logo.webp");
+    const abs = path.join(process.cwd(), "public", "brands", "dj-law", "logo.webp");
     assert.ok(fs.existsSync(abs));
     const buf = fs.readFileSync(abs);
     assert.ok(buf.length > 1000, "logo binary should be substantial");
-    // PNG magic
-    assert.equal(buf[0], 0x89);
-    assert.equal(buf[1], 0x50);
+    // WebP magic (firm's original DLC-FAV-ICON.webp)
+    assert.equal(buf.toString("ascii", 0, 4), "RIFF");
+    assert.equal(buf.toString("ascii", 8, 12), "WEBP");
   });
 
   it("resolves therman official logo.webp when present", () => {

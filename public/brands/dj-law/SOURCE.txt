@@ -1,5 +1,7 @@
-logo.png — official Djoumourian Law Corp (DLC) crest as served via Google favicon cache
-  (https://www.google.com/s2/favicons?domain=djlawcorp.com&sz=256 → 150×150 PNG).
-  Firm site djlawcorp.com was SiteGround-captcha blocked from this box (2026-09-24);
-  binary is the firm's published mark, stored unmodified (no recolor/crop/filter).
-mock-reference.png — Nick layout mock (reference only; NOT the firm logo).
+logo.webp — OFFICIAL Djougourian Law Corp (DLC) mark, byte-for-byte from the firm's own site:
+  https://djlawcorp.com/wp-content/uploads/2022/12/DLC-FAV-ICON.webp  (fetched 2026-09-24 via headless Chromium)
+  150x150 RGBA WebP. The green disc + cream rim are part of the firm's artwork (not an added plate).
+  sha256 cd8094f2b290d763a1810828d2fce4153a757b98bb2084df936af87c555b5716
+  Pixel-identical (MAE 0) to the previous logo.png (Google s2 favicon cache PNG, sha256 b037e334…e619), now removed.
+  Other firm mark on site: DLC-Letterhead-bw (black on transparent) — unusable on the dark hub ground, not used.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.
