@@ -6,8 +6,7 @@ Assets:
   hero-chrome-plate.png  — clean composite plate (empty field)
   meander-frame.png      — frame-only transparent interior
   column-left/right.png  — Ionic columns (no crest pixels)
-  seal-ring.png          — gold braid only; interior fully transparent
   map-sat-thumb.png      — satellite thumb + teal pin
   watermark-ground.png   — tall soft-fade ground (no hard bottom edge)
-  justify-mark.png       — header two green arrows
 Do NOT inpaint SoT crops into the plate. Do NOT bake firm type/logo/DLC.
+Retired 2026-09-24 (Nick: never modify/ring logos): seal-ring.png, justify-mark.png.

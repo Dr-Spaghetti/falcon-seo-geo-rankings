@@ -48,19 +48,7 @@ export function IonicColumnRight({ className }: { className?: string }) {
   );
 }
 
-/** Photoreal ornate seal ring — center transparent for firm crest. */
-export function OrnateSealRing({ className }: { className?: string }) {
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={`${HUB}/seal-ring.png`}
-      alt=""
-      aria-hidden
-      className={className}
-      draggable={false}
-    />
-  );
-}
+/* OrnateSealRing (seal-ring.png) retired 2026-09-24: firm logos render as-is, never inside a ring. */
 
 /** Dense circuit / scales / columns watermark cropped from SoT ground. */
 export function LegalCircuitWatermark({ className }: { className?: string }) {

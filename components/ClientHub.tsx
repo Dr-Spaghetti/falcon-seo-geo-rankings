@@ -1,17 +1,17 @@
 import Link from "next/link";
 import type { LfClient } from "@/lib/lf";
-import { resolveBrandLogoUrl } from "@/lib/lf-logo";
 import { OfficialLogo } from "@/components/hub/OfficialLogo";
-import { JUSTIFY_LOCAL_LOGO } from "@/lib/brand-logos";
+import { JUSTIFY_LOCAL_LOGO, getFirmLogo } from "@/lib/brand-logos";
 
 /**
  * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
- * Circuit-bg + Cinzel/Inter. Official crest in ring; no Greek-key hero border.
+ * Circuit-bg + Cinzel/Inter. Official firm logo rendered as-is between the gold
+ * pillars (no ring / disc / plate / circular crop / mask); no Greek-key border.
  * Per-firm chrome via --brand-accent / --hub-* tokens (not DJ-gold stamped).
  */
 export function ClientHub({ client }: { client: LfClient }) {
   const base = `/clients/${client.slug}`;
-  const logoUrl = resolveBrandLogoUrl(client.slug);
+  const firmLogo = getFirmLogo(client.slug);
   const locationsLabel = `${client.location_count} LOCATIONS`;
   const scansLabel = `${client.scan_count.toLocaleString()} TOTAL SCANS`;
   const isLongName = client.name.length > 34;
@@ -34,7 +34,7 @@ export function ClientHub({ client }: { client: LfClient }) {
         className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-[color-mix(in_srgb,var(--hub-card)_92%,#000)] p-6 shadow-xl"
         aria-label={`${client.name} client dashboard`}
       >
-        <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 md:flex-row md:px-4">
+        <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 [--firm-logo-max-h:128px] [--firm-logo-max-w:min(340px,calc(100vw-190px))] md:flex-row md:px-4 md:[--firm-logo-max-h:120px] md:[--firm-logo-max-w:240px] lg:[--firm-logo-max-h:148px] lg:[--firm-logo-max-w:460px]">
           {/* Left: OFFICIAL Justify Local logo file, untouched (no text + arrows rebuild) */}
           <div
             data-logo-slot="hero-justify"
@@ -71,37 +71,31 @@ export function ClientHub({ client }: { client: LfClient }) {
             </p>
           </div>
 
-          {/* Right: CSS gold pillars + gold-gradient ring holding OFFICIAL crest */}
-          <div className="flex shrink-0 items-center gap-3">
+          {/* Right: gold pillars flanking the OFFICIAL firm logo file, as-is.
+              Shared template for every client: no ring, disc, plate, circular
+              crop, mask, filter or recolor. Aspect locked to natural size. */}
+          <div className="flex max-w-full shrink-0 items-stretch gap-3 md:gap-4">
             <CssGoldPillar />
             <div
-              data-logo-slot="crest-ring"
-              className="flex h-20 w-20 items-center justify-center rounded-full p-[2px] shadow-lg"
-              style={{
-                background:
-                  "linear-gradient(to top right, var(--hub-metal-dark), var(--hub-metal-light), var(--hub-metal))",
-              }}
+              data-logo-slot="firm-logo"
+              className="flex min-w-0 items-center justify-center"
             >
-              <div
-                data-logo-slot="crest-inner"
-                className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[var(--hub-seal-bg,#0a0f1a)] shadow-inner"
-              >
-                {logoUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    data-logo-slot="crest-img"
-                    src={logoUrl}
-                    alt={`${client.name} crest`}
-                    width={72}
-                    height={72}
-                    className="block h-auto w-[90%] max-h-[90%] object-contain object-center"
-                  />
-                ) : (
-                  <span className="px-1 text-center text-[8px] uppercase tracking-wider text-white/40">
-                    Crest unavailable
-                  </span>
-                )}
-              </div>
+              {firmLogo ? (
+                <OfficialLogo
+                  logo={firmLogo}
+                  slot="firm-logo"
+                  priority
+                  className="h-auto"
+                  style={{
+                    // Fit inside (--firm-logo-max-w x --firm-logo-max-h), ratio locked.
+                    width: `min(var(--firm-logo-max-w), calc(var(--firm-logo-max-h) * ${firmLogo.width} / ${firmLogo.height}))`,
+                  }}
+                />
+              ) : (
+                <span className="flex h-24 w-32 items-center justify-center px-1 text-center text-[10px] uppercase tracking-wider text-white/40">
+                  Logo unavailable
+                </span>
+              )}
             </div>
             <CssGoldPillar />
           </div>
@@ -198,24 +192,25 @@ export function ClientHub({ client }: { client: LfClient }) {
 }
 
 function CssGoldPillar() {
+  // Stretches to the firm logo's height (parent is items-stretch).
   return (
-    <div className="flex flex-col items-center" aria-hidden>
+    <div className="flex min-h-[72px] flex-col items-center" aria-hidden>
       <div
-        className="h-1.5 w-5 rounded-t-sm"
+        className="h-1.5 w-5 shrink-0 rounded-t-sm"
         style={{
           background:
             "linear-gradient(to right, var(--hub-metal), var(--hub-metal-light))",
         }}
       />
       <div
-        className="h-14 w-3.5 border-x border-[#f7e492]/40 shadow-sm"
+        className="w-3.5 flex-1 border-x border-[#f7e492]/40 shadow-sm"
         style={{
           background:
             "linear-gradient(to bottom, #e3bf52, #b89228, #e3bf52)",
         }}
       />
       <div
-        className="h-2 w-5 rounded-b-sm"
+        className="h-2 w-5 shrink-0 rounded-b-sm"
         style={{
           background:
             "linear-gradient(to right, var(--hub-metal-dark), var(--hub-metal))",
@@ -224,8 +219,6 @@ function CssGoldPillar() {
     </div>
   );
 }
-
-
 
 function LocationOnIcon({ className }: { className?: string }) {
   return (

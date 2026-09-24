@@ -61,4 +61,14 @@ describe("brand-logos manifest (official files, untouched)", () => {
     }
   });
 
+
+  it("shared hub template never wraps firm logos in a ring / disc / crop / filter", () => {
+    const root = process.cwd();
+    assert.ok(!fs.existsSync(path.join(root, "public/brands/_hub/seal-ring.png")));
+    const hub = fs.readFileSync(path.join(root, "components/ClientHub.tsx"), "utf8");
+    assert.ok(!/crest-ring|crest-inner|OrnateSealRing|seal-bg/.test(hub), "ring/disc wrapper is back");
+    const comp = fs.readFileSync(path.join(root, "components/hub/OfficialLogo.tsx"), "utf8");
+    const jsx = comp.slice(comp.lastIndexOf("<img"));
+    assert.ok(!/filter|mask|clip-path|clipPath|object-fit|object-cover|rounded/.test(jsx), "OfficialLogo must not alter pixels");
+  });
 });

@@ -27,8 +27,6 @@ export type LfBrandTheme = {
   metalLight?: string;
   /** Optional exact metal dark (HTML SoT goldDark) */
   metalDark?: string;
-  /** Crest ring interior fill (per-firm; DJ forest, Therman navy, …) */
-  sealBg?: string;
   /** Human-readable provenance for commits / audits */
   source: string;
 };
@@ -92,7 +90,6 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     surface: "#060d18",
     metalLight: "#E8D5A3",
     metalDark: "#8B7038",
-    sealBg: "#011633",
     source:
       "choosecharlie.com #011633 navy + gold #C5A059. HARD: zero green on/behind crest (no Justify green plate/halo).",
   },
@@ -266,7 +263,6 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     surface: "#0b0f17",
     metalLight: "#f6e27a",
     metalDark: "#997d25",
-    sealBg: "#05281e",
     source:
       "Nick HTML SoT 2026-09-24 — header #0d131f, page #090d14, circuit #0b0f17, gold #d4af37 / #f6e27a / #997d25, green #00d68f",
   },
@@ -436,6 +432,5 @@ export function brandCssVars(
     "--hub-card": theme.soft,
     ...(theme.metalLight ? { "--hub-metal-light": theme.metalLight } : {}),
     ...(theme.metalDark ? { "--hub-metal-dark": theme.metalDark } : {}),
-    ...(theme.sealBg ? { "--hub-seal-bg": theme.sealBg } : {}),
   };
 }
