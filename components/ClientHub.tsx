@@ -24,109 +24,96 @@ export function ClientHub({ client }: { client: LfClient }) {
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
         aria-hidden
       >
-        <LegalCircuitWatermark className="h-full min-h-[720px] w-full object-cover opacity-[0.22]" />
+        <LegalCircuitWatermark className="h-full min-h-[720px] w-full object-cover opacity-[0.32]" />
       </div>
 
-      {/* Framed hero — photoreal SoT chrome plate + overlay typography/crest */}
+      {/* Framed hero — photoreal SoT chrome plate (aspect-locked) + overlay type/crest */}
       <section
-        className="relative overflow-hidden rounded-[18px] shadow-2xl shadow-black/55"
-        style={{ backgroundColor: "#181a1e" }}
+        className="relative overflow-hidden rounded-[16px] shadow-2xl shadow-black/55"
+        style={{ backgroundColor: "#141618" }}
         aria-label={`${client.name} client dashboard`}
       >
-        {/* Photoreal plate: meander frame + columns + seal ring */}
-        <HeroChromePlate className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-fill" />
+        <div className="relative w-full" style={{ aspectRatio: "996 / 218" }}>
+          {/* Photoreal plate: full SoT meander/columns/seal (pixels, not SVG) */}
+          <HeroChromePlate className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-fill" />
 
-        {/* faint line-chart watermark inside plate */}
-        <svg
-          className="pointer-events-none absolute inset-0 z-[2] h-full w-full text-white opacity-[0.08]"
-          aria-hidden
-          preserveAspectRatio="none"
-          viewBox="0 0 800 220"
-        >
-          <polyline
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.2"
-            points="40,160 100,140 160,150 220,110 280,120 340,80 400,100 460,55 520,90 580,45 640,75 700,40 760,60"
-          />
-        </svg>
 
-        {/* Crest locked to photoreal seal hole (~84.5% x, ~52% y of plate) */}
-        <div
-          className="pointer-events-none absolute z-[4] flex items-center justify-center overflow-hidden rounded-full"
-          style={{
-            right: "7.5%",
-            top: "50%",
-            transform: "translateY(-52%)",
-            width: "min(6.6rem, 14%)",
-            height: "min(6.6rem, 58%)",
-            backgroundColor: "color-mix(in srgb, var(--brand) 78%, #050805)",
-            boxShadow: "inset 0 0 16px rgba(0,0,0,0.5)",
-          }}
-          aria-hidden={!logoUrl}
-        >
-          {logoUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={logoUrl}
-              alt={`${client.name} logo`}
-              width={150}
-              height={150}
-              className="pointer-events-auto h-[88%] w-[88%] object-contain"
-            />
-          ) : (
-            <span className="px-2 text-center text-[9px] font-medium uppercase tracking-wider text-white/50">
-              Crest unavailable
-            </span>
-          )}
-        </div>
-
-        <div className="relative z-[3] flex min-h-[11.5rem] flex-col items-stretch gap-4 px-7 py-8 sm:min-h-[13rem] sm:px-10 sm:py-9 lg:flex-row lg:items-center lg:gap-3">
-          {/* Left: justify local mark */}
-          <div className="flex shrink-0 justify-center lg:w-[9.5rem] lg:justify-start">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brands/_justify/logo.png"
-              alt="justify local"
-              width={150}
-              height={66}
-              className="h-14 w-auto object-contain sm:h-[4.5rem]"
-            />
+          {/* Crest locked to photoreal seal hole (~84.5% x) */}
+          <div
+            className="pointer-events-none absolute z-[4] flex items-center justify-center overflow-hidden rounded-full"
+            style={{
+              left: "84.5%",
+              top: "52%",
+              transform: "translate(-50%, -50%)",
+              width: "9.8%",
+              height: "45%",
+              backgroundColor: "color-mix(in srgb, var(--brand) 78%, #050805)",
+              boxShadow: "inset 0 0 12px rgba(0,0,0,0.55)",
+            }}
+          >
+            {logoUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={logoUrl}
+                alt={`${client.name} logo`}
+                width={150}
+                height={150}
+                className="pointer-events-auto h-[88%] w-[88%] object-contain"
+              />
+            ) : (
+              <span className="px-1 text-center text-[8px] font-medium uppercase tracking-wider text-white/50">
+                Crest unavailable
+              </span>
+            )}
           </div>
 
-          {/* Center stack — dynamic firm typography (leave right pad for seal) */}
-          <div className="min-w-0 flex-1 space-y-1.5 px-2 text-center lg:pr-[16%]">
-            <h1
-              className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.6rem]"
-              style={{
-                color: "var(--brand-accent)",
-                textShadow:
-                  "0 1px 0 rgba(255,255,255,0.18), 0 2px 10px rgba(0,0,0,0.6)",
-              }}
-            >
-              {client.name}
-            </h1>
-            <p
-              className="text-[11px] font-semibold uppercase tracking-[0.22em] sm:text-xs"
-              style={{ color: "var(--brand-accent)" }}
-            >
-              CLIENT DASHBOARD
-            </p>
-            <p
-              className="text-base font-medium tabular-nums sm:text-lg"
-              style={{ color: "var(--brand-accent)" }}
-            >
-              {countsLine}
-            </p>
-            <p
-              className="mx-auto max-w-xl text-sm italic leading-relaxed"
-              style={{
-                color:
-                  "color-mix(in srgb, var(--brand-accent) 55%, #ffffff)",
-              }}
-            >
-              Select a location to review rankings, filters, and scan reports.
-            </p>
+          <div className="relative z-[3] flex h-full items-center gap-3 px-[4%] py-[3%]">
+            {/* Left: justify local mark */}
+            <div className="flex w-[14%] shrink-0 justify-start">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brands/_justify/logo.png"
+                alt="justify local"
+                width={150}
+                height={66}
+                className="h-auto w-full max-w-[9.5rem] object-contain"
+              />
+            </div>
+
+            {/* Center stack — dynamic firm typography */}
+            <div className="min-w-0 flex-1 space-y-0.5 pr-[18%] text-center">
+              <h1
+                className="font-serif text-[clamp(1.25rem,2.8vw,2.6rem)] font-semibold leading-tight tracking-tight"
+                style={{
+                  color: "var(--brand-accent)",
+                  textShadow:
+                    "0 1px 0 rgba(255,255,255,0.18), 0 2px 10px rgba(0,0,0,0.6)",
+                }}
+              >
+                {client.name}
+              </h1>
+              <p
+                className="text-[clamp(9px,1.1vw,12px)] font-semibold uppercase tracking-[0.22em]"
+                style={{ color: "var(--brand-accent)" }}
+              >
+                CLIENT DASHBOARD
+              </p>
+              <p
+                className="text-[clamp(0.85rem,1.5vw,1.15rem)] font-medium tabular-nums"
+                style={{ color: "var(--brand-accent)" }}
+              >
+                {countsLine}
+              </p>
+              <p
+                className="mx-auto max-w-xl text-[clamp(0.7rem,1.1vw,0.875rem)] italic leading-snug"
+                style={{
+                  color:
+                    "color-mix(in srgb, var(--brand-accent) 55%, #ffffff)",
+                }}
+              >
+                Select a location to review rankings, filters, and scan reports.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -159,16 +146,14 @@ export function ClientHub({ client }: { client: LfClient }) {
                 </span>
               </div>
 
-              <div className="mt-2 flex items-start justify-between gap-3">
+              <div className="mt-2 flex items-start gap-3">
                 <p className="min-w-0 flex-1 text-sm leading-snug text-white/75">
                   {loc.address || "Address unavailable"}
                 </p>
-                <div className="shrink-0 overflow-hidden rounded">
-                  <MapThumbPlaceholder
-                    className="h-12 w-14 object-cover"
-                    label={loc.city || loc.name}
-                  />
-                </div>
+                <MapThumbPlaceholder
+                  className="h-10 w-11 shrink-0 rounded object-cover opacity-90"
+                  label={loc.city || loc.name}
+                />
               </div>
 
               <div className="mt-4 flex justify-end">

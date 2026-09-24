@@ -152,7 +152,7 @@ export function AppShell({
 
           {/* Center: justify mark */}
           <div className="flex justify-center">
-            <JustifyMark className="h-7 w-auto sm:h-8" />
+            <JustifyMark className="h-8 w-auto object-contain sm:h-9" />
           </div>
 
           {/* Right: clock + profile pill */}
