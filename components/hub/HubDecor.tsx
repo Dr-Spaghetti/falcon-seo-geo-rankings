@@ -4,11 +4,6 @@
  * Flat SVG gold frame/columns/seal intentionally retired (Design HARD FAIL 616687b).
  */
 
-import {
-  JUSTIFY_ARROWS_PATH,
-  JUSTIFY_ARROWS_VIEWBOX,
-} from "@/components/hub/justify-arrows-path";
-
 const HUB = "/brands/_hub";
 
 /** Photoreal meander frame + Ionic columns + seal ring (center transparent). */
@@ -81,47 +76,11 @@ export function LegalCircuitWatermark({ className }: { className?: string }) {
   );
 }
 
-/**
- * Two thick filled ⌝ corner chevrons (no shaft) — traced from
- * public/brands/_hub/justify-mark.png. Stacked ~40% diagonal overlap.
- * N1: green arrows only, never people icons.
+/*
+ * Justify marks: the potrace redraw (justify-arrows-path.ts) and the
+ * text + arrows header mark were retired 2026-09-24 (Nick: never modify logos).
+ * Use <OfficialLogo logo={JUSTIFY_LOCAL_LOGO} /> from ./OfficialLogo instead.
  */
-export function JustifyCornerArrows({ className }: { className?: string }) {
-  // Exact official chevrons: potrace of green pixels from public/brands/_justify/logo.png
-  return (
-    <svg
-      data-logo-slot="justify-arrows"
-      className={className}
-      viewBox={JUSTIFY_ARROWS_VIEWBOX}
-      fill="#00d68f"
-      aria-hidden
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <path d={JUSTIFY_ARROWS_PATH} />
-    </svg>
-  );
-}
-
-/**
- * Header-center justify mark — wordmark + shared corner-chevron SVG
- * (same arrows as hero; no raster crop).
- */
-export function JustifyMark({ className }: { className?: string }) {
-  return (
-    <span
-      data-logo-slot="header-justify-mark"
-      className={`inline-flex items-center justify-center gap-1 leading-none text-white ${className ?? ""}`}
-      role="img"
-      aria-label="justify"
-    >
-      <span className="relative top-px font-sans text-[1.05em] font-bold leading-none tracking-tight">
-        justify
-      </span>
-      <JustifyCornerArrows className="relative -top-px h-[0.9em] w-[0.9em] shrink-0 self-center" />
-    </span>
-  );
-}
 
 /** Dark satellite-style map thumb cropped from SoT (teal pin). */
 export function MapThumbPlaceholder({

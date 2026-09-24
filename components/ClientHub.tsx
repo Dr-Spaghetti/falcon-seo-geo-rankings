@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { LfClient } from "@/lib/lf";
 import { resolveBrandLogoUrl } from "@/lib/lf-logo";
-import { JustifyCornerArrows } from "@/components/hub/HubDecor";
+import { OfficialLogo } from "@/components/hub/OfficialLogo";
+import { JUSTIFY_LOCAL_LOGO } from "@/lib/brand-logos";
 
 /**
  * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
@@ -34,23 +35,16 @@ export function ClientHub({ client }: { client: LfClient }) {
         aria-label={`${client.name} client dashboard`}
       >
         <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 md:flex-row md:px-4">
-          {/* Left: justify local — word + two green diagonal arrows (N1, same as header PNG) */}
-          <div className="flex shrink-0 items-center gap-2">
-            <div>
-              <div
-                data-logo-slot="hero-justify-cluster"
-                className="flex items-center justify-center gap-1.5 text-2xl leading-none"
-              >
-                <span className="relative top-px font-black leading-none tracking-tight text-white">
-                  justify
-                </span>
-                <JustifyCornerArrows className="relative -top-px h-[0.95em] w-[0.95em] shrink-0 self-center" />
-              </div>
-              <div className="mt-0.5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                <span>local</span>
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              </div>
-            </div>
+          {/* Left: OFFICIAL Justify Local logo file, untouched (no text + arrows rebuild) */}
+          <div
+            data-logo-slot="hero-justify"
+            className="flex shrink-0 items-center justify-center self-stretch"
+          >
+            <OfficialLogo
+              logo={JUSTIFY_LOCAL_LOGO}
+              slot="hero-justify"
+              className="h-[72px] w-auto md:h-[88px]"
+            />
           </div>
 
           {/* Center stack */}
@@ -231,9 +225,6 @@ function CssGoldPillar() {
   );
 }
 
-
-
-/** N1 — two crisp green diagonal up-right arrows (matches header wordmark shape). */
 
 
 function LocationOnIcon({ className }: { className?: string }) {

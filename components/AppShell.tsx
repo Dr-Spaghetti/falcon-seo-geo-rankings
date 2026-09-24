@@ -8,7 +8,8 @@ import {
   getBrandTheme,
 } from "@/lib/lf-brand";
 import { LF_CLIENT_NAV } from "@/lib/lf-nav";
-import { JustifyMark } from "@/components/hub/HubDecor";
+import { OfficialLogo } from "@/components/hub/OfficialLogo";
+import { JUSTIFY_LOCAL_LOGO } from "@/lib/brand-logos";
 import { LiveClock } from "@/components/hub/LiveClock";
 
 function navActive(pathname: string, href: string) {
@@ -17,7 +18,7 @@ function navActive(pathname: string, href: string) {
 
 /**
  * AppShell — Nick HTML SoT chrome for LF clients (2026-09-24):
- * Header #0d131f (via --hub-header): Keyword Scans/Reports left, justify center, live ET clock right.
+ * Header #0d131f (via --hub-header): Keyword Scans/Reports left, official Justify Local logo center, live ET clock right.
  * No fake account / settings / notifications / "5" badge.
  * Body: .circuit-bg (CSS grid), no photoreal watermark plate.
  * Footer: Justify Local Platform · Client Portal & Geo-Grid Rank Intelligence
@@ -120,9 +121,17 @@ export function AppShell({
             </select>
           </div>
 
-          {/* Center: justify mark — two green arrows (N1) */}
-          <div className="flex justify-center">
-            <JustifyMark className="text-[1.65rem] sm:text-[1.85rem]" />
+          {/* Center: OFFICIAL Justify Local logo file, untouched (no retrace/text rebuild) */}
+          <div
+            data-logo-slot="header-justify"
+            className="flex items-center justify-center self-stretch"
+          >
+            <OfficialLogo
+              logo={JUSTIFY_LOCAL_LOGO}
+              slot="header-justify"
+              priority
+              className="h-10 w-auto sm:h-[46px]"
+            />
           </div>
 
           {/* Right: live ET clock only — no fake account/settings/bell */}

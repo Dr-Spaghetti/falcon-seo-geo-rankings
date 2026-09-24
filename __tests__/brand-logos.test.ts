@@ -51,4 +51,14 @@ describe("brand-logos manifest (official files, untouched)", () => {
       }
     }
   });
+  it("no traced/redrawn logo modules remain", () => {
+    const root = process.cwd();
+    assert.ok(!fs.existsSync(path.join(root, "components/hub/justify-arrows-path.ts")));
+    assert.ok(!fs.existsSync(path.join(root, "public/brands/_hub/justify-mark.png")));
+    for (const f of ["components/AppShell.tsx", "components/ClientHub.tsx", "components/hub/HubDecor.tsx"]) {
+      const src = fs.readFileSync(path.join(root, f), "utf8");
+      assert.ok(!/JustifyCornerArrows|JustifyMark\b|JUSTIFY_ARROWS_PATH/.test(src), `${f} still uses a redrawn Justify mark`);
+    }
+  });
+
 });
