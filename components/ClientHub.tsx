@@ -19,22 +19,22 @@ export function ClientHub({ client }: { client: LfClient }) {
 
   return (
     <div className="relative space-y-7 text-slate-100">
-      {/* Dense legal + circuit watermark from SoT ground */}
+      {/* Dense legal + circuit watermark — z-0 (not -z-10; AppShell bg would hide negative z) */}
       <div
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
         aria-hidden
       >
-        <LegalCircuitWatermark className="h-full min-h-[720px] w-full object-cover opacity-[0.32]" />
+        <LegalCircuitWatermark className="h-full min-h-[720px] w-full object-cover opacity-[0.42]" />
       </div>
 
-      {/* Framed hero — photoreal SoT chrome plate (aspect-locked) + overlay type/crest */}
+      {/* Framed hero — photoreal SoT chrome (no opaque slate fill-plate; type floats on field) */}
       <section
-        className="relative overflow-hidden rounded-[16px] shadow-2xl shadow-black/55"
+        className="relative z-[1] overflow-hidden rounded-[16px] shadow-2xl shadow-black/55"
         style={{ backgroundColor: "#141618" }}
         aria-label={`${client.name} client dashboard`}
       >
         <div className="relative w-full" style={{ aspectRatio: "996 / 218" }}>
-          {/* Photoreal plate: full SoT meander/columns/seal (pixels, not SVG) */}
+          {/* Photoreal chrome: meander/columns/seal + field texture; SoT type stripped */}
           <HeroChromePlate className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-fill" />
 
 
@@ -43,10 +43,10 @@ export function ClientHub({ client }: { client: LfClient }) {
             className="pointer-events-none absolute z-[4] flex items-center justify-center overflow-hidden rounded-full"
             style={{
               left: "84.5%",
-              top: "52%",
+              top: "51.5%",
               transform: "translate(-50%, -50%)",
-              width: "9.8%",
-              height: "45%",
+              width: "10.2%",
+              height: "47%",
               backgroundColor: "color-mix(in srgb, var(--brand) 78%, #050805)",
               boxShadow: "inset 0 0 12px rgba(0,0,0,0.55)",
             }}
@@ -86,8 +86,8 @@ export function ClientHub({ client }: { client: LfClient }) {
                 className="font-serif text-[clamp(1.25rem,2.8vw,2.6rem)] font-semibold leading-tight tracking-tight"
                 style={{
                   color: "var(--brand-accent)",
-                  textShadow:
-                    "0 1px 0 rgba(255,255,255,0.18), 0 2px 10px rgba(0,0,0,0.6)",
+                  /* SoT floats type on field — no dark halo plate / ghost duplicate */
+                  textShadow: "0 1px 0 rgba(255,255,255,0.12)",
                 }}
               >
                 {client.name}
@@ -119,7 +119,7 @@ export function ClientHub({ client }: { client: LfClient }) {
       </section>
 
       {/* Office Locations — simplified density (Nick punch: too busy for older clients) */}
-      <section aria-label="Office Locations" className="space-y-3">
+      <section aria-label="Office Locations" className="relative z-[1] space-y-3">
         <h2
           className="font-serif text-base font-semibold tracking-tight sm:text-lg"
           style={{ color: "var(--brand-accent)" }}
