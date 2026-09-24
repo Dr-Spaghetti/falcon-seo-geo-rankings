@@ -44,14 +44,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                 <span className="font-black tracking-tight text-white">
                   justify
                 </span>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/brands/_hub/justify-arrows.png"
-                  alt=""
-                  aria-hidden
-                  className="h-[0.95em] w-auto shrink-0 object-contain object-left"
-                  draggable={false}
-                />
+                <JustifyHeroArrows className="h-[0.95em] w-[0.95em] shrink-0" />
               </div>
               <div className="mt-0.5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                 <span>local</span>
@@ -230,6 +223,34 @@ function CssGoldPillar() {
         }}
       />
     </div>
+  );
+}
+
+
+
+/** N1 — two crisp green diagonal up-right arrows (matches header wordmark shape). */
+function JustifyHeroArrows({ className }: { className?: string }) {
+  // Two north-east arrows — stroke geometry matching header wordmark; vector-crisp.
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        stroke="#00d68f"
+        strokeWidth="2.75"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      >
+        <path d="M10 4.5h9.5V14" />
+        <path d="M19.5 4.5L8.5 15.5" />
+        <path d="M4.5 10h9.5V19.5" />
+        <path d="M14 10L3 21" />
+      </g>
+    </svg>
   );
 }
 
