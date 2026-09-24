@@ -94,7 +94,7 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     metalDark: "#8B7038",
     sealBg: "#011633",
     source:
-      "choosecharlie.com theme CSS header-nav/hero #011633 + Therman gold accent #C5A059 (logo cream/gold; NOT DJ forest)",
+      "choosecharlie.com #011633 navy + gold #C5A059. HARD: zero green on/behind crest (no Justify green plate/halo).",
   },
   premier: buildTheme("#142452", {
     soft: "#243660",

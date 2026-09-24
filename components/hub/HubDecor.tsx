@@ -143,8 +143,9 @@ export function MapThumbPlaceholder({
 }
 
 /** @deprecated flat SVG retired — maps to photoreal plate */
-export function GreekMeanderFrame({ className }: { className?: string }) {
-  return <HeroChromePlate className={className} />;
+export function GreekMeanderFrame(_props: { className?: string }) {
+  /* Retired 2026-09-24 CoS: no ornate Greek-key / meander / filigree. */
+  return null;
 }
 
 /** @deprecated flat SVG retired — maps to photoreal column */

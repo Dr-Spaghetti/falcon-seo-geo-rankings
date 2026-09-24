@@ -5,7 +5,7 @@ import { JustifyCornerArrows } from "@/components/hub/HubDecor";
 
 /**
  * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
- * CSS gold-frame + circuit-bg + Cinzel/Inter. Official crest in ring only.
+ * Circuit-bg + Cinzel/Inter. Official crest in ring; no Greek-key hero border.
  * Per-firm chrome via --brand-accent / --hub-* tokens (not DJ-gold stamped).
  */
 export function ClientHub({ client }: { client: LfClient }) {
@@ -27,16 +27,12 @@ export function ClientHub({ client }: { client: LfClient }) {
 
   return (
     <div className="relative flex flex-col gap-6 text-slate-100">
-      {/* Hero — gold-frame + dashed inset; NO photoreal PNG plate */}
+      {/* Hero — no ornate Greek-key / filigree border (CoS 2026-09-24).
+          Keep CSS gold pillars only. Soft slate card edge, not meander. */}
       <section
-        className="gold-frame relative overflow-hidden rounded-2xl p-6"
+        className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-[color-mix(in_srgb,var(--hub-card)_92%,#000)] p-6 shadow-xl"
         aria-label={`${client.name} client dashboard`}
       >
-        <div
-          className="gold-dashed pointer-events-none absolute inset-2 rounded-xl"
-          aria-hidden
-        />
-
         <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 md:flex-row md:px-4">
           {/* Left: justify local — word + two green diagonal arrows (N1, same as header PNG) */}
           <div className="flex shrink-0 items-center gap-2">
@@ -94,7 +90,7 @@ export function ClientHub({ client }: { client: LfClient }) {
             >
               <div
                 data-logo-slot="crest-inner"
-                className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[var(--hub-seal-bg,#05281e)] shadow-inner"
+                className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[var(--hub-seal-bg,#0a0f1a)] shadow-inner"
               >
                 {logoUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
