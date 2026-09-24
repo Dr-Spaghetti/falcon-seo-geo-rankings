@@ -3,22 +3,19 @@
 | Field | Value |
 |-------|--------|
 | **goal_id** | falcon-dj-hub-sot-exact / Band D feat PR #1 |
-| **state** | ready_for_design (DJ Eng settle — awaiting Design HARD PASS) |
+| **state** | ready_for_design (Eng retip after HARD FAIL 616687b — awaiting Design re-PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| **blocker** | Design HARD PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `616687b` |
-| **tip_sha** | `616687b0afda1d3bb087606d964e3bf833815062` |
-| **updated_at** | 2026-09-24 1:09 PM ET |
+| **blocker** | Design HARD re-PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` |
+| **tip_sha** | *(pending commit)* |
+| **updated_at** | 2026-09-24 1:25 PM ET |
 
 ## Evidence links
 
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Tip SHA | `616687b0afda1d3bb087606d964e3bf833815062` |
-| Preview (Ready, Band C gitless) | https://justifycode-wordpress-dashboard-3fobtx05w.vercel.app |
-| Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-3fobtx05w.vercel.app/clients/dj-law |
-| Inspect | https://vercel.com/nicks-projects-2d0579a1/justifycode-wordpress-dashboard/7VkR7Xjzn8hzKdBLLgNfbyHiWiKo |
+| Preview (Band C gitless) | *(pending deploy)* |
 | Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
 | Vercel project | justifycode-wordpress-dashboard |
 
@@ -27,40 +24,31 @@
 | Kind | Path / note |
 |------|-------------|
 | **Canonical SoT** | `_shots/sot-2026-09-24/dj-law-hub-sot.png` (Nick attach) |
-| Also | `_shots/nick-dj-hub-mock.png` (same bytes) |
-| Therman | Template clone of DJ SoT — no separate mock; crest = `public/brands/therman/logo.webp` |
+| Therman | Template clone of DJ SoT — crest = `public/brands/therman/logo.webp` |
+| Nick live punch | `_shots/nick-feedback-2026-09-24/PUNCH.txt` |
 
-## Eng verify (DJ first)
+## Eng retip vs HARD FAIL 616687b (photoreal gold)
+
+| # | Punch | Eng action |
+|---|-------|------------|
+| 1 | KILL flat SVG frame/columns/seal | Cropped photoreal chrome FROM SoT → `public/brands/_hub/` (hero-chrome-plate, columns, seal-ring, meander-frame) |
+| 2 | Map thumbs → satellite | `map-sat-thumb.png` cropped from SoT (dark sat + teal pin) |
+| 3 | Denser watermark | `watermark-ground.png` cropped from SoT ground (opacity 0.22) |
+| 4 | AppShell exact / drop firm-select | Visible `<select>` → `sr-only`; search + Keyword Scans/Reports · justify mark · NY clock · profile/gear/bell+5 |
+| 5 | Re-tip Band C | Eng settle shots v3 — NOT claiming Design DONE |
+| N1 | TWO GREEN ARROWS (Nick) | `justify-mark.png` cropped from SoT header — people icons reverted |
+| N2 | Hero gold KEEP direction | Photoreal plate kept; Design bar still pending re-PASS |
+| N3 | OL lower half too busy | Simplified: plain gold heading, lighter cards, text scan count, link CTA (no gold tab/pill/button chrome) |
+
+## Verify
 
 | # | Check | Result | Evidence |
 |---|-------|--------|----------|
-| 1 | `npm test` + `tsc --noEmit` + `npm run build` | **GREEN** | 24/24 tests; tsc 0; build 101 routes |
-| 2 | DJ hub vs SoT — frame / columns / AppShell / OL | **ENG SETTLE** (Design HARD PASS pending) | `_shots/verify-2026-09-24/verify-dj-hub-v2.png` + `sot-vs-dj-v2-top.png` |
-| 3 | DOM: DJ DLC crest `<img`; no Firm hub chip | **PASS** | `/brands/dj-law/logo.png`; Firm hub=0 |
-| 4 | Therman template clone + logo.webp (no placeholder) | **PASS** (clone; not claiming Design DONE) | `_shots/verify-2026-09-24/verify-therman-hub-v2.png` |
-| 5 | Preview URL + tip SHA | **PASS** | tip `616687b`; preview Ready @ 3fobtx05w |
-
-## Mock gaps closed (vs prior FAIL `verify-dj-hub.png`)
-
-- [x] AppShell: search + “Keyword Scans/Reports” · center justify mark · live NY clock · profile/gear/bell(+5)
-- [x] Subtle firm switcher (does not dominate mock chrome); WordPress under gear menu
-- [x] Dark legal ground + scales/columns/circuit watermark
-- [x] Thick ornate gold Greek-meander frame (SVG overlay) — not thin 3px border
-- [x] Ionic columns flanking ornate seal + firm crest `object-contain` as-is
-- [x] justify local left; firm name gold serif; CLIENT DASHBOARD; counts; italic instruction
-- [x] Removed `badge="Firm hub"` from all hub pages
-- [x] Office Locations: gold tab + black serif underline (SoT), not prior wrong treatment alone
-- [x] Location cards: city serif, grey scan pill, address, map thumb+pin, gold-border Open dashboard; no ★ ratings
-- [x] Therman accent `#C5A059` on Choose Charlie navy (not DJ forest stamped)
-
-## Residual diffs vs photoreal SoT (honest)
-
-- Frame/columns are SVG metallic gradients — not the SoT’s photoreal 3D gold render
-- Map thumb is styled dark SVG (no Mapbox key) — not real satellite imagery
-- Header circuit texture is SVG line art, lighter than SoT emboss
-- Firm `<select>` is an accessibility/usability addition under the left label (not in mock)
+| 1 | `npm test` + `tsc --noEmit` + `npm run build` | **GREEN** | 24/24; tsc 0; build 101 routes |
+| 2 | DJ / Therman settle shots | pending v3 | `_shots/verify-2026-09-24/verify-*-hub-v3.png` + `sot-vs-dj-v3-top.png` |
 
 ## Band D HOLD
 
 - **NO** merge to `master`
 - **NO** promote to prod alias `justifycode-wordpress-dashboard.vercel.app`
+- **NOT** claiming Design DONE — Eng settle only; Design HARD re-PASS required

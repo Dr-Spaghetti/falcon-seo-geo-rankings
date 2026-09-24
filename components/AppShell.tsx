@@ -17,9 +17,10 @@ function navActive(pathname: string, href: string) {
 
 /**
  * AppShell — Nick DJ hub SoT chrome for LF clients:
- * Left: search + "Keyword Scans/Reports" (+ subtle firm select)
- * Center: justify mark
- * Right: live NY clock + profile / gear / bell
+ * Left: search + "Keyword Scans/Reports" (NO visible firm-select — Design punch)
+ * Center: justify mark (two green arrows, never people icons)
+ * Right: live NY clock + profile / gear / bell(+5)
+ * Firm switch: URL /clients/{slug} only (sr-only select for a11y).
  * Non-LF routes keep the prior light wash layout.
  */
 export function AppShell({
@@ -113,7 +114,7 @@ export function AppShell({
         <div
           className={`relative mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 ${maxW}`}
         >
-          {/* Left: search + label + subtle firm select */}
+          {/* Left: search + Keyword Scans/Reports — firm select sr-only (Design punch) */}
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
             <Link
               href={activeClient?.href ?? "/clients/dj-law"}
@@ -135,7 +136,7 @@ export function AppShell({
                 const next = e.target.value;
                 if (next) router.push(next);
               }}
-              className="max-w-[7.5rem] truncate rounded border border-white/15 bg-black/25 px-1.5 py-1 text-[11px] font-medium text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:max-w-[11rem] sm:text-xs"
+              className="sr-only"
             >
               {LF_CLIENT_NAV.map((c) => (
                 <option

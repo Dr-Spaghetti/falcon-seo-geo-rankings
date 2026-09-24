@@ -1,0 +1,12 @@
+Photoreal hub chrome cropped from Nick SoT:
+  _shots/sot-2026-09-24/dj-law-hub-sot.png
+Assets:
+  hero-chrome-plate.png  — full meander frame + columns + seal ring (center transparent)
+  meander-frame.png      — frame-only (transparent interior)
+  column-left.png / column-right.png — Ionic columns
+  seal-ring.png          — ornate gold ring, center transparent for firm crest
+  map-sat-thumb.png      — satellite-style map thumb + teal pin from SoT
+  watermark-ground.png   — denser circuit/scales/columns ground from SoT
+Do NOT replace with flat SVG gradients.
+--- justify-mark in SOURCE ---
+  justify-mark.png       — SoT header wordmark + TWO GREEN ARROWS (not people icons)
