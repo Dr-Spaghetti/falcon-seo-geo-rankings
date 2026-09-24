@@ -16,6 +16,13 @@ export type LfBrandTheme = {
   muted: string;
   /** Hero background image (linear-gradient) */
   hero: string;
+  /**
+   * Metal / frame accent for premium hub chrome.
+   * Per-firm — never stamp DJ gold onto every firm.
+   */
+  accent: string;
+  /** Dark hub body surface (premium dark template) */
+  surface: string;
   /** Human-readable provenance for commits / audits */
   source: string;
 };
@@ -34,6 +41,8 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
   border: "#0a1420",
   muted: "#e4ebf3",
   hero: "linear-gradient(135deg, #122033 0%, #1b2d45 48%, #243a58 100%)",
+  accent: "#8fa3bc",
+  surface: "#131820",
   source: "Falcon default navy (tailwind navy-900 / hero-navy)",
 };
 
@@ -57,7 +66,7 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - rampart: rampartinjurylawyers.com Elementor --e-global-color-primary #333544
  * - milano: milanoaccidentlawyers.com WordPress theme primary #0073e5
  * - tad-law: tadlaw.com homepage critical CSS #cb6326
- * - dj-law: djlawcorp.com Bootstrap primary #0d6efd
+ * - dj-law: DLC crest / site — forest green + charcoal + metal gold (NOT Bootstrap #0d6efd)
  * - mary-higgins: letsbelegal.com --color-prime #b32227
  * - shammas-law: shammas-law.com practice-area cards #001159
  * - farias-firm: fariastriallaw.com dark ink #112337
@@ -134,6 +143,7 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     border: "#152838",
     muted: "#d0d8e0",
     hero: "linear-gradient(135deg, #22374b 0%, #2a4560 48%, #3a5570 100%)",
+    accent: "#d0b56d",
     source:
       "omegalaw.com theme omega-rebuild assets/app/css/main.min.css navy #22374b (~66× button hover/fill + scroll-to-top; gold #d0b56d accent secondary)",
   }),
@@ -169,9 +179,11 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     ring: "#9a3032",
     border: "#4a090a",
     muted: "#e8d0d1",
-    hero: "linear-gradient(135deg, #640d0f 0%, #7a181a 48%, #8a2426 100%)",
+    hero: "linear-gradient(135deg, #2a0a0b 0%, #4a0c0e 48%, #640d0f 100%)",
+    accent: "#066a94",
+    surface: "#1a0c0d",
     source:
-      "andycallifbailbonds.com homepage inline CSS / 24 Hour Help mark burgundy #640d0f (CTA blue #066a94 supporting accent)",
+      "andycallifbailbonds.com homepage inline CSS / 24 Hour Help mark burgundy #640d0f (CTA blue #066a94 supporting accent — not DJ gold)",
   }),
   "amos-perrick": buildTheme("#2b2b51", {
     soft: "#454575",
@@ -179,6 +191,7 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     border: "#1a1a38",
     muted: "#d0d0e0",
     hero: "linear-gradient(135deg, #2b2b51 0%, #353568 48%, #454575 100%)",
+    accent: "#E2C675",
     source:
       "apmdlaw.com header/footer logo SVG navy #2b2b51 (gold #E2C675 accent secondary)",
   }),
@@ -188,6 +201,7 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     border: "#264552",
     muted: "#d0e0e4",
     hero: "linear-gradient(135deg, #375d6a 0%, #426e7c 48%, #4a7585 100%)",
+    accent: "#ECB52A",
     source:
       "golddoglaw.com homepage/logo SVG slate teal #375d6a (gold #ECB52A accent secondary)",
   }),
@@ -227,14 +241,16 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     source:
       "tadlaw.com homepage critical CSS #cb6326 (dark #252422 supporting neutral)",
   }),
-  "dj-law": buildTheme("#0d6efd", {
-    soft: "#3d8bfd",
-    ring: "#5c9cfe",
-    border: "#0a58ca",
-    muted: "#cfe2ff",
-    hero: "linear-gradient(135deg, #0d6efd 0%, #2a7ffe 48%, #3d8bfd 100%)",
+  "dj-law": buildTheme("#1b3e2a", {
+    soft: "#33353c",
+    ring: "#e8c8a8",
+    border: "#0d2418",
+    muted: "#d4c4a8",
+    hero: "linear-gradient(135deg, #1a1c22 0%, #2a2c34 48%, #33353c 100%)",
+    accent: "#d0a854",
+    surface: "#131418",
     source:
-      "djlawcorp.com Bootstrap primary #0d6efd (site shell; separate from Facchetti)",
+      "DLC crest + Nick hub mock — forest green #1b3e2a header, charcoal hero #33353c, metal gold accent #d0a854 (crest cream #e8c8a8); replaces wrong Bootstrap #0d6efd",
   }),
   "mary-higgins": buildTheme("#b32227", {
     soft: "#c93a3f",
@@ -260,6 +276,7 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     border: "#0a1828",
     muted: "#d0d6dc",
     hero: "linear-gradient(135deg, #112337 0%, #1a3048 48%, #2a3f55 100%)",
+    accent: "#d4a437",
     source:
       "fariastriallaw.com dark ink/primary #112337 (gold #d4a437 accent secondary)",
   }),
@@ -272,26 +289,64 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     source:
       "pearlandthompsonlaw.com dark ink/primary theme token #112337",
   }),
-  "direct-legal-funding": buildTheme("#ea5800", {
-    soft: "#f07326",
+  "direct-legal-funding": buildTheme("#051750", {
+    soft: "#1a2a6a",
     ring: "#f59045",
-    border: "#c44a00",
+    border: "#030d30",
     muted: "#fde8d4",
-    hero: "linear-gradient(135deg, #ea5800 0%, #f06815 48%, #f07326 100%)",
+    hero: "linear-gradient(135deg, #051750 0%, #0a2260 48%, #1a2a6a 100%)",
+    accent: "#ea5800",
+    surface: "#060b1c",
     source:
-      "directlegalfunding.com orange accent #ea5800 (deep navy #051750 section secondary)",
+      "directlegalfunding.com deep navy #051750 primary shell + orange #ea5800 metal accent (not DJ gold)",
   }),
 };
 
 function buildTheme(
   primary: string,
-  extras: Omit<LfBrandTheme, "primary" | "onPrimary">
+  extras: Omit<LfBrandTheme, "primary" | "onPrimary" | "accent" | "surface"> & {
+    accent?: string;
+    surface?: string;
+  }
 ): LfBrandTheme {
+  const { accent, surface, ...rest } = extras;
   return {
     primary,
     onPrimary: contrastOnPrimary(primary),
-    ...extras,
+    accent: accent ?? defaultAccent(primary),
+    surface: surface ?? defaultSurface(primary),
+    ...rest,
   };
+}
+
+/** Per-primary metal accent — silver/steel lift, NOT fixed DJ gold. */
+function defaultAccent(primary: string): string {
+  const [r, g, b] = hexToRgb(primary);
+  const mix = 0.55;
+  const nr = Math.round(r * (1 - mix) + 190 * mix);
+  const ng = Math.round(g * (1 - mix) + 198 * mix);
+  const nb = Math.round(b * (1 - mix) + 210 * mix);
+  return rgbToHex(nr, ng, nb);
+}
+
+/** Dark hub body derived from primary. */
+function defaultSurface(primary: string): string {
+  const [r, g, b] = hexToRgb(primary);
+  return rgbToHex(
+    Math.max(8, Math.round(r * 0.35)),
+    Math.max(10, Math.round(g * 0.35)),
+    Math.max(14, Math.round(b * 0.4))
+  );
+}
+
+function rgbToHex(r: number, g: number, b: number): string {
+  const clamp = (n: number) => Math.max(0, Math.min(255, n));
+  return (
+    "#" +
+    [clamp(r), clamp(g), clamp(b)]
+      .map((n) => n.toString(16).padStart(2, "0"))
+      .join("")
+  );
 }
 
 /** Relative luminance (sRGB) for WCAG-ish contrast decisions. */
@@ -355,5 +410,7 @@ export function brandCssVars(
     "--brand-ring": theme.ring,
     "--brand-border": theme.border,
     "--brand-hero": theme.hero,
+    "--brand-accent": theme.accent,
+    "--brand-surface": theme.surface,
   };
 }

@@ -1,0 +1,5 @@
+logo.png — official Djoumourian Law Corp (DLC) crest as served via Google favicon cache
+  (https://www.google.com/s2/favicons?domain=djlawcorp.com&sz=256 → 150×150 PNG).
+  Firm site djlawcorp.com was SiteGround-captcha blocked from this box (2026-09-24);
+  binary is the firm's published mark, stored unmodified (no recolor/crop/filter).
+mock-reference.png — Nick layout mock (reference only; NOT the firm logo).

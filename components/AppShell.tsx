@@ -30,10 +30,21 @@ export function AppShell({
   const brand = getBrandTheme(brandSlugFromPathname(pathname));
   const brandStyle = brandCssVars(brand) as React.CSSProperties;
 
+  const isLfClient = Boolean(activeClient);
+
   return (
     <div
-      className="min-h-screen bg-page-wash text-slate-900 antialiased"
-      style={brandStyle}
+      className={
+        isLfClient
+          ? "min-h-screen text-slate-100 antialiased"
+          : "min-h-screen bg-page-wash text-slate-900 antialiased"
+      }
+      style={{
+        ...brandStyle,
+        ...(isLfClient
+          ? { backgroundColor: "var(--brand-surface)" }
+          : null),
+      }}
     >
       <header className="sticky top-0 z-40 border-b border-[color:var(--brand-border)] bg-[var(--brand)] text-[var(--brand-fg)] shadow-md shadow-black/25">
         <div

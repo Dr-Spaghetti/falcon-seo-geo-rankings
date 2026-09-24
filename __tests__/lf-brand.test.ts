@@ -70,4 +70,30 @@ describe("lf-brand", () => {
       /092241|kaplunmarx|elementor-24|e-global-color-2a1465e/i
     );
   });
+
+  it("dj-law uses crest charcoal/green/gold — not Bootstrap blue", () => {
+    const dj = getBrandTheme("dj-law");
+    assert.equal(dj.primary, "#1b3e2a");
+    assert.equal(dj.accent, "#d0a854");
+    assert.notEqual(dj.primary, "#0d6efd");
+    assert.match(dj.source, /DLC crest|forest green|Bootstrap/i);
+  });
+
+  it("non-gold firms keep own accents (andy-callif, direct-legal-funding)", () => {
+    const andy = getBrandTheme("andy-callif");
+    const dlf = getBrandTheme("direct-legal-funding");
+    assert.equal(andy.accent, "#066a94");
+    assert.notEqual(andy.accent.toLowerCase(), "#d0a854");
+    assert.equal(dlf.accent, "#ea5800");
+    assert.notEqual(dlf.accent.toLowerCase(), "#d0a854");
+  });
+
+  it("every LF brand slug exposes accent + surface tokens", () => {
+    for (const slug of Object.keys(LF_BRAND_BY_SLUG)) {
+      const theme = getBrandTheme(slug);
+      assert.match(theme.accent, /^#[0-9a-fA-F]{6}$/, slug + " accent");
+      assert.match(theme.surface, /^#[0-9a-fA-F]{6}$/, slug + " surface");
+    }
+  });
+
 });

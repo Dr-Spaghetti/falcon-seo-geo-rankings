@@ -17,6 +17,8 @@
   --brand-ring: #2f4a6e;
   --brand-border: #0a1420;
   --brand-hero: linear-gradient(135deg, #122033 0%, #1b2d45 48%, #243a58 100%);
+  --brand-accent: #8fa3bc;
+  --brand-surface: #131820;
 }
 
 body {
