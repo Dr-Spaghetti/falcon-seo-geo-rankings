@@ -1,160 +1,153 @@
 import Link from "next/link";
 import type { LfClient } from "@/lib/lf";
 import { resolveBrandLogoUrl } from "@/lib/lf-logo";
+import {
+  GreekMeanderFrame,
+  IonicColumn,
+  LegalCircuitWatermark,
+  MapThumbPlaceholder,
+  OrnateSealRing,
+} from "@/components/hub/HubDecor";
 
 /**
- * Shared premium dark branded hub (Nick DJ Law mock SoT).
- * Same template for all LF_CLIENT_NAV hubs; per-firm tokens via --brand-* CSS vars.
- * Firm logos: official binaries under public/brands/{slug}/ only — displayed as-is.
+ * Shared premium dark branded hub — Nick DJ Law hub SoT is the master template.
+ * Exact chrome: ornate gold Greek-meander frame, Ionic columns, seal crest,
+ * dark legal watermark ground, Office Locations card language.
+ * Per-firm: crest/logo, name, counts, --brand-* tokens only.
  */
-export function ClientHub({
-  client,
-  badge,
-}: {
-  client: LfClient;
-  /** Optional chip under the hero (e.g. "Firm hub") */
-  badge?: string;
-}) {
+export function ClientHub({ client }: { client: LfClient }) {
   const base = `/clients/${client.slug}`;
   const logoUrl = resolveBrandLogoUrl(client.slug);
   const countsLine = `${client.location_count} locations | ${client.scan_count.toLocaleString()} Total scans`;
 
   return (
-    <div className="relative space-y-7 text-slate-100">
-      {/* Subtle shared watermark */}
+    <div className="relative space-y-8 text-slate-100">
+      {/* Large subtle legal + circuit watermark on page ground */}
       <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
         aria-hidden
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 20% 0%, var(--brand-accent) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, var(--brand-soft) 0%, transparent 50%)",
-        }}
-      />
+      >
+        <LegalCircuitWatermark className="h-full min-h-[720px] w-full text-white opacity-[0.07]" />
+      </div>
 
-      {/* Framed hero */}
+      {/* Framed hero — thick ornate gold Greek-key frame */}
       <section
-        className="relative overflow-hidden rounded-2xl border-[3px] px-5 py-6 shadow-xl shadow-black/40 sm:px-8 sm:py-8"
+        className="relative overflow-hidden rounded-[18px] px-7 py-9 shadow-2xl shadow-black/55 sm:px-12 sm:py-11"
         style={{
-          borderColor: "var(--brand-accent)",
           backgroundImage:
-            "linear-gradient(145deg, rgba(0,0,0,0.25) 0%, transparent 40%), var(--brand-hero)",
+            "linear-gradient(145deg, rgba(0,0,0,0.4) 0%, transparent 45%), var(--brand-hero)",
           backgroundColor: "var(--brand-surface)",
         }}
         aria-label={`${client.name} client dashboard`}
       >
-        {/* faint chart watermark inside frame */}
+        <GreekMeanderFrame className="pointer-events-none absolute inset-0 z-[2] h-full w-full" />
+
+        {/* faint line-chart watermark inside frame */}
         <svg
-          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]"
+          className="pointer-events-none absolute inset-0 z-[1] h-full w-full text-white opacity-[0.09]"
           aria-hidden
           preserveAspectRatio="none"
-          viewBox="0 0 800 200"
+          viewBox="0 0 800 220"
         >
           <polyline
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
-            points="0,140 80,120 160,130 240,90 320,100 400,60 480,80 560,40 640,70 720,30 800,50"
+            strokeWidth="2.2"
+            points="40,160 100,140 160,150 220,110 280,120 340,80 400,100 460,55 520,90 580,45 640,75 700,40 760,60"
           />
         </svg>
 
-        <div className="relative flex flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex min-w-0 flex-1 flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-            {/* Justify Local mark */}
-            <div className="shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brands/_justify/logo.png"
-                alt="justify local"
-                width={140}
-                height={61}
-                className="h-14 w-auto object-contain sm:h-16"
-              />
-            </div>
-
-            <div className="min-w-0 space-y-1.5">
-              <h1
-                className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl"
-                style={{ color: "var(--brand-accent)" }}
-              >
-                {client.name}
-              </h1>
-              <p
-                className="text-xs font-semibold uppercase tracking-[0.18em] sm:text-sm"
-                style={{ color: "var(--brand-accent)" }}
-              >
-                CLIENT DASHBOARD
-              </p>
-              <p
-                className="text-base font-medium tabular-nums sm:text-lg"
-                style={{ color: "var(--brand-accent)" }}
-              >
-                {countsLine}
-              </p>
-              <p className="max-w-xl text-sm italic leading-relaxed text-white/70">
-                Select a location to review rankings, filters, and scan reports.
-              </p>
-              {badge ? (
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <span
-                    className="rounded-full px-2.5 py-0.5 text-[11px] font-medium ring-1"
-                    style={{
-                      color: "var(--brand-accent)",
-                      backgroundColor:
-                        "color-mix(in srgb, var(--brand-accent) 12%, transparent)",
-                      boxShadow:
-                        "inset 0 0 0 1px color-mix(in srgb, var(--brand-accent) 35%, transparent)",
-                    }}
-                  >
-                    {badge}
-                  </span>
-                </div>
-              ) : null}
-            </div>
+        <div className="relative z-[3] flex flex-col items-stretch gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-3">
+          {/* Left: justify local mark */}
+          <div className="flex shrink-0 justify-center lg:w-[9.5rem] lg:justify-start">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brands/_justify/logo.png"
+              alt="justify local"
+              width={150}
+              height={66}
+              className="h-14 w-auto object-contain sm:h-[4.5rem]"
+            />
           </div>
 
-          {/* Firm logo — official file as-is; never invent / recolor */}
-          <div className="flex shrink-0 items-center justify-center lg:justify-end">
-            {logoUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={logoUrl}
-                alt={`${client.name} logo`}
-                width={160}
-                height={160}
-                className="h-28 w-28 rounded-full object-contain sm:h-36 sm:w-36"
-                // No CSS filter / tint — display binary as-is
-                style={{ filter: "none" }}
-              />
-            ) : (
+          {/* Center stack */}
+          <div className="min-w-0 flex-1 space-y-1.5 px-2 text-center">
+            <h1
+              className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem]"
+              style={{
+                color: "var(--brand-accent)",
+                textShadow:
+                  "0 1px 0 rgba(255,255,255,0.18), 0 2px 10px rgba(0,0,0,0.6)",
+              }}
+            >
+              {client.name}
+            </h1>
+            <p
+              className="text-[11px] font-semibold uppercase tracking-[0.22em] sm:text-xs"
+              style={{ color: "var(--brand-accent)" }}
+            >
+              CLIENT DASHBOARD
+            </p>
+            <p
+              className="text-base font-medium tabular-nums sm:text-lg"
+              style={{ color: "var(--brand-accent)" }}
+            >
+              {countsLine}
+            </p>
+            <p
+              className="mx-auto max-w-xl text-sm italic leading-relaxed"
+              style={{
+                color:
+                  "color-mix(in srgb, var(--brand-accent) 55%, #ffffff)",
+              }}
+            >
+              Select a location to review rankings, filters, and scan reports.
+            </p>
+          </div>
+
+          {/* Right: Ionic columns flanking ornate seal + firm logo */}
+          <div className="flex shrink-0 items-end justify-center gap-0 sm:gap-1 lg:w-[17rem]">
+            <IonicColumn className="mb-1 hidden h-[11.5rem] w-auto sm:block" />
+            <div className="relative flex h-36 w-36 items-center justify-center sm:h-40 sm:w-40">
+              <OrnateSealRing className="pointer-events-none absolute inset-0 h-full w-full" />
               <div
-                className="flex h-28 w-28 flex-col items-center justify-center rounded-full border border-dashed text-center sm:h-36 sm:w-36"
+                className="relative z-[1] flex h-[76%] w-[76%] items-center justify-center overflow-hidden rounded-full"
                 style={{
-                  borderColor: "color-mix(in srgb, var(--brand-accent) 45%, transparent)",
-                  color: "var(--brand-accent)",
-                  backgroundColor: "color-mix(in srgb, var(--brand-surface) 80%, black)",
+                  backgroundColor:
+                    "color-mix(in srgb, var(--brand) 78%, #050805)",
+                  boxShadow: "inset 0 0 16px rgba(0,0,0,0.5)",
                 }}
-                role="img"
-                aria-label={`${client.name} logo unavailable`}
               >
-                <span className="px-2 text-[10px] font-semibold uppercase tracking-wider opacity-80">
-                  Logo
-                </span>
-                <span className="mt-0.5 max-w-[6.5rem] truncate px-2 text-xs font-medium">
-                  {client.name}
-                </span>
+                {logoUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={logoUrl}
+                    alt={`${client.name} logo`}
+                    width={150}
+                    height={150}
+                    className="h-[90%] w-[90%] object-contain"
+                    style={{ filter: "none" }}
+                  />
+                ) : (
+                  <span className="px-2 text-center text-[10px] font-medium uppercase tracking-wider text-white/50">
+                    Crest unavailable
+                  </span>
+                )}
               </div>
-            )}
+            </div>
+            <IonicColumn className="mb-1 hidden h-[11.5rem] w-auto sm:block" />
           </div>
         </div>
       </section>
 
-      {/* Office Locations */}
-      <section aria-label="Office Locations" className="space-y-3">
+      {/* Office Locations — SoT: gold tab, black serif underlined (not thin gold text alone) */}
+      <section aria-label="Office Locations" className="space-y-4">
         <div
-          className="inline-flex rounded-lg px-3 py-1.5 text-sm font-serif font-semibold shadow-sm"
+          className="inline-block rounded-md px-3.5 py-1.5 font-serif text-base font-bold tracking-tight underline decoration-2 underline-offset-[5px] shadow-sm sm:text-lg"
           style={{
-            color: "var(--brand-surface)",
+            color: "#0a0a0a",
             backgroundColor: "var(--brand-accent)",
+            textDecorationColor: "#0a0a0a",
           }}
         >
           Office Locations
@@ -164,41 +157,42 @@ export function ClientHub({
           {client.locations.map((loc) => (
             <article
               key={loc.place_id}
-              className="flex flex-col rounded-xl border border-white/10 bg-[#1c1e24]/95 p-5 shadow-md shadow-black/30"
+              className="flex flex-col rounded-xl border bg-[#1a1c22]/95 p-5 shadow-md shadow-black/40"
+              style={{
+                borderColor:
+                  "color-mix(in srgb, var(--brand-accent) 60%, transparent)",
+                boxShadow:
+                  "0 0 0 1px color-mix(in srgb, var(--brand-accent) 28%, transparent), 0 8px 24px rgba(0,0,0,0.4)",
+              }}
             >
               <div className="flex items-start justify-between gap-3">
-                <h3 className="text-lg font-semibold text-white underline decoration-white/30 underline-offset-4">
+                <h3 className="font-serif text-lg font-bold text-white underline decoration-white/40 decoration-2 underline-offset-4">
                   {loc.city || loc.name}
                 </h3>
                 <span
-                  className="shrink-0 rounded-md px-2 py-0.5 text-xs font-semibold tabular-nums text-white/90 ring-1 ring-white/15"
-                  style={{
-                    backgroundColor:
-                      "color-mix(in srgb, var(--brand-primary, var(--brand)) 55%, #0a0a0a)",
-                  }}
+                  className="shrink-0 rounded-full bg-[#2a2c34] px-2.5 py-0.5 text-xs font-medium tabular-nums text-white/75 ring-1 ring-white/10"
                   title="Scan count"
                 >
                   {loc.scan_count.toLocaleString()} scans
                 </span>
               </div>
-              <p className="mt-2 text-sm leading-snug text-white/75">
-                {loc.address || "Address unavailable"}
-              </p>
 
-              <div className="mt-5 flex items-end justify-between gap-3">
-                <div className="min-w-0 text-xs text-white/45">
-                  {loc.rating != null && loc.rating > 0 ? (
-                    <span>
-                      ★ {loc.rating.toFixed(1)}
-                      {loc.reviews != null ? ` · ${loc.reviews}` : ""}
-                    </span>
-                  ) : (
-                    <span>No rating yet</span>
-                  )}
+              <div className="mt-3 flex items-start justify-between gap-3">
+                <p className="min-w-0 flex-1 text-sm leading-snug text-white/85">
+                  {loc.address || "Address unavailable"}
+                </p>
+                <div className="shrink-0 overflow-hidden rounded-md ring-1 ring-white/10">
+                  <MapThumbPlaceholder
+                    className="h-14 w-[5.25rem]"
+                    label={loc.city || loc.name}
+                  />
                 </div>
+              </div>
+
+              <div className="mt-5 flex justify-end">
                 <Link
                   href={`${base}/locations/${loc.place_id}`}
-                  className="inline-flex items-center gap-1 rounded-md border border-[color:var(--brand-accent)] px-3 py-1.5 text-sm font-medium text-[color:var(--brand-accent)] transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-surface)]"
+                  className="inline-flex items-center gap-1 rounded-md border border-[color:var(--brand-accent)] px-3 py-1.5 text-sm font-medium text-white transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-surface)]"
                 >
                   Open dashboard
                   <span aria-hidden>→</span>

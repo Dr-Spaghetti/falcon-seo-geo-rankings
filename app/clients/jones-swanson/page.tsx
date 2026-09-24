@@ -15,7 +15,7 @@ export default function JonesSwansonClientPage() {
 
   return (
     <AppShell wide>
-      <ClientHub client={client} badge="Firm hub" />
+      <ClientHub client={client} />
     </AppShell>
   );
 }

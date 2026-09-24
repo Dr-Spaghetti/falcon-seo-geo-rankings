@@ -15,7 +15,7 @@ export default function CmhClientPage() {
 
   return (
     <AppShell wide>
-      <ClientHub client={client} badge="Firm hub" />
+      <ClientHub client={client} />
     </AppShell>
   );
 }

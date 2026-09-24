@@ -15,7 +15,7 @@ export default function TadLawClientPage() {
 
   return (
     <AppShell wide>
-      <ClientHub client={client} badge="Firm hub" />
+      <ClientHub client={client} />
     </AppShell>
   );
 }

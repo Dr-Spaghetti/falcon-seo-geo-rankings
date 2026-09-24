@@ -17,6 +17,21 @@ describe("lf-logo", () => {
     assert.equal(buf[1], 0x50);
   });
 
+  it("resolves therman official logo.webp when present", () => {
+    const url = resolveBrandLogoUrl("therman");
+    assert.equal(url, "/brands/therman/logo.webp");
+    const abs = path.join(
+      process.cwd(),
+      "public",
+      "brands",
+      "therman",
+      "logo.webp"
+    );
+    assert.ok(fs.existsSync(abs));
+    const buf = fs.readFileSync(abs);
+    assert.ok(buf.length > 500, "therman logo binary should be substantial");
+  });
+
   it("returns null for firms without a logo file (placeholder path)", () => {
     assert.equal(resolveBrandLogoUrl("no-such-firm-xyz"), null);
   });

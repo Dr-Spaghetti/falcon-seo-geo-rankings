@@ -71,6 +71,13 @@ describe("lf-brand", () => {
     );
   });
 
+  it("therman keeps Choose Charlie navy + Therman gold accent (not DJ green)", () => {
+    const therman = getBrandTheme("therman");
+    assert.equal(therman.primary, "#011633");
+    assert.equal(therman.accent.toLowerCase(), "#c5a059");
+    assert.notEqual(therman.primary, "#1b3e2a");
+  });
+
   it("dj-law uses crest charcoal/green/gold — not Bootstrap blue", () => {
     const dj = getBrandTheme("dj-law");
     assert.equal(dj.primary, "#1b3e2a");

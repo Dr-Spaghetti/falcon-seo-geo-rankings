@@ -80,8 +80,10 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     border: "#000d1f",
     muted: "#c5d3e4",
     hero: "linear-gradient(135deg, #011633 0%, #0a2448 48%, #143a66 100%)",
+    accent: "#C5A059",
+    surface: "#060d18",
     source:
-      "choosecharlie.com theme CSS header-nav/hero #011633 (Charlie Therman / Choose Charlie)",
+      "choosecharlie.com theme CSS header-nav/hero #011633 + Therman gold accent #C5A059 (logo cream/gold; NOT DJ forest)",
   }),
   premier: buildTheme("#142452", {
     soft: "#243660",
