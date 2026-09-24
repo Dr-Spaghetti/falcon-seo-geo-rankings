@@ -4,7 +4,8 @@ import type { BrandLogo } from "@/lib/brand-logos";
 /**
  * Renders an official logo file exactly as shipped: plain <img>, natural
  * width/height attributes (locks aspect ratio), no filter / mask / crop /
- * object-fit / ring / plate. Size it with height OR width only.
+ * object-fit / ring / plate. Size it with height OR width only. Files whose
+ * transparent padding is asymmetric get a translate-only optical centring.
  * data-logo-img lets the fidelity + centering gates find the rendered box.
  */
 export function OfficialLogo({
@@ -33,7 +34,14 @@ export function OfficialLogo({
       loading={priority ? "eager" : undefined}
       fetchPriority={priority ? "high" : undefined}
       className={`block max-w-none ${className ?? ""}`}
-      style={{ aspectRatio: `${logo.width} / ${logo.height}`, ...style }}
+      style={{
+        aspectRatio: `${logo.width} / ${logo.height}`,
+        // Optical centring for files with asymmetric transparent padding (no crop).
+        ...(logo.inkOffsetPct
+          ? { transform: `translate(${-logo.inkOffsetPct.x}%, ${-logo.inkOffsetPct.y}%)` }
+          : {}),
+        ...style,
+      }}
     />
   );
 }

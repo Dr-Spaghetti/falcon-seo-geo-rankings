@@ -16,6 +16,14 @@ export type BrandLogo = {
   height: number;
   sha256: string;
   alt: string;
+  /**
+   * Optical centering: offset (as % of the rendered box) of the visible-ink
+   * bbox centre from the file's canvas centre, caused by the file's own
+   * asymmetric transparent padding. <OfficialLogo> translates the box by the
+   * negative of this so the visible logo sits centred in its slot WITHOUT
+   * cropping the file. Measured from the alpha channel (alpha > 12).
+   */
+  inkOffsetPct?: { x: number; y: number };
 };
 
 /** Justify Local — Drive "JL Logo Files/Logo w/o Shade Effect/logo-white-without-shadow.png". */
@@ -25,6 +33,8 @@ export const JUSTIFY_LOCAL_LOGO: BrandLogo = {
   height: 1562,
   sha256: "e3b4eb2037babfc09d6d95585fe64ae07eeb41e700ad73063eeee127b45bfc69",
   alt: "Justify Local",
+  // ink rows 152..1469 of 1562 (top pad 152, bottom pad 92) => ink centre +1.9% low.
+  inkOffsetPct: { x: 0, y: 1.9 },
 };
 
 /** Firm logos keyed by client slug. */
