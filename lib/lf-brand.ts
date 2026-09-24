@@ -27,6 +27,8 @@ export type LfBrandTheme = {
   metalLight?: string;
   /** Optional exact metal dark (HTML SoT goldDark) */
   metalDark?: string;
+  /** Crest ring interior fill (per-firm; DJ forest, Therman navy, …) */
+  sealBg?: string;
   /** Human-readable provenance for commits / audits */
   source: string;
 };
@@ -78,7 +80,9 @@ export const LF_BRAND_FALLBACK: LfBrandTheme = {
  * - direct-legal-funding: directlegalfunding.com orange #ea5800
  */
 export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
-  therman: buildTheme("#011633", {
+  therman: {
+    primary: "#011633",
+    onPrimary: "#ffffff",
     soft: "#1a3a66",
     ring: "#2a5080",
     border: "#000d1f",
@@ -86,9 +90,12 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     hero: "linear-gradient(135deg, #011633 0%, #0a2448 48%, #143a66 100%)",
     accent: "#C5A059",
     surface: "#060d18",
+    metalLight: "#E8D5A3",
+    metalDark: "#8B7038",
+    sealBg: "#011633",
     source:
       "choosecharlie.com theme CSS header-nav/hero #011633 + Therman gold accent #C5A059 (logo cream/gold; NOT DJ forest)",
-  }),
+  },
   premier: buildTheme("#142452", {
     soft: "#243660",
     ring: "#3a5080",
@@ -259,6 +266,7 @@ export const LF_BRAND_BY_SLUG: Record<string, LfBrandTheme> = {
     surface: "#0b0f17",
     metalLight: "#f6e27a",
     metalDark: "#997d25",
+    sealBg: "#05281e",
     source:
       "Nick HTML SoT 2026-09-24 — header #0d131f, page #090d14, circuit #0b0f17, gold #d4af37 / #f6e27a / #997d25, green #00d68f",
   },
@@ -428,5 +436,6 @@ export function brandCssVars(
     "--hub-card": theme.soft,
     ...(theme.metalLight ? { "--hub-metal-light": theme.metalLight } : {}),
     ...(theme.metalDark ? { "--hub-metal-dark": theme.metalDark } : {}),
+    ...(theme.sealBg ? { "--hub-seal-bg": theme.sealBg } : {}),
   };
 }

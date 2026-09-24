@@ -36,7 +36,9 @@ export function AppShell({
   const brand = getBrandTheme(brandSlugFromPathname(pathname));
   const brandStyle = brandCssVars(brand) as React.CSSProperties;
   const isLfClient = Boolean(activeClient);
-  const maxW = wide ? "max-w-[1600px]" : "max-w-5xl";
+  // HTML SoT: main max-w-7xl mx-auto px-6 — same gutters on header/main/footer.
+  const maxW = isLfClient ? "max-w-7xl" : wide ? "max-w-[1600px]" : "max-w-5xl";
+  const padX = isLfClient ? "px-6" : "px-3 sm:px-5";
 
   if (!isLfClient) {
     return (
@@ -82,7 +84,7 @@ export function AppShell({
         style={{ backgroundColor: "var(--hub-header, #0d131f)" }}
       >
         <div
-          className={`relative mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 ${maxW}`}
+          className={`relative mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-2.5 sm:gap-4 ${padX} ${maxW}`}
         >
           {/* Left: search-style Keyword Scans/Reports (HTML SoT look; no fake actions) */}
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
@@ -125,19 +127,23 @@ export function AppShell({
 
           {/* Right: live ET clock only — no fake account/settings/bell */}
           <div className="flex items-center justify-end gap-2 sm:gap-3">
-            <LiveClock className="font-serif text-xs tracking-tight text-slate-300 sm:text-sm" />
+            <LiveClock className="font-sans text-xs font-normal normal-case tracking-normal text-slate-300 sm:text-sm" />
           </div>
         </div>
       </header>
 
       <main
-        className={`relative z-[1] mx-auto w-full flex-1 px-3 pt-4 pb-8 sm:px-5 ${maxW}`}
+        className={`relative z-[1] mx-auto w-full flex-1 pt-6 pb-8 ${padX} ${maxW}`}
       >
         {children}
       </main>
 
-      <footer className="relative z-[1] border-t border-slate-800/60 py-4 text-center text-[11px] tracking-wide text-slate-500">
-        Justify Local Platform · Client Portal &amp; Geo-Grid Rank Intelligence
+      <footer className="relative z-[1] border-t border-slate-800/60 py-3">
+        <div
+          className={`mx-auto text-center text-[11px] font-sans tracking-wide text-slate-500 ${padX} ${maxW}`}
+        >
+          Justify Local Platform · Client Portal &amp; Geo-Grid Rank Intelligence
+        </div>
       </footer>
     </div>
   );

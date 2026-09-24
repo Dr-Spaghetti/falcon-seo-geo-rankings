@@ -37,14 +37,21 @@ export function ClientHub({ client }: { client: LfClient }) {
         />
 
         <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 md:flex-row md:px-4">
-          {/* Left: justify local mark — two green arrows (N1) */}
+          {/* Left: justify local — word + two green diagonal arrows (N1, same as header PNG) */}
           <div className="flex shrink-0 items-center gap-2">
             <div>
-              <div className="flex items-center gap-1">
-                <span className="text-2xl font-black tracking-tight text-white">
+              <div className="flex items-center gap-1.5 text-2xl leading-none">
+                <span className="font-black tracking-tight text-white">
                   justify
                 </span>
-                <TwoGreenArrows className="h-4 w-4 text-emerald-400" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/brands/_hub/justify-arrows.png"
+                  alt=""
+                  aria-hidden
+                  className="h-[0.95em] w-auto shrink-0 object-contain object-left"
+                  draggable={false}
+                />
               </div>
               <div className="mt-0.5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                 <span>local</span>
@@ -58,7 +65,7 @@ export function ClientHub({ client }: { client: LfClient }) {
             <h1
               className={
                 isLongName
-                  ? "max-w-[22ch] font-serif text-xl font-bold uppercase tracking-widest text-[#f0d481] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:text-2xl"
+                  ? "line-clamp-2 max-w-[28ch] font-serif text-base font-bold uppercase leading-snug tracking-wider text-[#f0d481] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] sm:text-lg md:text-xl"
                   : "font-serif text-2xl font-bold uppercase tracking-widest text-[#f0d481] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:text-3xl"
               }
             >
@@ -87,7 +94,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                   "linear-gradient(to top right, var(--hub-metal-dark), var(--hub-metal-light), var(--hub-metal))",
               }}
             >
-              <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[#05281e] shadow-inner">
+              <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[var(--hub-seal-bg,#05281e)] shadow-inner">
                 {logoUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -226,19 +233,6 @@ function CssGoldPillar() {
   );
 }
 
-/** N1 — two green arrows (not people icons). */
-function TwoGreenArrows({ className }: { className?: string }) {
-  return (
-    <span className={`inline-flex flex-col leading-none ${className ?? ""}`} aria-hidden>
-      <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="currentColor">
-        <path d="M4 10 L8 5 L12 10 L10.5 10 L8 7.2 L5.5 10 Z" />
-      </svg>
-      <svg viewBox="0 0 16 16" className="-mt-1.5 h-3.5 w-3.5" fill="currentColor">
-        <path d="M4 10 L8 5 L12 10 L10.5 10 L8 7.2 L5.5 10 Z" />
-      </svg>
-    </span>
-  );
-}
 
 function LocationOnIcon({ className }: { className?: string }) {
   return (
