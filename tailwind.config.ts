@@ -12,6 +12,9 @@ const config: Config = {
         serif: ["var(--font-serif)", "Cinzel", "Georgia", "serif"],
       },
       colors: {
+        // Near-white body/secondary text on dark hub surfaces (readability, 2026-09-24).
+        // Hierarchy comes from size + weight, not grey. Primary titles stay #fff.
+        "hub-text": "#F2F4F7",
         brand: {
           50: "#f0f7ff",
           100: "#e0effe",

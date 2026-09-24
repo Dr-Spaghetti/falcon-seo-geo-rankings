@@ -38,7 +38,7 @@ function LinkPill({
 }) {
   if (!href || disabled) {
     return (
-      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-navy-300">
+      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-navy-500">
         {label}
       </span>
     );
@@ -58,8 +58,8 @@ function LinkPill({
 
 function solvClass(solv: number | null) {
   if (solv == null || !Number.isFinite(solv)) return "text-navy-800";
-  if (solv >= 30) return "font-semibold text-emerald-700";
-  if (solv >= 20) return "font-medium text-emerald-600";
+  if (solv >= 30) return "font-semibold text-emerald-800";
+  if (solv >= 20) return "font-medium text-emerald-700";
   if (solv >= 10) return "text-navy-800";
   return "text-navy-500";
 }
@@ -139,13 +139,13 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         />
         <div className="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand-muted)]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-hub-text">
               Location dashboard
             </p>
             <h1 className="mt-1 truncate text-2xl font-semibold tracking-tight sm:text-3xl">
               {loc.city || loc.name}
             </h1>
-            <p className="mt-1.5 text-sm text-[color:var(--brand-muted)]">{loc.address}</p>
+            <p className="mt-1.5 text-sm text-hub-text">{loc.address}</p>
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               {loc.rating != null && loc.rating > 0 ? (
                 <span className="rounded-full bg-white/10 px-2.5 py-0.5 font-medium text-white ring-1 ring-white/20">
@@ -153,7 +153,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 </span>
               ) : null}
               {loc.primary_category ? (
-                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[color:var(--brand-muted)] ring-1 ring-white/15">
+                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-hub-text ring-1 ring-white/15">
                   {loc.primary_category}
                 </span>
               ) : null}
@@ -197,11 +197,11 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         />
       </div>
 
-      <div className="sticky top-[3.25rem] z-30 rounded-xl border border-navy-200/80 bg-navy-100/85 p-4 shadow-sm shadow-navy-900/[0.05] backdrop-blur-md">
+      <div className="sticky top-[3.25rem] z-30 rounded-xl border border-navy-200/80 bg-navy-100 p-4 shadow-sm shadow-navy-900/[0.05] backdrop-blur-md">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-semibold text-navy-900">Date filters</p>
-            <p className="text-xs text-navy-600/80">
+            <p className="text-xs text-navy-700">
               From census{" "}
               <code className="rounded bg-navy-200/60 px-1 text-[11px] text-navy-800">
                 date
@@ -264,15 +264,15 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 placeholder="Filter keywords…"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                className="rounded-lg border border-navy-200/80 bg-navy-50/90 px-2.5 py-1.5 text-sm font-normal normal-case text-navy-900 shadow-sm placeholder:text-navy-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
+                className="rounded-lg border border-navy-200/80 bg-navy-50/90 px-2.5 py-1.5 text-sm font-normal normal-case text-navy-900 shadow-sm placeholder:text-navy-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
               />
             </label>
           </div>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-navy-200/80 bg-navy-50/80 shadow-sm shadow-navy-900/[0.04]">
-        <div className="flex items-center justify-between border-b border-navy-200/70 bg-navy-100/60 px-4 py-3">
+      <div className="overflow-hidden rounded-xl border border-navy-200/80 bg-navy-50 shadow-sm shadow-navy-900/[0.04]">
+        <div className="flex items-center justify-between border-b border-navy-200/70 bg-navy-100 px-4 py-3">
           <h2 className="text-sm font-semibold text-navy-900">Scan table</h2>
           <p className="text-xs tabular-nums text-navy-600">
             {filtered.length.toLocaleString()} row
@@ -283,7 +283,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         {filtered.length === 0 ? (
           <div className="mx-4 my-6 rounded-xl border border-dashed border-navy-300/70 bg-navy-100/50 px-4 py-14 text-center">
             <p className="text-sm font-semibold text-navy-800">No scans match</p>
-            <p className="mt-1 text-sm text-navy-600/80">
+            <p className="mt-1 text-sm text-navy-700">
               Try clearing month/day or the keyword filter.
             </p>
           </div>
@@ -327,7 +327,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                         {s.keyword || "—"}
                       </p>
                       {s.campaign_name ? (
-                        <p className="truncate text-xs text-navy-500/80">
+                        <p className="truncate text-xs text-navy-600">
                           {s.campaign_name}
                         </p>
                       ) : null}
@@ -346,7 +346,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                     <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-navy-700 sm:px-4">
                       {s.found_in == null ? "—" : s.found_in}
                       {s.data_points != null ? (
-                        <span className="text-navy-400">/{s.data_points}</span>
+                        <span className="text-navy-600">/{s.data_points}</span>
                       ) : null}
                     </td>
                     <td className="whitespace-nowrap px-3 py-2 sm:px-4">

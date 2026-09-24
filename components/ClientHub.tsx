@@ -61,7 +61,7 @@ export function ClientHub({ client }: { client: LfClient }) {
             >
               {client.name}
             </h1>
-            <p className="mb-2 mt-0.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-300">
+            <p className="mb-2 mt-0.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-hub-text">
               Client Dashboard
             </p>
             {/* Stats pill: one line at 390 (tighter tracking/padding <640px);
@@ -72,10 +72,10 @@ export function ClientHub({ client }: { client: LfClient }) {
               className="gold-badge-outline mb-2 max-w-full rounded-full px-3.5 py-1 text-[11px] font-semibold tracking-wide text-[#f7e492] sm:px-5 sm:text-xs sm:tracking-wider"
             >
               <span className="whitespace-nowrap">{locationsLabel}</span>
-              <span aria-hidden="true" className="mx-1.5 text-slate-500 sm:mx-2">|</span>
+              <span aria-hidden="true" className="mx-1.5 text-[#f7e492]/80 sm:mx-2">|</span>
               <span className="whitespace-nowrap">{scansLabel}</span>
             </div>
-            <p className="text-xs font-normal text-slate-400">
+            <p className="text-xs font-normal text-hub-text">
               Select a location to review rankings, filters, and scan reports.
             </p>
           </div>
@@ -105,7 +105,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                   }}
                 />
               ) : (
-                <span className="flex h-24 w-32 items-center justify-center px-1 text-center text-[10px] uppercase tracking-wider text-white/40">
+                <span className="flex h-24 w-32 items-center justify-center px-1 text-center text-[10px] uppercase tracking-wider text-hub-text">
                   Logo unavailable
                 </span>
               )}
@@ -124,7 +124,7 @@ export function ClientHub({ client }: { client: LfClient }) {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div data-location-grid className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {client.locations.map((loc) => {
             const locLatest =
               loc.latest_iso || loc.latest_date
@@ -133,12 +133,13 @@ export function ClientHub({ client }: { client: LfClient }) {
             return (
               <article
                 key={loc.place_id}
-                className="flex flex-col justify-between rounded-xl border border-slate-700/70 bg-[#101726]/90 p-5 shadow-xl backdrop-blur-sm transition-all duration-200 hover:border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)]"
+                data-location-card
+                className="flex flex-col justify-between rounded-xl border border-slate-700/70 bg-[#101726]/90 p-5 shadow-xl sm:p-6 backdrop-blur-sm transition-all duration-200 hover:border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)]"
               >
                 <div>
-                  <div className="mb-4 flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div className="mb-4 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-slate-800 pb-3">
                     <h2
-                      className="font-serif text-lg font-bold text-white underline decoration-2 underline-offset-4"
+                      className="min-w-0 break-words font-serif text-xl font-bold leading-tight text-white underline decoration-2 underline-offset-[5px] xl:text-2xl"
                       style={{
                         textDecorationColor:
                           "color-mix(in srgb, var(--hub-metal) 60%, transparent)",
@@ -146,31 +147,31 @@ export function ClientHub({ client }: { client: LfClient }) {
                     >
                       {loc.city || loc.name}
                     </h2>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-[#172238] px-2.5 py-0.5 text-[11px] font-medium text-slate-300">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-slate-700/80 bg-[#172238] px-3 py-1 text-[13px] font-medium text-hub-text">
+                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
                       {loc.scan_count.toLocaleString()} scans
                     </span>
                   </div>
 
                   <div className="flex items-start justify-between gap-4">
-                    <div className="space-y-1">
-                      <p className="text-xs leading-relaxed text-slate-300">
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <p className="break-words text-[15px] leading-relaxed text-hub-text xl:text-base">
                         {loc.address || "Address unavailable"}
                       </p>
                       {locLatest ? (
-                        <div className="flex items-center gap-1.5 pt-2 text-[11px] font-medium text-emerald-400">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                        <div className="flex items-center gap-2 pt-2 text-sm font-medium text-emerald-400">
+                          <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
                           {locLatest}
                         </div>
                       ) : null}
                     </div>
                     {/* CSS radar/grid thumb + glowing pin (HTML SoT ADOPT) */}
                     <div
-                      className="relative flex h-16 w-20 flex-shrink-0 items-center justify-center overflow-hidden rounded-md border border-slate-700/80 bg-[#0a1120]"
+                      className="relative flex h-20 w-24 flex-shrink-0 items-center justify-center overflow-hidden rounded-md border border-slate-700/80 bg-[#0a1120]"
                       aria-hidden
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:10px_10px]" />
-                      <LocationOnIcon className="relative z-10 h-5 w-5 text-emerald-400 drop-shadow-[0_0_6px_rgba(0,214,143,0.8)]" />
+                      <LocationOnIcon className="relative z-10 h-6 w-6 text-emerald-400 drop-shadow-[0_0_6px_rgba(0,214,143,0.8)]" />
                     </div>
                   </div>
                 </div>
@@ -178,7 +179,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                 <div className="mt-6 flex justify-end border-t border-slate-800/80 pt-3">
                   <Link
                     href={`${base}/locations/${loc.place_id}`}
-                    className="gold-badge inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold shadow-sm transition-all hover:brightness-110 active:scale-95"
+                    className="gold-badge inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold shadow-sm xl:text-[15px] transition-all hover:brightness-110 active:scale-95"
                   >
                     <span>Open dashboard</span>
                     <span aria-hidden>→</span>
@@ -194,7 +195,7 @@ export function ClientHub({ client }: { client: LfClient }) {
             <p className="text-sm font-medium text-white/90">
               No locations in this firm hub
             </p>
-            <p className="mt-1 text-sm text-white/55">
+            <p className="mt-1 text-sm text-hub-text">
               Rebuild client data from the Local Falcon census archive.
             </p>
           </div>

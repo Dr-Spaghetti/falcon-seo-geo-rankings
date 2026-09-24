@@ -39,7 +39,7 @@ export default function RampartLocationPage({
       <div className="mb-6">
         <Link
           href="/clients/rampart"
-          className="inline-flex items-center gap-1 rounded-md text-sm font-medium text-navy-700 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2"
+          className="inline-flex items-center gap-1 rounded-md text-sm font-medium text-hub-text hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
           ← All Rampart Injury Lawyers locations
         </Link>

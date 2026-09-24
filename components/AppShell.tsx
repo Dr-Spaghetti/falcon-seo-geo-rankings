@@ -94,7 +94,7 @@ export function AppShell({
               href={activeClient?.href ?? "/clients/dj-law"}
               aria-label="Keyword Scans/Reports"
               title="Keyword Scans/Reports"
-              className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-700/60 bg-[#131b2b] text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 sm:h-auto sm:w-full sm:min-w-0 sm:max-w-64 sm:shrink sm:justify-start sm:py-1.5 sm:pl-9 sm:pr-3"
+              className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-700/60 bg-[#131b2b] text-xs font-medium text-hub-text transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 sm:h-auto sm:w-full sm:min-w-0 sm:max-w-64 sm:shrink sm:justify-start sm:py-1.5 sm:pl-9 sm:pr-3"
             >
               <SearchIcon className="pointer-events-none h-4 w-4 text-emerald-400 sm:absolute sm:left-3 sm:top-1/2 sm:-translate-y-1/2" />
               <span className="hidden truncate sm:inline">Keyword Scans/Reports</span>
@@ -139,7 +139,7 @@ export function AppShell({
 
           {/* Right: live ET clock only — no fake account/settings/bell */}
           <div className="flex min-w-0 items-center justify-end gap-2 sm:gap-3">
-            <LiveClock className="min-w-0 sm:min-w-[11.5rem] text-right leading-tight font-sans text-xs font-normal normal-case tracking-normal text-slate-300 sm:text-sm" />
+            <LiveClock className="min-w-0 sm:min-w-[11.5rem] text-right leading-tight font-sans text-xs font-normal normal-case tracking-normal text-hub-text sm:text-sm" />
           </div>
         </div>
       </header>
@@ -152,7 +152,7 @@ export function AppShell({
 
       <footer className="relative z-[1] border-t border-slate-800/60 py-3">
         <div
-          className={`mx-auto text-center text-[11px] font-sans tracking-wide text-slate-500 ${padX} ${maxW}`}
+          className={`mx-auto text-center text-xs font-sans tracking-wide text-hub-text ${padX} ${maxW}`}
         >
           Justify Local Platform · Client Portal &amp; Geo-Grid Rank Intelligence
         </div>
