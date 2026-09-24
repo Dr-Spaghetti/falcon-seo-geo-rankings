@@ -41,11 +41,14 @@ export function ClientHub({ client }: { client: LfClient }) {
           {/* Left: justify local — word + two green diagonal arrows (N1, same as header PNG) */}
           <div className="flex shrink-0 items-center gap-2">
             <div>
-              <div className="flex items-center gap-1.5 text-2xl leading-none">
-                <span className="font-black tracking-tight text-white">
+              <div
+                data-logo-slot="hero-justify-cluster"
+                className="flex items-center justify-center gap-1.5 text-2xl leading-none"
+              >
+                <span className="relative top-px font-black leading-none tracking-tight text-white">
                   justify
                 </span>
-                <JustifyCornerArrows className="h-[0.95em] w-[0.95em] shrink-0" />
+                <JustifyCornerArrows className="relative -top-px h-[0.95em] w-[0.95em] shrink-0 self-center" />
               </div>
               <div className="mt-0.5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                 <span>local</span>
@@ -82,21 +85,26 @@ export function ClientHub({ client }: { client: LfClient }) {
           <div className="flex shrink-0 items-center gap-3">
             <CssGoldPillar />
             <div
+              data-logo-slot="crest-ring"
               className="flex h-20 w-20 items-center justify-center rounded-full p-[2px] shadow-lg"
               style={{
                 background:
                   "linear-gradient(to top right, var(--hub-metal-dark), var(--hub-metal-light), var(--hub-metal))",
               }}
             >
-              <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[var(--hub-seal-bg,#05281e)] shadow-inner">
+              <div
+                data-logo-slot="crest-inner"
+                className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-[color:color-mix(in_srgb,var(--hub-metal)_60%,transparent)] bg-[var(--hub-seal-bg,#05281e)] shadow-inner"
+              >
                 {logoUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
+                    data-logo-slot="crest-img"
                     src={logoUrl}
                     alt={`${client.name} crest`}
                     width={72}
                     height={72}
-                    className="w-[90%] max-h-[90%] object-contain"
+                    className="block h-auto w-[90%] max-h-[90%] object-contain object-center"
                   />
                 ) : (
                   <span className="px-1 text-center text-[8px] uppercase tracking-wider text-white/40">

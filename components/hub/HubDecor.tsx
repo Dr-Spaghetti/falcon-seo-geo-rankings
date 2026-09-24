@@ -90,6 +90,7 @@ export function JustifyCornerArrows({ className }: { className?: string }) {
   // Exact official chevrons: potrace of green pixels from public/brands/_justify/logo.png
   return (
     <svg
+      data-logo-slot="justify-arrows"
       className={className}
       viewBox={JUSTIFY_ARROWS_VIEWBOX}
       fill="#00d68f"
@@ -109,14 +110,15 @@ export function JustifyCornerArrows({ className }: { className?: string }) {
 export function JustifyMark({ className }: { className?: string }) {
   return (
     <span
-      className={`inline-flex items-center gap-1 leading-none text-white ${className ?? ""}`}
+      data-logo-slot="header-justify-mark"
+      className={`inline-flex items-center justify-center gap-1 leading-none text-white ${className ?? ""}`}
       role="img"
       aria-label="justify"
     >
-      <span className="font-sans text-[1.05em] font-bold tracking-tight">
+      <span className="relative top-px font-sans text-[1.05em] font-bold leading-none tracking-tight">
         justify
       </span>
-      <JustifyCornerArrows className="h-[0.9em] w-[0.9em] shrink-0" />
+      <JustifyCornerArrows className="relative -top-px h-[0.9em] w-[0.9em] shrink-0 self-center" />
     </span>
   );
 }

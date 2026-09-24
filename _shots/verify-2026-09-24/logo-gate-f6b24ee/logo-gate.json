@@ -1,0 +1,3044 @@
+{
+  "base": "http://127.0.0.1:3010",
+  "generated_at": "2026-09-24T19:11:52.507Z",
+  "fail_rule": "|offset_px|>2 OR |offset_pct|>2 (DOM and/or PIXEL per slot rules)",
+  "any_fail": false,
+  "results": [
+    {
+      "slot": "crest-inner",
+      "kind": "crest",
+      "slug": "dj-law",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-inner__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 76,
+          "h": 76
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 66.59375
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 87.62
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 76,
+        "container_h": 77,
+        "bbox": {
+          "x0": 6,
+          "y0": 6,
+          "x1": 69,
+          "y1": 70,
+          "w": 64,
+          "h": 65
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 98.28,
+        "visible_pixel_count": 772,
+        "bg_rgb": [
+          8,
+          41,
+          15
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 87.62,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-ring",
+      "kind": "crest-ring",
+      "slug": "dj-law",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-ring__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 80,
+          "h": 80
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 66.59375
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 83.24
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 80,
+        "container_h": 81,
+        "bbox": {
+          "x0": 8,
+          "y0": 8,
+          "x1": 71,
+          "y1": 72,
+          "w": 64,
+          "h": 65
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 93.24,
+        "visible_pixel_count": 705,
+        "bg_rgb": [
+          14,
+          46,
+          32
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for crest-ring"
+      },
+      "logo_width_pct_of_container": 83.24,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "dj-law",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "logo": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 126,
+        "container_h": 32,
+        "bbox": {
+          "x0": 0,
+          "y0": 1,
+          "x1": 124,
+          "y1": 31,
+          "w": 125,
+          "h": 31
+        },
+        "offset_px": {
+          "x": -0.5,
+          "y": 0.5
+        },
+        "offset_pct": {
+          "x": -0.397,
+          "y": 1.562
+        },
+        "logo_width_pct_of_container": 99.21,
+        "visible_pixel_count": 1447,
+        "bg_rgb": [
+          13,
+          19,
+          31
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": -0.5,
+        "y": 0.5
+      },
+      "offset_pct": {
+        "x": -0.397,
+        "y": 1.562
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "dj-law",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "logo": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 28,
+        "container_h": 27,
+        "bbox": {
+          "x0": 1,
+          "y0": 0,
+          "x1": 26,
+          "y1": 26,
+          "w": 26,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 92.86,
+        "visible_pixel_count": 330,
+        "bg_rgb": [
+          13,
+          19,
+          31
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "dj-law",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 99,
+        "container_h": 25,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 98,
+          "y1": 24,
+          "w": 99,
+          "h": 25
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 942,
+        "bg_rgb": [
+          12,
+          17,
+          25
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "dj-law",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": false,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 23,
+          "y1": 22,
+          "w": 23,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 2.083,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 95.83,
+        "visible_pixel_count": 245,
+        "bg_rgb": [
+          13,
+          18,
+          26
+        ],
+        "fail_axes": {
+          "x": true,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-inner",
+      "kind": "crest",
+      "slug": "therman",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-inner__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 76,
+          "h": 76
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 16.203125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": -0.01
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": -0.01
+        },
+        "logo_width_pct_of_container": 87.62
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 76,
+        "container_h": 77,
+        "bbox": {
+          "x0": 6,
+          "y0": 30,
+          "x1": 70,
+          "y1": 45,
+          "w": 65,
+          "h": 16
+        },
+        "offset_px": {
+          "x": 0.5,
+          "y": -0.5
+        },
+        "offset_pct": {
+          "x": 0.658,
+          "y": -0.649
+        },
+        "logo_width_pct_of_container": 99.82,
+        "visible_pixel_count": 639,
+        "bg_rgb": [
+          1,
+          22,
+          51
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 87.62,
+      "offset_px": {
+        "x": 0,
+        "y": -0.01
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": -0.01
+      }
+    },
+    {
+      "slot": "crest-ring",
+      "kind": "crest-ring",
+      "slug": "therman",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-ring__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 80,
+          "h": 80
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 16.203125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": -0.01
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": -0.01
+        },
+        "logo_width_pct_of_container": 83.24
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 80,
+        "container_h": 81,
+        "bbox": {
+          "x0": 7,
+          "y0": 32,
+          "x1": 72,
+          "y1": 47,
+          "w": 66,
+          "h": 16
+        },
+        "offset_px": {
+          "x": 0,
+          "y": -0.5
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": -0.617
+        },
+        "logo_width_pct_of_container": 96.15,
+        "visible_pixel_count": 652,
+        "bg_rgb": [
+          1,
+          22,
+          51
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for crest-ring"
+      },
+      "logo_width_pct_of_container": 83.24,
+      "offset_px": {
+        "x": 0,
+        "y": -0.01
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": -0.01
+      }
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "therman",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "logo": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 126,
+        "container_h": 32,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 125,
+          "y1": 31,
+          "w": 126,
+          "h": 32
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 4032,
+        "bg_rgb": [
+          1,
+          22,
+          51
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "therman",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "logo": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 28,
+        "container_h": 27,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 27,
+          "y1": 26,
+          "w": 28,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 756,
+        "bg_rgb": [
+          1,
+          22,
+          51
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "therman",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 99,
+        "container_h": 25,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 98,
+          "y1": 24,
+          "w": 99,
+          "h": 25
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 942,
+        "bg_rgb": [
+          12,
+          17,
+          25
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "therman",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": false,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 23,
+          "y1": 22,
+          "w": 23,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 2.083,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 95.83,
+        "visible_pixel_count": 245,
+        "bg_rgb": [
+          13,
+          18,
+          26
+        ],
+        "fail_axes": {
+          "x": true,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-ring-empty",
+      "slug": "premier",
+      "viewport": "1440x900",
+      "pass": null,
+      "skipped": true,
+      "reason": "no crest image"
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "premier",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "logo": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 126,
+        "container_h": 32,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 125,
+          "y1": 31,
+          "w": 126,
+          "h": 32
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 4032,
+        "bg_rgb": [
+          20,
+          36,
+          82
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "premier",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "logo": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 28,
+        "container_h": 27,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 27,
+          "y1": 26,
+          "w": 28,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 756,
+        "bg_rgb": [
+          20,
+          36,
+          82
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "premier",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 99,
+        "container_h": 25,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 98,
+          "y1": 24,
+          "w": 99,
+          "h": 25
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 942,
+        "bg_rgb": [
+          12,
+          17,
+          26
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "premier",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": false,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 23,
+          "y1": 22,
+          "w": 23,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 2.083,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 95.83,
+        "visible_pixel_count": 245,
+        "bg_rgb": [
+          13,
+          18,
+          26
+        ],
+        "fail_axes": {
+          "x": true,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-ring-empty",
+      "slug": "cmh",
+      "viewport": "1440x900",
+      "pass": null,
+      "skipped": true,
+      "reason": "no crest image"
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "cmh",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "logo": {
+          "w": 125.1875,
+          "h": 31.078125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 126,
+        "container_h": 32,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 125,
+          "y1": 31,
+          "w": 126,
+          "h": 32
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 4032,
+        "bg_rgb": [
+          6,
+          36,
+          61
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "cmh",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "logo": {
+          "w": 26.625,
+          "h": 26.625
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 28,
+        "container_h": 27,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 27,
+          "y1": 26,
+          "w": 28,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 756,
+        "bg_rgb": [
+          6,
+          36,
+          61
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "cmh",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 99,
+        "container_h": 25,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 98,
+          "y1": 24,
+          "w": 99,
+          "h": 25
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 942,
+        "bg_rgb": [
+          12,
+          17,
+          25
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "cmh",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": false,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 23,
+          "y1": 22,
+          "w": 23,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 2.083,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 95.83,
+        "visible_pixel_count": 245,
+        "bg_rgb": [
+          13,
+          18,
+          26
+        ],
+        "fail_axes": {
+          "x": true,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "favicon",
+      "kind": "favicon",
+      "slug": "_site",
+      "viewport": "1440x900",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__1440x900__favicon__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__1440x900__favicon__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 64,
+          "h": 64
+        },
+        "logo": {
+          "w": 32,
+          "h": 32
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 50
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 64,
+        "container_h": 64,
+        "bbox": {
+          "x0": 20,
+          "y0": 20,
+          "x1": 42,
+          "y1": 43,
+          "w": 23,
+          "h": 24
+        },
+        "offset_px": {
+          "x": -0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": -0.781,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 35.94,
+        "visible_pixel_count": 270,
+        "bg_rgb": [
+          10,
+          15,
+          26
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 50,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "http://127.0.0.1:3010/icon.png"
+    },
+    {
+      "slot": "crest-inner",
+      "kind": "crest",
+      "slug": "dj-law",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-inner__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 76,
+          "h": 76
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 66.59375
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 87.62
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 76,
+        "container_h": 76,
+        "bbox": {
+          "x0": 6,
+          "y0": 6,
+          "x1": 69,
+          "y1": 69,
+          "w": 64,
+          "h": 64
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 98.28,
+        "visible_pixel_count": 732,
+        "bg_rgb": [
+          13,
+          43,
+          17
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 87.62,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-ring",
+      "kind": "crest-ring",
+      "slug": "dj-law",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-ring__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 80,
+          "h": 80
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 66.59375
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 83.24
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 80,
+        "container_h": 80,
+        "bbox": {
+          "x0": 8,
+          "y0": 8,
+          "x1": 71,
+          "y1": 71,
+          "w": 64,
+          "h": 64
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 93.24,
+        "visible_pixel_count": 677,
+        "bg_rgb": [
+          14,
+          45,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for crest-ring"
+      },
+      "logo_width_pct_of_container": 83.24,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "dj-law",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "logo": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 111,
+        "container_h": 28,
+        "bbox": {
+          "x0": 0,
+          "y0": 1,
+          "x1": 110,
+          "y1": 27,
+          "w": 111,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0.5
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 1.786
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 1412,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0.5
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 1.786
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "dj-law",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "logo": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 23,
+          "y1": 23,
+          "w": 24,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 299,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "dj-law",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 100,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 0,
+          "x1": 98,
+          "y1": 23,
+          "w": 98,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 98,
+        "visible_pixel_count": 924,
+        "bg_rgb": [
+          17,
+          24,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "dj-law",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 22,
+          "y1": 22,
+          "w": 22,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 91.67,
+        "visible_pixel_count": 239,
+        "bg_rgb": [
+          17,
+          24,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-inner",
+      "kind": "crest",
+      "slug": "therman",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-inner__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 76,
+          "h": 76
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 16.203125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": -0.01
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": -0.01
+        },
+        "logo_width_pct_of_container": 87.62
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 76,
+        "container_h": 76,
+        "bbox": {
+          "x0": 6,
+          "y0": 30,
+          "x1": 70,
+          "y1": 45,
+          "w": 65,
+          "h": 16
+        },
+        "offset_px": {
+          "x": 0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0.658,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 99.82,
+        "visible_pixel_count": 640,
+        "bg_rgb": [
+          1,
+          22,
+          51
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 87.62,
+      "offset_px": {
+        "x": 0,
+        "y": -0.01
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": -0.01
+      }
+    },
+    {
+      "slot": "crest-ring",
+      "kind": "crest-ring",
+      "slug": "therman",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-ring__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 80,
+          "h": 80
+        },
+        "logo": {
+          "w": 66.59375,
+          "h": 16.203125
+        },
+        "offset_px": {
+          "x": 0,
+          "y": -0.01
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": -0.01
+        },
+        "logo_width_pct_of_container": 83.24
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "circle",
+        "container_w": 80,
+        "container_h": 80,
+        "bbox": {
+          "x0": 7,
+          "y0": 32,
+          "x1": 72,
+          "y1": 47,
+          "w": 66,
+          "h": 16
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 96.15,
+        "visible_pixel_count": 652,
+        "bg_rgb": [
+          1,
+          22,
+          51
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for crest-ring"
+      },
+      "logo_width_pct_of_container": 83.24,
+      "offset_px": {
+        "x": 0,
+        "y": -0.01
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": -0.01
+      }
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "therman",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "logo": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 111,
+        "container_h": 28,
+        "bbox": {
+          "x0": 0,
+          "y0": 1,
+          "x1": 110,
+          "y1": 27,
+          "w": 111,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0.5
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 1.786
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 1412,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0.5
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 1.786
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "therman",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "logo": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 23,
+          "y1": 23,
+          "w": 24,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 299,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "therman",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 100,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 0,
+          "x1": 98,
+          "y1": 23,
+          "w": 98,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 98,
+        "visible_pixel_count": 924,
+        "bg_rgb": [
+          17,
+          24,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "therman",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 22,
+          "y1": 22,
+          "w": 22,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 91.67,
+        "visible_pixel_count": 239,
+        "bg_rgb": [
+          17,
+          24,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-ring-empty",
+      "slug": "premier",
+      "viewport": "390x844",
+      "pass": null,
+      "skipped": true,
+      "reason": "no crest image"
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "premier",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "logo": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 111,
+        "container_h": 28,
+        "bbox": {
+          "x0": 0,
+          "y0": 1,
+          "x1": 110,
+          "y1": 27,
+          "w": 111,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0.5
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 1.786
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 1412,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0.5
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 1.786
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "premier",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "logo": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 23,
+          "y1": 23,
+          "w": 24,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 299,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "premier",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 100,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 0,
+          "x1": 98,
+          "y1": 23,
+          "w": 98,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 98,
+        "visible_pixel_count": 924,
+        "bg_rgb": [
+          17,
+          24,
+          34
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "premier",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 22,
+          "y1": 22,
+          "w": 22,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 91.67,
+        "visible_pixel_count": 239,
+        "bg_rgb": [
+          17,
+          24,
+          34
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "crest-ring-empty",
+      "slug": "cmh",
+      "viewport": "390x844",
+      "pass": null,
+      "skipped": true,
+      "reason": "no crest image"
+    },
+    {
+      "slot": "header-justify-mark",
+      "kind": "mark",
+      "slug": "cmh",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-mark__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "logo": {
+          "w": 110.90625,
+          "h": 27.71875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 111,
+        "container_h": 28,
+        "bbox": {
+          "x0": 0,
+          "y0": 1,
+          "x1": 110,
+          "y1": 27,
+          "w": 111,
+          "h": 27
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0.5
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 1.786
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 1412,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0.5
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 1.786
+      }
+    },
+    {
+      "slot": "header-justify-arrows",
+      "kind": "arrows",
+      "slug": "cmh",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "logo": {
+          "w": 23.75,
+          "h": 23.75
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 0,
+          "y0": 0,
+          "x1": 23,
+          "y1": 23,
+          "w": 24,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100,
+        "visible_pixel_count": 299,
+        "bg_rgb": [
+          19,
+          27,
+          43
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-cluster",
+      "kind": "mark",
+      "slug": "cmh",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-cluster__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "logo": {
+          "w": 98.609375,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 100,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 0,
+          "x1": 98,
+          "y1": 23,
+          "w": 98,
+          "h": 24
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 98,
+        "visible_pixel_count": 924,
+        "bg_rgb": [
+          17,
+          24,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "hero-justify-arrows",
+      "kind": "arrows",
+      "slug": "cmh",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-arrows__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "logo": {
+          "w": 22.796875,
+          "h": 22.796875
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 100
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 24,
+        "container_h": 24,
+        "bbox": {
+          "x0": 1,
+          "y0": 1,
+          "x1": 22,
+          "y1": 22,
+          "w": 22,
+          "h": 22
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 91.67,
+        "visible_pixel_count": 239,
+        "bg_rgb": [
+          17,
+          24,
+          33
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        },
+        "note": "pixel informational; gate uses DOM for arrows"
+      },
+      "logo_width_pct_of_container": 100,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "slot": "favicon",
+      "kind": "favicon",
+      "slug": "_site",
+      "viewport": "390x844",
+      "pass": true,
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__390x844__favicon__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__390x844__favicon__zoom3.png",
+      "dom": {
+        "container": {
+          "w": 64,
+          "h": 64
+        },
+        "logo": {
+          "w": 32,
+          "h": 32
+        },
+        "offset_px": {
+          "x": 0,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": 0,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 50
+      },
+      "pixel": {
+        "ok": true,
+        "pass": true,
+        "mode": "ink",
+        "container_w": 64,
+        "container_h": 64,
+        "bbox": {
+          "x0": 20,
+          "y0": 20,
+          "x1": 42,
+          "y1": 43,
+          "w": 23,
+          "h": 24
+        },
+        "offset_px": {
+          "x": -0.5,
+          "y": 0
+        },
+        "offset_pct": {
+          "x": -0.781,
+          "y": 0
+        },
+        "logo_width_pct_of_container": 35.94,
+        "visible_pixel_count": 270,
+        "bg_rgb": [
+          10,
+          15,
+          26
+        ],
+        "fail_axes": {
+          "x": false,
+          "y": false
+        }
+      },
+      "logo_width_pct_of_container": 50,
+      "offset_px": {
+        "x": 0,
+        "y": 0
+      },
+      "offset_pct": {
+        "x": 0,
+        "y": 0
+      },
+      "url": "http://127.0.0.1:3010/icon.png"
+    }
+  ]
+}
