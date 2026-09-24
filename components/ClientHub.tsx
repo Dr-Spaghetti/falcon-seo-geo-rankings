@@ -34,7 +34,7 @@ export function ClientHub({ client }: { client: LfClient }) {
         className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-[color-mix(in_srgb,var(--hub-card)_92%,#000)] p-6 shadow-xl"
         aria-label={`${client.name} client dashboard`}
       >
-        <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 [--firm-logo-max-h:128px] [--firm-logo-max-w:min(340px,calc(100vw-190px))] md:flex-row md:px-4 md:[--firm-logo-max-h:120px] md:[--firm-logo-max-w:240px] lg:[--firm-logo-max-h:148px] lg:[--firm-logo-max-w:460px]">
+        <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 [--firm-logo-max-h:128px] [--firm-logo-max-w:min(340px,calc(100vw-190px))] xl:flex-row xl:px-4 xl:[--firm-logo-max-h:148px] xl:[--firm-logo-max-w:460px]">
           {/* Left: OFFICIAL Justify Local logo file, untouched (no text + arrows rebuild) */}
           <div
             data-logo-slot="hero-justify"
@@ -48,7 +48,7 @@ export function ClientHub({ client }: { client: LfClient }) {
           </div>
 
           {/* Center stack */}
-          <div className="flex min-w-0 flex-1 flex-col items-center px-2 text-center md:px-4">
+          <div className="flex min-w-0 flex-1 flex-col items-center px-2 text-center xl:px-4">
             <h1
               className={
                 isLongName
@@ -72,9 +72,13 @@ export function ClientHub({ client }: { client: LfClient }) {
           </div>
 
           {/* Right: gold pillars flanking the OFFICIAL firm logo file, as-is.
+              Clear space logo box -> pillar: 24px (xl row layout), 16px (stacked <1280px).
               Shared template for every client: no ring, disc, plate, circular
               crop, mask, filter or recolor. Aspect locked to natural size. */}
-          <div className="flex max-w-full shrink-0 items-stretch gap-3 md:gap-4">
+          <div
+            data-pillar-cluster
+            className="flex max-w-full shrink-0 items-stretch gap-4 xl:gap-6"
+          >
             <CssGoldPillar />
             <div
               data-logo-slot="firm-logo"
