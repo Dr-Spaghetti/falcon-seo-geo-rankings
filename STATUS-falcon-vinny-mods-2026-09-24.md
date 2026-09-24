@@ -1,29 +1,27 @@
-# STATUS_V1 — Falcon Local Falcon dashboards (Nick HTML SoT v10)
+# STATUS_V1 — Falcon Local Falcon dashboards (Nick HTML SoT v11)
 
 | Field | Value |
 |-------|--------|
 | **goal_id** | falcon-dj-hub-html-sot / Band D feat PR #1 |
-| **state** | ready_for_design (Eng v10 — chevron T/L 1:3; awaiting Design re-PASS) |
+| **state** | ready_for_design (Eng v11 potrace arrows PASS locally; Band C deploy rate-limited) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| **blocker** | Design HARD re-PASS pending; Band D HOLD |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `91ccc10` |
-| **tip_sha** | `91ccc10def366002ef4628cef75963ad35130b6d` |
-| **updated_at** | 2026-09-24 2:40 PM ET |
+| **blocker** | Vercel `api-upload-free` rate limit (retry ~24h); Design re-PASS pending; Band D HOLD |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `3e1f4a0` |
+| **tip_sha** | `3e1f4a0908a49a030526caef9fbb0b4784c5fe62` |
+| **updated_at** | 2026-09-24 2:45 PM ET |
 
 ## Evidence links
 
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Tip SHA | `91ccc10def366002ef4628cef75963ad35130b6d` |
-| Preview (Band C gitless) | https://justifycode-wordpress-dashboard-qlduaoanr.vercel.app |
-| Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-qlduaoanr.vercel.app/clients/dj-law |
-| Preview `/clients/therman` | https://justifycode-wordpress-dashboard-qlduaoanr.vercel.app/clients/therman |
-| Inspect | https://vercel.com/nicks-projects-2d0579a1/justifycode-wordpress-dashboard/57N6WPpicm8XS4Mj68Zt1V2ZNq2p |
+| Tip SHA | `3e1f4a0908a49a030526caef9fbb0b4784c5fe62` |
+| Preview (Band C gitless) | BLOCKED — `api-upload-free` Too many requests; retry in ~24h |
+| Last good preview (v10) | https://justifycode-wordpress-dashboard-qlduaoanr.vercel.app |
 | Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
 
-## Eng v10
-Chevron arms: PNG T/L=0.333 (4/12); SVG T/L=0.335 (δ=0.4%). Shared SVG hero+header.
+## Eng v11
+Official chevrons: green-mask + potrace from `public/brands/_justify/logo.png` → shared SVG (hero+header). Rounded corners, clear gap, no overlap. Self-gate: `sot-arrows-vs-svg-v11.png`.
 
 ## Band D HOLD
 NO merge / NO prod / NO alias. NOT Design DONE.
