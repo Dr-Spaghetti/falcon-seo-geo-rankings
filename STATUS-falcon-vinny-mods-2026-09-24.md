@@ -6,8 +6,8 @@
 | **state** | ready_for_design (Eng retip after HARD FAIL 96268ce — awaiting Design re-PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | Design HARD re-PASS pending; Band D HOLD |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `TIP_PENDING` |
-| **tip_sha** | `TIP_PENDING` |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `2cb01f4` |
+| **tip_sha** | `2cb01f4e3703892a75cfebfa63c3c186c730e022` |
 | **updated_at** | 2026-09-24 2:12 PM ET |
 
 ## Evidence links
@@ -15,11 +15,11 @@
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Tip SHA | `TIP_PENDING` |
-| Preview (Band C gitless) | PREVIEW_PENDING |
-| Preview `/clients/dj-law` | PREVIEW_PENDING/clients/dj-law |
-| Preview `/clients/therman` | PREVIEW_PENDING/clients/therman |
-| Inspect | INSPECT_PENDING |
+| Tip SHA | `2cb01f4e3703892a75cfebfa63c3c186c730e022` |
+| Preview (Band C gitless) | https://justifycode-wordpress-dashboard-nrqrtzqlh.vercel.app |
+| Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-nrqrtzqlh.vercel.app/clients/dj-law |
+| Preview `/clients/therman` | https://justifycode-wordpress-dashboard-nrqrtzqlh.vercel.app/clients/therman |
+| Inspect | https://vercel.com/nicks-projects-2d0579a1/justifycode-wordpress-dashboard/9RmdWYGvvnWBKsDdX18TPavedLNG |
 | Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
 
 ## Eng retip vs HARD FAIL 96268ce + Nick live flags
@@ -31,7 +31,7 @@
 | 3 | Therman title fit | Long-name smaller clamp + max-w + pr-[26%] | CLOSED (Eng) |
 | 4 | Watermark hard rect + empty black | AppShell full-viewport wm + radial mask + feathered asset | CLOSED (Eng soft) — residual fade may remain |
 | 5 | Narrow floating column | `max-w-[1600px]` wide hubs | CLOSED (Eng soft) |
-| 6 | Re-tip Band C | v5 shots + gitless preview | IN PROGRESS |
+| 6 | Re-tip Band C | v5 shots + gitless preview | CLOSED (Eng) |
 
 ## Verify
 
