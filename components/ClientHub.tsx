@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { LfClient } from "@/lib/lf";
 import { resolveBrandLogoUrl } from "@/lib/lf-logo";
+import { JustifyCornerArrows } from "@/components/hub/HubDecor";
 
 /**
  * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
@@ -44,7 +45,7 @@ export function ClientHub({ client }: { client: LfClient }) {
                 <span className="font-black tracking-tight text-white">
                   justify
                 </span>
-                <JustifyHeroArrows className="h-[0.95em] w-[0.95em] shrink-0" />
+                <JustifyCornerArrows className="h-[0.95em] w-[0.95em] shrink-0" />
               </div>
               <div className="mt-0.5 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
                 <span>local</span>
@@ -229,30 +230,6 @@ function CssGoldPillar() {
 
 
 /** N1 — two crisp green diagonal up-right arrows (matches header wordmark shape). */
-function JustifyHeroArrows({ className }: { className?: string }) {
-  // Two north-east arrows — stroke geometry matching header wordmark; vector-crisp.
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        stroke="#00d68f"
-        strokeWidth="2.75"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      >
-        <path d="M10 4.5h9.5V14" />
-        <path d="M19.5 4.5L8.5 15.5" />
-        <path d="M4.5 10h9.5V19.5" />
-        <path d="M14 10L3 21" />
-      </g>
-    </svg>
-  );
-}
 
 
 function LocationOnIcon({ className }: { className?: string }) {

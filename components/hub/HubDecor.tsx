@@ -77,18 +77,44 @@ export function LegalCircuitWatermark({ className }: { className?: string }) {
 }
 
 /**
- * Header-center justify mark — SoT raster: white wordmark + TWO GREEN ARROWS.
- * People/human icons are WRONG (Nick punch 2026-09-24).
+ * Two thick filled ⌝ corner chevrons (no shaft) — traced from
+ * public/brands/_hub/justify-mark.png. Stacked ~40% diagonal overlap.
+ * N1: green arrows only, never people icons.
+ */
+export function JustifyCornerArrows({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 16 16"
+      fill="#00d68f"
+      aria-hidden
+      xmlns="http://www.w3.org/2000/svg"
+      shapeRendering="geometricPrecision"
+    >
+      {/* Back (lower-left) */}
+      <path d="M0.4 4.8h10.8v10.8h-3.9v-6.9h-6.9z" />
+      {/* Front (upper-right) */}
+      <path d="M4.6 0.4h10.8v10.8h-3.9v-6.9h-6.9z" />
+    </svg>
+  );
+}
+
+/**
+ * Header-center justify mark — wordmark + shared corner-chevron SVG
+ * (same arrows as hero; no raster crop).
  */
 export function JustifyMark({ className }: { className?: string }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={`${HUB}/justify-mark.png`}
-      alt="justify"
-      className={className}
-      draggable={false}
-    />
+    <span
+      className={`inline-flex items-center gap-1 leading-none text-white ${className ?? ""}`}
+      role="img"
+      aria-label="justify"
+    >
+      <span className="font-sans text-[1.05em] font-bold tracking-tight">
+        justify
+      </span>
+      <JustifyCornerArrows className="h-[0.9em] w-[0.9em] shrink-0" />
+    </span>
   );
 }
 

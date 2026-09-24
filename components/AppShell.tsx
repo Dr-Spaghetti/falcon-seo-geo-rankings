@@ -122,7 +122,7 @@ export function AppShell({
 
           {/* Center: justify mark — two green arrows (N1) */}
           <div className="flex justify-center">
-            <JustifyMark className="h-8 w-auto object-contain sm:h-9" />
+            <JustifyMark className="text-[1.65rem] sm:text-[1.85rem]" />
           </div>
 
           {/* Right: live ET clock only — no fake account/settings/bell */}
