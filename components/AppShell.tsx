@@ -89,12 +89,15 @@ export function AppShell({
         >
           {/* Left: search-style Keyword Scans/Reports (HTML SoT look; no fake actions) */}
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+            {/* <640px: compact 32px search icon button; sm+: full pill */}
             <Link
               href={activeClient?.href ?? "/clients/dj-law"}
-              className="relative flex w-full min-w-0 max-w-64 items-center rounded-md border border-slate-700/60 bg-[#131b2b] py-1.5 pl-9 pr-3 text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+              aria-label="Keyword Scans/Reports"
+              title="Keyword Scans/Reports"
+              className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-slate-700/60 bg-[#131b2b] text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 sm:h-auto sm:w-full sm:min-w-0 sm:max-w-64 sm:shrink sm:justify-start sm:py-1.5 sm:pl-9 sm:pr-3"
             >
-              <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-400" />
-              <span className="truncate">Keyword Scans/Reports</span>
+              <SearchIcon className="pointer-events-none h-4 w-4 text-emerald-400 sm:absolute sm:left-3 sm:top-1/2 sm:-translate-y-1/2" />
+              <span className="hidden truncate sm:inline">Keyword Scans/Reports</span>
             </Link>
             <label htmlFor="lf-client-switcher" className="sr-only">
               Switch client firm

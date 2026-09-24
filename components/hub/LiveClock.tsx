@@ -3,16 +3,20 @@
 import { useEffect, useState } from "react";
 
 /**
- * Live America/New_York clock, e.g. "24th Sep, 11:43 AM EST".
+ * Live America/New_York clock, e.g. "24th Sep, 11:43 AM EST" (sm+),
+ * "11:43 AM EST" below 640px so the mobile header stays one row.
  * Server / first paint: stable-width placeholder (no clock text) so SSR HTML
  * matches the client's first paint — avoids React #418 / #423 / #425.
  * Live label only after mount.
  */
 export function LiveClock({ className }: { className?: string }) {
-  const [label, setLabel] = useState<string | null>(null);
+  const [label, setLabel] = useState<{ full: string; short: string; iso: string } | null>(null);
 
   useEffect(() => {
-    const tick = () => setLabel(formatNy(new Date()));
+    const tick = () => {
+      const d = new Date();
+      setLabel({ ...formatNy(d), iso: d.toISOString() });
+    };
     tick();
     const id = window.setInterval(tick, 15_000);
     return () => window.clearInterval(id);
@@ -21,21 +25,30 @@ export function LiveClock({ className }: { className?: string }) {
   return (
     <time
       className={className}
-      dateTime={label ?? undefined}
+      dateTime={label?.iso}
       aria-live="off"
       suppressHydrationWarning
       style={{
         display: "inline-block",
         textAlign: "right",
+        whiteSpace: "nowrap",
         fontVariantNumeric: "tabular-nums",
       }}
     >
-      {label ?? "\u00a0"}
+      {label ? (
+        <>
+          {/* <640px: time + zone only, so the header stays one row */}
+          <span className="sm:hidden">{label.short}</span>
+          <span className="hidden sm:inline">{label.full}</span>
+        </>
+      ) : (
+        "\u00a0"
+      )}
     </time>
   );
 }
 
-function formatNy(d: Date): string {
+function formatNy(d: Date): { full: string; short: string } {
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     day: "numeric",
@@ -54,7 +67,10 @@ function formatNy(d: Date): string {
   const minute = get("minute");
   const dayPeriod = get("dayPeriod");
   const tz = get("timeZoneName") || "ET";
-  return `${day} ${month}, ${hour}:${minute} ${dayPeriod} ${tz}`;
+  return {
+    full: `${day} ${month}, ${hour}:${minute} ${dayPeriod} ${tz}`,
+    short: `${hour}:${minute} ${dayPeriod} ${tz}`,
+  };
 }
 
 function ordinal(n: number): string {
