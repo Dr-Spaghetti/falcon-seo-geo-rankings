@@ -84,16 +84,14 @@ export function AppShell({
         <div
           className={`relative mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 ${maxW}`}
         >
-          {/* Left: Keyword Scans/Reports — firm select sr-only */}
+          {/* Left: search-style Keyword Scans/Reports (HTML SoT look; no fake actions) */}
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
             <Link
               href={activeClient?.href ?? "/clients/dj-law"}
-              className="flex min-w-0 items-center gap-2 rounded-md text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              className="relative flex w-64 max-w-[min(20rem,42vw)] items-center rounded-md border border-slate-700/60 bg-[#131b2b] py-1.5 pl-9 pr-3 text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
             >
-              <SearchIcon className="h-4 w-4 shrink-0 text-white/80" />
-              <span className="truncate font-serif text-sm tracking-tight sm:text-[15px]">
-                Keyword Scans/Reports
-              </span>
+              <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-400" />
+              <span className="truncate">Keyword Scans/Reports</span>
             </Link>
             <label htmlFor="lf-client-switcher" className="sr-only">
               Switch client firm
