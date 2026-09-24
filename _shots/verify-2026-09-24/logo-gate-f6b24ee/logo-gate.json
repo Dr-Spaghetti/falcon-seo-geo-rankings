@@ -1,6 +1,6 @@
 {
-  "base": "http://127.0.0.1:3010",
-  "generated_at": "2026-09-24T19:11:52.507Z",
+  "base": "https://justifycode-wordpress-dashboard-kdpmlju2o.vercel.app",
+  "generated_at": "2026-09-24T19:13:35.660Z",
   "fail_rule": "|offset_px|>2 OR |offset_pct|>2 (DOM and/or PIXEL per slot rules)",
   "any_fail": false,
   "results": [
@@ -10,8 +10,8 @@
       "slug": "dj-law",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-inner__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-inner__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__crest-inner__zoom3.png",
       "dom": {
         "container": {
           "w": 76,
@@ -81,8 +81,8 @@
       "slug": "dj-law",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-ring__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__crest-ring__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__crest-ring__zoom3.png",
       "dom": {
         "container": {
           "w": 80,
@@ -153,8 +153,8 @@
       "slug": "dj-law",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 125.1875,
@@ -224,8 +224,8 @@
       "slug": "dj-law",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 26.625,
@@ -296,8 +296,8 @@
       "slug": "dj-law",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -367,8 +367,8 @@
       "slug": "dj-law",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__1440x900__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__1440x900__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -439,8 +439,8 @@
       "slug": "therman",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-inner__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-inner__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__crest-inner__zoom3.png",
       "dom": {
         "container": {
           "w": 76,
@@ -510,8 +510,8 @@
       "slug": "therman",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-ring__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__crest-ring__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__crest-ring__zoom3.png",
       "dom": {
         "container": {
           "w": 80,
@@ -582,8 +582,8 @@
       "slug": "therman",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 125.1875,
@@ -653,8 +653,8 @@
       "slug": "therman",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 26.625,
@@ -725,8 +725,8 @@
       "slug": "therman",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -796,8 +796,8 @@
       "slug": "therman",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__1440x900__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__1440x900__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -876,8 +876,8 @@
       "slug": "premier",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 125.1875,
@@ -947,8 +947,8 @@
       "slug": "premier",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 26.625,
@@ -1019,8 +1019,8 @@
       "slug": "premier",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -1090,8 +1090,8 @@
       "slug": "premier",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__1440x900__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__1440x900__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -1170,8 +1170,8 @@
       "slug": "cmh",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 125.1875,
@@ -1241,8 +1241,8 @@
       "slug": "cmh",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 26.625,
@@ -1313,8 +1313,8 @@
       "slug": "cmh",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -1384,8 +1384,8 @@
       "slug": "cmh",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__1440x900__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__1440x900__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -1456,8 +1456,8 @@
       "slug": "_site",
       "viewport": "1440x900",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__1440x900__favicon__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__1440x900__favicon__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/_site__1440x900__favicon__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/_site__1440x900__favicon__zoom3.png",
       "dom": {
         "container": {
           "w": 64,
@@ -1520,7 +1520,7 @@
         "x": 0,
         "y": 0
       },
-      "url": "http://127.0.0.1:3010/icon.png"
+      "url": "https://justifycode-wordpress-dashboard-kdpmlju2o.vercel.app/icon.png"
     },
     {
       "slot": "crest-inner",
@@ -1528,8 +1528,8 @@
       "slug": "dj-law",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-inner__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-inner__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__crest-inner__zoom3.png",
       "dom": {
         "container": {
           "w": 76,
@@ -1599,8 +1599,8 @@
       "slug": "dj-law",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-ring__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__crest-ring__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__crest-ring__zoom3.png",
       "dom": {
         "container": {
           "w": 80,
@@ -1671,8 +1671,8 @@
       "slug": "dj-law",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 110.90625,
@@ -1742,8 +1742,8 @@
       "slug": "dj-law",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 23.75,
@@ -1814,8 +1814,8 @@
       "slug": "dj-law",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -1885,8 +1885,8 @@
       "slug": "dj-law",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/dj-law__390x844__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/dj-law__390x844__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -1957,8 +1957,8 @@
       "slug": "therman",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-inner__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-inner__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__crest-inner__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__crest-inner__zoom3.png",
       "dom": {
         "container": {
           "w": 76,
@@ -2028,8 +2028,8 @@
       "slug": "therman",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-ring__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__crest-ring__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__crest-ring__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__crest-ring__zoom3.png",
       "dom": {
         "container": {
           "w": 80,
@@ -2100,8 +2100,8 @@
       "slug": "therman",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 110.90625,
@@ -2171,8 +2171,8 @@
       "slug": "therman",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 23.75,
@@ -2243,8 +2243,8 @@
       "slug": "therman",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -2314,8 +2314,8 @@
       "slug": "therman",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/therman__390x844__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/therman__390x844__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -2394,8 +2394,8 @@
       "slug": "premier",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 110.90625,
@@ -2465,8 +2465,8 @@
       "slug": "premier",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 23.75,
@@ -2537,8 +2537,8 @@
       "slug": "premier",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -2608,8 +2608,8 @@
       "slug": "premier",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/premier__390x844__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/premier__390x844__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -2688,8 +2688,8 @@
       "slug": "cmh",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-mark__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-mark__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__header-justify-mark__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__header-justify-mark__zoom3.png",
       "dom": {
         "container": {
           "w": 110.90625,
@@ -2759,8 +2759,8 @@
       "slug": "cmh",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__header-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__header-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__header-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 23.75,
@@ -2831,8 +2831,8 @@
       "slug": "cmh",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-cluster__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-cluster__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__hero-justify-cluster__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__hero-justify-cluster__zoom3.png",
       "dom": {
         "container": {
           "w": 98.609375,
@@ -2902,8 +2902,8 @@
       "slug": "cmh",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-arrows__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/cmh__390x844__hero-justify-arrows__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__hero-justify-arrows__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/cmh__390x844__hero-justify-arrows__zoom3.png",
       "dom": {
         "container": {
           "w": 22.796875,
@@ -2974,8 +2974,8 @@
       "slug": "_site",
       "viewport": "390x844",
       "pass": true,
-      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__390x844__favicon__container.png",
-      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee-local/_site__390x844__favicon__zoom3.png",
+      "container_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/_site__390x844__favicon__container.png",
+      "crop_path": "/workspace/falcon-seo-geo-rankings/_shots/verify-2026-09-24/logo-gate-f6b24ee/_site__390x844__favicon__zoom3.png",
       "dom": {
         "container": {
           "w": 64,
@@ -3038,7 +3038,13 @@
         "x": 0,
         "y": 0
       },
-      "url": "http://127.0.0.1:3010/icon.png"
+      "url": "https://justifycode-wordpress-dashboard-kdpmlju2o.vercel.app/icon.png"
     }
-  ]
+  ],
+  "tip_sha": "2ae562d5eff6ba811eb0041903fcb6962df0f230",
+  "live_url": "https://justifycode-wordpress-dashboard-kdpmlju2o.vercel.app",
+  "logo_sha256": {
+    "dj": "b037e334991acff77bfdcc783868f63af7f326983fb68582965fd78c63e3e619",
+    "therman": "9152e17c6ac98521c1a03b84abf78fdc98c05a723dfdb82491f4c37f32c18e06"
+  }
 }
