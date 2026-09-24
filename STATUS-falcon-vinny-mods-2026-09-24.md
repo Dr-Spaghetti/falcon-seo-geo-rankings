@@ -6,8 +6,8 @@
 | **state** | ready_for_design (Eng retip after HARD FAIL 49120da — awaiting Design re-PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | Design HARD re-PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `TIP_PENDING` |
-| **tip_sha** | `TIP_PENDING` |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `96268ce` |
+| **tip_sha** | `96268ce29658b29b0900b1c00a09b3c769f0329e` |
 | **updated_at** | 2026-09-24 1:52 PM ET |
 
 ## Evidence links
@@ -15,11 +15,11 @@
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Tip SHA | `TIP_PENDING` |
-| Preview (Band C gitless) | PREVIEW_PENDING |
-| Preview `/clients/dj-law` | PREVIEW_PENDING/clients/dj-law |
-| Preview `/clients/therman` | PREVIEW_PENDING/clients/therman |
-| Inspect | INSPECT_PENDING |
+| Tip SHA | `96268ce29658b29b0900b1c00a09b3c769f0329e` |
+| Preview (Band C gitless) | https://justifycode-wordpress-dashboard-4jqi3frur.vercel.app |
+| Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-4jqi3frur.vercel.app/clients/dj-law |
+| Preview `/clients/therman` | https://justifycode-wordpress-dashboard-4jqi3frur.vercel.app/clients/therman |
+| Inspect | https://vercel.com/nicks-projects-2d0579a1/justifycode-wordpress-dashboard/GhWpWoV2jY2jWRqenxDZ2UyKwkh7 |
 | Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
 | Vercel project | justifycode-wordpress-dashboard |
 
@@ -38,7 +38,7 @@
 | 1 | KILL hero opaque dark fill plate + ghosted title / “Select a location…” | Regenerated `hero-chrome-plate.png`: inpainted SoT firm type + baked logo out of center/left; **no flat slate card** (old center std=0 → textured field std≈11); seal hole transparent; toned title `textShadow` (removed dark 10px halo) | CLOSED (Eng) — Design re-PASS pending |
 | 2 | Soft seal/crest nudge | Crest `top` 52%→51.5%, size 9.8/45→10.2/47 | CLOSED (Eng soft) |
 | 3 | Soft denser watermark | Opacity 0.32→0.42; stacking `-z-10`→`z-0` (was painted under AppShell bg) | CLOSED (Eng soft) |
-| 4 | Re-tip Band C | Eng settle shots v4 + gitless preview — NOT claiming Design DONE | IN PROGRESS |
+| 4 | Re-tip Band C | Eng settle shots v4 + gitless preview — NOT claiming Design DONE | CLOSED (Eng) |
 
 ## CLOSED (do not regress)
 
