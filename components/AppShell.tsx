@@ -8,7 +8,7 @@ import {
   getBrandTheme,
 } from "@/lib/lf-brand";
 import { LF_CLIENT_NAV } from "@/lib/lf-nav";
-import { JustifyMark } from "@/components/hub/HubDecor";
+import { JustifyMark, LegalCircuitWatermark } from "@/components/hub/HubDecor";
 import { LiveClock } from "@/components/hub/LiveClock";
 
 function navActive(pathname: string, href: string) {
@@ -37,7 +37,7 @@ export function AppShell({
   const brand = getBrandTheme(brandSlugFromPathname(pathname));
   const brandStyle = brandCssVars(brand) as React.CSSProperties;
   const isLfClient = Boolean(activeClient);
-  const maxW = wide ? "max-w-7xl" : "max-w-5xl";
+  const maxW = wide ? "max-w-[1600px]" : "max-w-5xl";
 
   if (!isLfClient) {
     return (
@@ -81,6 +81,19 @@ export function AppShell({
         backgroundColor: "var(--brand-surface)",
       }}
     >
+      {/* Full-viewport soft-fade watermark — no hard rectangular cut-off */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+        aria-hidden
+        style={{
+          maskImage:
+            "radial-gradient(ellipse 95% 75% at 50% 28%, #000 0%, #000 42%, transparent 78%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 95% 75% at 50% 28%, #000 0%, #000 42%, transparent 78%)",
+        }}
+      >
+        <LegalCircuitWatermark className="h-full w-full object-cover object-top opacity-[0.45]" />
+      </div>
       <header
         className="sticky top-0 z-40 border-b shadow-lg shadow-black/40"
         style={{
@@ -197,7 +210,7 @@ export function AppShell({
         </div>
       </header>
 
-      <main className={`relative mx-auto px-4 py-8 sm:px-6 ${maxW}`}>
+      <main className={`relative z-[1] mx-auto px-3 pt-0 pb-8 sm:px-5 ${maxW}`}>
         {children}
       </main>
     </div>

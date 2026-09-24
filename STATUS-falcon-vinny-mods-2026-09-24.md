@@ -3,62 +3,43 @@
 | Field | Value |
 |-------|--------|
 | **goal_id** | falcon-dj-hub-sot-exact / Band D feat PR #1 |
-| **state** | ready_for_design (Eng retip after HARD FAIL 49120da — awaiting Design re-PASS) |
+| **state** | ready_for_design (Eng retip after HARD FAIL 96268ce — awaiting Design re-PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| **blocker** | Design HARD re-PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `6df9087` |
-| **tip_sha** | `6df90871cc6eea9a59376df96405fc07128eb168` |
-| **updated_at** | 2026-09-24 1:55 PM ET |
+| **blocker** | Design HARD re-PASS pending; Band D HOLD |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `TIP_PENDING` |
+| **tip_sha** | `TIP_PENDING` |
+| **updated_at** | 2026-09-24 2:12 PM ET |
 
 ## Evidence links
 
 | Kind | Link / note |
 |------|-------------|
 | PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
-| Tip SHA | `6df90871cc6eea9a59376df96405fc07128eb168` |
-| Preview (Band C gitless) | https://justifycode-wordpress-dashboard-4jqi3frur.vercel.app |
-| Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-4jqi3frur.vercel.app/clients/dj-law |
-| Preview `/clients/therman` | https://justifycode-wordpress-dashboard-4jqi3frur.vercel.app/clients/therman |
-| Inspect | https://vercel.com/nicks-projects-2d0579a1/justifycode-wordpress-dashboard/GhWpWoV2jY2jWRqenxDZ2UyKwkh7 |
+| Tip SHA | `TIP_PENDING` |
+| Preview (Band C gitless) | PREVIEW_PENDING |
+| Preview `/clients/dj-law` | PREVIEW_PENDING/clients/dj-law |
+| Preview `/clients/therman` | PREVIEW_PENDING/clients/therman |
+| Inspect | INSPECT_PENDING |
 | Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
-| Vercel project | justifycode-wordpress-dashboard |
 
-## SoT lock
-
-| Kind | Path / note |
-|------|-------------|
-| **Canonical SoT** | `_shots/sot-2026-09-24/dj-law-hub-sot.png` (Nick attach) |
-| Therman | Template clone of DJ SoT — crest = `public/brands/therman/logo.webp` |
-| Design HARD FAIL 49120da | `_shots/verify-2026-09-24/qa-49120da/VERDICT.txt` |
-
-## Eng retip vs HARD FAIL 49120da (hero dark plate + ghost type)
+## Eng retip vs HARD FAIL 96268ce + Nick live flags
 
 | # | Punch | Eng action | Status |
 |---|-------|------------|--------|
-| 1 | KILL hero opaque dark fill plate + ghosted title / “Select a location…” | Regenerated `hero-chrome-plate.png`: inpainted SoT firm type + baked logo out of center/left; **no flat slate card** (old center std=0 → textured field std≈11); seal hole transparent; toned title `textShadow` (removed dark 10px halo) | CLOSED (Eng) — Design re-PASS pending |
-| 2 | Soft seal/crest nudge | Crest `top` 52%→51.5%, size 9.8/45→10.2/47 | CLOSED (Eng soft) |
-| 3 | Soft denser watermark | Opacity 0.32→0.42; stacking `-z-10`→`z-0` (was painted under AppShell bg) | CLOSED (Eng soft) |
-| 4 | Re-tip Band C | Eng settle shots v4 + gitless preview — NOT claiming Design DONE | CLOSED (Eng) |
-
-## CLOSED (do not regress)
-
-| # | Item | Status |
-|---|------|--------|
-| Prior | Flat-SVG gold killer | CLOSED |
-| N1 | Two green arrows justify mark | PASS |
-| N2 | Photoreal gold direction | PASS |
-| N3 | OL simplify for older clients | PASS |
+| 1 | STOP inpaint; clean plate | Composite meander+cols+gold-only seal-ring on uniform #141618 field; ZERO baked type/logo/DLC. Live DOM for type, justify local, crest | CLOSED (Eng) — Design re-PASS pending |
+| 2 | Dead band above hero | AppShell LF main `pt-0`; hero_y≈59 | CLOSED (Eng) |
+| 3 | Therman title fit | Long-name smaller clamp + max-w + pr-[26%] | CLOSED (Eng) |
+| 4 | Watermark hard rect + empty black | AppShell full-viewport wm + radial mask + feathered asset | CLOSED (Eng soft) — residual fade may remain |
+| 5 | Narrow floating column | `max-w-[1600px]` wide hubs | CLOSED (Eng soft) |
+| 6 | Re-tip Band C | v5 shots + gitless preview | IN PROGRESS |
 
 ## Verify
 
-| # | Check | Result | Evidence |
-|---|-------|--------|----------|
-| 1 | `npm test` + `tsc --noEmit` + `npm run build` | **GREEN** | 24/24; tsc 0; build 101 routes |
-| 2 | DJ / Therman settle shots | **ENG SETTLE v4** (Design re-PASS pending) | `_shots/verify-2026-09-24/verify-dj-hub-v4.png`, `verify-therman-hub-v4.png`, `sot-vs-dj-v4-top.png` |
-| 3 | Quant plate gate | **0** ultra-flat (std&lt;0.5) dark windows in hero interior | vs FAIL tip flat center std=0 |
+| # | Check | Result |
+|---|-------|--------|
+| 1 | npm test / tsc / build | GREEN |
+| 2 | Plate-only teal/glyphs | 0 |
+| 3 | v5 shots 1440+1280 | `_shots/verify-2026-09-24/*v5*` + CAPTURE-v5.txt |
 
 ## Band D HOLD
-
-- **NO** merge to `master`
-- **NO** promote to prod alias `justifycode-wordpress-dashboard.vercel.app`
-- **NOT** claiming Design DONE — Eng settle only; Design HARD re-PASS required
+NO merge / NO prod / NO alias. NOT Design DONE.

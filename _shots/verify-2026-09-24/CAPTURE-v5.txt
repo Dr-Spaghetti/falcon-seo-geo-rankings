@@ -1,0 +1,33 @@
+Eng v5 settle — HARD FAIL 96268ce retip (clean composite plate; no SoT inpaint)
+When: 2026-09-24 ~2:10pm ET
+Viewports: 1440 and 1280
+
+WHAT I ACTUALLY SEE (opened shots with Read + plate-only hides)
+
+DJ hero (crop-dj-v5-hero-1440.png):
+- Ornate gold meander frame, columns on the right, gold seal ring with live DLC crest inside.
+- Left: live "justify local" mark (white wordmark + two teal arrows + pin) — one logo.
+- Center: live gold "DJ Law Corp" / CLIENT DASHBOARD / counts / Select line — one stack.
+- Field behind type is uniform dark (#141618 composite), not a separate slate card asset.
+- Plate-only (overlays hidden): empty dark field + gold chrome only. teal=0, no white glyphs,
+  no baked title, no second arrows, no DLC green fill. Seal hole transparent.
+
+Therman hero (crop-therman-v5-hero-1440.png):
+- Same clean chrome language; live Charlie Therman crest in the ring.
+- Long name uses smaller clamp + max-width wrap with extra right padding toward the seal.
+- Plate-only: same empty field as DJ (no ghost "DJ Law Corp" pixels on the plate).
+
+Top bar / dead band (crop-*-v5-top-1440.png):
+- Hero y≈59 under AppShell header — gap largely removed vs prior ~87px / tall black band.
+- Header N1 two green arrows mark still present.
+
+Page ground (verify-*-v5-*-full.png):
+- Watermark moved to AppShell full-viewport with soft radial mask + feathered asset.
+- Detail still falls off below the location card (std drop ~y=364); softened vs hard rect
+  but not SoT-perfect continuum — residual for Design eye.
+
+Width: max-w-[1600px], hero ~1400px at 1440 viewport (less "floating postage stamp").
+
+Gates (pixel):
+- plate teal=0, green-dom=0, seal α=0, center std≈1.6, left white>180 = 0
+- DOM: 1× hero-chrome-plate, 1× h1, 1× justify local, 1× crest

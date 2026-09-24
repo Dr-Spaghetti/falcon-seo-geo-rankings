@@ -3,7 +3,6 @@ import type { LfClient } from "@/lib/lf";
 import { resolveBrandLogoUrl } from "@/lib/lf-logo";
 import {
   HeroChromePlate,
-  LegalCircuitWatermark,
   MapThumbPlaceholder,
 } from "@/components/hub/HubDecor";
 
@@ -16,25 +15,19 @@ export function ClientHub({ client }: { client: LfClient }) {
   const base = `/clients/${client.slug}`;
   const logoUrl = resolveBrandLogoUrl(client.slug);
   const countsLine = `${client.location_count} locations | ${client.scan_count.toLocaleString()} Total scans`;
+  // Long firm names (e.g. Therman) — keep clear of seal; prefer natural wrap
+  const isLongName = client.name.length > 34;
 
   return (
-    <div className="relative space-y-7 text-slate-100">
-      {/* Dense legal + circuit watermark — z-0 (not -z-10; AppShell bg would hide negative z) */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
-        aria-hidden
-      >
-        <LegalCircuitWatermark className="h-full min-h-[720px] w-full object-cover opacity-[0.42]" />
-      </div>
-
-      {/* Framed hero — photoreal SoT chrome (no opaque slate fill-plate; type floats on field) */}
+    <div className="relative space-y-5 text-slate-100">
+      {/* Framed hero — clean composite chrome; type/crest/logo live in DOM */}
       <section
         className="relative z-[1] overflow-hidden rounded-[16px] shadow-2xl shadow-black/55"
         style={{ backgroundColor: "#141618" }}
         aria-label={`${client.name} client dashboard`}
       >
         <div className="relative w-full" style={{ aspectRatio: "996 / 218" }}>
-          {/* Photoreal chrome: meander/columns/seal + field texture; SoT type stripped */}
+          {/* CLEAN composite plate: frame/cols/gold-ring + empty field (no baked glyphs) */}
           <HeroChromePlate className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-fill" />
 
 
@@ -45,10 +38,10 @@ export function ClientHub({ client }: { client: LfClient }) {
               left: "84.5%",
               top: "51.5%",
               transform: "translate(-50%, -50%)",
-              width: "10.2%",
-              height: "47%",
-              backgroundColor: "color-mix(in srgb, var(--brand) 78%, #050805)",
-              boxShadow: "inset 0 0 12px rgba(0,0,0,0.55)",
+              width: "11.2%",
+              height: "51%",
+              backgroundColor: "color-mix(in srgb, var(--brand) 82%, #050805)",
+              boxShadow: "inset 0 0 10px rgba(0,0,0,0.5)",
             }}
           >
             {logoUrl ? (
@@ -80,15 +73,15 @@ export function ClientHub({ client }: { client: LfClient }) {
               />
             </div>
 
-            {/* Center stack — dynamic firm typography */}
-            <div className="min-w-0 flex-1 space-y-0.5 pr-[18%] text-center">
+            {/* Center stack — live firm typography (wraps; clears seal) */}
+            <div className="min-w-0 flex-1 space-y-0.5 px-1 pr-[24%] text-center sm:pr-[26%]">
               <h1
-                className="font-serif text-[clamp(1.25rem,2.8vw,2.6rem)] font-semibold leading-tight tracking-tight"
-                style={{
-                  color: "var(--brand-accent)",
-                  /* SoT floats type on field — no dark halo plate / ghost duplicate */
-                  textShadow: "0 1px 0 rgba(255,255,255,0.12)",
-                }}
+                className={
+                  isLongName
+                    ? "mx-auto max-w-[36ch] font-serif text-[clamp(0.7rem,1.55vw,1.45rem)] font-semibold leading-[1.15] tracking-tight break-words"
+                    : "font-serif text-[clamp(0.9rem,2.2vw,2.1rem)] font-semibold leading-[1.12] tracking-tight break-words"
+                }
+                style={{ color: "var(--brand-accent)" }}
               >
                 {client.name}
               </h1>
