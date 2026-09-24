@@ -4,6 +4,11 @@
  * Flat SVG gold frame/columns/seal intentionally retired (Design HARD FAIL 616687b).
  */
 
+import {
+  JUSTIFY_ARROWS_PATH,
+  JUSTIFY_ARROWS_VIEWBOX,
+} from "@/components/hub/justify-arrows-path";
+
 const HUB = "/brands/_hub";
 
 /** Photoreal meander frame + Ionic columns + seal ring (center transparent). */
@@ -82,22 +87,17 @@ export function LegalCircuitWatermark({ className }: { className?: string }) {
  * N1: green arrows only, never people icons.
  */
 export function JustifyCornerArrows({ className }: { className?: string }) {
-  // Traced from justify-mark.png: each ⌝ arm is 12×4 px → thickness/length = 1/3.
-  // Front at (4,0), back at (0,5); viewBox 16×17 matches PNG arrow crop aspect.
+  // Exact official chevrons: potrace of green pixels from public/brands/_justify/logo.png
   return (
     <svg
       className={className}
-      viewBox="0 0 16 17"
+      viewBox={JUSTIFY_ARROWS_VIEWBOX}
       fill="#00d68f"
       aria-hidden
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
-      shapeRendering="geometricPrecision"
     >
-      {/* Back (lower-left) — ox=0 oy=5 L=12 T=4 */}
-      <path d="M0 5h12v12H8V9H0z" />
-      {/* Front (upper-right) — ox=4 oy=0 L=12 T=4 */}
-      <path d="M4 0h12v12h-4V4H4z" />
+      <path d={JUSTIFY_ARROWS_PATH} />
     </svg>
   );
 }
