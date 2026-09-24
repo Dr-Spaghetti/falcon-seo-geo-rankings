@@ -6,8 +6,21 @@
 | **state** | ready_for_design (DJ Eng settle — awaiting Design HARD PASS) |
 | **evidence_uri** | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
 | **blocker** | Design HARD PASS pending on DJ hub vs SoT; Band D HOLD (NO merge / NO prod) |
-| **branch** | `feat/falcon-ui-premier-2026-09-16` |
+| **branch** | `feat/falcon-ui-premier-2026-09-16` @ `616687b` |
+| **tip_sha** | `616687b0afda1d3bb087606d964e3bf833815062` |
 | **updated_at** | 2026-09-24 1:09 PM ET |
+
+## Evidence links
+
+| Kind | Link / note |
+|------|-------------|
+| PR #1 | https://github.com/Dr-Spaghetti/falcon-seo-geo-rankings/pull/1 |
+| Tip SHA | `616687b0afda1d3bb087606d964e3bf833815062` |
+| Preview (Ready, Band C gitless) | https://justifycode-wordpress-dashboard-3fobtx05w.vercel.app |
+| Preview `/clients/dj-law` | https://justifycode-wordpress-dashboard-3fobtx05w.vercel.app/clients/dj-law |
+| Inspect | https://vercel.com/nicks-projects-2d0579a1/justifycode-wordpress-dashboard/7VkR7Xjzn8hzKdBLLgNfbyHiWiKo |
+| Prod alias (UNTOUCHED) | https://justifycode-wordpress-dashboard.vercel.app |
+| Vercel project | justifycode-wordpress-dashboard |
 
 ## SoT lock
 
@@ -25,7 +38,7 @@
 | 2 | DJ hub vs SoT — frame / columns / AppShell / OL | **ENG SETTLE** (Design HARD PASS pending) | `_shots/verify-2026-09-24/verify-dj-hub-v2.png` + `sot-vs-dj-v2-top.png` |
 | 3 | DOM: DJ DLC crest `<img`; no Firm hub chip | **PASS** | `/brands/dj-law/logo.png`; Firm hub=0 |
 | 4 | Therman template clone + logo.webp (no placeholder) | **PASS** (clone; not claiming Design DONE) | `_shots/verify-2026-09-24/verify-therman-hub-v2.png` |
-| 5 | Preview URL + tip SHA | *filled after push/deploy* | see Evidence links below |
+| 5 | Preview URL + tip SHA | **PASS** | tip `616687b`; preview Ready @ 3fobtx05w |
 
 ## Mock gaps closed (vs prior FAIL `verify-dj-hub.png`)
 
