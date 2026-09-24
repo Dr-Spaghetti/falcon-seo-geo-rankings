@@ -85,13 +85,13 @@ export function AppShell({
         style={{ backgroundColor: "var(--hub-header, #0d131f)" }}
       >
         <div
-          className={`relative mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-2.5 sm:gap-4 ${padX} ${maxW}`}
+          className={`relative mx-auto grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 py-2.5 sm:gap-4 ${padX} ${maxW}`}
         >
           {/* Left: search-style Keyword Scans/Reports (HTML SoT look; no fake actions) */}
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
             <Link
               href={activeClient?.href ?? "/clients/dj-law"}
-              className="relative flex w-64 max-w-[min(20rem,42vw)] items-center rounded-md border border-slate-700/60 bg-[#131b2b] py-1.5 pl-9 pr-3 text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+              className="relative flex w-full min-w-0 max-w-64 items-center rounded-md border border-slate-700/60 bg-[#131b2b] py-1.5 pl-9 pr-3 text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
             >
               <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-400" />
               <span className="truncate">Keyword Scans/Reports</span>
@@ -135,8 +135,8 @@ export function AppShell({
           </div>
 
           {/* Right: live ET clock only — no fake account/settings/bell */}
-          <div className="flex items-center justify-end gap-2 sm:gap-3">
-            <LiveClock className="font-sans text-xs font-normal normal-case tracking-normal text-slate-300 sm:text-sm" />
+          <div className="flex min-w-0 items-center justify-end gap-2 sm:gap-3">
+            <LiveClock className="min-w-0 sm:min-w-[11.5rem] text-right leading-tight font-sans text-xs font-normal normal-case tracking-normal text-slate-300 sm:text-sm" />
           </div>
         </div>
       </header>

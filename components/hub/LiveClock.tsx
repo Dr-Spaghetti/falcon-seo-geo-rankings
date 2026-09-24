@@ -26,7 +26,6 @@ export function LiveClock({ className }: { className?: string }) {
       suppressHydrationWarning
       style={{
         display: "inline-block",
-        minWidth: "11.5rem",
         textAlign: "right",
         fontVariantNumeric: "tabular-nums",
       }}
