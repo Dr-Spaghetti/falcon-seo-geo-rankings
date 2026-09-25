@@ -1,0 +1,27 @@
+{
+  "slug": "amos-perrick",
+  "name": "Amos Perrick",
+  "group": "Amos Perrick",
+  "brand_match": "amos-perrick",
+  "generated_at": "2026-09-16T19:19:13.542Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 782,
+  "locations": [
+    {
+      "place_id": "ChIJtfvPmgUhyIkRrqVD-3_sl2s",
+      "name": "Amos Perrick Law",
+      "address": "9520 Berger Rd Ste 212, Columbia, MD 21046",
+      "city": "Columbia",
+      "rating": 4.7,
+      "reviews": 46,
+      "phone": "+14103818019",
+      "url": "https://apmdlaw.com/",
+      "primary_category": "Divorce lawyer",
+      "groups": [],
+      "scan_count": 782,
+      "latest_date": "8/30/2026 4:43 AM",
+      "latest_iso": "2026-08-30"
+    }
+  ]
+}

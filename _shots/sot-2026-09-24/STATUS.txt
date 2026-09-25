@@ -1,0 +1,1 @@
+DJ_LAW_HUB_SOT = master template for ALL Falcon client hubs (Nick 2026-09-24). Therman/others = same frame + firm crest/name/stats swap. logo.webp for Therman.

@@ -1,0 +1,27 @@
+{
+  "slug": "milano",
+  "name": "Milano Legal Group",
+  "group": "Milano Legal Group",
+  "brand_match": "milano",
+  "generated_at": "2026-09-16T19:29:41.571Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 558,
+  "locations": [
+    {
+      "place_id": "ChIJkQgFGEPBQIYRGT7-6YcKRRY",
+      "name": "Milano Accident Lawyers",
+      "address": "2603 Augusta Dr Ste 260, Houston, TX 77057",
+      "city": "Houston",
+      "rating": 5,
+      "reviews": 277,
+      "phone": "+13466434601",
+      "url": "https://milanoaccidentlawyers.com/?utm_source=google&utm_medium=gbp&utm_campaign=houston",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 558,
+      "latest_date": "8/20/2026 11:04 PM",
+      "latest_iso": "2026-08-20"
+    }
+  ]
+}
