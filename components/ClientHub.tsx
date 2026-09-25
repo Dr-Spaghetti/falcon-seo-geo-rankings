@@ -18,6 +18,7 @@ export function ClientHub({ client }: { client: LfClient }) {
     client.scan_count,
   );
   const isLongName = client.name.length > 34;
+  const firmLogoScaleClass = FIRM_LOGO_SCALE_CLASS[client.slug] ?? "";
 
   // Real latest scan from location data (no fake "Operational & Synced")
   const latestDates = client.locations
@@ -37,7 +38,7 @@ export function ClientHub({ client }: { client: LfClient }) {
         className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-[color-mix(in_srgb,var(--hub-card)_92%,#000)] p-6 shadow-xl"
         aria-label={`${client.name} client dashboard`}
       >
-        <div className="relative z-10 flex flex-col items-center justify-between gap-6 px-2 [--firm-logo-max-h:128px] [--firm-logo-max-w:min(340px,calc(100vw-190px))] xl:flex-row xl:px-4 xl:[--firm-logo-max-h:148px] xl:[--firm-logo-max-w:460px]">
+        <div className={`relative z-10 flex flex-col items-center justify-between gap-6 px-2 [--firm-logo-max-h:128px] [--firm-logo-max-w:min(340px,calc(100vw-190px))] xl:flex-row xl:px-4 xl:[--firm-logo-max-h:148px] xl:[--firm-logo-max-w:460px] ${firmLogoScaleClass}`}>
           {/* Left: OFFICIAL Justify Local logo file, untouched (no text + arrows rebuild) */}
           <div
             data-logo-slot="hero-justify"
@@ -101,7 +102,8 @@ export function ClientHub({ client }: { client: LfClient }) {
                   className="h-auto"
                   style={{
                     // Fit inside (--firm-logo-max-w x --firm-logo-max-h), ratio locked.
-                    width: `min(var(--firm-logo-max-w), calc(var(--firm-logo-max-h) * ${firmLogo.width} / ${firmLogo.height}))`,
+                    // --firm-logo-scale: optional per-firm display scale (default 1).
+                    width: `calc(min(var(--firm-logo-max-w), calc(var(--firm-logo-max-h) * ${firmLogo.width} / ${firmLogo.height})) * var(--firm-logo-scale, 1))`,
                   }}
                 />
               ) : (
@@ -210,6 +212,17 @@ export function ClientHub({ client }: { client: LfClient }) {
     </div>
   );
 }
+
+/**
+ * Per-firm display scale for the hero firm logo (same untouched file, ratio locked).
+ * Therman: 82% (-18%) in the xl row layout only (>=1280px), per Nick 2026-09-24,
+ * so the wide wordmark balances the left title block. The pillars stretch to the logo
+ * height and keep their clear space. Stacked tablet and mobile sizes are unchanged.
+ * Literal class strings so Tailwind JIT emits them.
+ */
+const FIRM_LOGO_SCALE_CLASS: Record<string, string> = {
+  therman: "xl:[--firm-logo-scale:0.82]",
+};
 
 function CssGoldPillar() {
   // Stretches to the firm logo's height (parent is items-stretch).
