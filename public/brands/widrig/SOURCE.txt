@@ -1,7 +1,9 @@
-logo.png — OFFICIAL Widrig Law mark, byte-for-byte from source (untouched; no recolor/crop/trace).
-SOURCE: Google Drive: ALL Client Logos/Client Logos/Widrig Law Logo.png
-URL: https://drive.google.com/file/d/1ST5avniBmqs6OTHGa53MgT9IUskHXJ-E/view?usp=drivesdk
-Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
-350×82; sha256 5934cc9de5a70f95cd7183d6fb0f9c22b35c89773e65ec9530cac86807ce8b75
-350×82 PNG with alpha.
-Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.
+logo.png — Nick-approved luminance remap for dark hub — NOT official firm white files.
+SOURCE: Nick Sacchetti explicit override of no-recolor rule, 2026-09-30 (ET).
+Derived from archived official Drive mark (logo-official.png) via luminance remap for dark-hub contrast.
+Handoff: /workspace/falcon-logo-hunt/light-edits-nick-approved/widrig/logo-light.png (same bytes)
+350×82 PNG with alpha; mean luminance ≈214 (light ink).
+sha256 225c6de83b24d5749ee0c9bc4d53ab0092669fb33fd92c9e70b264ce9cc6b20b
+Official original archived as logo-official.png (Drive Widrig Law Logo.png)
+  sha256 5934cc9de5a70f95cd7183d6fb0f9c22b35c89773e65ec9530cac86807ce8b75 — also /workspace/falcon-logo-hunt/archives/widrig/
+Render as-is: no additional ring, disc, plate, circular crop, mask, filter, or recolor.

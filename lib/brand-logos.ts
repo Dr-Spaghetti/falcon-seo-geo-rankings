@@ -10,7 +10,7 @@
  * bytes in public/ and that every public/brands/<slug>/logo.* has an entry.
  * Provenance: public/brands/<slug>/SOURCE.txt
  *
- * pearl-thompson: official file wired 2026-09-30; contrast FAIL on dark hub (flagged).
+ * pearl-thompson / rampart / widrig: Nick-approved luminance remap for dark hub (2026-09-30) — NOT official firm white files.
  */
 export type BrandLogo = {
   src: string;
@@ -178,16 +178,16 @@ export const FIRM_LOGOS: Record<string, BrandLogo> = {
   },
   "pearl-thompson": {
     src: "/brands/pearl-thompson/logo.png",
-    width: 2000,
-    height: 1600,
-    sha256: "02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac",
+    width: 1118,
+    height: 321,
+    sha256: "4b34e69a3ce5bebc47bb850c043c1d2c35932f222b24acadeef2d359d12811af",
     alt: "Pearl & Thompson logo",
   },
   rampart: {
     src: "/brands/rampart/logo.png",
     width: 2560,
     height: 1551,
-    sha256: "52745433ff194ecd27a1d62f9e0682ecc1257d0ab891fd1265dcbdb35860ff8a",
+    sha256: "bea35d63610ceb94aabc232bc6ac4270b679beddf0dc6f9e244e44770f6dbc55",
     alt: "Rampart Injury Lawyers logo",
   },
   "shammas-law": {
@@ -208,7 +208,7 @@ export const FIRM_LOGOS: Record<string, BrandLogo> = {
     src: "/brands/widrig/logo.png",
     width: 350,
     height: 82,
-    sha256: "5934cc9de5a70f95cd7183d6fb0f9c22b35c89773e65ec9530cac86807ce8b75",
+    sha256: "225c6de83b24d5749ee0c9bc4d53ab0092669fb33fd92c9e70b264ce9cc6b20b",
     alt: "Widrig Law logo",
   },
 };

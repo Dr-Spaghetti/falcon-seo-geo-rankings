@@ -1,10 +1,9 @@
-logo.png — OFFICIAL Pearl & Thompson mark, byte-for-byte from source (untouched; no recolor/crop/trace/filter).
-SOURCE: Nick Sacchetti chat attachment 2026-09-30 (official firm logo file)
-CoS handoff: /workspace/falcon-logo-hunt/pearl-thompson/logo.png (same bytes)
-Attachment sha256: 02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac
-Collected: 2026-09-30 (ET). Replaces prior "Logo unavailable" placeholder.
-2000×1600 PNG opaque white canvas; dark gray wordmark + gold scales icon.
-sha256 02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac
-CONTRAST FAIL on dark hub (same class as rampart/widrig): dark gray + gold on white —
-no official light/white lockup supplied; do NOT invent or CSS-invert.
-Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.
+logo.png — Nick-approved luminance remap for dark hub — NOT official firm white files.
+SOURCE: Nick Sacchetti explicit override of no-recolor rule, 2026-09-30 (ET).
+Derived from archived official Nick-attachment mark (logo-official.png) via luminance remap for dark-hub contrast.
+Handoff: /workspace/falcon-logo-hunt/light-edits-nick-approved/pearl-thompson/logo-light.png (same bytes)
+1118×321 PNG with alpha; mean luminance ≈211 (light ink).
+sha256 4b34e69a3ce5bebc47bb850c043c1d2c35932f222b24acadeef2d359d12811af
+Official original archived as logo-official.png (Nick attachment 2000×1600 opaque white canvas)
+  sha256 02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac — also /workspace/falcon-logo-hunt/archives/pearl-thompson/
+Render as-is: no additional ring, disc, plate, circular crop, mask, filter, or recolor.
