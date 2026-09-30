@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Milano Legal Group mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Milano Logo.png
+URL: https://drive.google.com/file/d/1epM_nWOIrUoCL41VRWWmr9w-OJzHRwe1/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+348×348; sha256 7d541084398fa72ef99addd02a0abfc5c94208edaa86766c7c54dc1d12b5705f
+348×348 RGB PNG (opaque).
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

@@ -1,0 +1,7 @@
+logo.svg — OFFICIAL Shammas Law light SVG mark, byte-for-byte from source (untouched; no recolor/crop/trace/filter).
+SOURCE: Official site shammas-law.com — theme SVG logo (white + soft gray fills for dark backgrounds)
+URL: https://shammas-law.com/wp-content/themes/shammas-law-redesign/assets/app/svg/logo.svg
+Collected: 2026-09-30 (ET). Contrast fix: prior logo.webp was dark royal-blue on transparency (invisible on dark hub).
+240×116 SVG; fills white + #CBCEC4 accents.
+sha256 4de98fc7ec48532f1b369a9984f9b643caf06ee6f7be73d6d22e75e6b2cb383b
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

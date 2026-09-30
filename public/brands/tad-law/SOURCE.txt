@@ -1,0 +1,8 @@
+logo.svg — OFFICIAL Tad Law LIGHT logotype, byte-for-byte from source (untouched; no recolor/crop/trace/filter).
+SOURCE: Official site tadlaw.com — light header logotype SVG (for dark backgrounds)
+URL: https://tadlaw.com/wp-content/themes/tad-law-rebuild/assets/app/svg/logotype-light.svg
+Collected: 2026-09-30 (ET). Contrast fix: prior asset was dark logotype.svg
+  (fills #040404/#0c0404) which was invisible on dark hub.
+400×78.049 SVG; fills include #fff (wordmark) + brand gold accents.
+sha256 5c249938adb8d395c92b9a9151e9146acac7822e0aae32b5eadfb7aebf25bdff
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

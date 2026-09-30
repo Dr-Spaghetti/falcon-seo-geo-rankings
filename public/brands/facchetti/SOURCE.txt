@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL Adrianos Facchetti mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Facchetti Logo.webp
+URL: https://drive.google.com/file/d/1QHVlB2LyJ3PJS3cLR9a6-07mURI9Q-ey/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+2048×828; sha256 df120342a767888b5b73d39d99718e86b9a0d59371e3bed400d933e6b67c5b3e
+2048×828 WebP; source dimensions/alpha preserved.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

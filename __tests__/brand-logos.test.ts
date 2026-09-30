@@ -7,20 +7,73 @@ import { FIRM_LOGOS, JUSTIFY_LOCAL_LOGO, type BrandLogo } from "../lib/brand-log
 
 const pub = path.join(process.cwd(), "public");
 
-function dims(buf: Buffer): { w: number; h: number } {
-  if (buf.readUInt32BE(0) === 0x89504e47) {
-    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
-  }
-  if (buf.toString("ascii", 0, 4) === "RIFF" && buf.toString("ascii", 8, 12) === "WEBP") {
-    const chunk = buf.toString("ascii", 12, 16);
-    if (chunk === "VP8X") return { w: 1 + buf.readUIntLE(24, 3), h: 1 + buf.readUIntLE(27, 3) };
-    if (chunk === "VP8L") {
-      const b = buf.readUInt32LE(21);
-      return { w: (b & 0x3fff) + 1, h: ((b >> 14) & 0x3fff) + 1 };
+function dims(buf: Buffer, src: string): { w: number; h: number } {
+  const ext = path.extname(src).toLowerCase();
+
+  if (ext === ".png" || buf.readUInt32BE(0) === 0x89504e47) {
+    if (buf.readUInt32BE(0) === 0x89504e47) {
+      return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
     }
-    if (chunk === "VP8 ") return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff };
   }
-  throw new Error("unsupported image format");
+
+  if (
+    ext === ".webp" ||
+    (buf.toString("ascii", 0, 4) === "RIFF" && buf.toString("ascii", 8, 12) === "WEBP")
+  ) {
+    if (buf.toString("ascii", 0, 4) === "RIFF" && buf.toString("ascii", 8, 12) === "WEBP") {
+      const chunk = buf.toString("ascii", 12, 16);
+      if (chunk === "VP8X") return { w: 1 + buf.readUIntLE(24, 3), h: 1 + buf.readUIntLE(27, 3) };
+      if (chunk === "VP8L") {
+        const b = buf.readUInt32LE(21);
+        return { w: (b & 0x3fff) + 1, h: ((b >> 14) & 0x3fff) + 1 };
+      }
+      if (chunk === "VP8 ") return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff };
+    }
+  }
+
+  if (ext === ".jpg" || ext === ".jpeg" || buf[0] === 0xff && buf[1] === 0xd8) {
+    if (buf[0] === 0xff && buf[1] === 0xd8) {
+      let i = 2;
+      while (i < buf.length - 8) {
+        if (buf[i] !== 0xff) break;
+        const marker = buf[i + 1];
+        if (marker === 0xd8 || marker === 0xd9) {
+          i += 2;
+          continue;
+        }
+        if (marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+          i += 2;
+          continue;
+        }
+        const seglen = buf.readUInt16BE(i + 2);
+        if (
+          marker >= 0xc0 &&
+          marker <= 0xcf &&
+          marker !== 0xc4 &&
+          marker !== 0xc8 &&
+          marker !== 0xcc
+        ) {
+          return { w: buf.readUInt16BE(i + 7), h: buf.readUInt16BE(i + 5) };
+        }
+        i += 2 + seglen;
+      }
+    }
+  }
+
+  if (ext === ".svg" || buf.toString("utf8", 0, 200).includes("<svg")) {
+    const text = buf.toString("utf8");
+    // Prefer viewBox (true canvas) over root width/height, which can be wrong
+    // (e.g. Amos Perrick ships square width/height attrs on a wide viewBox).
+    const vb = text.match(
+      /viewBox=["']?\s*([0-9.eE+-]+)\s+([0-9.eE+-]+)\s+([0-9.eE+-]+)\s+([0-9.eE+-]+)/
+    );
+    if (vb) return { w: Number(vb[3]), h: Number(vb[4]) };
+    const wm = text.match(/\bwidth=["']?([0-9.eE+-]+)/);
+    const hm = text.match(/\bheight=["']?([0-9.eE+-]+)/);
+    if (wm && hm) return { w: Number(wm[1]), h: Number(hm[1]) };
+  }
+
+  throw new Error(`unsupported image format for ${src}`);
 }
 
 function check(logo: BrandLogo) {
@@ -29,7 +82,7 @@ function check(logo: BrandLogo) {
   const buf = fs.readFileSync(abs);
   const sha = crypto.createHash("sha256").update(buf).digest("hex");
   assert.equal(sha, logo.sha256, `${logo.src} bytes changed — logos must stay untouched`);
-  const d = dims(buf);
+  const d = dims(buf, logo.src);
   assert.deepEqual(d, { w: logo.width, h: logo.height }, `${logo.src} dimensions`);
 }
 

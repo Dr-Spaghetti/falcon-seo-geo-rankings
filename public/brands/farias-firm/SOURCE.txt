@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Farias Firm mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Farias Logo.png
+URL: https://drive.google.com/file/d/1f2VED70aqHnPoafFwkWcDqhUTrJwHMsk/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+450×110; sha256 bee723ab405009daa1f456fdeb68ecd79aa989d0eb54431a06e6e2e1df119747
+450×110 PNG with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

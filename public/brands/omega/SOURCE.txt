@@ -1,0 +1,7 @@
+logo.jpg — OFFICIAL Omega Law Group mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Omega Law Group Logo.jpg
+URL: https://drive.google.com/file/d/19fFOHAen3uYjf2GlEJ7uIY_UFe285wJp/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+447×447; sha256 df4e363f1a3c8b3c66b6a2d27ba3dfac262f5507ed654709daa4b90a6989a517
+447×447 JPEG, 5.8 KB — low byte density; may look soft at hero size.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.
