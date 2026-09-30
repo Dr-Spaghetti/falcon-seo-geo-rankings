@@ -10,7 +10,7 @@
  * bytes in public/ and that every public/brands/<slug>/logo.* has an entry.
  * Provenance: public/brands/<slug>/SOURCE.txt
  *
- * pearl-thompson: no official file yet — hub keeps "Logo unavailable" placeholder.
+ * pearl-thompson: official file wired 2026-09-30; contrast FAIL on dark hub (flagged).
  */
 export type BrandLogo = {
   src: string;
@@ -175,6 +175,13 @@ export const FIRM_LOGOS: Record<string, BrandLogo> = {
     height: 191,
     sha256: "734214c3429876a55efb74f5db1744d5bd9265a90837c5bc59f36d00fb7f94ff",
     alt: "Premier Law Group logo",
+  },
+  "pearl-thompson": {
+    src: "/brands/pearl-thompson/logo.png",
+    width: 2000,
+    height: 1600,
+    sha256: "02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac",
+    alt: "Pearl & Thompson logo",
   },
   rampart: {
     src: "/brands/rampart/logo.png",

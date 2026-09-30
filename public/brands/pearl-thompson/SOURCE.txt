@@ -1,0 +1,10 @@
+logo.png — OFFICIAL Pearl & Thompson mark, byte-for-byte from source (untouched; no recolor/crop/trace/filter).
+SOURCE: Nick Sacchetti chat attachment 2026-09-30 (official firm logo file)
+CoS handoff: /workspace/falcon-logo-hunt/pearl-thompson/logo.png (same bytes)
+Attachment sha256: 02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac
+Collected: 2026-09-30 (ET). Replaces prior "Logo unavailable" placeholder.
+2000×1600 PNG opaque white canvas; dark gray wordmark + gold scales icon.
+sha256 02681063deb574bd57ea73b251774a6e3e255380dcc7b9055ce59691ae7c1aac
+CONTRAST FAIL on dark hub (same class as rampart/widrig): dark gray + gold on white —
+no official light/white lockup supplied; do NOT invent or CSS-invert.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.
