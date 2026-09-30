@@ -1,0 +1,27 @@
+{
+  "slug": "pearl-thompson",
+  "name": "Pearl & Thompson",
+  "group": "Pearl & Thompson",
+  "brand_match": "pearl-thompson",
+  "generated_at": "2026-09-16T19:35:27.404Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 206,
+  "locations": [
+    {
+      "place_id": "ChIJMVM6ReY53YgRIqk5ezNJKbk",
+      "name": "Pearl & Thompson, PLLC",
+      "address": "811 S Missouri Ave, Lakeland, FL 33815",
+      "city": "Lakeland",
+      "rating": 4.9,
+      "reviews": 36,
+      "phone": "+18633595238",
+      "url": "https://www.pearlandthompsonlaw.com/",
+      "primary_category": "Criminal justice attorney",
+      "groups": [],
+      "scan_count": 206,
+      "latest_date": "2/28/2026 12:00 AM",
+      "latest_iso": "2026-02-28"
+    }
+  ]
+}

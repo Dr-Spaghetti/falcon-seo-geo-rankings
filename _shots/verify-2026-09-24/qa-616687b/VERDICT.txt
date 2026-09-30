@@ -1,0 +1,48 @@
+HARD FAIL
+========
+Tip: 616687b (PR #1)
+Preview: https://justifycode-wordpress-dashboard-3fobtx05w.vercel.app/clients/dj-law
+Therman: …/clients/therman
+SoT: _shots/sot-2026-09-24/dj-law-hub-sot.png (MASTER TEMPLATE)
+Evidence: _shots/verify-2026-09-24/qa-616687b/ + Eng sot-vs-dj-v2-top.png
+When: 2026-09-24 ~1:14pm ET
+Band D: HOLD
+
+ONE KILLER
+----------
+SoT gold system is photoreal 3D metallic (bevelled meander frame, Ionic columns, ornate DLC seal).
+Live tip is flat SVG gold with gradients — same silhouette, wrong material.
+Exact frame/chrome bar fails. Hero-band mean abs RGB Δ ≈ 51 vs SoT (Design cmp-*).
+
+DJ Law
+------
+FAIL — killer above.
+Layout language is close (AppShell, meander silhouette, columns+seal slot, OL gold tab, location cards).
+Not exact. Eng residual matches Design: SVG frame/columns vs photoreal SoT; schematic map thumbs vs satellite; lighter circuit watermark; firm-select chrome drift.
+
+Therman clone
+-------------
+FAIL — same killer (inherits master template miss).
+PASS on crest swap: real Charlie Therman logo.webp in seal — no literal "logo" placeholder, not wrong design system for firm mark.
+Name/stats swap OK.
+
+Punch (Eng)
+-----------
+1. Replace SVG meander frame + Ionic columns + ornate seal with SoT-grade photoreal assets (crop/rasterize from Nick SoT PNG or rebuild metallic to match).
+2. Map thumbs → satellite-style like SoT (not circuit schematic).
+3. Restore denser circuit / scales watermark weight under cards.
+4. Align AppShell chrome to SoT (drop firm-select / theme-toggle drift unless Nick unlocks).
+5. Re-tip → Design HARD re-PASS vs SoT PNG exact before DONE.
+
+Band D HOLD. Nothing DONE.
+
+---
+NICK PUNCH ADDENDUM (via CoS 2026-09-24 ~1:16pm ET)
+Evidence: _shots/nick-feedback-2026-09-24/ (PUNCH.txt + therman-hub-nick-glance.png)
+LOCKED into FAIL bar — re-PASS requires ALL of:
+
+N1) AppShell center "justify" mark: FAIL human/person icons — must be TWO GREEN ARROWS per SoT (visible wrong on Nick glance).
+N2) Hero ornate gold: KEEP (Nick likes). Still must be photoreal metallic, not flat SVG (prior killer stands).
+N3) Lower Office Locations / tabs: too busy for older clients — simplify for PASS (density/chrome/map-thumb clutter).
+
+Prior killer + punch (1–5) still apply. Band D HOLD. Nothing DONE until Design HARD re-PASS.

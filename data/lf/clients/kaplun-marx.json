@@ -1,0 +1,110 @@
+{
+  "slug": "kaplun-marx",
+  "name": "KaplunMarx",
+  "group": "Kaplun Marx",
+  "brand_match": "kaplun",
+  "generated_at": "2026-09-16T18:09:45.873Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 6,
+  "scan_count": 4699,
+  "locations": [
+    {
+      "place_id": "ChIJ5fHispQ0wYkRoSrFTrQRDpU",
+      "name": "KaplunMarx, New Jersey Personal Injury Attorneys at Law",
+      "address": "10000 Lincoln Dr E #201, Marlton, NJ 08053",
+      "city": "Marlton",
+      "rating": 5,
+      "reviews": 40,
+      "phone": "+18562142440",
+      "url": "https://kaplunmarx.com/locations/new-jersey/marlton/?utm_campaign=marlton",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Kaplun Marx"
+      ],
+      "scan_count": 1748,
+      "latest_date": "8/20/2026 3:16 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJU6hH5gHJxokRTt9l2dFOr0E",
+      "name": "Philadelphia Personal Injury Lawyers, KaplunMarx",
+      "address": "115 S 8th St Ste 5, Philadelphia, PA 19106",
+      "city": "Philadelphia",
+      "rating": 5,
+      "reviews": 354,
+      "phone": "+12153986073",
+      "url": "https://kaplunmarx.com/?utm_campaign=PhillyGBP",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Kaplun Marx"
+      ],
+      "scan_count": 1218,
+      "latest_date": "8/20/2026 3:26 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJl98shp24xokR9ahgsE6mii0",
+      "name": "KaplunMarx, Personal Injury Attorneys at Law",
+      "address": "1230 County Line Rd, Bryn Mawr, PA 19010",
+      "city": "Bryn Mawr",
+      "rating": 4.9,
+      "reviews": 239,
+      "phone": "+16109152341",
+      "url": "https://kaplunmarx.com/bryn-mawr-personal-injury-lawyer/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 513,
+      "latest_date": "8/20/2026 3:33 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJTbT2t--txokRoWzCuhd53ak",
+      "name": "KaplunMarx, Allentown Personal Injury Attorneys at Law",
+      "address": "401 Walnut St #27, Allentown, PA 18102",
+      "city": "Allentown",
+      "rating": 5,
+      "reviews": 225,
+      "phone": "+16109811593",
+      "url": "https://kaplunmarx.com/allentown-personal-injury-lawyer/",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Kaplun Marx"
+      ],
+      "scan_count": 492,
+      "latest_date": "8/20/2026 3:23 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJP64QIqitxokRP-krkKcU8jY",
+      "name": "Kaplunmarx, Bucks County Personal Injury Attorneys at Law",
+      "address": "1123 Street Rd Ste B, Southampton, PA 18966",
+      "city": "Southampton",
+      "rating": 5,
+      "reviews": 23,
+      "phone": "+12157700919",
+      "url": "https://kaplunmarx.com/bucks-county-personal-injury-lawyer/",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Kaplun Marx"
+      ],
+      "scan_count": 478,
+      "latest_date": "8/20/2026 3:19 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJj3OsYLt3xokRJEjYzsxC4-o",
+      "name": "Reading Personal Injury Lawyers, KaplunMarx",
+      "address": "519 Walnut St Office 3B, Reading, PA 19601",
+      "city": "Reading",
+      "rating": 5,
+      "reviews": 14,
+      "phone": "+16108908191",
+      "url": "https://kaplunmarx.com/reading-personal-injury-lawyer/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 250,
+      "latest_date": "8/20/2026 3:30 PM",
+      "latest_iso": "2026-08-20"
+    }
+  ]
+}

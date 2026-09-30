@@ -1,0 +1,13 @@
+logo-white-without-shadow.png — OFFICIAL Justify Local lockup (white wordmark, mint #18CB96 arrows + pin), flat.
+  Source: Google Drive "JL Logo Files" (canonical per JustifyLocal Brand Kit v1.1)
+          / "Logo w/o Shade Effect" / logo-white-without-shadow.png
+          file id 1MaA5GQ0k293McqL8CHjrmvxMS2c0EAdl (owner jesse@justifylocal.com, created 2026-08-13)
+  3125x1562 RGBA PNG, byte-for-byte copy (no crop/trim/recolor/retrace/filter).
+  sha256 e3b4eb2037babfc09d6d95585fe64ae07eeb41e700ad73063eeee127b45bfc69
+  Brand kit rule: "logo-white-without-shadow.png — Dark / charcoal backgrounds"; "Prefer flat (without-shadow) for ... UI".
+
+Retired 2026-09-24:
+  logo.png (500x219) — was an ALTERED copy of the live-site JustifyLogo.png (glow stripped in 2cb01f4;
+  true original sha256 262259f20e1ecadfc7d005b9b11e6487d2b5411e6fba9b4ea77148ec54a65909, identical to
+  https://justifylocal.com/wp-content/uploads/2025/09/JL-updated-Color-Logo.png and Drive JustifyLogo.png).
+  components/hub/justify-arrows-path.ts (potrace redraw of that altered file) deleted.

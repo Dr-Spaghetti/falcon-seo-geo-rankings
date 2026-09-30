@@ -1,0 +1,10 @@
+logo.png — OFFICIAL Carlson Hayslett WHITE/light mark, byte-for-byte from source (untouched; no recolor/crop/trace/filter).
+SOURCE: Official site carlsonhayslett.com — header white logo asset (for dark backgrounds)
+URL: https://www.datocms-assets.com/99416/1785361284-ch-logo-white.png
+CoS handoff: /workspace/falcon-logo-hunt/cmh-white/logo.png (same bytes)
+Collected: 2026-09-30 (ET). Contrast fix: prior asset was dark footer lockup
+  https://www.datocms-assets.com/99416/1785361457-ch-logo-footer.png which was invisible on dark hub.
+493×157 PNG transparent; mean luminance ≈255 (pure white ink).
+sha256 ed84373f19beba4326e0b98a5d3c8d0f9c380a85471f9a3df3d0b65cd85ba4df
+Asymmetric vertical padding → inkOffsetPct applied.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

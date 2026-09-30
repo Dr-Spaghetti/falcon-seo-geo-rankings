@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { LfLocationDetail, LfScan } from "@/lib/lf";
 import { KpiCard, formatMetric } from "@/components/Metric";
+import { locationLinks } from "@/lib/google-listing";
 
 const MONTHS = [
   "Jan",
@@ -38,7 +39,7 @@ function LinkPill({
 }) {
   if (!href || disabled) {
     return (
-      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-slate-300">
+      <span className="inline-flex cursor-not-allowed rounded-md px-1.5 py-0.5 text-[11px] text-navy-500">
         {label}
       </span>
     );
@@ -48,12 +49,24 @@ function LinkPill({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-50 hover:text-navy-900"
+      className="inline-flex rounded-md bg-navy-100 px-1.5 py-0.5 text-[11px] font-medium text-navy-800 hover:bg-navy-200/80 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
     >
       {label}
     </a>
   );
 }
+
+
+function solvClass(solv: number | null) {
+  if (solv == null || !Number.isFinite(solv)) return "text-navy-800";
+  if (solv >= 30) return "font-semibold text-emerald-800";
+  if (solv >= 20) return "font-medium text-emerald-700";
+  if (solv >= 10) return "text-navy-800";
+  return "text-navy-500";
+}
+
+const selectClass =
+  "rounded-lg border border-navy-200/80 bg-navy-50/90 px-2.5 py-1.5 text-sm font-normal normal-case text-navy-900 tabular-nums shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1";
 
 export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const years = useMemo(() => {
@@ -66,7 +79,6 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const [month, setMonth] = useState<number | "all">("all");
   const [day, setDay] = useState<number | "all">("all");
   const [q, setQ] = useState("");
-
   const monthsAvailable = useMemo(() => {
     const ms = new Set<number>();
     for (const s of data.scans) {
@@ -115,45 +127,64 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   }
 
   const loc = data.location;
+  const links = locationLinks(loc);
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div className="min-w-0">
-          <p className="text-xs font-medium uppercase tracking-wider text-navy-600">
-            Location dashboard
-          </p>
-          <h1 className="mt-1 truncate text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {loc.city || loc.name}
-          </h1>
-          <p className="mt-1 text-sm text-slate-500">{loc.address}</p>
-          <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-500">
-            {loc.rating != null ? (
-              <span className="rounded-full bg-white px-2 py-0.5 ring-1 ring-slate-200">
-                ★ {formatMetric(loc.rating, 1)} · {loc.reviews ?? 0} reviews
-              </span>
-            ) : null}
-            {loc.primary_category ? (
-              <span className="rounded-full bg-white px-2 py-0.5 ring-1 ring-slate-200">
-                {loc.primary_category}
-              </span>
-            ) : null}
-            <span className="rounded-full bg-white px-2 py-0.5 font-mono text-[11px] ring-1 ring-slate-200">
-              {loc.place_id}
-            </span>
+      <section
+        className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] px-5 py-6 text-[var(--brand-fg)] shadow-lg shadow-black/15 sm:px-7 sm:py-7"
+        style={{ backgroundImage: "var(--brand-hero)" }}
+      >
+        <div
+          className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/5 blur-2xl"
+          aria-hidden
+        />
+        <div className="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-wider text-hub-text">
+              Location dashboard
+            </p>
+            <h1 className="mt-1 truncate text-2xl font-semibold tracking-tight sm:text-3xl">
+              {loc.city || loc.name}
+            </h1>
+            <p className="mt-1.5 text-sm text-hub-text">{loc.address}</p>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs">
+              {loc.rating != null && loc.rating > 0 ? (
+                <span className="rounded-full bg-white/10 px-2.5 py-0.5 font-medium text-white ring-1 ring-white/20">
+                  ★ {formatMetric(loc.rating, 1)} · {loc.reviews ?? 0} reviews
+                </span>
+              ) : null}
+              {loc.primary_category ? (
+                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-hub-text ring-1 ring-white/15">
+                  {loc.primary_category}
+                </span>
+              ) : null}
+            </div>
           </div>
+          {links.length ? (
+            <div className="flex shrink-0 flex-wrap gap-2">
+              {links.map((l) => (
+                <a
+                  key={l.kind}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-listing-link={l.kind}
+                  className={
+                    (l.kind === "google"
+                      ? "border-white/30 bg-white/15 "
+                      : "border-white/20 bg-transparent ") +
+                    "inline-flex items-center rounded-lg border px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand)]"
+                  }
+                >
+                  {l.label} <span aria-hidden className="ml-1">↗</span>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              ))}
+            </div>
+          ) : null}
         </div>
-        {loc.url ? (
-          <a
-            href={loc.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-navy-800 shadow-sm hover:bg-slate-50"
-          >
-            Open GBP site ↗
-          </a>
-        ) : null}
-      </div>
+      </section>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <KpiCard
@@ -170,6 +201,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
           label="Avg ATRP"
           value={formatMetric(meanAtrp)}
           hint="Avg true rank position"
+          tone="accent"
         />
         <KpiCard
           label="Avg SOLV"
@@ -179,19 +211,19 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
         />
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="sticky top-[3.25rem] z-30 rounded-xl border border-navy-200/80 bg-navy-100 p-4 shadow-sm shadow-navy-900/[0.05] backdrop-blur-md">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-800">Date filters</p>
-            <p className="text-xs text-slate-500">
-              From census <code className="text-[11px]">date</code> field (US M/D/YYYY)
+            <p className="text-sm font-semibold text-navy-900">Date filters</p>
+            <p className="text-xs text-navy-700">
+              Filter scans by date or keyword
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <label className="flex flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Year
               <select
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 tabular-nums"
+                className={selectClass}
                 value={year === "all" ? "all" : String(year)}
                 onChange={(e) => onYearChange(e.target.value)}
               >
@@ -203,10 +235,10 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Month
               <select
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800"
+                className={selectClass}
                 value={month === "all" ? "all" : String(month)}
                 onChange={(e) => onMonthChange(e.target.value)}
               >
@@ -218,10 +250,10 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Day
               <select
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 tabular-nums"
+                className={selectClass}
                 value={day === "all" ? "all" : String(day)}
                 onChange={(e) =>
                   setDay(e.target.value === "all" ? "all" : Number(e.target.value))
@@ -235,93 +267,100 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 ))}
               </select>
             </label>
-            <label className="flex min-w-[12rem] flex-1 flex-col gap-1 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+            <label className="flex min-w-[12rem] flex-1 flex-col gap-1 text-[11px] font-semibold uppercase tracking-wide text-navy-600">
               Keyword
               <input
                 type="search"
                 placeholder="Filter keywords…"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-sm font-normal normal-case text-slate-800 placeholder:text-slate-400"
+                className="rounded-lg border border-navy-200/80 bg-navy-50/90 px-2.5 py-1.5 text-sm font-normal normal-case text-navy-900 shadow-sm placeholder:text-navy-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-1"
               />
             </label>
           </div>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-        <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
-          <h2 className="text-sm font-semibold text-slate-800">Scan table</h2>
-          <p className="text-xs tabular-nums text-slate-500">
+      <div className="overflow-hidden rounded-xl border border-navy-200/80 bg-navy-50 shadow-sm shadow-navy-900/[0.04]">
+        <div className="flex items-center justify-between border-b border-navy-200/70 bg-navy-100 px-4 py-3">
+          <h2 className="text-sm font-semibold text-navy-900">Scan table</h2>
+          <p className="text-xs tabular-nums text-navy-600">
             {filtered.length.toLocaleString()} row
             {filtered.length === 1 ? "" : "s"}
           </p>
         </div>
 
         {filtered.length === 0 ? (
-          <div className="px-4 py-16 text-center">
-            <p className="text-sm font-medium text-slate-700">No scans match</p>
-            <p className="mt-1 text-sm text-slate-500">
+          <div className="mx-4 my-6 rounded-xl border border-dashed border-navy-300/70 bg-navy-100/50 px-4 py-14 text-center">
+            <p className="text-sm font-semibold text-navy-800">No scans match</p>
+            <p className="mt-1 text-sm text-navy-700">
               Try clearing month/day or the keyword filter.
             </p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="max-h-[70vh] overflow-auto">
             <table className="min-w-full text-left text-sm">
-              <thead className="bg-slate-50 text-[11px] uppercase tracking-wider text-slate-500">
-                <tr>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium">Date</th>
-                  <th className="px-4 py-2.5 font-medium">Keyword</th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+              <thead className="sticky top-0 z-10 bg-navy-100/95 text-[11px] uppercase tracking-wider text-navy-600 backdrop-blur-sm">
+                <tr className="border-b border-navy-200/80">
+                  <th className="whitespace-nowrap px-3 py-2 font-semibold sm:px-4">
+                    Date
+                  </th>
+                  <th className="px-3 py-2 font-semibold sm:px-4">Keyword</th>
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     ARP
                   </th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     ATRP
                   </th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     SOLV
                   </th>
-                  <th className="whitespace-nowrap px-4 py-2.5 font-medium text-right">
+                  <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
                     Found
                   </th>
-                  <th className="px-4 py-2.5 font-medium">Links</th>
+                  <th className="px-3 py-2 font-semibold sm:px-4">Links</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
-                {filtered.map((s) => (
-                  <tr key={s.id} className="hover:bg-slate-50/80">
-                    <td className="whitespace-nowrap px-4 py-2.5 tabular-nums text-slate-600">
+              <tbody>
+                {filtered.map((s, i) => (
+                  <tr
+                    key={s.id}
+                    className={`border-b border-navy-100/90 transition-colors hover:bg-navy-100/70 ${
+                      i % 2 === 0 ? "bg-navy-50/40" : "bg-navy-100/35"
+                    }`}
+                  >
+                    <td className="whitespace-nowrap px-3 py-2 tabular-nums text-navy-700 sm:px-4">
                       {s.date || "—"}
                     </td>
-                    <td className="max-w-[18rem] px-4 py-2.5">
-                      <p className="truncate font-medium text-slate-800">
+                    <td className="max-w-[18rem] px-3 py-2 sm:px-4">
+                      <p className="truncate font-medium text-navy-900">
                         {s.keyword || "—"}
                       </p>
                       {s.campaign_name ? (
-                        <p className="truncate text-xs text-slate-400">
+                        <p className="truncate text-xs text-navy-600">
                           {s.campaign_name}
                         </p>
                       ) : null}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-800">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-navy-800 sm:px-4">
                       {formatMetric(s.arp)}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-800">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-accent-700 sm:px-4">
                       {formatMetric(s.atrp)}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-800">
+                    <td
+                      className={`whitespace-nowrap px-3 py-2 text-right tabular-nums sm:px-4 ${solvClass(s.solv)}`}
+                    >
                       {s.solv == null ? "—" : `${formatMetric(s.solv)}%`}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-600">
+                    <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums text-navy-700 sm:px-4">
                       {s.found_in == null ? "—" : s.found_in}
                       {s.data_points != null ? (
-                        <span className="text-slate-400">/{s.data_points}</span>
+                        <span className="text-navy-600">/{s.data_points}</span>
                       ) : null}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2.5">
+                    <td className="whitespace-nowrap px-3 py-2 sm:px-4">
                       <div className="flex flex-wrap gap-1">
-                        <LinkPill href={s.heatmap} label="Heatmap" />
-                        <LinkPill href={s.image} label="Image" />
                         <LinkPill href={s.pdf} label="PDF" />
                         <LinkPill href={s.public_url} label="Report" />
                       </div>
@@ -333,6 +372,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
           </div>
         )}
       </div>
+
     </div>
   );
 }

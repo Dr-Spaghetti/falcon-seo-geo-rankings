@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const DATA_DIR = path.join(process.cwd(), "data", "lf");
+const CLIENTS_DIR = path.join(DATA_DIR, "clients");
 
 export type LfLocationSummary = {
   place_id: string;
@@ -19,7 +20,7 @@ export type LfLocationSummary = {
   latest_iso: string | null;
 };
 
-export type LfPilotClient = {
+export type LfClient = {
   slug: string;
   name: string;
   group: string;
@@ -30,6 +31,9 @@ export type LfPilotClient = {
   scan_count: number;
   locations: LfLocationSummary[];
 };
+
+/** @deprecated Prefer LfClient — alias kept for existing imports */
+export type LfPilotClient = LfClient;
 
 export type LfScan = {
   id: string;
@@ -83,8 +87,26 @@ function readJson<T>(filePath: string): T | null {
   return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
 }
 
-export function getPilotClient(): LfPilotClient | null {
-  return readJson<LfPilotClient>(path.join(DATA_DIR, "pilot-client.json"));
+function isSafeSlug(slug: string): boolean {
+  return Boolean(slug) && /^[a-z0-9-]+$/.test(slug);
+}
+
+/**
+ * Load a firm-level client by slug.
+ * Prefer data/lf/clients/{slug}.json; Therman also falls back to legacy pilot-client.json.
+ */
+export function getClient(slug: string): LfClient | null {
+  if (!isSafeSlug(slug)) return null;
+  const fromClients = readJson<LfClient>(path.join(CLIENTS_DIR, `${slug}.json`));
+  if (fromClients) return fromClients;
+  if (slug === "therman") {
+    return readJson<LfClient>(path.join(DATA_DIR, "pilot-client.json"));
+  }
+  return null;
+}
+
+export function getPilotClient(): LfClient | null {
+  return getClient("therman");
 }
 
 export function getLocationDetail(placeId: string): LfLocationDetail | null {
@@ -95,9 +117,13 @@ export function getLocationDetail(placeId: string): LfLocationDetail | null {
   );
 }
 
+export function listClientPlaceIds(slug: string): string[] {
+  const client = getClient(slug);
+  return client?.locations.map((l) => l.place_id) ?? [];
+}
+
 export function listPilotPlaceIds(): string[] {
-  const pilot = getPilotClient();
-  return pilot?.locations.map((l) => l.place_id) ?? [];
+  return listClientPlaceIds("therman");
 }
 
 export function avgMetric(

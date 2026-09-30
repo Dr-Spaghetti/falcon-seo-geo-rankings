@@ -1,0 +1,23 @@
+Eng verify shots after HARD FAIL 49120da tip fix (local settle before Band C).
+When: 2026-09-24 ~1:50pm ET
+Viewport: 1024x720
+
+Files:
+- verify-dj-hub-v4.png
+- verify-therman-hub-v4.png
+- sot-vs-dj-v4-top.png
+- crop-dj-v4-center.png
+- crop-therman-v4-center.png
+
+Killer fix:
+- Regenerated public/brands/_hub/hero-chrome-plate.png from SoT hero:
+  inpainted SoT firm type + justify logo out of center/left;
+  NO opaque flat slate fill (old center std=0 → new std≈11 textured field);
+  seal hole kept transparent for crest overlay.
+- Tonéd title textShadow (removed dark 10px halo that read as plate/ghost).
+- Soft: watermark opacity 0.32→0.42 + z-0 stacking (was -z-10 under AppShell bg).
+- Soft: seal crest top 52%→51.5%, size 9.8/45 → 10.2/47.
+
+Quant gate (DJ v4 hub PNG): ultra-flat plate windows std<0.5 = 0.
+DOM: single "DJ Law Corp" / single "Select a location" string in HTML.
+Band D HOLD. Not claiming Design DONE.

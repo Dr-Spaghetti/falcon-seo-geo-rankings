@@ -1,0 +1,61 @@
+{
+  "slug": "kunka",
+  "name": "Kunka Law",
+  "group": "Kunka Law",
+  "brand_match": "kunka",
+  "generated_at": "2026-09-16T19:25:21.104Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 3,
+  "scan_count": 603,
+  "locations": [
+    {
+      "place_id": "ChIJ6egAs8X9t4kRQonJnHfArhA",
+      "name": "Glen Burnie DUI Lawyer, Kunka Law",
+      "address": "7420 Baltimore Annapolis Blvd, Glen Burnie, MD 21061",
+      "city": "Glen Burnie",
+      "rating": 5,
+      "reviews": 21,
+      "phone": "+14439798584",
+      "url": "https://kunkalaw.com/?utm_campaign=glenburnie",
+      "primary_category": "Criminal justice attorney",
+      "groups": [
+        "Kunka"
+      ],
+      "scan_count": 362,
+      "latest_date": "8/10/2026 1:42 PM",
+      "latest_iso": "2026-08-10"
+    },
+    {
+      "place_id": "ChIJn6xrfznft4kRtWsldlY1zAQ",
+      "name": "Columbia Criminal Defense Lawyers",
+      "address": "5501 Twin Knolls Rd #102, Columbia, MD 21045",
+      "city": "Columbia",
+      "rating": 5,
+      "reviews": 6,
+      "phone": "+14104018186",
+      "url": "https://kunkalaw.com/?utm_campaign=columbia",
+      "primary_category": "Criminal justice attorney",
+      "groups": [],
+      "scan_count": 202,
+      "latest_date": "8/10/2026 1:42 PM",
+      "latest_iso": "2026-08-10"
+    },
+    {
+      "place_id": "ChIJv7sKXOHft4kRC4SX7Nf8g7U",
+      "name": "Kunka Law LLC",
+      "address": "5501 Twin Knolls Rd #102, Columbia, MD 21045",
+      "city": "Columbia",
+      "rating": 0,
+      "reviews": 0,
+      "phone": "+14439173913",
+      "url": "https://kunkalaw.com/",
+      "primary_category": "Criminal justice attorney",
+      "groups": [
+        "Kunka"
+      ],
+      "scan_count": 39,
+      "latest_date": "7/30/2026 5:26 AM",
+      "latest_iso": "2026-07-30"
+    }
+  ]
+}

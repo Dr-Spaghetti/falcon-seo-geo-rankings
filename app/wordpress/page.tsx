@@ -36,9 +36,7 @@ export default function WordpressPage() {
       <section className="rounded-xl border border-dashed border-slate-300 bg-white/60 p-5 text-sm text-slate-500">
         <p className="font-medium text-slate-700">Coming soon</p>
         <p className="mt-1">
-          Plugin sync API and chatbot stubs live at{" "}
-          <code className="rounded bg-slate-100 px-1">/api/sites/[siteId]/pages</code>.
-          Mount this app at <code className="rounded bg-slate-100 px-1">justifycode.com/wordpress</code>.
+          WordPress plugin sync and chatbot answers grounded in your site content.
         </p>
       </section>
     </div>

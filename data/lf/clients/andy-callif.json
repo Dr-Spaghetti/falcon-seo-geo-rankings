@@ -1,0 +1,42 @@
+{
+  "slug": "andy-callif",
+  "name": "Andy Callif Bail Bonds",
+  "group": "Andy Callif Bail Bonds",
+  "brand_match": "andy-callif",
+  "generated_at": "2026-09-16T19:14:41.185Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 2,
+  "scan_count": 843,
+  "locations": [
+    {
+      "place_id": "ChIJWdogKpv7OIgR3Zl3LYcVaVI",
+      "name": "Andy Callif Delaware Bail Bonds",
+      "address": "84 N Sandusky St, Delaware, OH 43015",
+      "city": "Delaware",
+      "rating": 5,
+      "reviews": 16,
+      "phone": "+17409001450",
+      "url": "https://www.andycallifbailbonds.com/delaware-oh/bail-bonds/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-delaware",
+      "primary_category": "Bail bonds service",
+      "groups": [],
+      "scan_count": 426,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    },
+    {
+      "place_id": "ChIJJ-LLruKLR4gRNvyLl0GX69Q",
+      "name": "Andy Callif Bail Bonds",
+      "address": "350 S High St, Columbus, OH 43215",
+      "city": "Columbus",
+      "rating": 4.9,
+      "reviews": 852,
+      "phone": "+16146357912",
+      "url": "https://www.andycallifbailbonds.com/",
+      "primary_category": "Bail bonds service",
+      "groups": [],
+      "scan_count": 417,
+      "latest_date": "9/1/2026 1:30 AM",
+      "latest_iso": "2026-09-01"
+    }
+  ]
+}

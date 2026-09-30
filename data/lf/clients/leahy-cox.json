@@ -1,0 +1,42 @@
+{
+  "slug": "leahy-cox",
+  "name": "Leahy Cox",
+  "group": "Leahy Cox",
+  "brand_match": "leahy-cox",
+  "generated_at": "2026-09-16T19:12:37.104Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 2,
+  "scan_count": 853,
+  "locations": [
+    {
+      "place_id": "ChIJj5eDFcvhwFQRmyauSQBy4vk",
+      "name": "Leahy Cox, LLP",
+      "address": "188 W B St Bldg n, Springfield, OR 97477",
+      "city": "Springfield",
+      "rating": 4.6,
+      "reviews": 76,
+      "phone": "+15417038230",
+      "url": "https://www.emeraldlaw.com/?npcmp=dir:local:1636504:97477",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 516,
+      "latest_date": "8/25/2026 12:07 PM",
+      "latest_iso": "2026-08-25"
+    },
+    {
+      "place_id": "ChIJmaqHA4ULlVQRAW0Y-KvwviA",
+      "name": "Portland Car Accident Lawyers, Leahy Cox",
+      "address": "80 SE Madison St #240, Portland, OR 97214",
+      "city": "Portland",
+      "rating": 5,
+      "reviews": 1,
+      "phone": "+15039873780",
+      "url": "https://emeraldlaw.com/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 337,
+      "latest_date": "8/10/2026 1:37 PM",
+      "latest_iso": "2026-08-10"
+    }
+  ]
+}

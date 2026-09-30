@@ -1,0 +1,5 @@
+SOURCE: Google Drive file "Charlie Therman Logo.webp" (id 1ZbtGzPSI1G1Wg8zP4oQ9K_PMadxXPTb8)
+Owner: partners@justifylocal.com (client logo folder, created 2026-07-25)
+300x73 RGBA WebP, byte-identical to Drive (sha256 9152e17c6ac98521c1a03b84abf78fdc98c05a723dfdb82491f4c37f32c18e06).
+Firm site choosecharlie.com is behind a SiteGround bot challenge from this box; no higher-res original found (2026-09-24).
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

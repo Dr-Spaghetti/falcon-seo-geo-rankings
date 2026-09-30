@@ -1,0 +1,27 @@
+{
+  "slug": "shammas-law",
+  "name": "Shammas Law",
+  "group": "Shammas Law",
+  "brand_match": "shammas-law",
+  "generated_at": "2026-09-16T19:34:31.803Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 354,
+  "locations": [
+    {
+      "place_id": "ChIJgxuIOLcsDogR-X9pkQnGlC4",
+      "name": "Chicago Personal Injury & Car Accident Lawyers - Shammas Law",
+      "address": "161 N Clark St #3050, Chicago, IL 60601",
+      "city": "Chicago",
+      "rating": 5,
+      "reviews": 189,
+      "phone": "+13124711417",
+      "url": "https://shammas-law.com/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 354,
+      "latest_date": "8/19/2026 1:06 PM",
+      "latest_iso": "2026-08-19"
+    }
+  ]
+}

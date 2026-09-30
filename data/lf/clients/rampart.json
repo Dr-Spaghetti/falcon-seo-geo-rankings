@@ -1,0 +1,27 @@
+{
+  "slug": "rampart",
+  "name": "Rampart Injury Lawyers",
+  "group": "Rampart Injury Lawyers",
+  "brand_match": "rampart",
+  "generated_at": "2026-09-16T19:26:22.203Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 1,
+  "scan_count": 577,
+  "locations": [
+    {
+      "place_id": "ChIJB4HGE9uFbIcRZmUc1GIQWM0",
+      "name": "Rampart Injury Lawyers, Castle Rock",
+      "address": "333 Perry St #203, Castle Rock, CO 80104",
+      "city": "Castle Rock",
+      "rating": 5,
+      "reviews": 38,
+      "phone": "+13035471807",
+      "url": "https://rampartinjurylawyers.com/?utm_campaign=castlerock",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 577,
+      "latest_date": "8/19/2026 10:00 AM",
+      "latest_iso": "2026-08-19"
+    }
+  ]
+}

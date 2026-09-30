@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "dj-law",
+    "errors": [],
+    "classes": {
+      "goldFrame": false,
+      "goldDashed": false,
+      "sealBg": "rgb(5, 40, 30)",
+      "meanderImgs": []
+    }
+  },
+  {
+    "slug": "therman",
+    "errors": [],
+    "classes": {
+      "goldFrame": false,
+      "goldDashed": false,
+      "sealBg": "rgb(1, 22, 51)",
+      "meanderImgs": []
+    }
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "slug": "omega",
+  "name": "Omega Law Group",
+  "group": "Omega",
+  "brand_match": "omega",
+  "generated_at": "2026-09-16T18:57:59.314Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 4,
+  "scan_count": 1794,
+  "locations": [
+    {
+      "place_id": "ChIJBwVdXCcTkIARFvxVGj1NITM",
+      "name": "Stockton Personal Injury Lawyers - Omega Law Group",
+      "address": "343 E Main St Unit 705, Stockton, CA 95202",
+      "city": "Stockton",
+      "rating": 4.9,
+      "reviews": 51,
+      "phone": "+12093152251",
+      "url": "https://www.omegalaw.com/stockton/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-stockton",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Omega"
+      ],
+      "scan_count": 544,
+      "latest_date": "8/28/2026 10:34 PM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJP5rAp0Np6oARr9GIHXriErw",
+      "name": "Omega Law Group | Bakersfield Personal Injury Lawyers",
+      "address": "1527 19th St #326, Bakersfield, CA 93301",
+      "city": "Bakersfield",
+      "rating": 4.9,
+      "reviews": 77,
+      "phone": "+16614380342",
+      "url": "https://www.omegalaw.com/bakersfield/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-bakersfield",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Omega"
+      ],
+      "scan_count": 438,
+      "latest_date": "8/28/2026 10:36 PM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJ8TIc9ISZToYRveGA0Vx1weQ",
+      "name": "Dallas Injury Lawyers - Omega Law Group",
+      "address": "1910 Pacific Ave Ste 15860, Dallas, TX 75201",
+      "city": "Dallas",
+      "rating": 5,
+      "reviews": 28,
+      "phone": "+14693366452",
+      "url": "https://www.omegalaw.com/dallas/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-dallas",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Omega"
+      ],
+      "scan_count": 410,
+      "latest_date": "8/20/2026 10:38 PM",
+      "latest_iso": "2026-08-20"
+    },
+    {
+      "place_id": "ChIJqzfhTsXDQIYR6vdZUPtCbRg",
+      "name": "Omega Law Group | Houston Personal Injury Lawyers",
+      "address": "720 N Post Oak Rd Ste 430, Houston, TX 77024",
+      "city": "Houston",
+      "rating": 4.8,
+      "reviews": 26,
+      "phone": "+13465215205",
+      "url": "https://www.omegalaw.com/houston/personal-injury-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-houston",
+      "primary_category": "Personal injury attorney",
+      "groups": [
+        "Omega"
+      ],
+      "scan_count": 402,
+      "latest_date": "8/20/2026 10:39 PM",
+      "latest_iso": "2026-08-20"
+    }
+  ]
+}

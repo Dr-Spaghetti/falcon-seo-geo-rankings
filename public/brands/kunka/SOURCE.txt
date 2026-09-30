@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Kunka Law mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Kunka Logo.png
+URL: https://drive.google.com/file/d/1wemB1466lpkzOXG67s1jkAdancSS456z/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+500×200; sha256 89d0025eaca66b0f64d2ab9d4cc86055ca6aa704751133d12c820b2c8302cb62
+500×200 PNG with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

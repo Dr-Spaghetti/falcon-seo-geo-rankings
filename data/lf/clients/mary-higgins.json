@@ -1,0 +1,42 @@
+{
+  "slug": "mary-higgins",
+  "name": "Mary Higgins",
+  "group": "Mary Higgins",
+  "brand_match": "mary-higgins",
+  "generated_at": "2026-09-16T19:30:55.805Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 2,
+  "scan_count": 408,
+  "locations": [
+    {
+      "place_id": "ChIJyfopmGRlx4kR0zCxNFAuMBc",
+      "name": "Law Office of Mary Higgins",
+      "address": "9 E Loockerman St #207, Dover, DE 19901",
+      "city": "Dover",
+      "rating": 5,
+      "reviews": 23,
+      "phone": "+13022792852",
+      "url": "https://www.letsbelegal.com/",
+      "primary_category": "Law firm",
+      "groups": [],
+      "scan_count": 229,
+      "latest_date": "8/28/2026 1:50 AM",
+      "latest_iso": "2026-08-28"
+    },
+    {
+      "place_id": "ChIJj-y1UxoBx4kR3W5jXJstOXI",
+      "name": "Law Office of Mary Higgins, LLC",
+      "address": "200 Biddle Ave Ste 202, Newark, DE 19702",
+      "city": "Newark",
+      "rating": 4.7,
+      "reviews": 31,
+      "phone": "+13023064474",
+      "url": "https://letsbelegal.com/",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 179,
+      "latest_date": "8/28/2026 2:56 AM",
+      "latest_iso": "2026-08-28"
+    }
+  ]
+}

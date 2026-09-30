@@ -35,3 +35,4 @@ next-env.d.ts
 !/data/lf/
 !/data/lf/**
 .vercel
+.env*

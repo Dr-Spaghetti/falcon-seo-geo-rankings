@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL KaplunMarx mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/KaplunMarx Logo.webp
+URL: https://drive.google.com/file/d/1uMk2PzDB_datkvxQ8pQvR2CS9mer2X_z/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+300×59; sha256 e411754b24e8c26183589b4d399e306d11f5535f198c57794db7f725a3a0e23c
+300×59 WebP with alpha. Short height — may read soft at hero slot.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

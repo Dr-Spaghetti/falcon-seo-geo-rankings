@@ -1,0 +1,6 @@
+logo.png — OFFICIAL Mary Higgins mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Nick2 computer download folder: Mary Higgens Logo.png (source filename spelling Higgens; mapped to mary-higgins slug)
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+800×133; sha256 449a764bf8b036e4fe89047a35ba041ebf2ffadd2bf41bf766be0bf55568c58c
+800×133 PNG palette image, 7.0 KB. Low byte density — may look soft when scaled up.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

@@ -1,0 +1,8 @@
+logo.webp — OFFICIAL Jones & Swanson WHITE/light footer logotype, byte-for-byte from source (untouched; no recolor/crop/trace/filter).
+SOURCE: Official site awjlaw.com — footer logotype (for dark backgrounds)
+URL: https://www.awjlaw.com/wp-content/themes/jones-swanson-rebuild/assets/app/img/footer-logotype.webp
+Collected: 2026-09-30 (ET). Contrast fix: prior header logotype.webp was deep navy on transparency (invisible on dark hub).
+Also available in Drive Logos-Jones & Swanson: white (1).png / white (2).png — site footer asset preferred (same brand family as prior header logotype).
+718×317 WebP transparent; mean luminance ≈255 (pure white ink).
+sha256 2435a8cafb4d20610a8d776514c146a47876d074c826b21752afe3db8d950a02
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

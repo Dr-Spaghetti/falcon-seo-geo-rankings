@@ -1,0 +1,42 @@
+{
+  "slug": "tad-law",
+  "name": "Tad Law",
+  "group": "Tad Law",
+  "brand_match": "tad-law",
+  "generated_at": "2026-09-16T19:30:08.507Z",
+  "source_archive": "/workspace/falcon-lf-archive",
+  "location_count": 2,
+  "scan_count": 423,
+  "locations": [
+    {
+      "place_id": "ChIJj16zeDGdQIYRJaadIn2tVkA",
+      "name": "Tad Law | League City Criminal Defense & Injury Lawyer",
+      "address": "820 E Main St, League City, TX 77573",
+      "city": "League City",
+      "rating": 4.9,
+      "reviews": 224,
+      "phone": "+12815024791",
+      "url": "https://tadlaw.com/league-city-tx/criminal-defense-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-league-city",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 223,
+      "latest_date": "9/2/2026 1:34 PM",
+      "latest_iso": "2026-09-02"
+    },
+    {
+      "place_id": "ChIJqyalQEKeP4YRcS9LApadEjg",
+      "name": "Tad Law | Galveston Criminal Defense & Injury Lawyer",
+      "address": "511 59th St, Galveston, TX 77551",
+      "city": "Galveston",
+      "rating": 4.9,
+      "reviews": 136,
+      "phone": "+12819387990",
+      "url": "https://tadlaw.com/galveston-tx/criminal-defense-lawyer/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing-galveston",
+      "primary_category": "Personal injury attorney",
+      "groups": [],
+      "scan_count": 200,
+      "latest_date": "9/2/2026 1:34 PM",
+      "latest_iso": "2026-09-02"
+    }
+  ]
+}
