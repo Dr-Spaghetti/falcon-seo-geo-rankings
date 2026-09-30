@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Michael Marr / Injury Attorneys mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Marr Law Firm.png
+URL: https://drive.google.com/file/d/1iu8Uyt-KEuOb2c2cw3xztJ-Y2xlBOMhB/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+447×447; sha256 7b759f5822d163780562ff6379a4386125855483243e0b5b368a26de618ea359
+447×447 PNG palette image.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

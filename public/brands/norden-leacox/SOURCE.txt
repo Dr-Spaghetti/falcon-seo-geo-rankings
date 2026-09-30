@@ -1,0 +1,7 @@
+logo.jpg — OFFICIAL Norden Leacox mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Norden Leacox Logo.jpg
+URL: https://drive.google.com/file/d/1zrHfxTgDkjQwX_beoC_w5JdxMSxYgzVE/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+1440×1440; sha256 dfc2f629ee11f404b019b27a9b36a4ea26a395201d2a3c58a26aefb6099ce164
+1440×1440 JPEG (no alpha).
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

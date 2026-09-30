@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Gold Dog Injury Law mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Gold Dog Injury Law Logo.png
+URL: https://drive.google.com/file/d/1uuZkmu0PYXUiYGf3sn4mNSuVkDJHyLex/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+419×87; sha256 80285dc1ef6bcf689956e738233a3aceb81ce0565f2f95f7fe894ef1b44c3290
+419×87 PNG with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

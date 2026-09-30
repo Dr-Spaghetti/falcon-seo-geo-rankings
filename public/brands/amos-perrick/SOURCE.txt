@@ -1,0 +1,7 @@
+logo.svg — OFFICIAL Amos Perrick mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Amos Perrick Logo.svg
+URL: https://drive.google.com/file/d/18Bx6XnqkG6TrnIaqhcPiKR1T1KaZ8_px/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+350×140.9; sha256 9fc0f1a22119826f327523518a2e04aa4d0c5d2e174cb00c66bf1ce6ed550ca6
+Original SVG (viewBox 0 0 350 140.9). Width/height attributes on the root are misleading (112.9 square); natural canvas from viewBox used for aspect lock.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

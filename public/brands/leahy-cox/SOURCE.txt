@@ -1,0 +1,7 @@
+logo.jpg — OFFICIAL Leahy Cox mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Leahy Cox Logo.jpg
+URL: https://drive.google.com/file/d/1T0VTP6pqvdHsN2GzoYYEGgvxPdxYXzvC/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+447×447; sha256 107a7bf25ff050daab4af5471486929744b78341fc1c0b1f0c36262b53ca6d1d
+447×447 JPEG (no alpha).
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

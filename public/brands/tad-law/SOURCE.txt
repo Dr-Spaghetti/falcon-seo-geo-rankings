@@ -1,0 +1,7 @@
+logo.svg — OFFICIAL Tad Law mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Official site tadlaw.com — header logotype SVG
+URL: https://tadlaw.com/wp-content/themes/tad-law-rebuild/assets/app/svg/logotype.svg
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+400×78.049; sha256 bbfdd37865960832180b725f6bd47c96fb6800459058b1b753ec57b8fba790cd
+Original SVG 400×78.049.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

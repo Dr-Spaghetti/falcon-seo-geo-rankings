@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL Premier Law Group mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Premier Legal Group Logo.webp
+URL: https://drive.google.com/file/d/1dSK6BYSd_gr0MjRZGsMSa0qbbNc6HOs2/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+592×191; sha256 734214c3429876a55efb74f5db1744d5bd9265a90837c5bc59f36d00fb7f94ff
+592×191 WebP opaque RGB, only 3.2 KB — likely soft when scaled into hero slot.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

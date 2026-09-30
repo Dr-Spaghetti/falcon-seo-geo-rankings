@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Carlson Hayslett mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Official site carlsonhayslett.com — footer logo asset
+URL: https://www.datocms-assets.com/99416/1785361457-ch-logo-footer.png
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+862×236; sha256 b02b9e86da67a39fcab209396eb570f88adf885b3963875e8484eadcb808724d
+862×236 PNG transparent. Official Carlson Hayslett footer lockup. Asymmetric vertical padding → inkOffsetPct applied.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL Direct Legal Funding mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Official site directlegalfunding.com — header logo asset
+URL: https://directlegalfunding.com/wp-content/uploads/2023/09/logo.webp
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+676×100; sha256 d8c325b3e1931593baac1d8dec6a6ab09b3b9fe9184224af5fdec3dcc6debd1b
+676×100 WebP with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

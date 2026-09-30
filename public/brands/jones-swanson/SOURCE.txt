@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL Jones & Swanson mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Jones & Swanson Logo.webp
+URL: https://drive.google.com/file/d/1E41LsLg0EQ0mngWixhNTQwftfxNCgI6E/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+311×140; sha256 f5fd6e5315fcd632134681748b6cb509b1a1415fd0e2863a8257652a0789a413
+311×140 WebP with alpha. Asymmetric vertical padding → inkOffsetPct applied.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

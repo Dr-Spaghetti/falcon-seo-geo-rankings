@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL Shammas Law mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Shammas Law Logo.webp
+URL: https://drive.google.com/file/d/1pbFMIp9JDmgB7Y_Zly8MkOW8xXhn0IJo/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+480×192; sha256 5d345617f3cb33734f1b5037d25e4f3965edb662166bdddb9c2fcfb92e0430b8
+480×192 WebP with alpha, 4.9 KB — moderate soft risk.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

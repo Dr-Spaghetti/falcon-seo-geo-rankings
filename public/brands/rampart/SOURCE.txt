@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Rampart Injury Lawyers mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Rampart Logo.png
+URL: https://drive.google.com/file/d/1iHz4FVdaRhgo3-nPMBNt1m2tcIQ_Yb9R/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+2560×1551; sha256 52745433ff194ecd27a1d62f9e0682ecc1257d0ab891fd1265dcbdb35860ff8a
+2560×1551 PNG with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

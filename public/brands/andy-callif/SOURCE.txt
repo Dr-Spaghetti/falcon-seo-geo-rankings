@@ -1,0 +1,7 @@
+logo.webp — OFFICIAL Andy Callif Bail Bonds mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Andy Callif Bail Bonds Logo.webp
+URL: https://drive.google.com/file/d/1qOe-hLvxAKHvszNMLEmGrXDp637IQOWS/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+426×95; sha256 ecd4760d1bd7aeeda72cfc162ba6c9bce6de6eb842609b2807dfea7963918b9e
+426×95 WebP with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.

@@ -1,0 +1,7 @@
+logo.png — OFFICIAL Widrig Law mark, byte-for-byte from source (untouched; no recolor/crop/trace).
+SOURCE: Google Drive: ALL Client Logos/Client Logos/Widrig Law Logo.png
+URL: https://drive.google.com/file/d/1ST5avniBmqs6OTHGa53MgT9IUskHXJ-E/view?usp=drivesdk
+Collected: 2026-09-30 (ET) via CoS logo hunt. Manifest: /workspace/falcon-logo-hunt/MANIFEST.md
+350×82; sha256 5934cc9de5a70f95cd7183d6fb0f9c22b35c89773e65ec9530cac86807ce8b75
+350×82 PNG with alpha.
+Render as-is: no ring, disc, plate, circular crop, mask, filter, or recolor.
