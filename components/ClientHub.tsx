@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import type { LfClient } from "@/lib/lf";
 import { OfficialLogo } from "@/components/hub/OfficialLogo";
 import { JUSTIFY_LOCAL_LOGO, getFirmLogo } from "@/lib/brand-logos";
 import { hubStatLabels } from "@/lib/hub-labels";
+import type { ScanKindFilter } from "@/lib/lf-scan-kind";
+import {
+  LocationKindBadges,
+  ScanKindFilterChips,
+} from "@/components/hub/ScanKindUi";
 
 /**
  * Shared premium ClientHub — Nick HTML SoT (2026-09-24) style.
@@ -19,6 +27,25 @@ export function ClientHub({ client }: { client: LfClient }) {
   );
   const isLongName = client.name.length > 34;
   const firmLogoScaleClass = FIRM_LOGO_SCALE_CLASS[client.slug] ?? "";
+  const [kindFilter, setKindFilter] = useState<ScanKindFilter>("all");
+
+  const kindCounts = useMemo(() => {
+    let geo = 0;
+    let seo = 0;
+    for (const loc of client.locations) {
+      if ((loc.geo_scan_count ?? 0) > 0) geo += 1;
+      if ((loc.seo_scan_count ?? 0) > 0) seo += 1;
+    }
+    return { all: client.locations.length, geo, seo };
+  }, [client.locations]);
+
+  const visibleLocations = useMemo(() => {
+    if (kindFilter === "all") return client.locations;
+    if (kindFilter === "geo") {
+      return client.locations.filter((l) => (l.geo_scan_count ?? 0) > 0);
+    }
+    return client.locations.filter((l) => (l.seo_scan_count ?? 0) > 0);
+  }, [client.locations, kindFilter]);
 
   // Real latest scan from location data (no fake "Operational & Synced")
   const latestDates = client.locations
@@ -119,15 +146,24 @@ export function ClientHub({ client }: { client: LfClient }) {
 
       {/* Office Locations */}
       <section aria-label="Office Locations" className="flex flex-col gap-3">
-        <div>
-          <span className="gold-badge inline-flex items-center gap-1.5 rounded-md px-3.5 py-1 text-xs font-bold uppercase tracking-wider">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <span className="gold-badge inline-flex w-fit items-center gap-1.5 rounded-md px-3.5 py-1 text-xs font-bold uppercase tracking-wider">
             <LocationOnIcon className="h-3.5 w-3.5" />
             Office Locations
           </span>
+          <ScanKindFilterChips
+            value={kindFilter}
+            onChange={setKindFilter}
+            counts={kindCounts}
+            tone="hub"
+          />
         </div>
+        <p className="text-[11px] text-hub-text">
+          GEO = LLM / geo grid · SEO = Google / Maps. Chips filter offices that have that scan kind.
+        </p>
 
         <div data-location-grid className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {client.locations.map((loc) => {
+          {visibleLocations.map((loc) => {
             const locLatest =
               loc.latest_iso || loc.latest_date
                 ? `Latest scan ${formatScanDate(loc.latest_iso || loc.latest_date || "")}`
@@ -149,10 +185,16 @@ export function ClientHub({ client }: { client: LfClient }) {
                     >
                       {loc.city || loc.name}
                     </h2>
-                    <span className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-slate-700/80 bg-[#172238] px-3 py-1 text-[13px] font-medium text-hub-text">
-                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                      {loc.scan_count.toLocaleString()} scans
-                    </span>
+                    <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
+                      <LocationKindBadges
+                        geoCount={loc.geo_scan_count ?? 0}
+                        seoCount={loc.seo_scan_count ?? 0}
+                      />
+                      <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-700/80 bg-[#172238] px-3 py-1 text-[13px] font-medium text-hub-text">
+                        <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                        {loc.scan_count.toLocaleString()} scans
+                      </span>
+                    </div>
                   </div>
 
                   <div className="flex items-start justify-between gap-4">
@@ -205,6 +247,15 @@ export function ClientHub({ client }: { client: LfClient }) {
             </p>
             <p className="mt-1 text-sm text-hub-text">
               Location rankings will appear here once scans are available.
+            </p>
+          </div>
+        ) : visibleLocations.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-white/20 bg-white/5 px-6 py-16 text-center">
+            <p className="text-sm font-medium text-white/90">
+              No offices match this filter
+            </p>
+            <p className="mt-1 text-sm text-hub-text">
+              Try All, or the other GEO / SEO chip.
             </p>
           </div>
         ) : null}

@@ -4,6 +4,15 @@ import { useMemo, useState } from "react";
 import type { LfLocationDetail, LfScan } from "@/lib/lf";
 import { KpiCard, formatMetric } from "@/components/Metric";
 import { locationLinks } from "@/lib/google-listing";
+import type { ScanKindFilter } from "@/lib/lf-scan-kind";
+import {
+  scanKindFromPlatform,
+  scanMatchesKindFilter,
+} from "@/lib/lf-scan-kind";
+import {
+  ScanKindBadge,
+  ScanKindFilterChips,
+} from "@/components/hub/ScanKindUi";
 
 const MONTHS = [
   "Jan",
@@ -79,6 +88,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
   const [month, setMonth] = useState<number | "all">("all");
   const [day, setDay] = useState<number | "all">("all");
   const [q, setQ] = useState("");
+  const [kindFilter, setKindFilter] = useState<ScanKindFilter>("all");
   const monthsAvailable = useMemo(() => {
     const ms = new Set<number>();
     for (const s of data.scans) {
@@ -98,19 +108,31 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
     return Array.from(ds).sort((a, b) => a - b);
   }, [data.scans, year, month]);
 
+  const kindCounts = useMemo(() => {
+    let geo = 0;
+    let seo = 0;
+    for (const s of data.scans) {
+      const k = scanKindFromPlatform(s.platform);
+      if (k === "geo") geo += 1;
+      else if (k === "seo") seo += 1;
+    }
+    return { all: data.scans.length, geo, seo };
+  }, [data.scans]);
+
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return data.scans.filter((s) => {
+      if (!scanMatchesKindFilter(s.platform, kindFilter)) return false;
       if (year !== "all" && s.year !== year) return false;
       if (month !== "all" && s.month !== month) return false;
       if (day !== "all" && s.day !== day) return false;
       if (needle) {
-        const blob = `${s.keyword || ""} ${s.campaign_name || ""} ${s.type || ""}`.toLowerCase();
+        const blob = `${s.keyword || ""} ${s.campaign_name || ""} ${s.type || ""} ${s.platform || ""}`.toLowerCase();
         if (!blob.includes(needle)) return false;
       }
       return true;
     });
-  }, [data.scans, year, month, day, q]);
+  }, [data.scans, year, month, day, q, kindFilter]);
 
   const meanArp = avg(filtered, "arp");
   const meanAtrp = avg(filtered, "atrp");
@@ -212,6 +234,20 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
       </div>
 
       <div className="sticky top-[3.25rem] z-30 rounded-xl border border-navy-200/80 bg-navy-100 p-4 shadow-sm shadow-navy-900/[0.05] backdrop-blur-md">
+        <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-navy-900">Scan kind</p>
+            <p className="text-xs text-navy-700">
+              GEO = LLM / geo grid · SEO = Google / Maps
+            </p>
+          </div>
+          <ScanKindFilterChips
+            value={kindFilter}
+            onChange={setKindFilter}
+            counts={kindCounts}
+            tone="light"
+          />
+        </div>
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-semibold text-navy-900">Date filters</p>
@@ -294,7 +330,7 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
           <div className="mx-4 my-6 rounded-xl border border-dashed border-navy-300/70 bg-navy-100/50 px-4 py-14 text-center">
             <p className="text-sm font-semibold text-navy-800">No scans match</p>
             <p className="mt-1 text-sm text-navy-700">
-              Try clearing month/day or the keyword filter.
+              Try All / GEO / SEO chips, or clear month/day / keyword.
             </p>
           </div>
         ) : (
@@ -304,6 +340,9 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                 <tr className="border-b border-navy-200/80">
                   <th className="whitespace-nowrap px-3 py-2 font-semibold sm:px-4">
                     Date
+                  </th>
+                  <th className="whitespace-nowrap px-3 py-2 font-semibold sm:px-4">
+                    Kind
                   </th>
                   <th className="px-3 py-2 font-semibold sm:px-4">Keyword</th>
                   <th className="whitespace-nowrap px-3 py-2 text-right font-semibold sm:px-4">
@@ -331,6 +370,12 @@ export function LocationDashboard({ data }: { data: LfLocationDetail }) {
                   >
                     <td className="whitespace-nowrap px-3 py-2 tabular-nums text-navy-700 sm:px-4">
                       {s.date || "—"}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-2 sm:px-4">
+                      <ScanKindBadge
+                        kind={scanKindFromPlatform(s.platform)}
+                        platform={s.platform}
+                      />
                     </td>
                     <td className="max-w-[18rem] px-3 py-2 sm:px-4">
                       <p className="truncate font-medium text-navy-900">
