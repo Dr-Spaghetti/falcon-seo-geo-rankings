@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { countScanKinds } from "@/lib/lf-scan-kind";
 
 const DATA_DIR = path.join(process.cwd(), "data", "lf");
 const CLIENTS_DIR = path.join(DATA_DIR, "clients");
@@ -18,6 +19,10 @@ export type LfLocationSummary = {
   scan_count: number;
   latest_date: string | null;
   latest_iso: string | null;
+  /** Google / Maps scans — derived from scan.platform === "google" */
+  seo_scan_count?: number;
+  /** LLM / geo-grid scans — derived from scan.platform in gaio|gemini|chatgpt|aimode */
+  geo_scan_count?: number;
 };
 
 export type LfClient = {
@@ -91,6 +96,26 @@ function isSafeSlug(slug: string): boolean {
   return Boolean(slug) && /^[a-z0-9-]+$/.test(slug);
 }
 
+/** Attach seo_scan_count / geo_scan_count from location detail files (platform field). */
+function enrichLocationKindCounts(client: LfClient): LfClient {
+  const locations = client.locations.map((loc) => {
+    if (typeof loc.seo_scan_count === "number" && typeof loc.geo_scan_count === "number") {
+      return loc;
+    }
+    const detail = getLocationDetail(loc.place_id);
+    if (!detail) {
+      return { ...loc, seo_scan_count: loc.seo_scan_count ?? 0, geo_scan_count: loc.geo_scan_count ?? 0 };
+    }
+    const counts = countScanKinds(detail.scans);
+    return {
+      ...loc,
+      seo_scan_count: counts.seo,
+      geo_scan_count: counts.geo,
+    };
+  });
+  return { ...client, locations };
+}
+
 /**
  * Load a firm-level client by slug.
  * Prefer data/lf/clients/{slug}.json; Therman also falls back to legacy pilot-client.json.
@@ -98,9 +123,10 @@ function isSafeSlug(slug: string): boolean {
 export function getClient(slug: string): LfClient | null {
   if (!isSafeSlug(slug)) return null;
   const fromClients = readJson<LfClient>(path.join(CLIENTS_DIR, `${slug}.json`));
-  if (fromClients) return fromClients;
+  if (fromClients) return enrichLocationKindCounts(fromClients);
   if (slug === "therman") {
-    return readJson<LfClient>(path.join(DATA_DIR, "pilot-client.json"));
+    const legacy = readJson<LfClient>(path.join(DATA_DIR, "pilot-client.json"));
+    return legacy ? enrichLocationKindCounts(legacy) : null;
   }
   return null;
 }
