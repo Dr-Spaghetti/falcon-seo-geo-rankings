@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-/** Root lands on the Therman pilot client dashboard. */
+/** Root lands on the client directory hub. */
 export default function Home() {
-  redirect("/clients/therman");
+  redirect("/clients");
 }

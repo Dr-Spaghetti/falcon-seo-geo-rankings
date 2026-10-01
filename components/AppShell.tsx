@@ -18,7 +18,8 @@ function navActive(pathname: string, href: string) {
 
 /**
  * AppShell — Nick HTML SoT chrome for LF clients (2026-09-24):
- * Header #0d131f (via --hub-header): Keyword Scans/Reports left, official Justify Local logo center, live ET clock right.
+ * Header #0d131f (via --hub-header): All locations + firm switcher + All clients left,
+ * official Justify Local logo center, live ET clock right.
  * No fake account / settings / notifications / "5" badge.
  * Body: .circuit-bg (CSS grid), no photoreal watermark plate.
  * Footer: Justify Local Platform · Client Portal & Geo-Grid Rank Intelligence
@@ -33,12 +34,15 @@ export function AppShell({
   const pathname = usePathname() || "";
   const router = useRouter();
   const activeClient = LF_CLIENT_NAV.find((c) => navActive(pathname, c.href));
+  const isClientsIndex = pathname === "/clients";
   const wordpressActive = pathname.startsWith("/wordpress");
   const brand = getBrandTheme(brandSlugFromPathname(pathname));
   const brandStyle = brandCssVars(brand) as React.CSSProperties;
-  const isLfClient = Boolean(activeClient);
-  const hubHref = activeClient?.href ?? "/clients/therman";
-  const onHub = pathname === hubHref;
+  // Directory page is outside LF_CLIENT_NAV matching — still use hub chrome.
+  const isLfClient = Boolean(activeClient) || isClientsIndex;
+  const hubHref = activeClient?.href ?? "/clients";
+  const onHub = activeClient != null && pathname === activeClient.href;
+  const switcherValue = activeClient?.href ?? (isClientsIndex ? "/clients" : "");
   // HTML SoT: main max-w-7xl mx-auto px-6 — same gutters on header/main/footer.
   const maxW = isLfClient ? "max-w-7xl" : wide ? "max-w-[1600px]" : "max-w-5xl";
   const padX = isLfClient ? "px-6" : "px-3 sm:px-5";
@@ -54,7 +58,7 @@ export function AppShell({
             className={`mx-auto flex items-center justify-between gap-3 px-4 py-3 sm:px-6 ${maxW}`}
           >
             <Link
-              href="/clients/therman"
+              href="/clients"
               className="shrink-0 font-semibold tracking-tight text-[var(--brand-fg)]"
             >
               LocalFalcon Keyword Scans/Reports
@@ -89,9 +93,8 @@ export function AppShell({
         <div
           className={`relative mx-auto grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 py-2.5 sm:gap-4 ${padX} ${maxW}`}
         >
-          {/* Left: plain nav link back to the firm hub (NOT a search field: no
-              input box, no magnifier). <640px: 36px icon-only; sm+: icon + label. */}
-          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+          {/* Left: All locations (firm hub) + visible firm switcher + All clients */}
+          <div className="flex min-w-0 items-center gap-1.5 sm:gap-2.5">
             <Link
               href={hubHref}
               aria-label="All locations"
@@ -108,13 +111,16 @@ export function AppShell({
             <select
               id="lf-client-switcher"
               aria-label="Switch client firm"
-              value={activeClient?.href ?? ""}
+              value={switcherValue}
               onChange={(e) => {
                 const next = e.target.value;
                 if (next) router.push(next);
               }}
-              className="sr-only"
+              className="max-w-[7.5rem] truncate rounded border border-white/15 bg-black/25 px-1.5 py-1 text-[11px] font-medium text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:max-w-[11rem] sm:text-xs"
             >
+              <option value="/clients" className="bg-slate-900 text-white">
+                All clients
+              </option>
               {LF_CLIENT_NAV.map((c) => (
                 <option
                   key={c.slug}
@@ -125,6 +131,18 @@ export function AppShell({
                 </option>
               ))}
             </select>
+            <Link
+              href="/clients"
+              aria-current={isClientsIndex ? "page" : undefined}
+              data-nav-all-clients
+              className={
+                isClientsIndex
+                  ? "hidden whitespace-nowrap rounded-md bg-white/10 px-2 py-1 text-[11px] font-semibold text-white sm:inline"
+                  : "hidden whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-medium text-hub-text transition-colors hover:bg-white/10 hover:text-white sm:inline sm:text-xs"
+              }
+            >
+              All clients
+            </Link>
           </div>
 
           {/* Center: OFFICIAL Justify Local logo file, untouched (no retrace/text rebuild) */}
@@ -133,8 +151,12 @@ export function AppShell({
             className="flex items-center justify-center self-stretch"
           >
             <Link
-              href={hubHref}
-              aria-label={`Justify Local: ${activeClient?.label ?? "client"} home`}
+              href={isClientsIndex ? "/clients" : hubHref}
+              aria-label={
+                isClientsIndex
+                  ? "Justify Local: all clients"
+                  : `Justify Local: ${activeClient?.label ?? "client"} home`
+              }
               data-nav-logo
               className="flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70"
             >
